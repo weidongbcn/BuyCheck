@@ -1,0 +1,18 @@
+object DMindy: TDMindy
+  OldCreateOrder = False
+  Height = 240
+  HorizontalOffset = 604
+  VerticalOffset = 317
+  Width = 320
+  PPI = 96
+  object IdTCPClient1: TIdTCPClient
+    OnStatus = IdTCPClient1Status
+    OnDisconnected = IdTCPClient1Disconnected
+    OnConnected = IdTCPClient1Connected
+    ConnectTimeout = 0
+    Port = 0
+    ReadTimeout = -1
+    left = 66
+    top = 45
+  end
+end

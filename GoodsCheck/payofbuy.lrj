@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":168592320,"name":"tformbuypay.caption","sourcebytes":[230,148,175,228,187,152,231,153,187,232,174,176],"value":"\u652F\u4ED8\u767B\u8BB0"},
+{"hash":127695554,"name":"tformbuypay.button1.caption","sourcebytes":[65,99,101,112,116,97,114],"value":"Aceptar"},
+{"hash":101317805,"name":"tformbuypay.label4.caption","sourcebytes":[229,186,148,230,148,175,228,187,152,230,172,190,233,162,157],"value":"\u5E94\u652F\u4ED8\u6B3E\u989D"},
+{"hash":201449165,"name":"tformbuypay.label5.caption","sourcebytes":[229,174,158,233,153,133,230,148,175,228,187,152,230,172,190,233,162,157],"value":"\u5B9E\u9645\u652F\u4ED8\u6B3E\u989D"},
+{"hash":49204488,"name":"tformbuypay.groupbox1.caption","sourcebytes":[229,183,178,231,187,143,230,148,175,228,187,152],"value":"\u5DF2\u7ECF\u652F\u4ED8"},
+{"hash":252310017,"name":"tformbuypay.label6.caption","sourcebytes":[231,142,176,233,135,145],"value":"\u73B0\u91D1"},
+{"hash":1023697,"name":"tformbuypay.label7.caption","sourcebytes":[228,191,161,231,148,168,229,141,161],"value":"\u4FE1\u7528\u5361"},
+{"hash":253387134,"name":"tformbuypay.label8.caption","sourcebytes":[230,177,135,230,172,190],"value":"\u6C47\u6B3E"},
+{"hash":249647174,"name":"tformbuypay.label9.caption","sourcebytes":[229,133,182,228,187,150],"value":"\u5176\u4ED6"},
+{"hash":250036094,"name":"tformbuypay.label2.caption","sourcebytes":[229,141,149,230,141,174],"value":"\u5355\u636E"},
+{"hash":169139798,"name":"tformbuypay.label3.caption","sourcebytes":[228,190,155,229,186,148,229,149,134],"value":"\u4F9B\u5E94\u5546"},
+{"hash":221101527,"name":"tformbuypay.label1.caption","sourcebytes":[232,174,176,229,189,149,231,188,150,229,143,183],"value":"\u8BB0\u5F55\u7F16\u53F7"}
+]}

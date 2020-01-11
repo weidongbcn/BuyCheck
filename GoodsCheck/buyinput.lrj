@@ -1,0 +1,13 @@
+{"version":1,"strings":[
+{"hash":250384064,"name":"tformbuy.caption","sourcebytes":[230,150,176,229,141,149,229,133,165,229,186,147,231,153,187,232,174,176],"value":"\u65B0\u5355\u5165\u5E93\u767B\u8BB0"},
+{"hash":30186761,"name":"tformbuy.label4.caption","sourcebytes":[231,153,187,232,174,176,229,134,133,229,174,185],"value":"\u767B\u8BB0\u5185\u5BB9"},
+{"hash":169139798,"name":"tformbuy.label1.caption","sourcebytes":[228,190,155,229,186,148,229,149,134],"value":"\u4F9B\u5E94\u5546"},
+{"hash":68559655,"name":"tformbuy.label2.caption","sourcebytes":[231,165,168,230,141,174,231,188,150,229,143,183],"value":"\u7968\u636E\u7F16\u53F7"},
+{"hash":31457311,"name":"tformbuy.label3.caption","sourcebytes":[232,180,173,228,185,176,230,151,165,230,156,159],"value":"\u8D2D\u4E70\u65E5\u671F"},
+{"hash":12555,"name":"tformbuy.button5.caption","sourcebytes":[46,46,43],"value":"..+"},
+{"hash":342540,"name":"tformbuy.datetimepicker1.textfornulldate","sourcebytes":[78,85,76,76],"value":"NULL"},
+{"hash":253546618,"name":"tformbuy.button1.caption","sourcebytes":[231,161,174,229,174,154],"value":"\u786E\u5B9A"},
+{"hash":251994419,"name":"tformbuy.label16.caption","sourcebytes":[228,187,147,229,186,147],"value":"\u4ED3\u5E93"},
+{"hash":34011370,"name":"tformbuy.label5.caption","sourcebytes":[231,165,168,230,141,174,58],"value":"\u7968\u636E:"},
+{"hash":254202122,"name":"tformbuy.label6.caption","sourcebytes":[231,187,143,230,137,139,228,186,186,58],"value":"\u7ECF\u624B\u4EBA:"}
+]}

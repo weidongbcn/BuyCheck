@@ -1,0 +1,150 @@
+object FormProGoods: TFormProGoods
+  Left = 651
+  Height = 680
+  Top = 323
+  Width = 1024
+  Caption = '供应商货品单'
+  ClientHeight = 680
+  ClientWidth = 1024
+  Position = poMainFormCenter
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 57
+    Top = 0
+    Width = 1024
+    Align = alTop
+    ClientHeight = 57
+    ClientWidth = 1024
+    TabOrder = 0
+    object Label11: TLabel
+      Left = 646
+      Height = 17
+      Top = 20
+      Width = 36
+      Alignment = taRightJustify
+      Anchors = [akRight, akBottom]
+      Caption = '供应商'
+      ParentColor = False
+    end
+    object Button5: TButton
+      Left = 938
+      Height = 25
+      Top = 17
+      Width = 52
+      Anchors = [akRight, akBottom]
+      Caption = '..+'
+      OnClick = Button5Click
+      TabOrder = 0
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 696
+      Height = 25
+      Top = 17
+      Width = 228
+      Anchors = [akRight, akBottom]
+      DropDownCount = 32
+      KeyField = 'ID_PROVEEDOR'
+      ListField = 'NAME_COMERCIO'
+      ListFieldIndex = 0
+      ListSource = DataModule2.ProDataSource
+      LookupCache = False
+      OnSelect = DBLookupComboBox1Select
+      TabOrder = 1
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 41
+    Top = 639
+    Width = 1024
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 1024
+    TabOrder = 1
+    object Button1: TButton
+      Left = 860
+      Height = 25
+      Top = 6
+      Width = 75
+      Anchors = [akRight, akBottom]
+      Caption = '关闭'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 582
+    Top = 57
+    Width = 1024
+    Align = alClient
+    ClientHeight = 582
+    ClientWidth = 1024
+    TabOrder = 2
+    object Panel4: TPanel
+      Left = 838
+      Height = 580
+      Top = 1
+      Width = 185
+      Align = alRight
+      TabOrder = 0
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 580
+      Top = 1
+      Width = 837
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = '条形码'
+          Width = 120
+          FieldName = 'ENA'
+        end      
+        item
+          Title.Caption = '内容'
+          Width = 280
+          FieldName = 'GOODS_NAME'
+        end      
+        item
+          Title.Caption = '成本'
+          Width = 80
+          FieldName = 'COST'
+          DisplayFormat = '0.000'
+        end      
+        item
+          Title.Caption = '税率(%)'
+          Width = 60
+          FieldName = 'IVA'
+        end      
+        item
+          Title.Caption = '类别'
+          Width = 150
+          FieldName = 'CATEGORY'
+        end      
+        item
+          Title.Caption = '最后次时间'
+          FieldName = 'LAST_TIME'
+        end      
+        item
+          Title.Caption = '折扣%'
+          Width = 60
+          FieldName = 'DISCOUNT'
+        end>
+      DataSource = DataSource1
+      TabOrder = 1
+    end
+  end
+  object ListQuery: TZQuery
+    Params = <>
+    left = 380
+    top = 276
+  end
+  object DataSource1: TDataSource
+    DataSet = ListQuery
+    left = 290
+    top = 264
+  end
+end

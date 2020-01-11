@@ -1,0 +1,133 @@
+object FormCategory: TFormCategory
+  Left = 753
+  Height = 514
+  Top = 153
+  Width = 640
+  Caption = 'FormCategory'
+  ClientHeight = 514
+  ClientWidth = 640
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.0.0.4'
+  object zdbCategorys: TZedDBTreeView
+    Left = 0
+    Height = 514
+    Top = 0
+    Width = 96
+    Align = alLeft
+    DragMode = dmAutomatic
+    HideSelection = False
+    TabOrder = 0
+    OnDblClick = zdbCategorysDblClick
+    Options = [tvoAutoItemHeight, tvoKeepCollapsedNodes, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+    DBKeyField = 'ID'
+    DBTextField = 'Name'
+    DBParentField = 'Parent_id'
+  end
+  object Button1: TButton
+    Left = 513
+    Height = 25
+    Top = 128
+    Width = 95
+    Caption = 'Crear 0 Level'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object btnApply: TButton
+    Left = 513
+    Height = 25
+    Top = 300
+    Width = 95
+    Anchors = [akLeft, akBottom]
+    Caption = 'Apply'
+    OnClick = btnApplyClick
+    TabOrder = 2
+  end
+  object btnMove: TButton
+    Left = 513
+    Height = 25
+    Top = 343
+    Width = 95
+    Caption = 'Move'
+    OnClick = btnMoveClick
+    TabOrder = 3
+    Visible = False
+  end
+  object btnEdit: TButton
+    Left = 513
+    Height = 25
+    Top = 214
+    Width = 95
+    Caption = 'Edit'
+    OnClick = btnEditClick
+    TabOrder = 4
+  end
+  object btnDelete: TButton
+    Left = 513
+    Height = 25
+    Top = 257
+    Width = 95
+    Caption = 'Delete'
+    OnClick = btnDeleteClick
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 513
+    Height = 25
+    Top = 171
+    Width = 95
+    Caption = 'Crear Hijo'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object VirtualDBTreeEx1: TVirtualDBTreeEx
+    Left = 96
+    Height = 514
+    Top = 0
+    Width = 248
+    Align = alLeft
+    BorderStyle = bsSingle
+    DBOptions = [dboAutoBmp, dboAlwaysStructured, dboCheckDBStructure, dboParentStructure, dboTrackActive, dboTrackChanges, dboTrackCursor, dboViewAll, dboWriteLevel, dboWriteSecondary]
+    DataSource = categDataSource
+    DefaultText = 'Node'
+    Header.AutoSizeIndex = 0
+    Header.Columns = <>
+    Header.MainColumn = -1
+    KeyFieldName = 'id'
+    ParentFieldName = 'Parent_id'
+    TabOrder = 7
+    TreeOptions.MiscOptions = [toAcceptOLEDrop, toFullRepaintOnResize, toGridExtensions, toInitOnSave, toToggleOnDblClick, toWheelPanning, toEditOnClick]
+    TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toShowHorzGridLines, toShowRoot, toShowTreeLines, toShowVertGridLines, toThemeAware, toUseBlendedImages]
+    ViewFieldName = 'CATEGORY'
+    DBDataFieldNames = 'CATEGORY'
+  end
+  object categDataSource: TDataSource
+    DataSet = dbCategory
+    left = 544
+    top = 32
+  end
+  object dbCategory: TZQuery
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select * from CATEGORYS'
+    )
+    Params = <>
+    left = 392
+    top = 24
+  end
+  object ProveedorDB: TDataSource
+    DataSet = ProveedorQuery
+    left = 152
+    top = 88
+  end
+  object ProveedorQuery: TZQuery
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select * from 0000proveedorlist'
+    )
+    Params = <>
+    left = 80
+    top = 80
+  end
+end

@@ -1,0 +1,3194 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: global.dlgconnectfailed
+msgid "连接被拒绝，可能服务器没有开启"
+msgstr ""
+
+#: global.dlgexcept
+msgid "服务器端异常断开，工作将停止!"
+msgstr ""
+
+#: global.dlgnoconnected
+msgid "未连接服务器"
+msgstr ""
+
+#: global.en
+msgid "inglish"
+msgstr ""
+
+#: global.es
+msgid "Español"
+msgstr ""
+
+#: global.logclientconnected
+msgid "【客户端：%s,%s】连接到服务器--%s"
+msgstr ""
+
+#: global.logclientdisconnected
+msgid "【客户端：%s,%s】从服务器断开--%s"
+msgstr ""
+
+#: global.logserverclose
+msgid "【服务器关闭--%s】"
+msgstr ""
+
+#: global.logserverstart
+msgid "【服务器开启--%s】"
+msgstr ""
+
+#: global.logtxt
+msgid "------服务器操作日志------"
+msgstr ""
+
+#: global.msgreg1
+msgid "版本已注册"
+msgstr ""
+
+#: global.msgreg1a
+msgid "已注册"
+msgstr ""
+
+#: global.msgreg2
+msgid "未注册版本"
+msgstr ""
+
+#: global.msgreg3
+msgid "(网络版)"
+msgstr ""
+
+#: global.msgreg4
+msgid "(单机版)"
+msgstr ""
+
+#: global.msgreg5
+msgid "请注册,联系邮箱: wyldon@gmail.com 或电话: 675113787"
+msgstr ""
+
+#: global.msgreg6
+msgid "注册单位: "
+msgstr ""
+
+#: global.msgreg7
+msgid "注册文件成功导入, 请您退出程序重启!"
+msgstr ""
+
+#: global.msgreg8
+msgid "使用到"
+msgstr ""
+
+#: global.ncaption1
+msgid "No#"
+msgstr ""
+
+#: global.ncaption10
+msgid "Esta operación agrega el monto del conteo actual basado en el stock original."
+msgstr ""
+
+#: global.ncaption11
+msgid "Número de Operación"
+msgstr ""
+
+#: global.ncaption12
+msgid "Almacén de inventario"
+msgstr ""
+
+#: global.ncaption2
+msgctxt "global.ncaption2"
+msgid "Importe"
+msgstr ""
+
+#: global.ncaption3
+msgid "Crear Nuevo Categoria Padre"
+msgstr ""
+
+#: global.ncaption4
+msgid "Crear Nuevo Categoria Hijo"
+msgstr ""
+
+#: global.ncaption5
+msgid "Editar la categoria"
+msgstr ""
+
+#: global.ncaption6
+msgid "Inventario completo"
+msgstr ""
+
+#: global.ncaption7
+msgid "Cambiar database"
+msgstr ""
+
+#: global.ncaption8
+msgid "Suma de cuentas"
+msgstr ""
+
+#: global.ncaption9
+msgid "Esta operación cambiará la cantidad del inventario original a la cantidad de conteo."
+msgstr ""
+
+#: global.ndefault
+msgid "Default"
+msgstr ""
+
+#: global.nfun0
+msgid "F2: 建立类别;"
+msgstr ""
+
+#: global.nfun1
+msgid "F3: 打开钱箱"
+msgstr ""
+
+#: global.nfun2
+msgid "F4: 商品单位设定;"
+msgstr ""
+
+#: global.nfun3
+msgid "F5: 查找"
+msgstr ""
+
+#: global.nfun4
+msgid "F6: 加载图片;"
+msgstr ""
+
+#: global.nfun5
+msgid "F7: 供应商;"
+msgstr ""
+
+#: global.nfun6
+msgid "F8: 清空;"
+msgstr ""
+
+#: global.nfun7
+msgid "F5: 添加货品;"
+msgstr ""
+
+#: global.nfun8
+msgid "F7: 添加品牌;"
+msgstr ""
+
+#: global.nfun9
+msgid "F9: 查询;"
+msgstr ""
+
+#: global.nlbn49
+msgid "No Esta Connectado.(还未连接到任何数据库)"
+msgstr ""
+
+#: global.nlbn50
+msgid "Ya Esta Connectado a:(已经连接到:)"
+msgstr ""
+
+#: global.nlist1
+msgctxt "global.nlist1"
+msgid "Nombre Comercial"
+msgstr ""
+
+#: global.nlist2
+msgid "Razón Social"
+msgstr ""
+
+#: global.nlist3
+msgid "Codigo"
+msgstr ""
+
+#: global.nmsg0
+msgid "No esta conectado...No se puede trabajar; "
+msgstr ""
+
+#: global.nmsg1
+msgid "Tecla % en Edidor de CodigoBarra significa para buscar."
+msgstr ""
+
+#: global.nmsg10
+msgid "Tienes que acabar el trabajo que esta haciendo!"
+msgstr ""
+
+#: global.nmsg11
+msgid "Trabajo Echo. Ha modificado el database."
+msgstr ""
+
+#: global.nmsg2
+msgid ""
+"NOTA: \n"
+"Tasa de impuesto del libro de solo el 4%.\n"
+msgstr ""
+
+#: global.nmsg3
+msgid "Copia detalles desde otro articulo: "
+msgstr ""
+
+#: global.nmsg4
+msgid "Introducir Codigo de Barra"
+msgstr ""
+
+#: global.nmsg5
+msgid "Buscar codigo barra o nombre del articulo: "
+msgstr ""
+
+#: global.nmsg6
+msgid "Introducir Conception"
+msgstr ""
+
+#: global.nmsg7
+msgid "Error: Formato de Codigo de Barra incorrect!"
+msgstr ""
+
+#: global.nmsg8
+msgid "Tienes que selecionar un node Primero!"
+msgstr ""
+
+#: global.nmsg9
+msgid "Tienes que elegir un record en table primero!"
+msgstr ""
+
+#: global.nmsn14
+msgid "没有连接信息!"
+msgstr ""
+
+#: global.nmsn15
+msgid "没有连接信息,请先添加."
+msgstr ""
+
+#: global.nmsn16
+msgid "没有连接信息,您将无法操作,请注意添加."
+msgstr ""
+
+#: global.nmsn17
+msgid "用户不存在或密码错误"
+msgstr ""
+
+#: global.nmsn18
+msgid ""
+"保存成功.\n"
+"您需要重新登入才可以获取新资料,通知客户端重新登入.\n"
+msgstr ""
+
+#: global.nmsn19
+msgid "您的权限不够,无法打开!"
+msgstr ""
+
+#: global.nmsn49
+msgid "全部"
+msgstr ""
+
+#: global.nmsn50
+msgid "已经清点"
+msgstr ""
+
+#: global.nmsn51
+msgid "没有清点"
+msgstr ""
+
+#: global.nmsn52
+msgctxt "global.nmsn52"
+msgid "退货"
+msgstr ""
+
+#: global.nmsn53
+msgid "购买数量不等于已清点"
+msgstr ""
+
+#: global.nmsn54
+msgid "没有任何东西.."
+msgstr ""
+
+#: global.nopera1
+msgid "***-所有仓库"
+msgstr ""
+
+#: global.nopera2
+msgid "***-所有类别"
+msgstr ""
+
+#: global.nopera3
+msgid "***-所有供应商"
+msgstr ""
+
+#: global.staconnected
+msgid "已链接到服务器"
+msgstr ""
+
+#: global.stadisconnected
+msgid "已从服务器断开"
+msgstr ""
+
+#: global.staerror
+msgid "软件使用的端口被占用"
+msgstr ""
+
+#: global.stainittext
+msgid "服务器未开启"
+msgstr ""
+
+#: global.stareceivedpersent
+msgid "接收文件：%s--(%u%%)"
+msgstr ""
+
+#: global.staserverclose
+msgid "服务器关闭"
+msgstr ""
+
+#: global.staserverclosing
+msgid "服务器关闭着"
+msgstr ""
+
+#: global.staserverstart
+msgid "服务器开启成功"
+msgstr ""
+
+#: global.statext
+msgid "客户端连接数:%d个"
+msgstr ""
+
+#: global.zh
+msgid "中文"
+msgstr ""
+
+#: taboutbox.button1.caption
+msgid "注册文件"
+msgstr ""
+
+#: taboutbox.button2.caption
+msgctxt "taboutbox.button2.caption"
+msgid "刷新"
+msgstr ""
+
+#: taboutbox.copyright.caption
+msgid "Copyright (版权) : Wyldon SoftGest S.L."
+msgstr ""
+
+#: taboutbox.groupbox1.caption
+msgid "注册信息"
+msgstr ""
+
+#: taboutbox.label1.caption
+msgid "版权所有, 对破解,反编译行为必法律追究!"
+msgstr ""
+
+#: taboutbox.label2.caption
+msgid "注册单位:"
+msgstr ""
+
+#: taboutbox.label3.caption
+msgid "使用版本:"
+msgstr ""
+
+#: taboutbox.label4.caption
+msgid "允许终端数:"
+msgstr ""
+
+#: taboutbox.label5.caption
+msgid "CIF/NIF:"
+msgstr ""
+
+#: taboutbox.okbutton.caption
+msgid "OK"
+msgstr ""
+
+#: taboutbox.productname.caption
+msgid "Wyldon SoftGest TPV (销售终端机)"
+msgstr ""
+
+#: taboutbox.version.caption
+msgid "Version 3.0  (版本1.0-20190501)"
+msgstr ""
+
+#: tfbusquedas.btaplicar.caption
+msgid "Filtrar"
+msgstr ""
+
+#: tfbusquedas.btaplicar.hint
+msgctxt "tfbusquedas.btaplicar.hint"
+msgid "<F8> Activa el filtro seleccionado."
+msgstr ""
+
+#: tfbusquedas.btcancelar.caption
+msgctxt "tfbusquedas.btcancelar.caption"
+msgid "&Cancelar"
+msgstr ""
+
+#: tfbusquedas.btcancelar.hint
+msgctxt "tfbusquedas.btcancelar.hint"
+msgid "<ESCAPE> Salir de búsquedas sin elección."
+msgstr ""
+
+#: tfbusquedas.btcerrar.caption
+msgctxt "tfbusquedas.btcerrar.caption"
+msgid "&Aceptar"
+msgstr ""
+
+#: tfbusquedas.btcerrar.hint
+msgctxt "tfbusquedas.btcerrar.hint"
+msgid "<ENTER> Acepta la opción seleccionada en la rejilla de datos."
+msgstr ""
+
+#: tfbusquedas.caption
+msgctxt "tfbusquedas.caption"
+msgid "查找列表"
+msgstr ""
+
+#: tfbusquedas.cbcampos.hint
+msgctxt "tfbusquedas.cbcampos.hint"
+msgid "Selecciona la columna por la que ordenar/buscar."
+msgstr ""
+
+#: tfbusquedas.cbcampos.text
+msgctxt "tfbusquedas.cbcampos.text"
+msgid "CBCampos"
+msgstr ""
+
+#: tfbusquedas.cbfiltros.hint
+msgid "Slecciona el tipo del filtro a aplicar."
+msgstr ""
+
+#: tfbusquedas.cbfiltros.text
+msgid " ( == )  Igual que"
+msgstr ""
+
+#: tfbusquedas.edtexto.hint
+msgctxt "tfbusquedas.edtexto.hint"
+msgid "Introduce el dato a buscar en la tabla."
+msgstr ""
+
+#: tfbusquedas.gbcampo.caption
+msgid "   Campo para realizar la  búsqueda   "
+msgstr ""
+
+#: tfbusquedas.gbtexto.caption
+msgid "  Texto a buscar  "
+msgstr ""
+
+#: tfbusquedas.groupbox1.caption
+msgid "  Filtro a aplicar  "
+msgstr ""
+
+#: tflookup.btcancelar.caption
+msgctxt "tflookup.btcancelar.caption"
+msgid "&Cancelar"
+msgstr ""
+
+#: tflookup.btcancelar.hint
+msgctxt "tflookup.btcancelar.hint"
+msgid "<ESCAPE> Salir de búsquedas sin elección."
+msgstr ""
+
+#: tflookup.btcerrar.caption
+msgctxt "tflookup.btcerrar.caption"
+msgid "&Aceptar"
+msgstr ""
+
+#: tflookup.btcerrar.hint
+msgctxt "tflookup.btcerrar.hint"
+msgid "<ENTER> Acepta la opción seleccionada en la rejilla de datos."
+msgstr ""
+
+#: tflookup.caption
+msgctxt "tflookup.caption"
+msgid "查找结果"
+msgstr ""
+
+#: tflookup.panel1.caption
+msgid "结果:"
+msgstr ""
+
+#: tform1.bitbtn5.caption
+msgctxt "tform1.bitbtn5.caption"
+msgid "查找"
+msgstr ""
+
+#: tform1.button1.caption
+msgctxt "tform1.button1.caption"
+msgid "结单"
+msgstr ""
+
+#: tform1.button2.caption
+msgctxt "tform1.button2.caption"
+msgid "确定"
+msgstr ""
+
+#: tform1.button3.caption
+msgctxt "tform1.button3.caption"
+msgid "关闭"
+msgstr ""
+
+#: tform1.button4.caption
+msgid "条码替换"
+msgstr ""
+
+#: tform1.button8.caption
+msgctxt "tform1.button8.caption"
+msgid "确定"
+msgstr ""
+
+#: tform1.button9.caption
+msgctxt "tform1.button9.caption"
+msgid "退出"
+msgstr ""
+
+#: tform1.c1.caption
+msgctxt "tform1.c1.caption"
+msgid "查找"
+msgstr ""
+
+#: tform1.caption
+msgid "核对"
+msgstr ""
+
+#: tform1.combobox1.text
+msgctxt "tform1.combobox1.text"
+msgid "Cód. de Barra: "
+msgstr ""
+
+#: tform1.dbgrid1.columns[0].title.caption
+msgctxt "tform1.dbgrid1.columns[0].title.caption"
+msgid "SuCodigo"
+msgstr ""
+
+#: tform1.dbgrid1.columns[10].title.caption
+msgctxt "tform1.dbgrid1.columns[10].title.caption"
+msgid "Precio_Venta"
+msgstr ""
+
+#: tform1.dbgrid1.columns[11].title.caption
+msgctxt "tform1.dbgrid1.columns[11].title.caption"
+msgid "Importe"
+msgstr ""
+
+#: tform1.dbgrid1.columns[12].title.caption
+msgctxt "tform1.dbgrid1.columns[12].title.caption"
+msgid "PVPOPTION"
+msgstr ""
+
+#: tform1.dbgrid1.columns[1].title.caption
+msgctxt "tform1.dbgrid1.columns[1].title.caption"
+msgid "ENA"
+msgstr ""
+
+#: tform1.dbgrid1.columns[2].title.caption
+msgctxt "tform1.dbgrid1.columns[2].title.caption"
+msgid "Descripciòn"
+msgstr ""
+
+#: tform1.dbgrid1.columns[3].title.caption
+msgctxt "tform1.dbgrid1.columns[3].title.caption"
+msgid "Familia"
+msgstr ""
+
+#: tform1.dbgrid1.columns[4].title.caption
+msgctxt "tform1.dbgrid1.columns[4].title.caption"
+msgid "Unidad"
+msgstr ""
+
+#: tform1.dbgrid1.columns[5].title.caption
+msgctxt "tform1.dbgrid1.columns[5].title.caption"
+msgid "Cantidad"
+msgstr ""
+
+#: tform1.dbgrid1.columns[6].title.caption
+msgctxt "tform1.dbgrid1.columns[6].title.caption"
+msgid "Contado"
+msgstr ""
+
+#: tform1.dbgrid1.columns[7].title.caption
+msgctxt "tform1.dbgrid1.columns[7].title.caption"
+msgid "IVA %"
+msgstr ""
+
+#: tform1.dbgrid1.columns[8].title.caption
+msgctxt "tform1.dbgrid1.columns[8].title.caption"
+msgid "Precio_Compra"
+msgstr ""
+
+#: tform1.dbgrid1.columns[9].title.caption
+msgctxt "tform1.dbgrid1.columns[9].title.caption"
+msgid "Descuento %"
+msgstr ""
+
+#: tform1.groupbox1.caption
+msgctxt "tform1.groupbox1.caption"
+msgid "Funcionas>"
+msgstr ""
+
+#: tform1.label1.caption
+msgctxt "tform1.label1.caption"
+msgid "在货单中查找"
+msgstr ""
+
+#: tform1.label10.caption
+msgctxt "tform1.label10.caption"
+msgid "商品分类: "
+msgstr ""
+
+#: tform1.label12.caption
+msgctxt "tform1.label12.caption"
+msgid "上次成本价"
+msgstr ""
+
+#: tform1.label13.caption
+msgctxt "tform1.label13.caption"
+msgid "本次成本价"
+msgstr ""
+
+#: tform1.label14.caption
+msgctxt "tform1.label14.caption"
+msgid "已核对数量:"
+msgstr ""
+
+#: tform1.label16.caption
+msgctxt "tform1.label16.caption"
+msgid "SKU_NO:"
+msgstr ""
+
+#: tform1.label17.caption
+msgctxt "tform1.label17.caption"
+msgid "商品品牌:"
+msgstr ""
+
+#: tform1.label18.caption
+msgctxt "tform1.label18.caption"
+msgid "购买数量:"
+msgstr ""
+
+#: tform1.label19.caption
+msgctxt "tform1.label19.caption"
+msgid "零售价"
+msgstr ""
+
+#: tform1.label21.caption
+msgctxt "tform1.label21.caption"
+msgid "要核对的数量"
+msgstr ""
+
+#: tform1.label22.caption
+msgctxt "tform1.label22.caption"
+msgid "期望利润(%)"
+msgstr ""
+
+#: tform1.label23.caption
+msgctxt "tform1.label23.caption"
+msgid "税率 %"
+msgstr ""
+
+#: tform1.label28.caption
+msgid "内容查看"
+msgstr ""
+
+#: tform1.label29.caption
+msgctxt "tform1.label29.caption"
+msgid "Mirador"
+msgstr ""
+
+#: tform1.label32.caption
+msgctxt "tform1.label32.caption"
+msgid "条形码"
+msgstr ""
+
+#: tform1.label33.caption
+msgid "购入数量"
+msgstr ""
+
+#: tform1.label34.caption
+msgid "替换成"
+msgstr ""
+
+#: tform1.label35.caption
+msgid "替换数量"
+msgstr ""
+
+#: tform1.label38.caption
+msgctxt "tform1.label38.caption"
+msgid "期望价格"
+msgstr ""
+
+#: tform1.label4.caption
+msgctxt "tform1.label4.caption"
+msgid "商品条形码(出售): "
+msgstr ""
+
+#: tform1.label5.caption
+msgctxt "tform1.label5.caption"
+msgid "辅助码: "
+msgstr ""
+
+#: tform1.label6.caption
+msgid "名称(1): "
+msgstr ""
+
+#: tform1.label9.caption
+msgid "名称(2): "
+msgstr ""
+
+#: tform1.n2.caption
+msgid "替换条形码"
+msgstr ""
+
+#: tform1.n4.caption
+msgid "更改核对数量"
+msgstr ""
+
+#: tform1.n5.caption
+msgid "更改售价"
+msgstr ""
+
+#: tform1.n6.caption
+msgid "打印条形码"
+msgstr ""
+
+#: tform1.reempezar.caption
+msgctxt "tform1.reempezar.caption"
+msgid "清空"
+msgstr ""
+
+#: tformbuy.button1.caption
+msgctxt "tformbuy.button1.caption"
+msgid "确定"
+msgstr ""
+
+#: tformbuy.button5.caption
+msgctxt "tformbuy.button5.caption"
+msgid "..+"
+msgstr ""
+
+#: tformbuy.caption
+msgid "新单入库登记"
+msgstr ""
+
+#: tformbuy.datetimepicker1.textfornulldate
+msgctxt "tformbuy.datetimepicker1.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tformbuy.label1.caption
+msgctxt "tformbuy.label1.caption"
+msgid "供应商"
+msgstr ""
+
+#: tformbuy.label16.caption
+msgctxt "tformbuy.label16.caption"
+msgid "仓库"
+msgstr ""
+
+#: tformbuy.label2.caption
+msgctxt "tformbuy.label2.caption"
+msgid "票据编号"
+msgstr ""
+
+#: tformbuy.label3.caption
+msgctxt "tformbuy.label3.caption"
+msgid "购买日期"
+msgstr ""
+
+#: tformbuy.label4.caption
+msgid "登记内容"
+msgstr ""
+
+#: tformbuy.label5.caption
+msgid "票据:"
+msgstr ""
+
+#: tformbuy.label6.caption
+msgctxt "tformbuy.label6.caption"
+msgid "经手人:"
+msgstr ""
+
+#: tformbuydetalles.button1.caption
+msgctxt "tformbuydetalles.button1.caption"
+msgid "返回"
+msgstr ""
+
+#: tformbuydetalles.caption
+msgid "购买明细"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[0].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[0].title.caption"
+msgid "条码"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[1].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[1].title.caption"
+msgid "名称"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[2].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[2].title.caption"
+msgid "数量"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[3].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[3].title.caption"
+msgid "单位"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[4].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[4].title.caption"
+msgid "税率%"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[5].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[5].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[6].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[6].title.caption"
+msgid "折扣(%)"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[7].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[7].title.caption"
+msgid "小计"
+msgstr ""
+
+#: tformbuydetalles.dbgrid1.columns[8].title.caption
+msgctxt "tformbuydetalles.dbgrid1.columns[8].title.caption"
+msgid "购买日期"
+msgstr ""
+
+#: tformbuydetalles.label1.caption
+msgid "购买单据明细"
+msgstr ""
+
+#: tformbuyin.bitbtn5.caption
+msgctxt "tformbuyin.bitbtn5.caption"
+msgid "查找"
+msgstr ""
+
+#: tformbuyin.button1.caption
+msgctxt "tformbuyin.button1.caption"
+msgid "确定"
+msgstr ""
+
+#: tformbuyin.button2.caption
+msgctxt "tformbuyin.button2.caption"
+msgid "挂单"
+msgstr ""
+
+#: tformbuyin.button3.caption
+msgctxt "tformbuyin.button3.caption"
+msgid "结单"
+msgstr ""
+
+#: tformbuyin.caption
+msgid "货品入库"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[0].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[0].title.caption"
+msgid "编码"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[1].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[1].title.caption"
+msgid "名称"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[2].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[2].title.caption"
+msgid "数量"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[3].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[3].title.caption"
+msgid "单位"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[4].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[4].title.caption"
+msgid "成本"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[5].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[5].title.caption"
+msgid "折扣(%)"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[6].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[6].title.caption"
+msgid "税率%"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[7].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[7].title.caption"
+msgid "小计"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[8].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[8].title.caption"
+msgid "销售价"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[9].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[9].title.caption"
+msgid "商品唯一码"
+msgstr ""
+
+#: tformbuyin.label1.caption
+msgctxt "tformbuyin.label1.caption"
+msgid "条形码"
+msgstr ""
+
+#: tformbuyin.label10.caption
+msgid "记录编号:"
+msgstr ""
+
+#: tformbuyin.label11.caption
+msgctxt "tformbuyin.label11.caption"
+msgid "销售价"
+msgstr ""
+
+#: tformbuyin.label12.caption
+msgid "(F5) Para busqueda"
+msgstr ""
+
+#: tformbuyin.label13.caption
+msgid "(F9) Para Finalizar"
+msgstr ""
+
+#: tformbuyin.label2.caption
+msgctxt "tformbuyin.label2.caption"
+msgid "内容"
+msgstr ""
+
+#: tformbuyin.label3.caption
+msgctxt "tformbuyin.label3.caption"
+msgid "数量"
+msgstr ""
+
+#: tformbuyin.label4.caption
+msgctxt "tformbuyin.label4.caption"
+msgid "成本"
+msgstr ""
+
+#: tformbuyin.label5.caption
+msgctxt "tformbuyin.label5.caption"
+msgid "折扣(%)"
+msgstr ""
+
+#: tformbuyin.label6.caption
+msgctxt "tformbuyin.label6.caption"
+msgid "合计"
+msgstr ""
+
+#: tformbuyin.label8.caption
+msgctxt "tformbuyin.label8.caption"
+msgid "供应商:"
+msgstr ""
+
+#: tformbuyin.label9.caption
+msgctxt "tformbuyin.label9.caption"
+msgid "金额:"
+msgstr ""
+
+#: tformbuyin.newbutton.caption
+msgctxt "tformbuyin.newbutton.caption"
+msgid "新记录.."
+msgstr ""
+
+#: tformbuypay.button1.caption
+msgctxt "tformbuypay.button1.caption"
+msgid "Aceptar"
+msgstr ""
+
+#: tformbuypay.caption
+msgid "支付登记"
+msgstr ""
+
+#: tformbuypay.groupbox1.caption
+msgid "已经支付"
+msgstr ""
+
+#: tformbuypay.label1.caption
+msgid "记录编号"
+msgstr ""
+
+#: tformbuypay.label2.caption
+msgid "单据"
+msgstr ""
+
+#: tformbuypay.label3.caption
+msgctxt "tformbuypay.label3.caption"
+msgid "供应商"
+msgstr ""
+
+#: tformbuypay.label4.caption
+msgid "应支付款额"
+msgstr ""
+
+#: tformbuypay.label5.caption
+msgid "实际支付款额"
+msgstr ""
+
+#: tformbuypay.label6.caption
+msgctxt "tformbuypay.label6.caption"
+msgid "现金"
+msgstr ""
+
+#: tformbuypay.label7.caption
+msgctxt "tformbuypay.label7.caption"
+msgid "信用卡"
+msgstr ""
+
+#: tformbuypay.label8.caption
+msgctxt "tformbuypay.label8.caption"
+msgid "汇款"
+msgstr ""
+
+#: tformbuypay.label9.caption
+msgctxt "tformbuypay.label9.caption"
+msgid "其他"
+msgstr ""
+
+#: tformcolgada.button1.caption
+msgid "选择"
+msgstr ""
+
+#: tformcolgada.button2.caption
+msgctxt "tformcolgada.button2.caption"
+msgid "取消"
+msgstr ""
+
+#: tformcolgada.caption
+msgid "未处理单据"
+msgstr ""
+
+#: tformcolgada.dbgrid1.columns[0].title.caption
+msgctxt "tformcolgada.dbgrid1.columns[0].title.caption"
+msgid "编号"
+msgstr ""
+
+#: tformcolgada.dbgrid1.columns[1].title.caption
+msgctxt "tformcolgada.dbgrid1.columns[1].title.caption"
+msgid "票据"
+msgstr ""
+
+#: tformcolgada.dbgrid1.columns[2].title.caption
+msgctxt "tformcolgada.dbgrid1.columns[2].title.caption"
+msgid "号码"
+msgstr ""
+
+#: tformcolgada.dbgrid1.columns[3].title.caption
+msgctxt "tformcolgada.dbgrid1.columns[3].title.caption"
+msgid "供应商"
+msgstr ""
+
+#: tformcolgada.dbgrid1.columns[4].title.caption
+msgctxt "tformcolgada.dbgrid1.columns[4].title.caption"
+msgid "经手人"
+msgstr ""
+
+#: tformcolgada.dbgrid1.columns[5].title.caption
+msgctxt "tformcolgada.dbgrid1.columns[5].title.caption"
+msgid "日期"
+msgstr ""
+
+#: tformcolgada.label1.caption
+msgid "Listado Colgado"
+msgstr ""
+
+#: tformfindout.addbutton.caption
+msgid "建新&N(F11)"
+msgstr ""
+
+#: tformfindout.btcancelar.caption
+msgctxt "tformfindout.btcancelar.caption"
+msgid "取消"
+msgstr ""
+
+#: tformfindout.btcerrar.caption
+msgctxt "tformfindout.btcerrar.caption"
+msgid "确定"
+msgstr ""
+
+#: tformfindout.caption
+msgctxt "tformfindout.caption"
+msgid "查找结果"
+msgstr ""
+
+#: tformfindout.panel1.caption
+msgid "Listado : "
+msgstr ""
+
+#: tformgoodsbuyhis.button1.caption
+msgctxt "tformgoodsbuyhis.button1.caption"
+msgid "显示"
+msgstr ""
+
+#: tformgoodsbuyhis.button2.caption
+msgctxt "tformgoodsbuyhis.button2.caption"
+msgid "返回"
+msgstr ""
+
+#: tformgoodsbuyhis.caption
+msgid "货品购买记录"
+msgstr ""
+
+#: tformgoodsbuyhis.datetimepicker1.textfornulldate
+msgctxt "tformgoodsbuyhis.datetimepicker1.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tformgoodsbuyhis.datetimepicker2.textfornulldate
+msgctxt "tformgoodsbuyhis.datetimepicker2.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[0].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[0].title.caption"
+msgid "条形码"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[1].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[1].title.caption"
+msgid "内容"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[2].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[2].title.caption"
+msgid "数量"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[3].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[3].title.caption"
+msgid "成本"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[4].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[4].title.caption"
+msgid "税%"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[5].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[5].title.caption"
+msgid "折扣(%)"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[6].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[6].title.caption"
+msgid "销售价"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[7].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[7].title.caption"
+msgid "供应商"
+msgstr ""
+
+#: tformgoodsbuyhis.dbgrid1.columns[8].title.caption
+msgctxt "tformgoodsbuyhis.dbgrid1.columns[8].title.caption"
+msgid "购买日期"
+msgstr ""
+
+#: tformgoodsbuyhis.label1.caption
+msgctxt "tformgoodsbuyhis.label1.caption"
+msgid "从:"
+msgstr ""
+
+#: tformgoodsbuyhis.label2.caption
+msgctxt "tformgoodsbuyhis.label2.caption"
+msgid "至:"
+msgstr ""
+
+#: tformgoodsbuyhis.label3.caption
+msgid "查询条码或名称"
+msgstr ""
+
+#: tformgoodslist.btaplicar.caption
+msgid "过滤"
+msgstr ""
+
+#: tformgoodslist.btaplicar.hint
+msgctxt "tformgoodslist.btaplicar.hint"
+msgid "<F8> Activa el filtro seleccionado."
+msgstr ""
+
+#: tformgoodslist.btcancelar.caption
+msgctxt "tformgoodslist.btcancelar.caption"
+msgid "&(C)取消"
+msgstr ""
+
+#: tformgoodslist.btcancelar.hint
+msgctxt "tformgoodslist.btcancelar.hint"
+msgid "<ESCAPE> Salir de búsquedas sin elección."
+msgstr ""
+
+#: tformgoodslist.btcerrar.caption
+msgctxt "tformgoodslist.btcerrar.caption"
+msgid "&(A)确定"
+msgstr ""
+
+#: tformgoodslist.btcerrar.hint
+msgctxt "tformgoodslist.btcerrar.hint"
+msgid "<ENTER> Acepta la opción seleccionada en la rejilla de datos."
+msgstr ""
+
+#: tformgoodslist.caption
+msgctxt "tformgoodslist.caption"
+msgid "查找列表"
+msgstr ""
+
+#: tformgoodslist.cbcampos.hint
+msgctxt "tformgoodslist.cbcampos.hint"
+msgid "Selecciona la columna por la que ordenar/buscar."
+msgstr ""
+
+#: tformgoodslist.cbcampos.text
+msgctxt "tformgoodslist.cbcampos.text"
+msgid "CBCampos"
+msgstr ""
+
+#: tformgoodslist.dbgrid1.columns[0].title.caption
+msgctxt "tformgoodslist.dbgrid1.columns[0].title.caption"
+msgid "条形码"
+msgstr ""
+
+#: tformgoodslist.dbgrid1.columns[1].title.caption
+msgctxt "tformgoodslist.dbgrid1.columns[1].title.caption"
+msgid "名称"
+msgstr ""
+
+#: tformgoodslist.dbgrid1.columns[2].title.caption
+msgctxt "tformgoodslist.dbgrid1.columns[2].title.caption"
+msgid "品牌"
+msgstr ""
+
+#: tformgoodslist.dbgrid1.columns[3].title.caption
+msgctxt "tformgoodslist.dbgrid1.columns[3].title.caption"
+msgid "单位"
+msgstr ""
+
+#: tformgoodslist.dbgrid1.columns[4].title.caption
+msgctxt "tformgoodslist.dbgrid1.columns[4].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodslist.dbgrid1.columns[5].title.caption
+msgctxt "tformgoodslist.dbgrid1.columns[5].title.caption"
+msgid "销售价"
+msgstr ""
+
+#: tformgoodslist.dbgrid1.columns[6].title.caption
+msgctxt "tformgoodslist.dbgrid1.columns[6].title.caption"
+msgid "类别"
+msgstr ""
+
+#: tformgoodslist.edtexto.hint
+msgctxt "tformgoodslist.edtexto.hint"
+msgid "Introduce el dato a buscar en la tabla."
+msgstr ""
+
+#: tformgoodslist.gbcampo.caption
+msgid "   实现排列的栏目"
+msgstr ""
+
+#: tformgoodslist.gbtexto.caption
+msgid " 查找的内容  "
+msgstr ""
+
+#: tformgoodsspu.avisolimit.text
+msgid "No"
+msgstr ""
+
+#: tformgoodsspu.bitbtn12.caption
+msgctxt "tformgoodsspu.bitbtn12.caption"
+msgid "..."
+msgstr ""
+
+#: tformgoodsspu.bitbtn19.caption
+msgctxt "tformgoodsspu.bitbtn19.caption"
+msgid "..."
+msgstr ""
+
+#: tformgoodsspu.bitbtn2.caption
+msgctxt "tformgoodsspu.bitbtn2.caption"
+msgid "Buscar"
+msgstr ""
+
+#: tformgoodsspu.bitbtn20.caption
+msgctxt "tformgoodsspu.bitbtn20.caption"
+msgid "..."
+msgstr ""
+
+#: tformgoodsspu.bitbtn21.caption
+msgctxt "tformgoodsspu.bitbtn21.caption"
+msgid "..."
+msgstr ""
+
+#: tformgoodsspu.bitbtn22.caption
+msgctxt "tformgoodsspu.bitbtn22.caption"
+msgid "..."
+msgstr ""
+
+#: tformgoodsspu.bitbtn3.caption
+msgctxt "tformgoodsspu.bitbtn3.caption"
+msgid "Buscar"
+msgstr ""
+
+#: tformgoodsspu.btnclonar.caption
+msgid "Cl&onar"
+msgstr ""
+
+#: tformgoodsspu.button1.caption
+msgctxt "tformgoodsspu.button1.caption"
+msgid "关闭"
+msgstr ""
+
+#: tformgoodsspu.button10.caption
+msgctxt "tformgoodsspu.button10.caption"
+msgid "取消"
+msgstr ""
+
+#: tformgoodsspu.button11.caption
+msgid "应用"
+msgstr ""
+
+#: tformgoodsspu.button12.caption
+msgctxt "tformgoodsspu.button12.caption"
+msgid "删除"
+msgstr ""
+
+#: tformgoodsspu.button13.caption
+msgctxt "tformgoodsspu.button13.caption"
+msgid "删除"
+msgstr ""
+
+#: tformgoodsspu.button2.caption
+msgid "组成规格商品"
+msgstr ""
+
+#: tformgoodsspu.button3.caption
+msgctxt "tformgoodsspu.button3.caption"
+msgid "保存"
+msgstr ""
+
+#: tformgoodsspu.button4.caption
+msgid "开启编辑"
+msgstr ""
+
+#: tformgoodsspu.button5.caption
+msgid "更新"
+msgstr ""
+
+#: tformgoodsspu.button6.caption
+msgid "[+]"
+msgstr ""
+
+#: tformgoodsspu.button7.caption
+msgid "增加"
+msgstr ""
+
+#: tformgoodsspu.button8.caption
+msgctxt "tformgoodsspu.button8.caption"
+msgid "清空"
+msgstr ""
+
+#: tformgoodsspu.candiscount.text
+msgid "Yes"
+msgstr ""
+
+#: tformgoodsspu.caption
+msgid "SPU货品添加"
+msgstr ""
+
+#: tformgoodsspu.cbutton.caption
+msgctxt "tformgoodsspu.cbutton.caption"
+msgid "保存"
+msgstr ""
+
+#: tformgoodsspu.dateadd.text
+msgid "14/03/2017 17:34:31"
+msgstr ""
+
+#: tformgoodsspu.datemod.text
+msgid "05/10/2017 20:10:32"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[0].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[0].title.caption"
+msgid "SKU名称"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[10].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[10].title.caption"
+msgid "商品唯一码"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[1].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[1].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[2].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[2].title.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[3].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[3].title.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[4].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[4].title.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[5].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[5].title.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[6].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[6].title.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[7].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[7].title.caption"
+msgid "销售折扣%"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[8].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[8].title.caption"
+msgid "库存"
+msgstr ""
+
+#: tformgoodsspu.dbgrid1.columns[9].title.caption
+msgctxt "tformgoodsspu.dbgrid1.columns[9].title.caption"
+msgid "商品编码"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[0].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[0].title.caption"
+msgid "SKU名称"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[10].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[10].title.caption"
+msgid "SKU编码"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[1].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[1].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[2].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[2].title.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[3].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[3].title.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[4].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[4].title.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[5].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[5].title.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[6].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[6].title.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[7].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[7].title.caption"
+msgid "销售折扣%"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[8].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[8].title.caption"
+msgid "库存"
+msgstr ""
+
+#: tformgoodsspu.dbgrid2.columns[9].title.caption
+msgctxt "tformgoodsspu.dbgrid2.columns[9].title.caption"
+msgid "商品销售码"
+msgstr ""
+
+#: tformgoodsspu.dbgrid3.columns[0].title.caption
+msgctxt "tformgoodsspu.dbgrid3.columns[0].title.caption"
+msgid "SKU名称"
+msgstr ""
+
+#: tformgoodsspu.dbgrid3.columns[1].title.caption
+msgctxt "tformgoodsspu.dbgrid3.columns[1].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodsspu.dbgrid3.columns[2].title.caption
+msgctxt "tformgoodsspu.dbgrid3.columns[2].title.caption"
+msgid "销售价"
+msgstr ""
+
+#: tformgoodsspu.dbgrid3.columns[3].title.caption
+msgid "组合数量"
+msgstr ""
+
+#: tformgoodsspu.dbgrid3.columns[4].title.caption
+msgctxt "tformgoodsspu.dbgrid3.columns[4].title.caption"
+msgid "单位"
+msgstr ""
+
+#: tformgoodsspu.dbgrid3.columns[5].title.caption
+msgctxt "tformgoodsspu.dbgrid3.columns[5].title.caption"
+msgid "成员SKU编码"
+msgstr ""
+
+#: tformgoodsspu.edit4.text
+msgid "-1"
+msgstr ""
+
+#: tformgoodsspu.label1.caption
+msgid "商品条码:"
+msgstr ""
+
+#: tformgoodsspu.label10.caption
+msgctxt "tformgoodsspu.label10.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tformgoodsspu.label11.caption
+msgctxt "tformgoodsspu.label11.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tformgoodsspu.label12.caption
+msgctxt "tformgoodsspu.label12.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformgoodsspu.label13.caption
+msgctxt "tformgoodsspu.label13.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformgoodsspu.label14.caption
+msgid "商品的销售规格影响SKU商品的价格"
+msgstr ""
+
+#: tformgoodsspu.label15.caption
+msgid "商品属性不影响价格"
+msgstr ""
+
+#: tformgoodsspu.label16.caption
+msgctxt "tformgoodsspu.label16.caption"
+msgid "UUID"
+msgstr ""
+
+#: tformgoodsspu.label17.caption
+msgctxt "tformgoodsspu.label17.caption"
+msgid "商品品牌:"
+msgstr ""
+
+#: tformgoodsspu.label18.caption
+msgid "重量"
+msgstr ""
+
+#: tformgoodsspu.label19.caption
+msgid "包装/体积"
+msgstr ""
+
+#: tformgoodsspu.label2.caption
+msgctxt "tformgoodsspu.label2.caption"
+msgid "辅助码:"
+msgstr ""
+
+#: tformgoodsspu.label20.caption
+msgctxt "tformgoodsspu.label20.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformgoodsspu.label21.caption
+msgctxt "tformgoodsspu.label21.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformgoodsspu.label22.caption
+msgctxt "tformgoodsspu.label22.caption"
+msgid "PVP(3)"
+msgstr ""
+
+#: tformgoodsspu.label23.caption
+msgctxt "tformgoodsspu.label23.caption"
+msgid "PVP(2)"
+msgstr ""
+
+#: tformgoodsspu.label24.caption
+msgctxt "tformgoodsspu.label24.caption"
+msgid "PVP(1)"
+msgstr ""
+
+#: tformgoodsspu.label25.caption
+msgctxt "tformgoodsspu.label25.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodsspu.label26.caption
+msgctxt "tformgoodsspu.label26.caption"
+msgid "商品销售码"
+msgstr ""
+
+#: tformgoodsspu.label27.caption
+msgctxt "tformgoodsspu.label27.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformgoodsspu.label28.caption
+msgctxt "tformgoodsspu.label28.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformgoodsspu.label29.caption
+msgctxt "tformgoodsspu.label29.caption"
+msgid "PVP(3)"
+msgstr ""
+
+#: tformgoodsspu.label3.caption
+msgctxt "tformgoodsspu.label3.caption"
+msgid "名称(1):"
+msgstr ""
+
+#: tformgoodsspu.label30.caption
+msgctxt "tformgoodsspu.label30.caption"
+msgid "PVP(2)"
+msgstr ""
+
+#: tformgoodsspu.label31.caption
+msgctxt "tformgoodsspu.label31.caption"
+msgid "PVP(1)"
+msgstr ""
+
+#: tformgoodsspu.label32.caption
+msgctxt "tformgoodsspu.label32.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodsspu.label33.caption
+msgctxt "tformgoodsspu.label33.caption"
+msgid "商品销售码"
+msgstr ""
+
+#: tformgoodsspu.label34.caption
+msgctxt "tformgoodsspu.label34.caption"
+msgid "库存"
+msgstr ""
+
+#: tformgoodsspu.label35.caption
+msgid "名称(2):"
+msgstr ""
+
+#: tformgoodsspu.label36.caption
+msgctxt "tformgoodsspu.label36.caption"
+msgid "商品类型:"
+msgstr ""
+
+#: tformgoodsspu.label37.caption
+msgid "计件单位:"
+msgstr ""
+
+#: tformgoodsspu.label38.caption
+msgid "赠送销售积分数"
+msgstr ""
+
+#: tformgoodsspu.label39.caption
+msgid "购买该商品时赠送消费积分, -1表示按商品价格赠送"
+msgstr ""
+
+#: tformgoodsspu.label4.caption
+msgid "创建日期: "
+msgstr ""
+
+#: tformgoodsspu.label40.caption
+msgid "购买数量达到优惠数量时享受的优惠价格"
+msgstr ""
+
+#: tformgoodsspu.label41.caption
+msgid "优惠数量"
+msgstr ""
+
+#: tformgoodsspu.label42.caption
+msgid "优惠价格"
+msgstr ""
+
+#: tformgoodsspu.label43.caption
+msgctxt "tformgoodsspu.label43.caption"
+msgid "销售折扣%:"
+msgstr ""
+
+#: tformgoodsspu.label44.caption
+msgid "组合内容"
+msgstr ""
+
+#: tformgoodsspu.label45.caption
+msgctxt "tformgoodsspu.label45.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tformgoodsspu.label46.caption
+msgctxt "tformgoodsspu.label46.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tformgoodsspu.label47.caption
+msgctxt "tformgoodsspu.label47.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodsspu.label48.caption
+msgctxt "tformgoodsspu.label48.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformgoodsspu.label49.caption
+msgid "最后次供应商:"
+msgstr ""
+
+#: tformgoodsspu.label5.caption
+msgid "修改日期: "
+msgstr ""
+
+#: tformgoodsspu.label50.caption
+msgctxt "tformgoodsspu.label50.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformgoodsspu.label51.caption
+msgctxt "tformgoodsspu.label51.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformgoodsspu.label52.caption
+msgctxt "tformgoodsspu.label52.caption"
+msgid "销售折扣%:"
+msgstr ""
+
+#: tformgoodsspu.label53.caption
+msgid "选择商品"
+msgstr ""
+
+#: tformgoodsspu.label54.caption
+msgctxt "tformgoodsspu.label54.caption"
+msgid "销售折扣%"
+msgstr ""
+
+#: tformgoodsspu.label55.caption
+msgctxt "tformgoodsspu.label55.caption"
+msgid "销售折扣%"
+msgstr ""
+
+#: tformgoodsspu.label56.caption
+msgid "参与组合的数量:"
+msgstr ""
+
+#: tformgoodsspu.label57.caption
+msgid "启动库存警戒"
+msgstr ""
+
+#: tformgoodsspu.label58.caption
+msgid "最低警戒数量"
+msgstr ""
+
+#: tformgoodsspu.label59.caption
+msgid "可以打折"
+msgstr ""
+
+#: tformgoodsspu.label6.caption
+msgid "商品分类:"
+msgstr ""
+
+#: tformgoodsspu.label7.caption
+msgid "(%)税率:"
+msgstr ""
+
+#: tformgoodsspu.label8.caption
+msgctxt "tformgoodsspu.label8.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodsspu.label9.caption
+msgctxt "tformgoodsspu.label9.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformgoodsspu.tabsheet1.caption
+msgid "价格信息"
+msgstr ""
+
+#: tformgoodsspu.tabsheet2.caption
+msgid "规格商品和库存"
+msgstr ""
+
+#: tformgoodsspu.tabsheet3.caption
+msgid "商品属性"
+msgstr ""
+
+#: tformgoodsspu.tabsheet4.caption
+msgid "商品优惠价格"
+msgstr ""
+
+#: tformgoodsspu.tabsheet5.caption
+msgid "添加组合"
+msgstr ""
+
+#: tformgoodsspu.typebox.text
+msgctxt "tformgoodsspu.typebox.text"
+msgid "普通商品"
+msgstr ""
+
+#: tformimportxls.button1.caption
+msgid "选择文件"
+msgstr ""
+
+#: tformimportxls.button2.caption
+msgid "导入"
+msgstr ""
+
+#: tformimportxls.button3.caption
+msgctxt "tformimportxls.button3.caption"
+msgid "Button3"
+msgstr ""
+
+#: tformimportxls.button4.caption
+msgctxt "tformimportxls.button4.caption"
+msgid "保存表格格式"
+msgstr ""
+
+#: tformimportxls.button5.caption
+msgctxt "tformimportxls.button5.caption"
+msgid "..+"
+msgstr ""
+
+#: tformimportxls.button6.caption
+msgctxt "tformimportxls.button6.caption"
+msgid "退出"
+msgstr ""
+
+#: tformimportxls.caption
+msgid "导入表格"
+msgstr ""
+
+#: tformimportxls.checkbox1.caption
+msgid "供应商的货品编码"
+msgstr ""
+
+#: tformimportxls.checkbox18.caption
+msgid "税率中带百分号(%)"
+msgstr ""
+
+#: tformimportxls.checkbox19.caption
+msgid "数量中含有字符"
+msgstr ""
+
+#: tformimportxls.checkbox2.caption
+msgctxt "tformimportxls.checkbox2.caption"
+msgid "条形码"
+msgstr ""
+
+#: tformimportxls.checkbox3.caption
+msgid "货品名称"
+msgstr ""
+
+#: tformimportxls.checkbox4.caption
+msgid " 条形码拦截超过13位的长度"
+msgstr ""
+
+#: tformimportxls.checkbox5.caption
+msgid "单价(不含税)"
+msgstr ""
+
+#: tformimportxls.checkbox6.caption
+msgid "税率"
+msgstr ""
+
+#: tformimportxls.checkbox7.caption
+msgid "单价(含税)"
+msgstr ""
+
+#: tformimportxls.checkbox8.caption
+msgid "折扣"
+msgstr ""
+
+#: tformimportxls.checkbox9.caption
+msgid "建议价"
+msgstr ""
+
+#: tformimportxls.datetimepicker1.textfornulldate
+msgctxt "tformimportxls.datetimepicker1.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tformimportxls.edit3.text
+msgid "/, -, +"
+msgstr ""
+
+#: tformimportxls.groupbox1.caption
+msgid "单据含有"
+msgstr ""
+
+#: tformimportxls.groupbox2.caption
+msgid "所在列(栏)编号设置"
+msgstr ""
+
+#: tformimportxls.label1.caption
+msgid " 条形码中拦截字符(可以用空格，';', ',' 来分开)"
+msgstr ""
+
+#: tformimportxls.label10.caption
+msgid "单价所在列(含税)"
+msgstr ""
+
+#: tformimportxls.label11.caption
+msgid "小数点符号为"
+msgstr ""
+
+#: tformimportxls.label12.caption
+msgid "单据编号"
+msgstr ""
+
+#: tformimportxls.label13.caption
+msgid "货品编码所在列"
+msgstr ""
+
+#: tformimportxls.label14.caption
+msgctxt "tformimportxls.label14.caption"
+msgid "票据类型"
+msgstr ""
+
+#: tformimportxls.label15.caption
+msgid "票据日期"
+msgstr ""
+
+#: tformimportxls.label16.caption
+msgctxt "tformimportxls.label16.caption"
+msgid "仓库"
+msgstr ""
+
+#: tformimportxls.label17.caption
+msgid "建议价所在列"
+msgstr ""
+
+#: tformimportxls.label18.caption
+msgctxt "tformimportxls.label18.caption"
+msgid "经手人:"
+msgstr ""
+
+#: tformimportxls.label3.caption
+msgid "当前被选择行内容"
+msgstr ""
+
+#: tformimportxls.label4.caption
+msgid "条形码所在列"
+msgstr ""
+
+#: tformimportxls.label5.caption
+msgid "货品名称所在列"
+msgstr ""
+
+#: tformimportxls.label6.caption
+msgid "数量所在列"
+msgstr ""
+
+#: tformimportxls.label7.caption
+msgid "单价所在列(不含税)"
+msgstr ""
+
+#: tformimportxls.label8.caption
+msgid "税率所在列"
+msgstr ""
+
+#: tformimportxls.label9.caption
+msgid "折扣所在列"
+msgstr ""
+
+#: tformimportxls.puntoc.text
+msgctxt "tformimportxls.puntoc.text"
+msgid "."
+msgstr ""
+
+#: tforminventory.bitbtn5.caption
+msgctxt "tforminventory.bitbtn5.caption"
+msgid "查找"
+msgstr ""
+
+#: tforminventory.button1.caption
+msgctxt "tforminventory.button1.caption"
+msgid "确定"
+msgstr ""
+
+#: tforminventory.button2.caption
+msgctxt "tforminventory.button2.caption"
+msgid "退出"
+msgstr ""
+
+#: tforminventory.button6.caption
+msgid "更换原有数据"
+msgstr ""
+
+#: tforminventory.button8.caption
+msgid "增加盘点数量"
+msgstr ""
+
+#: tforminventory.caption
+msgid "盘点"
+msgstr ""
+
+#: tforminventory.dbgrid1.columns[0].title.caption
+msgctxt "tforminventory.dbgrid1.columns[0].title.caption"
+msgid "条形码"
+msgstr ""
+
+#: tforminventory.dbgrid1.columns[1].title.caption
+msgctxt "tforminventory.dbgrid1.columns[1].title.caption"
+msgid "内容"
+msgstr ""
+
+#: tforminventory.dbgrid1.columns[2].title.caption
+msgctxt "tforminventory.dbgrid1.columns[2].title.caption"
+msgid "品牌"
+msgstr ""
+
+#: tforminventory.dbgrid1.columns[3].title.caption
+msgctxt "tforminventory.dbgrid1.columns[3].title.caption"
+msgid "数量"
+msgstr ""
+
+#: tforminventory.dbgrid1.columns[4].title.caption
+msgctxt "tforminventory.dbgrid1.columns[4].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tforminventory.dbgrid1.columns[5].title.caption
+msgctxt "tforminventory.dbgrid1.columns[5].title.caption"
+msgid "类别"
+msgstr ""
+
+#: tforminventory.dbgrid1.columns[6].title.caption
+msgid "货品SPU码"
+msgstr ""
+
+#: tforminventory.dbgrid1.columns[7].title.caption
+msgid "商品SKU码"
+msgstr ""
+
+#: tforminventory.groupbox1.caption
+msgid "完成盘点"
+msgstr ""
+
+#: tforminventory.label1.caption
+msgctxt "tforminventory.label1.caption"
+msgid "条形码"
+msgstr ""
+
+#: tforminventory.label11.caption
+msgid "此操作会以原有的存量为基础，添加本次盘点量。"
+msgstr ""
+
+#: tforminventory.label2.caption
+msgctxt "tforminventory.label2.caption"
+msgid "内容"
+msgstr ""
+
+#: tforminventory.label3.caption
+msgctxt "tforminventory.label3.caption"
+msgid "数量"
+msgstr ""
+
+#: tforminventory.label6.caption
+msgid "此操作会更改原有的存货量为盘点数量"
+msgstr ""
+
+#: tforminventory.label7.caption
+msgctxt "tforminventory.label7.caption"
+msgid "成本"
+msgstr ""
+
+#: tforminventory.labelt1.caption
+msgctxt "tforminventory.labelt1.caption"
+msgid "操作编号"
+msgstr ""
+
+#: tforminventory.labelt2.caption
+msgctxt "tforminventory.labelt2.caption"
+msgid "盘点仓库"
+msgstr ""
+
+#: tforminventory.newbutton.caption
+msgctxt "tforminventory.newbutton.caption"
+msgid "建新盘点.."
+msgstr ""
+
+#: tformitemlist.btnadd.caption
+msgctxt "tformitemlist.btnadd.caption"
+msgid "添加"
+msgstr ""
+
+#: tformitemlist.btndel.caption
+msgctxt "tformitemlist.btndel.caption"
+msgid "删除"
+msgstr ""
+
+#: tformitemlist.btnedit.caption
+msgid "编辑"
+msgstr ""
+
+#: tformlogin.button1.caption
+msgid "Confirme(确定)"
+msgstr ""
+
+#: tformlogin.button2.caption
+msgid "Cancela(放弃)"
+msgstr ""
+
+#: tformlogin.button3.caption
+msgctxt "tformlogin.button3.caption"
+msgid "..+"
+msgstr ""
+
+#: tformlogin.caption
+msgid "TPV核对    登入"
+msgstr ""
+
+#: tformlogin.label1.caption
+msgid "Usario(用户名)"
+msgstr ""
+
+#: tformlogin.label2.caption
+msgid "Contraseña(密码)"
+msgstr ""
+
+#: tformlogin.label3.caption
+msgid "已连接到"
+msgstr ""
+
+#: tformm.button1.caption
+msgctxt "tformm.button1.caption"
+msgid "退出"
+msgstr ""
+
+#: tformm.button2.caption
+msgctxt "tformm.button2.caption"
+msgid "添加"
+msgstr ""
+
+#: tformm.button3.caption
+msgctxt "tformm.button3.caption"
+msgid "保存"
+msgstr ""
+
+#: tformm.button4.caption
+msgctxt "tformm.button4.caption"
+msgid "删除"
+msgstr ""
+
+#: tformm.label1.caption
+msgid "Listado (列表)"
+msgstr ""
+
+#: tformm.label2.caption
+msgctxt "tformm.label2.caption"
+msgid "..."
+msgstr ""
+
+#: tformnewinventory.button2.caption
+msgctxt "tformnewinventory.button2.caption"
+msgid "确定"
+msgstr ""
+
+#: tformnewinventory.button3.caption
+msgctxt "tformnewinventory.button3.caption"
+msgid "取消"
+msgstr ""
+
+#: tformnewinventory.caption
+msgid "登记新盘点"
+msgstr ""
+
+#: tformnewinventory.label1.caption
+msgid "理由"
+msgstr ""
+
+#: tformnewinventory.label16.caption
+msgctxt "tformnewinventory.label16.caption"
+msgid "仓库"
+msgstr ""
+
+#: tformpayinfo.button1.caption
+msgctxt "tformpayinfo.button1.caption"
+msgid "返回"
+msgstr ""
+
+#: tformpayinfo.caption
+msgid "支付信息"
+msgstr ""
+
+#: tformpayinfo.dbgrid1.columns[0].title.caption
+msgctxt "tformpayinfo.dbgrid1.columns[0].title.caption"
+msgid "经手人"
+msgstr ""
+
+#: tformpayinfo.dbgrid1.columns[1].title.caption
+msgctxt "tformpayinfo.dbgrid1.columns[1].title.caption"
+msgid "支付日期"
+msgstr ""
+
+#: tformpayinfo.dbgrid1.columns[2].title.caption
+msgctxt "tformpayinfo.dbgrid1.columns[2].title.caption"
+msgid "现金"
+msgstr ""
+
+#: tformpayinfo.dbgrid1.columns[3].title.caption
+msgctxt "tformpayinfo.dbgrid1.columns[3].title.caption"
+msgid "信用卡"
+msgstr ""
+
+#: tformpayinfo.dbgrid1.columns[4].title.caption
+msgid "价值卷"
+msgstr ""
+
+#: tformpayinfo.dbgrid1.columns[5].title.caption
+msgctxt "tformpayinfo.dbgrid1.columns[5].title.caption"
+msgid "汇款"
+msgstr ""
+
+#: tformpayinfo.dbgrid1.columns[6].title.caption
+msgctxt "tformpayinfo.dbgrid1.columns[6].title.caption"
+msgid "其他"
+msgstr ""
+
+#: tformpayinfo.label1.caption
+msgid "以支付:"
+msgstr ""
+
+#: tformpayinfo.label9.caption
+msgctxt "tformpayinfo.label9.caption"
+msgid "应付金额:"
+msgstr ""
+
+#: tformprogoods.button1.caption
+msgctxt "tformprogoods.button1.caption"
+msgid "关闭"
+msgstr ""
+
+#: tformprogoods.button5.caption
+msgctxt "tformprogoods.button5.caption"
+msgid "..+"
+msgstr ""
+
+#: tformprogoods.caption
+msgid "供应商货品单"
+msgstr ""
+
+#: tformprogoods.dbgrid1.columns[0].title.caption
+msgctxt "tformprogoods.dbgrid1.columns[0].title.caption"
+msgid "条形码"
+msgstr ""
+
+#: tformprogoods.dbgrid1.columns[1].title.caption
+msgctxt "tformprogoods.dbgrid1.columns[1].title.caption"
+msgid "内容"
+msgstr ""
+
+#: tformprogoods.dbgrid1.columns[2].title.caption
+msgctxt "tformprogoods.dbgrid1.columns[2].title.caption"
+msgid "成本"
+msgstr ""
+
+#: tformprogoods.dbgrid1.columns[3].title.caption
+msgctxt "tformprogoods.dbgrid1.columns[3].title.caption"
+msgid "税率(%)"
+msgstr ""
+
+#: tformprogoods.dbgrid1.columns[4].title.caption
+msgctxt "tformprogoods.dbgrid1.columns[4].title.caption"
+msgid "类别"
+msgstr ""
+
+#: tformprogoods.dbgrid1.columns[5].title.caption
+msgctxt "tformprogoods.dbgrid1.columns[5].title.caption"
+msgid "最后次时间"
+msgstr ""
+
+#: tformprogoods.dbgrid1.columns[6].title.caption
+msgid "折扣%"
+msgstr ""
+
+#: tformprogoods.label11.caption
+msgctxt "tformprogoods.label11.caption"
+msgid "供应商"
+msgstr ""
+
+#: tformproveedor.activebox.caption
+msgid "Activa"
+msgstr ""
+
+#: tformproveedor.bitbtn14.caption
+msgctxt "tformproveedor.bitbtn14.caption"
+msgid "Aplicar"
+msgstr ""
+
+#: tformproveedor.button1.caption
+msgid "退出(&X)"
+msgstr ""
+
+#: tformproveedor.button2.caption
+msgid "清空(&C)"
+msgstr ""
+
+#: tformproveedor.button3.caption
+msgid "保存(&S)"
+msgstr ""
+
+#: tformproveedor.button4.caption
+msgid "删除(&D)"
+msgstr ""
+
+#: tformproveedor.button6.caption
+msgid "添加(&A)"
+msgstr ""
+
+#: tformproveedor.button7.caption
+msgid "导出"
+msgstr ""
+
+#: tformproveedor.checkbox3.caption
+msgid "Buscar por codigo"
+msgstr ""
+
+#: tformproveedor.checkbox4.caption
+msgctxt "tformproveedor.checkbox4.caption"
+msgid "Buscar por unidades"
+msgstr ""
+
+#: tformproveedor.checkbox5.caption
+msgctxt "tformproveedor.checkbox5.caption"
+msgid "Buscar por importe"
+msgstr ""
+
+#: tformproveedor.label1.caption
+msgid "中文名称(Nombre Comercial)*:"
+msgstr ""
+
+#: tformproveedor.label11.caption
+msgctxt "tformproveedor.label11.caption"
+msgid "Tel."
+msgstr ""
+
+#: tformproveedor.label13.caption
+msgid "传真(Fax)"
+msgstr ""
+
+#: tformproveedor.label16.caption
+msgid "TIPO"
+msgstr ""
+
+#: tformproveedor.label17.caption
+msgid "Contacto"
+msgstr ""
+
+#: tformproveedor.label18.caption
+msgid "Mi ID"
+msgstr ""
+
+#: tformproveedor.label19.caption
+msgid "Mi Tarjeta VIP"
+msgstr ""
+
+#: tformproveedor.label22.caption
+msgid "Nombre de Banco"
+msgstr ""
+
+#: tformproveedor.label23.caption
+msgid "Numero de la Cuenta"
+msgstr ""
+
+#: tformproveedor.label24.caption
+msgid "observacion"
+msgstr ""
+
+#: tformproveedor.label26.caption
+msgid "Nombre de la cuenta"
+msgstr ""
+
+#: tformproveedor.label27.caption
+msgid "Cod. Proveedor"
+msgstr ""
+
+#: tformproveedor.label3.caption
+msgid "公司名称(Razón Social)*"
+msgstr ""
+
+#: tformproveedor.label34.caption
+msgid "http/Web"
+msgstr ""
+
+#: tformproveedor.label35.caption
+msgid "Email."
+msgstr ""
+
+#: tformproveedor.label36.caption
+msgid "Movil."
+msgstr ""
+
+#: tformproveedor.label37.caption
+msgctxt "tformproveedor.label37.caption"
+msgid "Tel."
+msgstr ""
+
+#: tformproveedor.label38.caption
+msgid "Provincia"
+msgstr ""
+
+#: tformproveedor.label39.caption
+msgid "Poblacion"
+msgstr ""
+
+#: tformproveedor.label4.caption
+msgid "INTER. CIF Europea"
+msgstr ""
+
+#: tformproveedor.label40.caption
+msgid "Codigo Postal"
+msgstr ""
+
+#: tformproveedor.label41.caption
+msgid "Direccion*"
+msgstr ""
+
+#: tformproveedor.label42.caption
+msgid "CIF/NIF*"
+msgstr ""
+
+#: tformproveedor.label45.caption
+msgctxt "tformproveedor.label45.caption"
+msgid "Desde Fecha"
+msgstr ""
+
+#: tformproveedor.label46.caption
+msgctxt "tformproveedor.label46.caption"
+msgid "Hasta Fecha"
+msgstr ""
+
+#: tformproveedor.label5.caption
+msgid "微信，QQ，wechat, whatapp, etc.."
+msgstr ""
+
+#: tformproveedor.label57.caption
+msgid "Periodo a visualizar"
+msgstr ""
+
+#: tformproveedor.label6.caption
+msgid "Fecha de alta"
+msgstr ""
+
+#: tformproveedor.label7.caption
+msgid ""
+"显示\n"
+"Listado en:\n"
+msgstr ""
+
+#: tformproveedor.label9.caption
+msgid "Pais"
+msgstr ""
+
+#: tformproveedor.modeview.text
+msgctxt "tformproveedor.modeview.text"
+msgid "简称"
+msgstr ""
+
+#: tformproveedor.panel1.caption
+msgid "Datos de Proveedor"
+msgstr ""
+
+#: tformproveedor.panel5.caption
+msgid "Panel5"
+msgstr ""
+
+#: tformproveedor.tabsheet1.caption
+msgid "General"
+msgstr ""
+
+#: tformproveedor.tabsheet2.caption
+msgid "Datos de Facturacion"
+msgstr ""
+
+#: tformproveedor.tabsheet3.caption
+msgid "  Historico de Compras  "
+msgstr ""
+
+#: tformproveedor.tabsheet4.caption
+msgid " Estadisticas "
+msgstr ""
+
+#: tformselectonesku.button1.caption
+msgctxt "tformselectonesku.button1.caption"
+msgid "Cerrar(退出)"
+msgstr ""
+
+#: tformselectonesku.button2.caption
+msgctxt "tformselectonesku.button2.caption"
+msgid "Elegir(选择)"
+msgstr ""
+
+#: tformselectonesku.caption
+msgid "选择SKU商品"
+msgstr ""
+
+#: tformselectonesku.dbgrid1.columns[0].title.caption
+msgctxt "tformselectonesku.dbgrid1.columns[0].title.caption"
+msgid "条形码"
+msgstr ""
+
+#: tformselectonesku.dbgrid1.columns[1].title.caption
+msgctxt "tformselectonesku.dbgrid1.columns[1].title.caption"
+msgid "名称"
+msgstr ""
+
+#: tformselectonesku.dbgrid1.columns[2].title.caption
+msgctxt "tformselectonesku.dbgrid1.columns[2].title.caption"
+msgid "类别"
+msgstr ""
+
+#: tformselectonesku.dbgrid1.columns[3].title.caption
+msgctxt "tformselectonesku.dbgrid1.columns[3].title.caption"
+msgid "品牌"
+msgstr ""
+
+#: tformselectonesku.dbgrid1.columns[4].title.caption
+msgctxt "tformselectonesku.dbgrid1.columns[4].title.caption"
+msgid "价格"
+msgstr ""
+
+#: tformselectonesku.dbgrid1.columns[5].title.caption
+msgctxt "tformselectonesku.dbgrid1.columns[5].title.caption"
+msgid "编码"
+msgstr ""
+
+#: tformselectsku.button1.caption
+msgctxt "tformselectsku.button1.caption"
+msgid "Cerrar(退出)"
+msgstr ""
+
+#: tformselectsku.button2.caption
+msgctxt "tformselectsku.button2.caption"
+msgid "Elegir(选择)"
+msgstr ""
+
+#: tformselectsku.caption
+msgid "FormSelectSKU"
+msgstr ""
+
+#: tformselectsku.dbgrid1.columns[0].title.caption
+msgctxt "tformselectsku.dbgrid1.columns[0].title.caption"
+msgid "条形码"
+msgstr ""
+
+#: tformselectsku.dbgrid1.columns[1].title.caption
+msgctxt "tformselectsku.dbgrid1.columns[1].title.caption"
+msgid "名称"
+msgstr ""
+
+#: tformselectsku.dbgrid1.columns[2].title.caption
+msgctxt "tformselectsku.dbgrid1.columns[2].title.caption"
+msgid "类别"
+msgstr ""
+
+#: tformselectsku.dbgrid1.columns[3].title.caption
+msgctxt "tformselectsku.dbgrid1.columns[3].title.caption"
+msgid "品牌"
+msgstr ""
+
+#: tformselectsku.dbgrid1.columns[4].title.caption
+msgctxt "tformselectsku.dbgrid1.columns[4].title.caption"
+msgid "商品类型"
+msgstr ""
+
+#: tformselectsku.dbgrid1.columns[5].title.caption
+msgctxt "tformselectsku.dbgrid1.columns[5].title.caption"
+msgid "价格"
+msgstr ""
+
+#: tformselectsku.dbgrid1.columns[6].title.caption
+msgctxt "tformselectsku.dbgrid1.columns[6].title.caption"
+msgid "编码"
+msgstr ""
+
+#: tformstock.button1.caption
+msgctxt "tformstock.button1.caption"
+msgid "关闭"
+msgstr ""
+
+#: tformstock.button3.caption
+msgctxt "tformstock.button3.caption"
+msgid "查看(&B)"
+msgstr ""
+
+#: tformstock.caption
+msgid "库存明细"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[0].title.caption
+msgctxt "tformstock.dbgrid1.columns[0].title.caption"
+msgid "仓库编号"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[1].title.caption
+msgctxt "tformstock.dbgrid1.columns[1].title.caption"
+msgid "条形码"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[2].title.caption
+msgctxt "tformstock.dbgrid1.columns[2].title.caption"
+msgid "内容"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[3].title.caption
+msgctxt "tformstock.dbgrid1.columns[3].title.caption"
+msgid "数量"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[4].title.caption
+msgctxt "tformstock.dbgrid1.columns[4].title.caption"
+msgid "成本"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[5].title.caption
+msgctxt "tformstock.dbgrid1.columns[5].title.caption"
+msgid "品牌"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[6].title.caption
+msgctxt "tformstock.dbgrid1.columns[6].title.caption"
+msgid "类别"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[7].title.caption
+msgid "状态"
+msgstr ""
+
+#: tformstock.dbgrid1.columns[8].title.caption
+msgid "SKU_NO"
+msgstr ""
+
+#: tformstock.label1.caption
+msgctxt "tformstock.label1.caption"
+msgid "仓库编号"
+msgstr ""
+
+#: tformstock.label2.caption
+msgid "仓库名称"
+msgstr ""
+
+#: tformstock.label3.caption
+msgid "查询货品"
+msgstr ""
+
+#: tformstock.label7.caption
+msgctxt "tformstock.label7.caption"
+msgid "类别: "
+msgstr ""
+
+#: tformwork.almacenbutton.hint
+msgctxt "tformwork.almacenbutton.hint"
+msgid "El Almance"
+msgstr ""
+
+#: tformwork.button1.caption
+msgctxt "tformwork.button1.caption"
+msgid "Abrir"
+msgstr ""
+
+#: tformwork.button2.caption
+msgctxt "tformwork.button2.caption"
+msgid "Button2"
+msgstr ""
+
+#: tformwork.button3.caption
+msgctxt "tformwork.button3.caption"
+msgid "输入购买内容"
+msgstr ""
+
+#: tformwork.button4.caption
+msgctxt "tformwork.button4.caption"
+msgid "Button4"
+msgstr ""
+
+#: tformwork.buttonnew.caption
+msgid "导入 XLS 文件"
+msgstr ""
+
+#: tformwork.caption
+msgid "工作中心"
+msgstr ""
+
+#: tformwork.categorybutton.hint
+msgctxt "tformwork.categorybutton.hint"
+msgid "Listado de Categoria"
+msgstr ""
+
+#: tformwork.checkbutton.hint
+msgctxt "tformwork.checkbutton.hint"
+msgid "Stock Inventory"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[0].title.caption
+msgid "处理编号"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[1].title.caption
+msgid "供应商编码"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[2].title.caption
+msgid "供应商名称"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[3].title.caption
+msgctxt "tformwork.dbgrid1.columns[3].title.caption"
+msgid "票据类型"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[4].title.caption
+msgctxt "tformwork.dbgrid1.columns[4].title.caption"
+msgid "票据编号"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[5].title.caption
+msgctxt "tformwork.dbgrid1.columns[5].title.caption"
+msgid "购买日期"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[6].title.caption
+msgid "输入日期"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[7].title.caption
+msgid "总额"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[8].title.caption
+msgctxt "tformwork.dbgrid1.columns[8].title.caption"
+msgid "经手人"
+msgstr ""
+
+#: tformwork.dbgrid1.columns[9].title.caption
+msgid "处理过"
+msgstr ""
+
+#: tformwork.documentobutton.caption
+msgid "Documento"
+msgstr ""
+
+#: tformwork.documentobutton.hint
+msgctxt "tformwork.documentobutton.hint"
+msgid "Albaran, Factura"
+msgstr ""
+
+#: tformwork.excelbutton.caption
+msgid "XLS"
+msgstr ""
+
+#: tformwork.excelbutton.hint
+msgctxt "tformwork.excelbutton.hint"
+msgid "Excel Documento"
+msgstr ""
+
+#: tformwork.f1.caption
+msgid "f"
+msgstr ""
+
+#: tformwork.goodsbutton.hint
+msgctxt "tformwork.goodsbutton.hint"
+msgid "Crear Nuevo Articulo"
+msgstr ""
+
+#: tformwork.hisbuybutton.hint
+msgctxt "tformwork.hisbuybutton.hint"
+msgid "Tree in grid simulation"
+msgstr ""
+
+#: tformwork.label1.caption
+msgid "Gestion picker"
+msgstr ""
+
+#: tformwork.label2.caption
+msgid "Que quieres hacer?"
+msgstr ""
+
+#: tformwork.label3.caption
+msgid "Importar datas por:"
+msgstr ""
+
+#: tformwork.n12.caption
+msgctxt "tformwork.n12.caption"
+msgid "查看"
+msgstr ""
+
+#: tformwork.n13.caption
+msgctxt "tformwork.n13.caption"
+msgid "删除"
+msgstr ""
+
+#: tformwork.n19.caption
+msgid "合并"
+msgstr ""
+
+#: tformwork.panel6.caption
+msgid "要核对的单据"
+msgstr ""
+
+#: tformwork.proveedorbutton.hint
+msgctxt "tformwork.proveedorbutton.hint"
+msgid "Proveedores"
+msgstr ""
+
+#: tformwork.quitbutton.hint
+msgid "Exit"
+msgstr ""
+
+#: tformwork.register.hint
+msgctxt "tformwork.register.hint"
+msgid "List Goods of Proveedor"
+msgstr ""
+
+#: tformwork.speedbutton1.hint
+msgid "Historia de compra"
+msgstr ""
+
+#: tformwork.speedbutton2.hint
+msgid "Findout ..."
+msgstr ""
+
+#: tformwork.statusbar.panels[0].text
+msgid "(F6) HIS. DE COMPRA DE ARTICULO"
+msgstr ""
+
+#: tformwork.storebutton.hint
+msgctxt "tformwork.storebutton.hint"
+msgid "Stock Actual"
+msgstr ""
+
+#: tformwork.xpdemobutton.hint
+msgctxt "tformwork.xpdemobutton.hint"
+msgid "List Goods of Proveedor"
+msgstr ""
+
+#: tform_his_buyfromproveedor.button1.caption
+msgid "获取"
+msgstr ""
+
+#: tform_his_buyfromproveedor.button2.caption
+msgctxt "tform_his_buyfromproveedor.button2.caption"
+msgid "Locate(&B)"
+msgstr ""
+
+#: tform_his_buyfromproveedor.button3.caption
+msgctxt "tform_his_buyfromproveedor.button3.caption"
+msgid "支付记录"
+msgstr ""
+
+#: tform_his_buyfromproveedor.button4.caption
+msgctxt "tform_his_buyfromproveedor.button4.caption"
+msgid "购买内容"
+msgstr ""
+
+#: tform_his_buyfromproveedor.button5.caption
+msgctxt "tform_his_buyfromproveedor.button5.caption"
+msgid "关闭"
+msgstr ""
+
+#: tform_his_buyfromproveedor.caption
+msgid "购买流水账"
+msgstr ""
+
+#: tform_his_buyfromproveedor.datetimepicker1.textfornulldate
+msgctxt "tform_his_buyfromproveedor.datetimepicker1.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tform_his_buyfromproveedor.datetimepicker2.textfornulldate
+msgctxt "tform_his_buyfromproveedor.datetimepicker2.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[0].title.caption
+msgctxt "tform_his_buyfromproveedor.dbgrid1.columns[0].title.caption"
+msgid "供应商"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[1].title.caption
+msgctxt "tform_his_buyfromproveedor.dbgrid1.columns[1].title.caption"
+msgid "购买日期"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[2].title.caption
+msgctxt "tform_his_buyfromproveedor.dbgrid1.columns[2].title.caption"
+msgid "经手人"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[3].title.caption
+msgid "购买单据"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[4].title.caption
+msgid "单据号码"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[5].title.caption
+msgctxt "tform_his_buyfromproveedor.dbgrid1.columns[5].title.caption"
+msgid "应付金额"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[6].title.caption
+msgctxt "tform_his_buyfromproveedor.dbgrid1.columns[6].title.caption"
+msgid "登记编号"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[7].title.caption
+msgid "已发票"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[8].title.caption
+msgid "发票号码"
+msgstr ""
+
+#: tform_his_buyfromproveedor.dbgrid1.columns[9].title.caption
+msgid "入库处"
+msgstr ""
+
+#: tform_his_buyfromproveedor.label1.caption
+msgid "购买记录"
+msgstr ""
+
+#: tform_his_buyfromproveedor.label2.caption
+msgid "Locate:"
+msgstr ""
+
+#: tform_his_buyfromproveedor.label3.caption
+msgctxt "tform_his_buyfromproveedor.label3.caption"
+msgid "从:"
+msgstr ""
+
+#: tform_his_buyfromproveedor.label4.caption
+msgctxt "tform_his_buyfromproveedor.label4.caption"
+msgid "至:"
+msgstr ""
+
+#: tform_his_buyfromproveedor.label5.caption
+msgctxt "tform_his_buyfromproveedor.label5.caption"
+msgid "过滤供应商:"
+msgstr ""
+
+#: tfrmdlgcapt.bitbtnok.caption
+msgctxt "tfrmdlgcapt.bitbtnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdlgcapt.label1.caption
+msgctxt "tfrmdlgcapt.label1.caption"
+msgid "Nombre de categoria"
+msgstr ""
+
+#: tfrmdlgcapt.label2.caption
+msgctxt "tfrmdlgcapt.label2.caption"
+msgid "Descriptiones"
+msgstr ""
+
+#: tfrmdlgcaption.bitbtncancel.caption
+msgid "Cancel"
+msgstr ""
+
+#: tfrmdlgcaption.bitbtnok.caption
+msgctxt "tfrmdlgcaption.bitbtnok.caption"
+msgid "&OK"
+msgstr ""
+
+#: tfrmdlgcaption.caption
+msgid "Crear Nuevo Categoria"
+msgstr ""
+
+#: tfrmdlgcaption.label1.caption
+msgctxt "tfrmdlgcaption.label1.caption"
+msgid "Nombre de categoria"
+msgstr ""
+
+#: tfrmdlgcaption.label2.caption
+msgctxt "tfrmdlgcaption.label2.caption"
+msgid "Descriptiones"
+msgstr ""
+
+#: tfrmitem.button1.caption
+msgid "开始端口扫描"
+msgstr ""
+
+#: tfrmitem.button2.caption
+msgid "查看在线机器"
+msgstr ""
+
+#: tfrmitem.button3.caption
+msgid "查看在线设备"
+msgstr ""
+
+#: tfrmitem.groupbox1.caption
+msgid "在线机器:"
+msgstr ""
+
+#: tfrmitem.labelededit1.editlabel.caption
+msgid "dbHost"
+msgstr ""
+
+#: tfrmitem.labelededit1.text
+msgctxt "tfrmitem.labelededit1.text"
+msgid "127.0.0.1"
+msgstr ""
+
+#: tfrmitem.labelededit10.editlabel.caption
+msgid "S_PORT"
+msgstr ""
+
+#: tfrmitem.labelededit10.text
+msgid "8888"
+msgstr ""
+
+#: tfrmitem.labelededit2.editlabel.caption
+msgid "dbUser"
+msgstr ""
+
+#: tfrmitem.labelededit2.text
+msgid "zeoslib"
+msgstr ""
+
+#: tfrmitem.labelededit3.editlabel.caption
+msgid "dbPasswd"
+msgstr ""
+
+#: tfrmitem.labelededit3.text
+msgctxt "tfrmitem.labelededit3.text"
+msgid "lazarus"
+msgstr ""
+
+#: tfrmitem.labelededit4.editlabel.caption
+msgid "dbProtocolo"
+msgstr ""
+
+#: tfrmitem.labelededit4.text
+msgid "Mysql"
+msgstr ""
+
+#: tfrmitem.labelededit5.editlabel.caption
+msgid "dbDataBase"
+msgstr ""
+
+#: tfrmitem.labelededit5.text
+msgctxt "tfrmitem.labelededit5.text"
+msgid "lazarus"
+msgstr ""
+
+#: tfrmitem.labelededit6.editlabel.caption
+msgid "PORT"
+msgstr ""
+
+#: tfrmitem.labelededit6.text
+msgid "3306"
+msgstr ""
+
+#: tfrmitem.labelededit7.editlabel.caption
+msgid "EMID"
+msgstr ""
+
+#: tfrmitem.labelededit7.text
+msgid "0000"
+msgstr ""
+
+#: tfrmitem.labelededit8.editlabel.caption
+msgid "PCID"
+msgstr ""
+
+#: tfrmitem.labelededit8.text
+msgid "C0002"
+msgstr ""
+
+#: tfrmitem.labelededit9.editlabel.caption
+msgid "S_Server"
+msgstr ""
+
+#: tfrmitem.labelededit9.text
+msgctxt "tfrmitem.labelededit9.text"
+msgid "127.0.0.1"
+msgstr ""
+
+#: tfrmitem.lanrang.caption
+msgid "本机拥有网络段:"
+msgstr ""
+
+#: tfrmitem.listviewip.columns[0].caption
+msgid "IP "
+msgstr ""
+
+#: tfrmitem.listviewip.columns[1].caption
+msgid "端口3306"
+msgstr ""
+
+#: tfrmitem.listviewip.columns[2].caption
+msgid "端口8888"
+msgstr ""
+
+#: tgoodsfromproveedor.button1.caption
+msgctxt "tgoodsfromproveedor.button1.caption"
+msgid "关闭"
+msgstr ""
+
+#: tgoodsfromproveedor.button2.caption
+msgctxt "tgoodsfromproveedor.button2.caption"
+msgid "查看"
+msgstr ""
+
+#: tgoodsfromproveedor.caption
+msgid "查询货品来源"
+msgstr ""
+
+#: tgoodsfromproveedor.dbgrid1.columns[0].title.caption
+msgctxt "tgoodsfromproveedor.dbgrid1.columns[0].title.caption"
+msgid "CD.BARRA"
+msgstr ""
+
+#: tgoodsfromproveedor.dbgrid1.columns[1].title.caption
+msgctxt "tgoodsfromproveedor.dbgrid1.columns[1].title.caption"
+msgid "Conception"
+msgstr ""
+
+#: tgoodsfromproveedor.dbgrid1.columns[2].title.caption
+msgctxt "tgoodsfromproveedor.dbgrid1.columns[2].title.caption"
+msgid "PROVEEDOR"
+msgstr ""
+
+#: tgoodsfromproveedor.dbgrid1.columns[3].title.caption
+msgctxt "tgoodsfromproveedor.dbgrid1.columns[3].title.caption"
+msgid "COMPRA"
+msgstr ""
+
+#: tgoodsfromproveedor.dbgrid1.columns[4].title.caption
+msgctxt "tgoodsfromproveedor.dbgrid1.columns[4].title.caption"
+msgid "DESC(%)"
+msgstr ""
+
+#: tgoodsfromproveedor.dbgrid1.columns[5].title.caption
+msgctxt "tgoodsfromproveedor.dbgrid1.columns[5].title.caption"
+msgid "CATEGORIA"
+msgstr ""
+
+#: tgoodsfromproveedor.dbgrid1.columns[6].title.caption
+msgctxt "tgoodsfromproveedor.dbgrid1.columns[6].title.caption"
+msgid "Ult.FECHA"
+msgstr ""
+
+#: tgoodsfromproveedor.label1.caption
+msgid "查看内容(货品名称,条形码,编号)"
+msgstr ""
+

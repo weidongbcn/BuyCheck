@@ -1,0 +1,7 @@
+{"version":1,"strings":[
+{"hash":71246124,"name":"tformfindout.caption","sourcebytes":[230,159,165,230,137,190,231,187,147,230,158,156],"value":"\u67E5\u627E\u7ED3\u679C"},
+{"hash":176169824,"name":"tformfindout.panel1.caption","sourcebytes":[76,105,115,116,97,100,111,32,58,32],"value":"Listado : "},
+{"hash":253546618,"name":"tformfindout.btcerrar.caption","sourcebytes":[231,161,174,229,174,154],"value":"\u786E\u5B9A"},
+{"hash":250171880,"name":"tformfindout.btcancelar.caption","sourcebytes":[229,143,150,230,182,136],"value":"\u53D6\u6D88"},
+{"hash":209032681,"name":"tformfindout.addbutton.caption","sourcebytes":[229,187,186,230,150,176,38,78,40,70,49,49,41],"value":"\u5EFA\u65B0&N(F11)"}
+]}

@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":46714537,"name":"taboutbox.productname.caption","sourcebytes":[87,121,108,100,111,110,32,83,111,102,116,71,101,115,116,32,84,80,86,32,40,233,148,128,229,148,174,231,187,136,231,171,175,230,156,186,41],"value":"Wyldon SoftGest TPV (\u9500\u552E\u7EC8\u7AEF\u673A)"},
+{"hash":90464105,"name":"taboutbox.version.caption","sourcebytes":[86,101,114,115,105,111,110,32,51,46,48,32,32,40,231,137,136,230,156,172,49,46,48,45,50,48,49,57,48,53,48,49,41],"value":"Version 3.0  (\u7248\u672C1.0-20190501)"},
+{"hash":133675262,"name":"taboutbox.copyright.caption","sourcebytes":[67,111,112,121,114,105,103,104,116,32,40,231,137,136,230,157,131,41,32,58,32,87,121,108,100,111,110,32,83,111,102,116,71,101,115,116,32,83,46,76,46],"value":"Copyright (\u7248\u6743) : Wyldon SoftGest S.L."},
+{"hash":239263537,"name":"taboutbox.label1.caption","sourcebytes":[231,137,136,230,157,131,230,137,128,230,156,137,44,32,229,175,185,231,160,180,232,167,163,44,229,143,141,231,188,150,232,175,145,232,161,140,228,184,186,229,191,133,230,179,149,229,190,139,232,191,189,231,169,182,33],"value":"\u7248\u6743\u6240\u6709, \u5BF9\u7834\u89E3,\u53CD\u7F16\u8BD1\u884C\u4E3A\u5FC5\u6CD5\u5F8B\u8FFD\u7A76!"},
+{"hash":1339,"name":"taboutbox.okbutton.caption","sourcebytes":[79,75],"value":"OK"},
+{"hash":100111183,"name":"taboutbox.groupbox1.caption","sourcebytes":[230,179,168,229,134,140,228,191,161,230,129,175],"value":"\u6CE8\u518C\u4FE1\u606F"},
+{"hash":227883866,"name":"taboutbox.label2.caption","sourcebytes":[230,179,168,229,134,140,229,141,149,228,189,141,58],"value":"\u6CE8\u518C\u5355\u4F4D:"},
+{"hash":10029402,"name":"taboutbox.label3.caption","sourcebytes":[228,189,191,231,148,168,231,137,136,230,156,172,58],"value":"\u4F7F\u7528\u7248\u672C:"},
+{"hash":67636810,"name":"taboutbox.label4.caption","sourcebytes":[229,133,129,232,174,184,231,187,136,231,171,175,230,149,176,58],"value":"\u5141\u8BB8\u7EC8\u7AEF\u6570:"},
+{"hash":227813866,"name":"taboutbox.label5.caption","sourcebytes":[67,73,70,47,78,73,70,58],"value":"CIF/NIF:"},
+{"hash":98644886,"name":"taboutbox.button1.caption","sourcebytes":[230,179,168,229,134,140,230,150,135,228,187,182],"value":"\u6CE8\u518C\u6587\u4EF6"},
+{"hash":249847824,"name":"taboutbox.button2.caption","sourcebytes":[229,136,183,230,150,176],"value":"\u5237\u65B0"}
+]}

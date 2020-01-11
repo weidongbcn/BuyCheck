@@ -1,0 +1,957 @@
+object FormProveedor: TFormProveedor
+  Left = 656
+  Height = 680
+  Top = 96
+  Width = 1024
+  ClientHeight = 680
+  ClientWidth = 1024
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 35
+    Top = 0
+    Width = 1024
+    Align = alTop
+    Caption = 'Datos de Proveedor'
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 41
+    Top = 639
+    Width = 1024
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 1024
+    TabOrder = 1
+    object Button1: TButton
+      Left = 800
+      Height = 25
+      Top = 6
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '退出(&X)'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 544
+      Height = 25
+      Top = 6
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '清空(&C)'
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 447
+      Height = 25
+      Top = 6
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '保存(&S)'
+      OnClick = Button3Click
+      TabOrder = 2
+    end
+    object Button4: TButton
+      Left = 658
+      Height = 25
+      Top = 6
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '删除(&D)'
+      TabOrder = 3
+    end
+    object Button6: TButton
+      Left = 242
+      Height = 25
+      Top = 6
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '添加(&A)'
+      OnClick = Button6Click
+      TabOrder = 4
+    end
+    object Button7: TButton
+      Left = 35
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '导出'
+      TabOrder = 5
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 604
+    Top = 35
+    Width = 1024
+    Align = alClient
+    ClientHeight = 604
+    ClientWidth = 1024
+    TabOrder = 2
+    object PageControl1: TPageControl
+      Left = 249
+      Height = 602
+      Top = 1
+      Width = 774
+      ActivePage = TabSheet1
+      Align = alClient
+      TabIndex = 0
+      TabOrder = 0
+      object TabSheet1: TTabSheet
+        Caption = 'General'
+        ClientHeight = 572
+        ClientWidth = 766
+        object Label27: TLabel
+          Left = 56
+          Height = 17
+          Top = 40
+          Width = 92
+          Alignment = taRightJustify
+          Caption = 'Cod. Proveedor'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 24
+          Height = 17
+          Top = 145
+          Width = 135
+          Caption = '公司名称(Razón Social)*'
+          ParentColor = False
+        end
+        object Label42: TLabel
+          Left = 24
+          Height = 17
+          Top = 187
+          Width = 48
+          Caption = 'CIF/NIF*'
+          ParentColor = False
+        end
+        object Label41: TLabel
+          Left = 24
+          Height = 17
+          Top = 229
+          Width = 59
+          Caption = 'Direccion*'
+          ParentColor = False
+        end
+        object Label40: TLabel
+          Left = 24
+          Height = 17
+          Top = 274
+          Width = 82
+          Caption = 'Codigo Postal'
+          ParentColor = False
+        end
+        object Label39: TLabel
+          Left = 160
+          Height = 17
+          Top = 273
+          Width = 57
+          Caption = 'Poblacion'
+          ParentColor = False
+        end
+        object Label38: TLabel
+          Left = 24
+          Height = 17
+          Top = 317
+          Width = 52
+          Caption = 'Provincia'
+          ParentColor = False
+        end
+        object Label37: TLabel
+          Left = 25
+          Height = 17
+          Top = 361
+          Width = 20
+          Caption = 'Tel.'
+          ParentColor = False
+        end
+        object Label36: TLabel
+          Left = 25
+          Height = 17
+          Top = 399
+          Width = 35
+          Caption = 'Movil.'
+          ParentColor = False
+        end
+        object Label35: TLabel
+          Left = 25
+          Height = 17
+          Top = 442
+          Width = 34
+          Caption = 'Email.'
+          ParentColor = False
+        end
+        object Label34: TLabel
+          Left = 25
+          Height = 17
+          Top = 485
+          Width = 55
+          Caption = 'http/Web'
+          ParentColor = False
+        end
+        object Label17: TLabel
+          Left = 456
+          Height = 17
+          Top = 101
+          Width = 52
+          Caption = 'Contacto'
+          ParentColor = False
+        end
+        object Label1: TLabel
+          Left = 24
+          Height = 17
+          Top = 103
+          Width = 175
+          Caption = '中文名称(Nombre Comercial)*:'
+          ParentColor = False
+        end
+        object Label11: TLabel
+          Left = 252
+          Height = 17
+          Top = 360
+          Width = 20
+          Caption = 'Tel.'
+          ParentColor = False
+        end
+        object Label13: TLabel
+          Left = 251
+          Height = 17
+          Top = 399
+          Width = 51
+          Caption = '传真(Fax)'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 264
+          Height = 17
+          Top = 188
+          Width = 114
+          Caption = 'INTER. CIF Europea'
+          ParentColor = False
+        end
+        object Label9: TLabel
+          Left = 236
+          Height = 17
+          Top = 316
+          Width = 23
+          Caption = 'Pais'
+          ParentColor = False
+        end
+        object Label16: TLabel
+          Left = 24
+          Height = 17
+          Top = 59
+          Width = 28
+          Caption = 'TIPO'
+          ParentColor = False
+        end
+        object Label19: TLabel
+          Left = 454
+          Height = 17
+          Top = 252
+          Width = 82
+          Caption = 'Mi Tarjeta VIP'
+          ParentColor = False
+        end
+        object Label18: TLabel
+          Left = 454
+          Height = 17
+          Top = 205
+          Width = 32
+          Caption = 'Mi ID'
+          ParentColor = False
+        end
+        object Label22: TLabel
+          Left = 452
+          Height = 17
+          Top = 302
+          Width = 108
+          Caption = 'Nombre de Banco'
+          ParentColor = False
+        end
+        object Label23: TLabel
+          Left = 452
+          Height = 17
+          Top = 349
+          Width = 125
+          Caption = 'Numero de la Cuenta'
+          ParentColor = False
+        end
+        object Label26: TLabel
+          Left = 454
+          Height = 17
+          Top = 399
+          Width = 124
+          Caption = 'Nombre de la cuenta'
+          ParentColor = False
+        end
+        object Label24: TLabel
+          Left = 452
+          Height = 17
+          Top = 442
+          Width = 71
+          Caption = 'observacion'
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 456
+          Height = 17
+          Top = 148
+          Width = 195
+          Caption = '微信，QQ，wechat, whatapp, etc..'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 458
+          Height = 17
+          Top = 56
+          Width = 77
+          Caption = 'Fecha de alta'
+          ParentColor = False
+        end
+        object EditCodigo: TEdit
+          Left = 160
+          Height = 25
+          Top = 34
+          Width = 121
+          CharCase = ecUppercase
+          OnExit = EditCodigoExit
+          OnKeyDown = EditCodigoKeyDown
+          TabOrder = 0
+        end
+        object Edit7: TEdit
+          Left = 160
+          Height = 25
+          Top = 292
+          Width = 237
+          CharCase = ecUppercase
+          OnKeyDown = Edit7KeyDown
+          TabOrder = 8
+        end
+        object Edit16: TEdit
+          Left = 456
+          Height = 25
+          Top = 116
+          Width = 300
+          TabOrder = 18
+        end
+        object Edit10: TEdit
+          Left = 24
+          Height = 25
+          Top = 375
+          Width = 135
+          Color = 10930928
+          OnKeyDown = Edit10KeyDown
+          TabOrder = 11
+        end
+        object Edit11: TEdit
+          Left = 257
+          Height = 25
+          Top = 375
+          Width = 140
+          OnKeyDown = Edit11KeyDown
+          TabOrder = 12
+        end
+        object Edit12: TEdit
+          Left = 24
+          Height = 25
+          Top = 418
+          Width = 135
+          Color = 10930928
+          OnKeyDown = Edit12KeyDown
+          TabOrder = 13
+        end
+        object Edit13: TEdit
+          Left = 256
+          Height = 25
+          Top = 418
+          Width = 141
+          OnChange = Edit13Change
+          TabOrder = 14
+        end
+        object Edit14: TEdit
+          Left = 24
+          Height = 25
+          Top = 461
+          Width = 373
+          OnKeyDown = Edit14KeyDown
+          TabOrder = 15
+        end
+        object Edit15: TEdit
+          Left = 24
+          Height = 25
+          Top = 500
+          Width = 373
+          OnKeyDown = Edit15KeyDown
+          TabOrder = 16
+        end
+        object Edit2: TEdit
+          Left = 25
+          Height = 25
+          Top = 160
+          Width = 373
+          CharCase = ecUppercase
+          Color = clYellow
+          OnKeyDown = Edit2KeyDown
+          TabOrder = 3
+        end
+        object Edit3: TEdit
+          Left = 24
+          Height = 25
+          Top = 206
+          Width = 180
+          CharCase = ecUppercase
+          OnKeyDown = Edit3KeyDown
+          TabOrder = 4
+        end
+        object Edit4: TEdit
+          Left = 264
+          Height = 25
+          Top = 204
+          Width = 133
+          OnKeyDown = Edit4KeyDown
+          TabOrder = 5
+        end
+        object Edit5: TEdit
+          Left = 25
+          Height = 25
+          Top = 248
+          Width = 372
+          CharCase = ecUppercase
+          OnKeyDown = Edit5KeyDown
+          TabOrder = 6
+        end
+        object Edit6: TEdit
+          Left = 25
+          Height = 25
+          Top = 293
+          Width = 97
+          OnKeyDown = Edit6KeyDown
+          TabOrder = 7
+        end
+        object Edit8: TEdit
+          Left = 25
+          Height = 25
+          Top = 335
+          Width = 186
+          CharCase = ecUppercase
+          OnKeyDown = Edit8KeyDown
+          TabOrder = 9
+        end
+        object Edit9: TEdit
+          Left = 237
+          Height = 25
+          Top = 335
+          Width = 160
+          OnKeyDown = Edit9KeyDown
+          TabOrder = 10
+        end
+        object Edit1: TEdit
+          Left = 24
+          Height = 25
+          Top = 120
+          Width = 373
+          CharCase = ecUppercase
+          Color = clYellow
+          OnKeyDown = Edit1KeyDown
+          TabOrder = 2
+        end
+        object DBLookupComboBox1: TDBLookupComboBox
+          Left = 24
+          Height = 25
+          Top = 77
+          Width = 145
+          KeyField = 'TYPE'
+          ListField = 'TYPE'
+          ListFieldIndex = 0
+          ListSource = EmTypeDataSource
+          LookupCache = False
+          OnKeyDown = DBLookupComboBox1KeyDown
+          TabOrder = 1
+        end
+        object Edit18: TEdit
+          Left = 454
+          Height = 25
+          Top = 225
+          Width = 300
+          OnKeyDown = Edit18KeyDown
+          TabOrder = 20
+        end
+        object Edit19: TEdit
+          Left = 454
+          Height = 25
+          Top = 271
+          Width = 300
+          OnKeyDown = Edit19KeyDown
+          TabOrder = 21
+        end
+        object ActiveBox: TCheckBox
+          Left = 464
+          Height = 21
+          Top = 25
+          Width = 56
+          Caption = 'Activa'
+          Checked = True
+          State = cbChecked
+          TabOrder = 17
+        end
+        object Edit20: TEdit
+          Left = 454
+          Height = 25
+          Top = 319
+          Width = 300
+          OnKeyDown = Edit20KeyDown
+          TabOrder = 22
+        end
+        object Edit21: TEdit
+          Left = 454
+          Height = 25
+          Top = 368
+          Width = 300
+          OnKeyDown = Edit21KeyDown
+          TabOrder = 23
+        end
+        object Edit22: TEdit
+          Left = 454
+          Height = 25
+          Top = 415
+          Width = 300
+          OnKeyDown = Edit22KeyDown
+          TabOrder = 24
+        end
+        object Memo1: TMemo
+          Left = 454
+          Height = 89
+          Top = 461
+          Width = 298
+          TabOrder = 25
+        end
+        object Edit17: TEdit
+          Left = 454
+          Height = 25
+          Top = 170
+          Width = 300
+          Color = 10930928
+          OnKeyDown = Edit17KeyDown
+          TabOrder = 19
+        end
+        object DateAdd: TDateEdit
+          Left = 456
+          Height = 25
+          Top = 74
+          Width = 121
+          CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+          DateOrder = doNone
+          ButtonWidth = 23
+          NumGlyphs = 2
+          MaxLength = 0
+          OnKeyDown = DateAddKeyDown
+          TabOrder = 26
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Datos de Facturacion'
+        ImageIndex = 1
+      end
+      object TabSheet3: TTabSheet
+        Caption = '  Historico de Compras  '
+        ClientHeight = 572
+        ClientWidth = 766
+        ImageIndex = 2
+        object Panel6: TPanel
+          Left = 581
+          Height = 572
+          Top = 0
+          Width = 185
+          Align = alRight
+          ClientHeight = 572
+          ClientWidth = 185
+          TabOrder = 0
+          object Label45: TLabel
+            Left = 25
+            Height = 17
+            Top = 24
+            Width = 74
+            Caption = 'Desde Fecha'
+            Color = clBtnFace
+            ParentColor = False
+            Transparent = False
+          end
+          object Label46: TLabel
+            Left = 25
+            Height = 17
+            Top = 91
+            Width = 70
+            Caption = 'Hasta Fecha'
+            Color = clBtnFace
+            ParentColor = False
+            Transparent = False
+          end
+          object DateDesde: TDateEdit
+            Left = 55
+            Height = 25
+            Top = 47
+            Width = 121
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            DateOrder = doNone
+            ButtonWidth = 23
+            NumGlyphs = 2
+            MaxLength = 0
+            TabOrder = 0
+          end
+          object DateHasta: TDateEdit
+            Left = 55
+            Height = 25
+            Top = 110
+            Width = 121
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            DateOrder = doNone
+            ButtonWidth = 23
+            NumGlyphs = 2
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object CheckBox3: TCheckBox
+            Left = 9
+            Height = 21
+            Top = 186
+            Width = 131
+            Caption = 'Buscar por codigo'
+            TabOrder = 2
+          end
+          object Edit45: TEdit
+            Left = 25
+            Height = 25
+            Top = 218
+            Width = 110
+            CharCase = ecUppercase
+            Enabled = False
+            MaxLength = 13
+            TabOrder = 3
+          end
+          object CheckBox4: TCheckBox
+            Left = 9
+            Height = 21
+            Top = 266
+            Width = 143
+            Caption = 'Buscar por unidades'
+            TabOrder = 4
+          end
+          object Edit46: TEdit
+            Left = 25
+            Height = 25
+            Top = 298
+            Width = 70
+            CharCase = ecUppercase
+            Enabled = False
+            MaxLength = 10
+            TabOrder = 5
+          end
+          object CheckBox5: TCheckBox
+            Left = 9
+            Height = 21
+            Top = 346
+            Width = 136
+            Caption = 'Buscar por importe'
+            TabOrder = 6
+          end
+          object Edit47: TEdit
+            Left = 25
+            Height = 25
+            Top = 378
+            Width = 110
+            CharCase = ecUppercase
+            Enabled = False
+            MaxLength = 10
+            TabOrder = 7
+          end
+          object BitBtn14: TBitBtn
+            Left = 73
+            Height = 34
+            Top = 409
+            Width = 86
+            Caption = 'Aplicar'
+            Glyph.Data = {
+              C6070000424DC607000000000000360000002800000016000000160000000100
+              2000000000009007000064000000640000000000000000000000FFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F9F9FFE9E9E9FFE4E4E4FFE4E4E4FFE4E4
+              E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4E4FFE4E4
+              E4FFC5CFD9FFACB1BCFFD1C7C7FFFCFBFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFECEAE9FFBEBBB9FFAFABA8FFAFABA8FFAFABA8FFAFABA8FFAFAB
+              A8FFAFABA8FFAFABA8FFAFABA8FFAFABA8FFAFABA8FF909BA7FF247BBBFF378C
+              C6FF999FAEFFE4DDDDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBE3
+              DFFFEDE6E2FFE8DCD5FFE7DBD4FFE6DAD3FFE6D9D2FFE5D8D1FFE4D7CFFFE3D6
+              CEFFE2D4CCFFE1D2CAFFB5B4B9FF2379B9FF34ADF0FF89D9FAFF6BB8E2FFC8D9
+              E7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFECE4DFFFFEFEFEFFFDF9
+              F6FFFCF6F2FFFBF5F1FFFAF2EEFFF9F1EDFFF8F0EBFFF7EEE9FFF5ECE6FFC9CC
+              D3FF2981C1FF34ADF1FF8DDCFCFF9DEBFEFF51B6EAFFD8ECF8FFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFECE4DFFFFEFEFEFFFEFCFAFFFDF6F3FFFBF5
+              F1FFFAF3EFFFFAF2EEFFF8F0EBFFF7EFEAFFCBCED6FF2A81C2FF33ACF0FF8EDC
+              FCFF9FECFEFF4CB1E3FFA6BDCCFFFCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFECE4DFFFFEFEFEFFFEFDFCFFFDF7F3FFFBF5F1FFFBF4F0FFFAF2
+              EEFFF8F0ECFFCCD1D9FF2A81C2FF33ACF0FF8EDCFCFFA1EDFEFF51B8ECFFB4BE
+              C5FFC6C2C0FFFCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFECE4
+              DFFFF8F6F6FFF1EDEDFFEFE6E4FFF1E9E5FFF7EFEBFFFAF2EEFFF9F1ECFF87A1
+              BCFF2F97D9FF8DDCFCFFA1EDFEFF50B8ECFFC7D4DEFFDECEC5FFC6C2BFFFFCFC
+              FCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6F3F3FFC0AEACFFA58C8CFF9E83
+              83FF9F8584FFAA9392FFB7A2A1FFD6C7C5FFD9CBC8FFB4A2A2FF6588ABFF7BCC
+              EDFF51B8ECFFC8D5DFFFF0E4DDFFDDCEC4FFC6C2BFFFFCFCFCFFFFFFFFFFFFFF
+              FFFFFFFFFFFFECE7E7FFA28888FF9A7B77FFC9B6AAFFE3DAD1FFE8E1DFFFE4DA
+              D4FFD0C0B7FFB8A3A0FFAD9696FFBAA6A6FFC0B1B2FF90BCDAFFC9D6E0FFF1E5
+              DFFFEFE3DCFFDDCDC3FFC6C2BFFFFCFCFCFFFFFFFFFFFFFFFFFFF3F0F0FFA085
+              85FFA7847CFFE8CEB4FFFFF9E3FFFFFFF2FFFFFFFAFFFEFCF3FFFDF9E5FFEDDA
+              C3FFC8B3ACFFBDAAAAFFDBCECBFFF2E8E2FFF1E6DFFFEFE4DDFFEEE2DBFFDCCB
+              C1FFC6C2BFFFFCFCFCFFFFFFFFFFFFFFFFFFC0AEAEFF9A7671FFF0C7A7FFF7DB
+              BAFFFFF3DBFFFFFCE9FFFFFEEFFFFFFDECFFFEF5DDFFFCE5C8FFEDCBADFFC8B4
+              B0FFD9CAC7FFF1E5DFFFEFE3DCFFEEE1DAFFEDE0D8FFDAC9BFFFC5C1BFFFFCFC
+              FCFFFFFFFFFFF3F0F0FF997D7DFFCE9C80FFFDCEA5FFF7D1ADFFFFE8CBFFFFF1
+              D7FFFFF5DDFFFFF4DAFFFFECD0FFFDDDBCFFFACCA5FFDDB9A5FFCEBEBDFFECE0
+              D9FFEDE0D9FFECDED6FFEADCD4FFD7C6BBFFC5C1BEFFFCFCFCFFFFFFFFFFE6E0
+              E0FF987673FFE8A87DFFFCC396FFF6C69CFFFFDAB7FFFFE1C2FFFFE5C6FFFFE3
+              C5FFFFDEBCFFFED3AEFFFCC79BFFEBB690FFD1C2C0FFE7D9D3FFEADCD4FFE8DA
+              D1FFE7D8CFFFD5C2B7FFC5C0BEFFFCFCFCFFFFFFFFFFDCD3D3FFA07C75FFEDA5
+              72FFFBB784FFF7BE8FFFFED2A9FFFFD8B2FFFFDAB5FFFFD7B2FFFED5ADFFFFD3
+              A7FFFFCF9DFFF2BD92FFD3C1BFFFE5D7D0FFE7D8CFFFE5D5CCFFE4D3C9FFD1BD
+              B1FFC4C0BDFFFCFCFCFFFFFFFFFFE5DEDEFFA3827EFFECA877FFFEC591FFFED5
+              A5FFFFE0B4FFFFE7BDFFFFEAC2FFFFEAC1FFFFE8BFFFFFE2B7FFFFDAABFFF1C2
+              9BFFD7C8C7FFEBDFDAFFE6D6CDFFE2D0C6FFE0CDC2FFCDB7ABFFC3BFBDFFFCFC
+              FCFFFFFFFFFFF2EFEFFFA88F8FFFDDAC89FFFFD5A5FFFEDFB2FFFFEAC2FFFFF1
+              CCFFFFF4D1FFFFF4D1FFFFF2CEFFFFEDC5FFFFE4B8FFE9C9AFFFD8CCCBFFEEE3
+              DDFFEADCD4FFDECBC0FFDBC6BAFFC7B0A2FFC9C4C2FFFDFDFDFFFFFFFFFFFEFE
+              FEFFC5B4B4FFBB9A8EFFF9D6ABFFFEE7BFFFFFF2CFFFFFF6D7FFFFF7DDFFFFF8
+              DEFFFFF7DAFFFFF4D2FFFAE3C0FFDDCBC4FFE1D5D2FFE3D2C9FFDAC8BDFFD5C0
+              B3FFD0B9ABFFC5AE9FFFE2DEDCFFFEFEFEFFFFFFFFFFFFFFFFFFF0ECECFFB7A2
+              A2FFCFB1A0FFFAE6C2FFFFF5D6FFFFF9E1FFFFFBE8FFFFFBEAFFFFFAE4FFFBEE
+              D4FFE2D2C8FFDBCFCDFFEFE5DFFFEADED8FFFEFBF9FFF6EDE8FFE8DAD1FFE9E0
+              DCFFFCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE9E3E3FFBEACACFFCBB5
+              ACFFECDAC6FFF6EDDBFFFAF4E8FFF7F0E7FFF0E3D6FFDDCECAFFDBCFCEFFF0E6
+              E2FFF1E5DFFFEADCD4FFF7EEE9FFE7D8CFFFE8E0DBFFFCFCFCFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2EFEFFFCCBEBCFFC8B8B8FFD0BF
+              BCFFD5C6C4FFD7C9C7FFD7CBCAFFE3D8D7FFF5EDE9FFF5EBE6FFEEE2DBFFE7D7
+              CEFFE9DBD2FFE8E0DBFFFCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFFFFFFFFFFEDE5E0FFF6F3F3FFEEEAEAFFEBE5E5FFF1EE
+              EEFFF8F6F4FFFDF8F4FFF9F1ECFFF3E9E3FFECDFD7FFDFCCC2FFE9E1DDFFFCFC
+              FCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFF6F2EFFFF2EAE5FFF0E7E2FFF0E6E1FFEFE5E0FFEEE4DEFFECE2
+              DBFFEADFD8FFE7DBD3FFE2D6CEFFEEE6E2FFFDFDFDFFFFFFFFFFFFFFFFFFFFFF
+              FFFFFFFFFFFFFFFFFFFF
+            }
+            TabOrder = 8
+          end
+        end
+        object Panel7: TPanel
+          Left = 0
+          Height = 572
+          Top = 0
+          Width = 581
+          Align = alClient
+          ClientHeight = 572
+          ClientWidth = 581
+          TabOrder = 1
+          object DBGrid2: TDBGrid
+            Left = 1
+            Height = 570
+            Top = 1
+            Width = 579
+            Align = alClient
+            Color = clWindow
+            Columns = <>
+            DataSource = DBCompraDS
+            TabOrder = 0
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -11
+            TitleFont.Name = 'Tahoma'
+          end
+        end
+      end
+      object TabSheet4: TTabSheet
+        Caption = ' Estadisticas '
+        ClientHeight = 572
+        ClientWidth = 766
+        ImageIndex = 3
+        object Panel4: TPanel
+          Left = 581
+          Height = 531
+          Top = 0
+          Width = 185
+          Align = alRight
+          ClientHeight = 531
+          ClientWidth = 185
+          TabOrder = 0
+          object Label57: TLabel
+            Left = 16
+            Height = 17
+            Top = 14
+            Width = 114
+            Caption = 'Periodo a visualizar'
+            Color = clBtnFace
+            ParentColor = False
+            Transparent = False
+          end
+          object ListBox5: TListBox
+            Left = 16
+            Height = 142
+            Top = 38
+            Width = 161
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            ItemHeight = 0
+            ParentFont = False
+            ScrollWidth = 159
+            TabOrder = 0
+          end
+        end
+        object DBGrid1: TDBGrid
+          Left = 0
+          Height = 531
+          Top = 0
+          Width = 581
+          Align = alClient
+          Color = clWindow
+          Columns = <>
+          TabOrder = 1
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+        end
+        object Panel5: TPanel
+          Left = 0
+          Height = 41
+          Top = 531
+          Width = 766
+          Align = alBottom
+          Caption = 'Panel5'
+          TabOrder = 2
+        end
+      end
+    end
+    object Panel8: TPanel
+      Left = 1
+      Height = 602
+      Top = 1
+      Width = 248
+      Align = alLeft
+      ClientHeight = 602
+      ClientWidth = 248
+      TabOrder = 1
+      object Panel9: TPanel
+        Left = 1
+        Height = 41
+        Top = 1
+        Width = 246
+        Align = alTop
+        ClientHeight = 41
+        ClientWidth = 246
+        TabOrder = 0
+        object Label7: TLabel
+          Left = 20
+          Height = 34
+          Top = 4
+          Width = 63
+          Alignment = taRightJustify
+          Caption = '显示'#13#10'Listado en:'
+          ParentColor = False
+        end
+        object ModeView: TComboBox
+          Left = 104
+          Height = 25
+          Top = 8
+          Width = 116
+          ItemHeight = 17
+          ItemIndex = 0
+          Items.Strings = (
+            '简称'
+            '公司名称'
+            '编号'
+            ''
+          )
+          OnChange = ModeViewChange
+          Style = csDropDownList
+          TabOrder = 0
+          Text = '简称'
+        end
+      end
+      object VirtualDBTreeEx1: TVirtualDBTreeEx
+        Left = 1
+        Height = 559
+        Top = 42
+        Width = 246
+        Align = alClient
+        BorderStyle = bsSingle
+        DBOptions = [dboAutoBmp, dboAlwaysStructured, dboCheckDBStructure, dboParentStructure, dboTrackActive, dboTrackChanges, dboTrackCursor, dboViewAll, dboWriteLevel, dboWriteSecondary]
+        DataSource = ProveedorDB
+        DefaultText = 'Node'
+        Header.AutoSizeIndex = 0
+        Header.Columns = <>
+        Header.MainColumn = -1
+        KeyFieldName = 'ID_PROVEEDOR'
+        OnClick = VirtualDBTreeEx1Click
+        ParentFieldName = 'ID'
+        TabOrder = 1
+        TreeOptions.MiscOptions = [toFullRepaintOnResize, toGridExtensions, toInitOnSave, toToggleOnDblClick, toWheelPanning, toEditOnClick]
+        TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toShowHorzGridLines, toShowRoot, toShowTreeLines, toShowVertGridLines, toThemeAware, toUseBlendedImages]
+        ViewFieldName = 'NAME_COMERCIO'
+        DBDataFieldNames = 'ID_PROVEEDOR'
+      end
+    end
+  end
+  object ProveedorQuery: TZQuery
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select * from 0000proveedorlist'
+    )
+    Params = <>
+    left = 184
+    top = 136
+  end
+  object ProveedorDB: TDataSource
+    DataSet = ProveedorQuery
+    left = 89
+    top = 90
+  end
+  object GuardarQuery: TZQuery
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select * from 0000proveedorlist'
+    )
+    Params = <>
+    left = 176
+    top = 296
+  end
+  object EmTypeUniQuery: TZQuery
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select * from 0000proveedorlist'
+    )
+    Params = <>
+    left = 712
+    top = 96
+  end
+  object EmTypeDataSource: TDataSource
+    DataSet = EmTypeUniQuery
+    left = 607
+    top = 96
+  end
+  object DBCompra: TZQuery
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select * from 0000proveedorlist'
+    )
+    Params = <>
+    left = 680
+    top = 80
+  end
+  object DBCompraDS: TDataSource
+    DataSet = DBCompra
+    left = 712
+    top = 192
+  end
+end

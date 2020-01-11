@@ -1,0 +1,484 @@
+object FormBuyIn: TFormBuyIn
+  Left = 622
+  Height = 680
+  Top = 190
+  Width = 1024
+  Caption = 'Compra'
+  ClientHeight = 680
+  ClientWidth = 1024
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  Position = poMainFormCenter
+  LCLVersion = '2.0.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 97
+    Top = 583
+    Width = 1024
+    Align = alBottom
+    ClientHeight = 97
+    ClientWidth = 1024
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 16
+      Height = 17
+      Top = 8
+      Width = 36
+      Caption = '条形码'
+      ParentColor = False
+    end
+    object Edit1: TEdit
+      Left = 16
+      Height = 25
+      Top = 23
+      Width = 152
+      OnEnter = Edit1Enter
+      OnExit = Edit1Exit
+      OnKeyDown = Edit1KeyDown
+      TabOrder = 0
+    end
+    object Edit2: TEdit
+      Left = 176
+      Height = 25
+      Top = 23
+      Width = 200
+      OnKeyDown = Edit2KeyDown
+      TabOrder = 1
+    end
+    object Label2: TLabel
+      Left = 176
+      Height = 17
+      Top = 8
+      Width = 24
+      Caption = '内容'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 384
+      Height = 17
+      Top = 8
+      Width = 24
+      Caption = '数量'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 472
+      Height = 17
+      Top = 9
+      Width = 24
+      Caption = '成本'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 560
+      Height = 17
+      Top = 8
+      Width = 43
+      Caption = '折扣(%)'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 648
+      Height = 17
+      Top = 8
+      Width = 24
+      Caption = '合计'
+      ParentColor = False
+    end
+    object Cantidad: TCurrencyEdit
+      Left = 384
+      Height = 25
+      Top = 23
+      Width = 80
+      Alignment = taRightJustify
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 2
+      Value = 0
+      ZeroEmpty = False
+      OnExit = CantidadExit
+      OnKeyDown = CantidadKeyDown
+    end
+    object Precio: TCurrencyEdit
+      Left = 472
+      Height = 25
+      Top = 23
+      Width = 80
+      Alignment = taRightJustify
+      DisplayFormat = '0.000'
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 3
+      Value = 0
+      ZeroEmpty = False
+      OnExit = PrecioExit
+      OnKeyDown = PrecioKeyDown
+    end
+    object Descuento: TCurrencyEdit
+      Left = 560
+      Height = 25
+      Top = 23
+      Width = 80
+      Alignment = taRightJustify
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 4
+      Value = 0
+      ZeroEmpty = False
+      OnExit = DescuentoExit
+      OnKeyDown = DescuentoKeyDown
+    end
+    object Importe: TCurrencyEdit
+      Left = 648
+      Height = 25
+      Top = 23
+      Width = 80
+      Alignment = taRightJustify
+      DecimalPlaces = 3
+      DisplayFormat = '0.000'
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 5
+      Value = 0
+      ZeroEmpty = False
+      OnKeyDown = ImporteKeyDown
+    end
+    object Button1: TButton
+      Left = 824
+      Height = 25
+      Top = 23
+      Width = 75
+      Caption = '确定'
+      OnClick = Button1Click
+      TabOrder = 7
+    end
+    object Label11: TLabel
+      Left = 736
+      Height = 17
+      Top = 8
+      Width = 36
+      Caption = '销售价'
+      ParentColor = False
+    end
+    object PVP1C: TCurrencyEdit
+      Left = 736
+      Height = 25
+      Top = 23
+      Width = 80
+      Alignment = taRightJustify
+      DisplayFormat = '0.00'
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 6
+      Value = 0
+      ZeroEmpty = False
+      OnKeyDown = PVP1CKeyDown
+    end
+    object Label12: TLabel
+      Left = 16
+      Height = 17
+      Top = 64
+      Width = 113
+      Anchors = [akLeft, akBottom]
+      Caption = '(F5) Para busqueda'
+      ParentColor = False
+    end
+    object BitBtn5: TBitBtn
+      AnchorSideBottom.Side = asrBottom
+      Left = 144
+      Height = 25
+      Top = 58
+      Width = 82
+      Anchors = [akLeft, akBottom]
+      BorderSpacing.Bottom = 8
+      Caption = '查找'
+      Glyph.Data = {
+        26040000424D2604000000000000360000002800000012000000120000000100
+        180000000000F003000064000000640000000000000000000000FEFEFEFEFEFE
+        FFFFFEFFFFFEF1EEEAD6D3CFCFCBCAD0CBC8D5CCC9D4CDCACFCED2C3C6CACDCE
+        CCC5D0D4A2BDD27A95AF949BAAC8C7D10000FFFFFCFFFFFEFFFFFFFEFCFCE4E0
+        DFC3C0BCB7B6B2B9B6B2BBB5B0B5AEABBDB8BAAFB2B6AAB5B98DA6B0688FAB71
+        97B58FA4B9B6C1CF0000000500000200F1F2F6F6F1FAEBE2E5FBF6F5EBEFE9F1
+        F5EFF2EEE9F3EAE7F5EBEBE1E5EABFDFEC6A9EB563A2C897D5FD9CCAE9A0C6DE
+        0000FFFFF5F7FCF3F2F3F7F9F4FDEAE1E4FFF9F9FCFDF9F2F4EEFAF1EDFFF7F5
+        F0E9ECD4E4F073A9C05BA4C48CD7FE95D6FC90BDD8AED3E90000FFFFF9FFFDF8
+        FBFBFBEFEEF0EEE9EAFFFCFBFFFCFCFFF3F1FFF6F1FDEDEEE3EAF37EA3B756A3
+        C486DEFF99DEFF90BED6A2B8C3D2DBDF0000FFFFFEFFFFFEFFFCFDFEF9FADDD5
+        D5E5DCD9CAC1BEDFD0CDF2D7D3FFEEEFD6DAE56F91A889CDF08CD4F695C6DCBC
+        D6E2B8BFC2E1DDDC0000FAFBFFFFFEFFFFF4F7BDAFB19E8D8A9C8E88B4AFA6B1
+        AAA1B9A7A0C2AFACAFA4AE9298AB93B1CCA1C3DBD5E4EDD5DADDBDBFC0DBDADC
+        0000F8F9FDFFFEFFD0BEBF99807ECAB1A7FBEADDFFFFF0FFFFF3F8EDDFD0BEB3
+        BAA5A3C2B4BAD4DAE7DBE4EEE4E0DFE5DFDABDBBBADADCDD0000FFFEFFE1D5D5
+        A58883CBA99CF7D8C3FFF6DDFFFFEAFAFDE4FFF8DFF2E1C7DDC5AFD6BFB0EBE3
+        DCE8E4DFEDE3D9E1D9CCC0BDB8DDDEDA0000FFFEFEC4B1ACAC8878ECC0A8FAD3
+        B3FFE6C4FCF4D6FCF8DBFCEDCCF7DFBBE4C3A2DCBEA5EBDBCEECE1D9EADDCFE6
+        DBCDBCB9B1D3D4D00000FFFFFBBAA296BE8F73F4BB94F5C297FFD9AFF7DEBCF6
+        E1C1FDDAB2FAD0A6F3C7A2DEBBA1E2D0C9E7DBD9E4D5CCDFD3C9BDB8B5D8D6D6
+        0000FFFFFCB6A598C29677EFB88DFECA9BFFD7AAFFE4BFF0D8B4FFE3B8FFDAB0
+        F5CBA8E4BFA9E9D4D2E4D7D9E1D5CBD1C7BDB8B3B0DAD7D90000F1FFFEBBBCB3
+        B89B86EEC5A4FFDDB2FFE8BBFFF2C8FFFBD3FFEEC8FFEAC6F4D5BCEACABDEBD5
+        D7DFCED1DBD1C7CAC2B5B8B1AEDFDADB0000F1FFFFDADCDCB19E96DCBDA8FFE9
+        C8FFFAD2FDF0CAFFFCD9FFFADCFAEDD3E9D5C3EBD1CAEED8DAE7D5D6D4CBBEC2
+        BCAFCCC7C4F2EDEE0000FFFCFFFBF3FACCB8BDBEA5A1EED5C1FFEFD3FFFEE2FF
+        FFE8FEFAE8EAE4D7D9D0C3E7D8CFF2DED9FFEBE6E9DDD1E1DBD0EBE8E4FFFEFF
+        0000FFFAFFFFFBFFECDEE4CFC0BEC8B8ABD5C7B5EADDCFE9DFD5D7D1CCDDD7D2
+        E8E2D7F7EBDFEFDDD6F6E4DDE3DAD1EBE5DEFEFAF9FFFEFF0000FFFAFDFFFDFE
+        F8F1EEFEF6EFDFDBD0DFDAD1DFD4D6DDD1D7EEE0E4F9ECEAFEF3E5F3E6D6DFD0
+        C7E2D7D3EEEAE9FFFDFDFFFFFFFFFFFF0000FFFEFFFFFFFEFFFFF8FFFDF3F3F3
+        E7E6E6E0ECE3EDEFE2F0EEDDE6F0E1DFE9D9CCDDD1BFE4D8CEF0E7E3FFFEFFF8
+        FAFBFFFDFFFFFDFE0000
+      }
+      OnClick = BitBtn5Click
+      OnKeyPress = BitBtn5KeyPress
+      TabOrder = 8
+    end
+    object Label13: TLabel
+      Left = 304
+      Height = 17
+      Top = 64
+      Width = 102
+      Caption = '(F9) Para Finalizar'
+      ParentColor = False
+    end
+    object Button3: TButton
+      Left = 416
+      Height = 25
+      Top = 59
+      Width = 75
+      Caption = '结单'
+      OnClick = Button3Click
+      TabOrder = 9
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 511
+    Top = 72
+    Width = 1024
+    Align = alClient
+    ClientHeight = 511
+    ClientWidth = 1024
+    TabOrder = 1
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 509
+      Top = 1
+      Width = 1022
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          ReadOnly = True
+          Title.Caption = '编码'
+          Width = 110
+          FieldName = 'ENA'
+        end      
+        item
+          ReadOnly = True
+          Title.Caption = '名称'
+          Width = 280
+          FieldName = 'GOODS_NAME'
+        end      
+        item
+          ReadOnly = True
+          Title.Caption = '数量'
+          FieldName = 'QUANTITY'
+        end      
+        item
+          Title.Caption = '单位'
+          Width = 50
+          FieldName = 'COMMODITY_UNIT'
+        end      
+        item
+          ReadOnly = True
+          Title.Caption = '成本'
+          FieldName = 'COST'
+          DisplayFormat = '0.000'
+        end      
+        item
+          ReadOnly = True
+          Title.Caption = '折扣(%)'
+          FieldName = 'DISCOUNT'
+        end      
+        item
+          Title.Caption = '税率%'
+          FieldName = 'IVA'
+        end      
+        item
+          ReadOnly = True
+          Title.Caption = '小计'
+          FieldName = 'LINEATOTAL'
+          DisplayFormat = '0.000'
+        end      
+        item
+          Color = clMoneyGreen
+          Title.Caption = '销售价'
+          FieldName = 'SELLING_P1C'
+          DisplayFormat = '0.000'
+        end      
+        item
+          Title.Caption = '商品唯一码'
+          FieldName = 'GOODS_ID'
+        end>
+      DataSource = BuyDetallesDS
+      TabOrder = 0
+      OnDblClick = DBGrid1DblClick
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 72
+    Top = 0
+    Width = 1024
+    Align = alTop
+    ClientHeight = 72
+    ClientWidth = 1024
+    TabOrder = 2
+    object Id: TEdit
+      Left = 128
+      Height = 25
+      Top = 8
+      Width = 251
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 0
+    end
+    object Label8: TLabel
+      Left = 81
+      Height = 17
+      Top = 42
+      Width = 39
+      Alignment = taRightJustify
+      Caption = '供应商:'
+      ParentColor = False
+    end
+    object Label9: TLabel
+      Left = 477
+      Height = 17
+      Top = 12
+      Width = 27
+      Alignment = taRightJustify
+      Caption = '金额:'
+      ParentColor = False
+    end
+    object N_Proveedor: TEdit
+      Left = 128
+      Height = 25
+      Top = 40
+      Width = 144
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 1
+    end
+    object Total: TCurrencyEdit
+      Left = 512
+      Height = 25
+      Top = 8
+      Width = 120
+      Alignment = taRightJustify
+      DecimalPlaces = 3
+      DisplayFormat = '0.000'
+      MaxValue = 0
+      MinValue = 0
+      ReadOnly = True
+      TabOrder = 2
+      TabStop = False
+      Value = 0
+      ZeroEmpty = False
+    end
+    object NewButton: TButton
+      Left = 741
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = '新记录..'
+      OnClick = NewButtonClick
+      TabOrder = 3
+    end
+    object Label10: TLabel
+      Left = 72
+      Height = 17
+      Top = 12
+      Width = 51
+      Alignment = taRightJustify
+      Caption = '记录编号:'
+      ParentColor = False
+    end
+    object Button2: TButton
+      Left = 741
+      Height = 25
+      Top = 40
+      Width = 75
+      Caption = '挂单'
+      OnClick = Button2Click
+      TabOrder = 4
+    end
+  end
+  object BuyDetalles: TZQuery
+    UpdateObject = ZUpdateSQL1
+    AfterPost = BuyDetallesAfterPost
+    Params = <>
+    left = 170
+    top = 86
+  end
+  object Articulo: TZQuery
+    Params = <>
+    left = 169
+    top = 176
+  end
+  object BuyTop: TZQuery
+    Params = <>
+    left = 282
+    top = 86
+  end
+  object BuyHelp: TZQuery
+    Params = <>
+    left = 295
+    top = 201
+  end
+  object BuyDetallesDS: TDataSource
+    DataSet = BuyDetalles
+    left = 458
+    top = 194
+  end
+  object DataSource2: TDataSource
+    left = 459
+    top = 275
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = True
+    left = 296
+    top = 346
+  end
+  object ArticuloUpdate: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    left = 304
+    top = 411
+  end
+  object TotalQuery: TZQuery
+    Params = <>
+    left = 323
+    top = 229
+  end
+  object dbTest: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    left = 496
+    top = 136
+  end
+  object dbTrabajo: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    left = 724
+    top = 420
+  end
+  object CombinaQuery: TZQuery
+    Params = <>
+    left = 473
+    top = 347
+  end
+end

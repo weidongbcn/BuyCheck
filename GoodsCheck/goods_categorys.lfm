@@ -1,0 +1,125 @@
+object FormCategory: TFormCategory
+  Left = 444
+  Height = 594
+  Top = 164
+  Width = 694
+  Caption = 'FormCategory'
+  ClientHeight = 594
+  ClientWidth = 694
+  OnCreate = FormCreate
+  LCLVersion = '2.0.0.3'
+  object Button1: TButton
+    Left = 513
+    Height = 25
+    Top = 128
+    Width = 95
+    Caption = 'Crear 0 Level'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object btnApply: TButton
+    Left = 513
+    Height = 25
+    Top = 300
+    Width = 95
+    Anchors = [akLeft, akBottom]
+    Caption = 'Apply'
+    OnClick = btnApplyClick
+    TabOrder = 1
+  end
+  object btnMove: TButton
+    Left = 513
+    Height = 25
+    Top = 343
+    Width = 95
+    Caption = 'Move'
+    OnClick = btnMoveClick
+    TabOrder = 2
+    Visible = False
+  end
+  object btnEdit: TButton
+    Left = 513
+    Height = 25
+    Top = 214
+    Width = 95
+    Caption = 'Edit'
+    OnClick = btnEditClick
+    TabOrder = 3
+  end
+  object btnDelete: TButton
+    Left = 513
+    Height = 25
+    Top = 257
+    Width = 95
+    Caption = 'Delete'
+    OnClick = btnDeleteClick
+    TabOrder = 4
+  end
+  object Button2: TButton
+    Left = 513
+    Height = 25
+    Top = 171
+    Width = 95
+    Caption = 'Crear Hijo'
+    OnClick = Button2Click
+    TabOrder = 5
+  end
+  object VirtualDBTreeEx1: TVirtualDBTreeEx
+    Left = 0
+    Height = 544
+    Top = 0
+    Width = 248
+    Align = alLeft
+    BorderStyle = bsSingle
+    DBOptions = [dboAutoBmp, dboAlwaysStructured, dboCheckDBStructure, dboParentStructure, dboTrackActive, dboTrackChanges, dboTrackCursor, dboViewAll, dboWriteLevel, dboWriteSecondary]
+    DataSource = categDataSource
+    DefaultText = 'Node'
+    Header.AutoSizeIndex = 0
+    Header.Columns = <>
+    Header.MainColumn = -1
+    KeyFieldName = 'id'
+    ParentFieldName = 'Parent_id'
+    TabOrder = 6
+    TreeOptions.MiscOptions = [toAcceptOLEDrop, toFullRepaintOnResize, toGridExtensions, toInitOnSave, toToggleOnDblClick, toWheelPanning, toEditOnClick]
+    TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toShowHorzGridLines, toShowRoot, toShowTreeLines, toShowVertGridLines, toThemeAware, toUseBlendedImages]
+    ViewFieldName = 'CATEGORY'
+    DBDataFieldNames = 'CATEGORY'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 544
+    Width = 694
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 694
+    TabOrder = 7
+    object Button3: TButton
+      Left = 562
+      Height = 25
+      Top = 15
+      Width = 75
+      Caption = '退出'
+      OnClick = Button3Click
+      TabOrder = 0
+    end
+  end
+  object categDataSource: TDataSource
+    DataSet = dbCategory
+    left = 328
+    top = 128
+  end
+  object dbCategory: TZQuery
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select * from CATEGORYS'
+    )
+    Params = <>
+    left = 304
+    top = 52
+  end
+  object ProveedorDB: TDataSource
+    left = 192
+    top = 80
+  end
+end

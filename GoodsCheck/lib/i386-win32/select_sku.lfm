@@ -1,0 +1,103 @@
+object FormSelectSKU: TFormSelectSKU
+  Left = 784
+  Height = 398
+  Top = 266
+  Width = 934
+  Caption = 'FormSelectSKU'
+  ClientHeight = 398
+  ClientWidth = 934
+  OnCreate = FormCreate
+  LCLVersion = '2.0.0.4'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 348
+    Top = 0
+    Width = 934
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = '条形码'
+        Width = 110
+        FieldName = 'ENA'
+      end    
+      item
+        Title.Caption = '名称'
+        Width = 240
+        FieldName = 'GOODS_NAME'
+      end    
+      item
+        Title.Caption = '类别'
+        Width = 120
+        FieldName = 'CATEGORY'
+      end    
+      item
+        Title.Caption = '品牌'
+        Width = 90
+        FieldName = 'BRAND_NAME'
+      end    
+      item
+        Title.Caption = '商品类型'
+        Width = 90
+        FieldName = 'CLASS'
+      end    
+      item
+        Title.Caption = '价格'
+        Width = 120
+        FieldName = 'PVP1C'
+      end    
+      item
+        Title.Caption = '编码'
+        Width = 120
+        FieldName = 'CODE'
+      end>
+    DataSource = DataSource1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    OnDblClick = DBGrid1DblClick
+    OnKeyDown = DBGrid1KeyDown
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 348
+    Width = 934
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 934
+    TabOrder = 1
+    object Button1: TButton
+      Left = 736
+      Height = 25
+      Top = 8
+      Width = 96
+      Anchors = [akTop, akRight]
+      Caption = 'Cerrar(退出)'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 440
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = 'Elegir(选择)'
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = dbTrabajo
+    left = 454
+    top = 218
+  end
+  object dbTrabajo: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    left = 724
+    top = 236
+  end
+end

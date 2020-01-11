@@ -1,0 +1,969 @@
+object FormCheck: TFormCheck
+  Left = 367
+  Height = 680
+  Top = 309
+  Width = 1024
+  Caption = 'FormCheck'
+  ClientHeight = 680
+  ClientWidth = 1024
+  Color = clActiveCaption
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poDesktopCenter
+  LCLVersion = '2.0.0.3'
+  object Panel1: TPanel
+    Left = 0
+    Height = 240
+    Top = 0
+    Width = 1024
+    Align = alTop
+    ClientHeight = 240
+    ClientWidth = 1024
+    TabOrder = 0
+    object Panel4: TPanel
+      Left = 1
+      Height = 238
+      Top = 1
+      Width = 583
+      Align = alLeft
+      ClientHeight = 238
+      ClientWidth = 583
+      TabOrder = 0
+      object ComboBox1: TComboBox
+        Left = 24
+        Height = 25
+        Top = 8
+        Width = 176
+        ItemHeight = 17
+        Items.Strings = (
+          'Cód. de Barra(Entrada): '
+          'Referencia:'
+        )
+        TabOrder = 0
+        TabStop = False
+        Text = 'Cód. de Barra: '
+      end
+      object Reader: TEdit
+        Left = 209
+        Height = 25
+        Top = 8
+        Width = 192
+        OnEnter = ReaderEnter
+        OnExit = ReaderExit
+        OnKeyDown = ReaderKeyDown
+        TabOrder = 2
+      end
+      object Label4: TLabel
+        Left = 14
+        Height = 17
+        Top = 43
+        Width = 144
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Cód. de Barra(Venta): '
+        ParentColor = False
+      end
+      object Edit1: TEdit
+        Left = 165
+        Height = 25
+        Top = 40
+        Width = 143
+        OnExit = Edit1Exit
+        OnKeyDown = Edit1KeyDown
+        TabOrder = 3
+      end
+      object Label5: TLabel
+        Left = 335
+        Height = 17
+        Top = 45
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Cód. Alternativo: '
+        ParentColor = False
+      end
+      object Edit2: TEdit
+        Left = 463
+        Height = 25
+        Top = 40
+        Width = 95
+        OnKeyDown = Edit2KeyDown
+        TabOrder = 4
+      end
+      object Label6: TLabel
+        Left = 14
+        Height = 17
+        Top = 68
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Descripciòn: '
+        ParentColor = False
+      end
+      object Edit3: TEdit
+        Left = 136
+        Height = 25
+        Top = 67
+        Width = 424
+        OnExit = Edit3Exit
+        OnKeyDown = Edit3KeyDown
+        TabOrder = 5
+      end
+      object Label9: TLabel
+        Left = 14
+        Height = 17
+        Top = 95
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '2ª Descripciòn: '
+        ParentColor = False
+      end
+      object Lang2: TEdit
+        Left = 136
+        Height = 25
+        Top = 95
+        Width = 424
+        OnKeyDown = Lang2KeyDown
+        TabOrder = 6
+      end
+      object Label10: TLabel
+        Left = 14
+        Height = 17
+        Top = 124
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Familia: '
+        ParentColor = False
+      end
+      object FamiliaBox1: TDBLookupComboBox
+        Left = 136
+        Height = 24
+        Top = 122
+        Width = 184
+        DropDownCount = 16
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        KeyField = 'ID'
+        ListField = 'PATH'
+        ListFieldIndex = 0
+        ListSource = DataModule2.CategDataSource
+        LookupCache = False
+        OnCloseUp = FamiliaBox1CloseUp
+        OnKeyDown = FamiliaBox1KeyDown
+        OnSelect = FamiliaBox1Select
+        ParentFont = False
+        TabOrder = 7
+      end
+      object Label23: TLabel
+        Left = 8
+        Height = 17
+        Top = 151
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'IVA %'
+        ParentColor = False
+      end
+      object IvaDBLookupComboBox1: TDBLookupComboBox
+        Left = 136
+        Height = 24
+        Top = 151
+        Width = 64
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        KeyField = 'ID'
+        ListField = 'IVA'
+        ListFieldIndex = 0
+        ListSource = DataModule2.IVADataSource
+        LookupCache = False
+        OnChange = IvaDBLookupComboBox1Change
+        OnChangeBounds = IvaDBLookupComboBox1ChangeBounds
+        OnClick = IvaDBLookupComboBox1Click
+        OnCloseUp = IvaDBLookupComboBox1CloseUp
+        OnKeyDown = IvaDBLookupComboBox1KeyDown
+        OnSelect = IvaDBLookupComboBox1Select
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 8
+      end
+      object Label24: TLabel
+        Left = 424
+        Height = 17
+        Top = 153
+        Width = 39
+        Caption = 'REQ.%'
+        ParentColor = False
+      end
+      object ReqDBLookupComboBox1: TDBLookupComboBox
+        Left = 472
+        Height = 25
+        Top = 151
+        Width = 64
+        Enabled = False
+        KeyField = 'ID'
+        ListField = 'REQ'
+        ListFieldIndex = 0
+        ListSource = DataModule2.IVADataSource
+        LookupCache = False
+        OnKeyDown = ReqDBLookupComboBox1KeyDown
+        TabOrder = 1
+        TabStop = False
+      end
+      object Label20: TLabel
+        Left = 344
+        Height = 17
+        Top = 179
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Unidades Venta: '
+        ParentColor = False
+      end
+      object Unidades: TEdit
+        Left = 472
+        Height = 25
+        Top = 177
+        Width = 64
+        OnKeyDown = UnidadesKeyDown
+        TabOrder = 10
+      end
+      object BitBtn20: TBitBtn
+        Left = 539
+        Height = 23
+        Top = 179
+        Width = 22
+        Caption = '...'
+        Layout = blGlyphTop
+        Margin = 0
+        OnClick = BitBtn20Click
+        Spacing = 0
+        TabOrder = 11
+        TabStop = False
+      end
+      object Label16: TLabel
+        Left = 8
+        Height = 17
+        Top = 179
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Medida/ Tipo:'
+        ParentBidiMode = False
+        ParentColor = False
+      end
+      object Medida: TEdit
+        Left = 136
+        Height = 25
+        Top = 179
+        Width = 184
+        OnKeyDown = MedidaKeyDown
+        TabOrder = 9
+      end
+      object Label17: TLabel
+        Left = 8
+        Height = 17
+        Top = 206
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Marca/Fabrica:'
+        ParentBidiMode = False
+        ParentColor = False
+      end
+      object Marca: TEdit
+        Left = 136
+        Height = 25
+        Top = 207
+        Width = 184
+        OnKeyDown = MarcaKeyDown
+        TabOrder = 12
+      end
+      object BitBtn21: TBitBtn
+        Left = 328
+        Height = 25
+        Top = 206
+        Width = 22
+        Caption = '...'
+        Layout = blGlyphTop
+        Margin = 0
+        OnClick = BitBtn21Click
+        Spacing = 0
+        TabOrder = 13
+        TabStop = False
+      end
+    end
+    object Panel5: TPanel
+      Left = 584
+      Height = 238
+      Top = 1
+      Width = 240
+      Align = alLeft
+      ClientHeight = 238
+      ClientWidth = 240
+      TabOrder = 1
+      object Label12: TLabel
+        Left = 12
+        Height = 17
+        Top = 12
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'P. Compra Anterio'
+        ParentColor = False
+      end
+      object Label13: TLabel
+        Left = 12
+        Height = 17
+        Top = 37
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'P. Compra Actual'
+        ParentColor = False
+      end
+      object Label18: TLabel
+        Left = 12
+        Height = 17
+        Top = 62
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Cant. de compra'
+        ParentColor = False
+      end
+      object Label14: TLabel
+        Left = 12
+        Height = 17
+        Top = 87
+        Width = 120
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Cant. Comprobada'
+        ParentBidiMode = False
+        ParentColor = False
+      end
+      object Label21: TLabel
+        Left = 121
+        Height = 17
+        Top = 110
+        Width = 96
+        Caption = 'Cant. A Chequea'
+        ParentColor = False
+      end
+      object ChequeEdit: TCurrencyEdit
+        Left = 128
+        Height = 27
+        Top = 131
+        Width = 89
+        Alignment = taRightJustify
+        Color = 5755391
+        DecimalPlaces = 3
+        DisplayFormat = '0;0'
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        MaxValue = 0
+        MinValue = 0
+        ParentFont = False
+        TabOrder = 0
+        Value = 0
+        ZeroEmpty = False
+        OnExit = ChequeEditExit
+        OnKeyDown = ChequeEditKeyDown
+      end
+      object Label19: TLabel
+        Left = 121
+        Height = 17
+        Top = 160
+        Width = 90
+        Caption = 'Precio de venta'
+        ParentColor = False
+      end
+      object PVPEdit: TCurrencyEdit
+        Left = 128
+        Height = 27
+        Top = 177
+        Width = 89
+        Alignment = taRightJustify
+        Color = clWhite
+        DecimalPlaces = 4
+        DisplayFormat = '0.000;-0.000'
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        MaxValue = 0
+        MinValue = 0
+        ParentFont = False
+        TabOrder = 1
+        Value = 0
+        OnKeyDown = PVPEditKeyDown
+      end
+      object Label22: TLabel
+        Left = 12
+        Height = 17
+        Top = 114
+        Width = 72
+        Caption = 'Beneficio(%)'
+        ParentColor = False
+      end
+      object Label38: TLabel
+        Left = 12
+        Height = 17
+        Top = 158
+        Width = 85
+        Caption = 'Recomendado'
+        ParentColor = False
+      end
+      object PrecioAnterio: TCurrencyEdit
+        Left = 136
+        Height = 24
+        Top = 6
+        Width = 89
+        Alignment = taRightJustify
+        AutoSize = False
+        Color = clWhite
+        DecimalPlaces = 4
+        DisplayFormat = '0.000;-0.000'
+        Font.Color = clWindowText
+        Font.Name = 'Tahoma'
+        MaxValue = 0
+        MinValue = 0
+        ParentFont = False
+        TabOrder = 2
+        TabStop = False
+        Value = 0
+        ZeroEmpty = False
+      end
+      object PrecioCompra: TCurrencyEdit
+        Left = 136
+        Height = 24
+        Top = 31
+        Width = 89
+        Alignment = taRightJustify
+        AutoSize = False
+        Color = clWhite
+        DecimalPlaces = 4
+        DisplayFormat = '0.000;-0.000'
+        Font.Color = clWindowText
+        Font.Name = 'Tahoma'
+        MaxValue = 0
+        MinValue = 0
+        ParentFont = False
+        TabOrder = 3
+        TabStop = False
+        Value = 0
+        ZeroEmpty = False
+      end
+      object CantidadCompra: TCurrencyEdit
+        Left = 136
+        Height = 24
+        Top = 56
+        Width = 89
+        Alignment = taRightJustify
+        AutoSize = False
+        Color = clMoneyGreen
+        DecimalPlaces = 3
+        DisplayFormat = '0'
+        Font.Color = clWindowText
+        Font.Name = 'Tahoma'
+        MaxValue = 0
+        MinValue = 0
+        ParentFont = False
+        TabOrder = 4
+        TabStop = False
+        Value = 0
+        ZeroEmpty = False
+      end
+      object CantidadPasado: TCurrencyEdit
+        Left = 136
+        Height = 24
+        Top = 81
+        Width = 89
+        Alignment = taRightJustify
+        AutoSize = False
+        Color = clMoneyGreen
+        DecimalPlaces = 3
+        DisplayFormat = '0'
+        Font.Color = clWindowText
+        Font.Name = 'Tahoma'
+        MaxValue = 0
+        MinValue = 0
+        ParentFont = False
+        TabOrder = 5
+        TabStop = False
+        Value = 0
+      end
+      object Benificio: TCurrencyEdit
+        Left = 17
+        Height = 27
+        Top = 131
+        Width = 89
+        Alignment = taRightJustify
+        Color = clMoneyGreen
+        DecimalPlaces = 0
+        DisplayFormat = '0;-0'
+        Font.Color = clWindowText
+        Font.Name = 'Tahoma'
+        MaxValue = 0
+        MinValue = 0
+        ParentFont = False
+        TabOrder = 6
+        TabStop = False
+        Value = 45
+        OnChange = BenificioChange
+      end
+      object PVPRecomedable: TCurrencyEdit
+        Left = 17
+        Height = 27
+        Top = 177
+        Width = 89
+        Alignment = taRightJustify
+        Color = clMoneyGreen
+        DisplayFormat = '0.00;-0.00'
+        Font.Color = clWindowText
+        Font.Name = 'Tahoma'
+        MaxValue = 0
+        MinValue = 0
+        ParentFont = False
+        TabOrder = 7
+        TabStop = False
+        Value = 0
+      end
+      object Button2: TButton
+        Left = 120
+        Height = 26
+        Top = 207
+        Width = 75
+        Caption = 'Confirma'
+        OnClick = Button2Click
+        TabOrder = 8
+      end
+      object Reempezar: TButton
+        Left = 24
+        Height = 25
+        Top = 208
+        Width = 75
+        Caption = 'Reempezar'
+        OnClick = ReempezarClick
+        TabOrder = 9
+      end
+    end
+    object ListView1: TListView
+      Left = 824
+      Height = 238
+      Top = 1
+      Width = 199
+      Align = alRight
+      Columns = <      
+        item
+        end      
+        item
+          Width = 145
+        end>
+      GridLines = True
+      IconOptions.Arrangement = iaLeft
+      IconOptions.WrapText = False
+      TabOrder = 2
+      ViewStyle = vsReport
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 630
+    Width = 1024
+    Align = alBottom
+    Color = clGradientActiveCaption
+    ParentColor = False
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 390
+    Top = 240
+    Width = 856
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'SuCodigo'
+        Width = 70
+        FieldName = 'SUCODIGO'
+      end    
+      item
+        Title.Caption = 'ENA'
+        Width = 110
+        FieldName = 'CDBARRA'
+      end    
+      item
+        Title.Caption = 'Descripciòn'
+        Width = 240
+        FieldName = 'DESCRIPCION'
+      end    
+      item
+        Title.Caption = 'Familia'
+        Width = 100
+        FieldName = 'NAME'
+      end    
+      item
+        Title.Caption = 'Unidad'
+      end    
+      item
+        Title.Caption = 'Medida'
+        Width = 100
+      end    
+      item
+        Title.Caption = 'Marca'
+        Width = 100
+      end    
+      item
+        Title.Caption = 'Cantidad'
+        Width = 100
+        FieldName = 'UNIDAD'
+      end    
+      item
+        Title.Caption = 'Contado'
+        FieldName = 'CONTADO'
+      end    
+      item
+        Title.Caption = 'IVA %'
+        FieldName = 'IVA'
+      end    
+      item
+        Title.Caption = 'Precio_Compra'
+        FieldName = 'PRECIO_CON'
+      end    
+      item
+        Title.Caption = 'Descuento %'
+        FieldName = 'DESCUENTO'
+      end    
+      item
+        Title.Caption = 'Precio_Venta'
+        FieldName = 'PVPC'
+        DisplayFormat = '#0.00'
+      end    
+      item
+        Title.Caption = 'Importe'
+        FieldName = 'IMPORTE'
+        DisplayFormat = '#0.00'
+      end    
+      item
+        Title.Caption = 'PVPOPTION'
+        FieldName = 'PVPOPTION'
+      end>
+    DataSource = DetallesDataSource
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+    TabOrder = 2
+    OnDrawColumnCell = DBGrid1DrawColumnCell
+    OnDblClick = DBGrid1DblClick
+    OnPrepareCanvas = DBGrid1PrepareCanvas
+  end
+  object Panel3: TPanel
+    Left = 856
+    Height = 390
+    Top = 240
+    Width = 168
+    Align = alRight
+    ClientHeight = 390
+    ClientWidth = 168
+    TabOrder = 3
+    object ComboBox2: TComboBox
+      Left = 8
+      Height = 25
+      Top = 77
+      Width = 145
+      ItemHeight = 17
+      OnCloseUp = ComboBox2CloseUp
+      OnEnter = ComboBox2Enter
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object Label29: TLabel
+      Left = 11
+      Height = 17
+      Top = 59
+      Width = 48
+      Caption = 'Mirador'
+      ParentColor = False
+    end
+    object Image1: TImage
+      Left = 110
+      Height = 44
+      Top = 192
+      Width = 43
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B477261706869631310000089504E47
+        0D0A1A0A0000000D494844520000002D0000002D08060000003A1AE29A000000
+        097048597300000EC400000EC401952B0E1B00000A4F6943435050686F746F73
+        686F70204943432070726F66696C65000078DA9D53675453E9163DF7DEF4424B
+        8880944B6F5215082052428B801491262A2109104A8821A1D91551C111454504
+        1BC8A088038E8E808C15512C0C8A0AD807E421A28E83A3888ACAFBE17BA36BD6
+        BCF7E6CDFEB5D73EE7ACF39DB3CF07C0080C9648335135800CA9421E11E083C7
+        C4C6E1E42E40810A2470001008B3642173FD230100F87E3C3C2B22C007BE0001
+        78D30B0800C04D9BC0301C87FF0FEA42995C01808401C07491384B0880140040
+        7A8E42A600404601809D98265300A0040060CB6362E300502D0060277FE6D300
+        809DF8997B01005B94211501A09100201365884400683B00ACCF568A45005830
+        0014664BC43900D82D00304957664800B0B700C0CE100BB200080C0030518885
+        2900047B0060C8232378008499001446F2573CF12BAE10E72A00007899B23CB9
+        243945815B082D710757572E1E28CE49172B14366102619A402EC27999193281
+        340FE0F3CC0000A0911511E083F3FD78CE0EAECECE368EB60E5F2DEABF06FF22
+        6262E3FEE5CFAB70400000E1747ED1FE2C2FB31A803B06806DFEA225EE04685E
+        0BA075F78B66B20F40B500A0E9DA57F370F87E3C3C45A190B9D9D9E5E4E4D84A
+        C4425B61CA577DFE67C25FC057FD6CF97E3CFCF7F5E0BEE22481325D814704F8
+        E0C2CCF44CA51CCF92098462DCE68F47FCB70BFFFC1DD322C44962B9582A14E3
+        5112718E449A8CF332A52289429229C525D2FF64E2DF2CFB033EDF3500B06A3E
+        017B912DA85D6303F64B27105874C0E2F70000F2BB6FC1D4280803806883E1CF
+        77FFEF3FFD47A02500806649927100005E44242E54CAB33FC708000044A0812A
+        B0411BF4C1182CC0061CC105DCC10BFC6036844224C4C24210420A64801C7260
+        29AC82422886CDB01D2A602FD4401D34C051688693700E2EC255B80E3D700FFA
+        61089EC128BC81090441C808136121DA8801628A58238E08179985F821C14804
+        128B2420C9881451224B91354831528A542055481DF23D720239875C46BA913B
+        C8003282FC86BC47319481B2513DD40CB543B9A8371A8446A20BD06474319A8F
+        16A09BD072B41A3D8C36A1E7D0AB680FDA8F3E43C730C0E8180733C46C302EC6
+        C342B1382C099363CBB122AC0CABC61AB056AC03BB89F563CFB17704128145C0
+        093604774220611E4148584C584ED848A8201C243411DA093709038451C22722
+        93A84BB426BA11F9C4186232318758482C23D6128F132F107B8843C437241289
+        433227B9900249B1A454D212D246D26E5223E92CA99B34481A2393C9DA646BB2
+        0739942C202BC885E49DE4C3E433E41BE421F25B0A9D624071A4F853E22852CA
+        6A4A19E510E534E5066598324155A39A52DDA8A15411358F5A42ADA1B652AF51
+        87A81334759A39CD8316494BA5ADA295D31A681768F769AFE874BA11DD951E4E
+        97D057D2CBE947E897E803F4770C0D861583C7886728199B18071867197718AF
+        984CA619D38B19C754303731EB98E7990F996F55582AB62A7C1591CA0A954A95
+        26951B2A2F54A9AAA6AADEAA0B55F355CB548FA95E537DAE46553353E3A909D4
+        96AB55AA9D50EB531B5367A93BA887AA67A86F543FA47E59FD890659C34CC34F
+        43A451A0B15FE3BCC6200B6319B3782C216B0DAB86758135C426B1CDD97C762A
+        BB98FD1DBB8B3DAAA9A13943334A3357B352F394663F07E39871F89C744E09E7
+        28A797F37E8ADE14EF29E2291BA6344CB931655C6BAA96979658AB48AB51AB47
+        EBBD36AEEDA79DA6BD45BB59FB810E41C74A275C2747678FCE059DE753D953DD
+        A70AA7164D3D3AF5AE2EAA6BA51BA1BB4477BF6EA7EE989EBE5E809E4C6FA7DE
+        79BDE7FA1C7D2FFD54FD6DFAA7F5470C5806B30C2406DB0CCE183CC535716F3C
+        1D2FC7DBF151435DC34043A561956197E18491B9D13CA3D5468D460F8C69C65C
+        E324E36DC66DC6A326062621264B4DEA4DEE9A524DB9A629A63B4C3B4CC7CDCC
+        CDA2CDD699359B3D31D732E79BE79BD79BDFB7605A785A2CB6A8B6B86549B2E4
+        5AA659EEB6BC6E855A3959A558555A5DB346AD9DAD25D6BBADBBA711A7B94E93
+        4EAB9ED667C3B0F1B6C9B6A9B719B0E5D806DBAEB66DB67D6167621767B7C5AE
+        C3EE93BD937DBA7D8DFD3D070D87D90EAB1D5A1D7E73B472143A563ADE9ACE9C
+        EE3F7DC5F496E92F6758CF10CFD833E3B613CB29C4699D539BD347671767B973
+        83F3888B894B82CB2E973E2E9B1BC6DDC8BDE44A74F5715DE17AD2F59D9BB39B
+        C2EDA8DBAFEE36EE69EE87DC9FCC349F299E593373D0C3C843E051E5D13F0B9F
+        95306BDFAC7E4F434F8167B5E7232F632F9157ADD7B0B7A577AAF761EF173EF6
+        3E729FE33EE33C37DE32DE595FCC37C0B7C8B7CB4FC36F9E5F85DF437F23FF64
+        FF7AFFD100A78025016703898141815B02FBF87A7C21BF8E3F3ADB65F6B2D9ED
+        418CA0B94115418F82AD82E5C1AD2168C8EC90AD21F7E798CE91CE690E85507E
+        E8D6D00761E6618BC37E0C2785878557863F8E7088581AD131973577D1DC4373
+        DF44FA449644DE9B67314F39AF2D4A352A3EAA2E6A3CDA37BA34BA3FC62E6659
+        CCD5589D58496C4B1C392E2AAE366E6CBEDFFCEDF387E29DE20BE37B17982FC8
+        5D7079A1CEC2F485A716A92E122C3A96404C884E3894F041102AA8168C25F213
+        77258E0A79C21DC267222FD136D188D8435C2A1E4EF2482A4D7A92EC91BC3579
+        24C533A52CE5B98427A990BC4C0D4CDD9B3A9E169A76206D323D3ABD31839291
+        907142AA214D93B667EA67E66676CBAC6585B2FEC56E8BB72F1E9507C96BB390
+        AC05592D0AB642A6E8545A28D72A07B267655766BFCD89CA3996AB9E2BCDEDCC
+        B3CADB90379CEF9FFFED12C212E192B6A5864B572D1D58E6BDAC6A39B23C7179
+        DB0AE315052B865606AC3CB88AB62A6DD54FABED5797AE7EBD267A4D6B815EC1
+        CA82C1B5016BEB0B550AE5857DEBDCD7ED5D4F582F59DFB561FA869D1B3E1589
+        8AAE14DB1797157FD828DC78E51B876FCABF99DC94B4A9ABC4B964CF66D266E9
+        E6DE2D9E5B0E96AA97E6970E6E0DD9DAB40DDF56B4EDF5F645DB2F97CD28DBBB
+        83B643B9A3BF3CB8BC65A7C9CECD3B3F54A454F454FA5436EED2DDB561D7F86E
+        D1EE1B7BBCF634ECD5DB5BBCF7FD3EC9BEDB5501554DD566D565FB49FBB3F73F
+        AE89AAE9F896FB6D5DAD4E6D71EDC703D203FD07230EB6D7B9D4D51DD23D5452
+        8FD62BEB470EC71FBEFE9DEF772D0D360D558D9CC6E223704479E4E9F709DFF7
+        1E0D3ADA768C7BACE107D31F761D671D2F6A429AF29A469B539AFB5B625BBA4F
+        CC3ED1D6EADE7AFC47DB1F0F9C343C59794AF354C969DAE982D39367F2CF8C9D
+        959D7D7E2EF9DC60DBA2B67BE763CEDF6A0F6FEFBA1074E1D245FF8BE73BBC3B
+        CE5CF2B874F2B2DBE51357B8579AAF3A5F6DEA74EA3CFE93D34FC7BB9CBB9AAE
+        B95C6BB9EE7ABDB57B66F7E91B9E37CEDDF4BD79F116FFD6D59E393DDDBDF37A
+        6FF7C5F7F5DF16DD7E7227FDCECBBBD97727EEADBC4FBC5FF440ED41D943DD87
+        D53F5BFEDCD8EFDC7F6AC077A0F3D1DC47F7068583CFFE91F58F0F43058F998F
+        CB860D86EB9E383E3939E23F72FDE9FCA743CF64CF269E17FEA2FECBAE17162F
+        7EF8D5EBD7CED198D1A197F29793BF6D7CA5FDEAC0EB19AFDBC6C2C61EBEC978
+        33315EF456FBEDC177DC771DEFA3DF0F4FE47C207F28FF68F9B1F553D0A7FB93
+        199393FF040398F3FC63332DDB000000206348524D00007A25000080830000F9
+        FF000080E9000075300000EA6000003A980000176F925FC5460000053E494441
+        5478DAEC99BBAF1B4514C67F6766F661FB42AE6E040872034848E12DD1240512
+        254D28107F0094FC2D94D469282810120588868A1ED28122405104BA8A42EE23
+        B926F7B1B6F731143BEB1D6F6C5F7B6D882265A5D1D8637BF79B33DFF79D3363
+        B1D6F2B85D8AC7F07A02FAFFBACCB4C1C36F3F782738FFCAD7C9DECD4B8F0A98
+        0E22C8F30B5B1F7D7F6721D056D457A3C39D4B3A881E2D0D8CFE0CF86421D088
+        7E6DEBCDED474E83FB376E7FBC38E82AE287D76BDA5B0BD8B2B7166C51BFC742
+        6111CA97542E3AEBF559579E50BCF539706D714E7BCC025135B0AA8905A41C97
+        12B8C8026064D118C7CB0BB10E755183B3C58C88DB720ECC882E4B4458A45C59
+        457BD03B3BA7E58D6CE3C95E1615CE00B64CC2157177B46CBFDA12F48B173B35
+        3DA645981951B56D006B50014800588AD6F4F085E603660AE0B69440CAC08803
+        2C11CC857C26A71B809913615688B09832CA2A2C1BAC085ACE88F04A94303560
+        0941452568512B08F1F660C2A76411504B394556BA85A8BA170508DBDB6D8578
+        211C0B51EC9A4587A9E9A042D011A8B8ECC5AC2044E7D362D725BA864B288F12
+        2A065D810E56E0348DC4B17AEDE61EE9382CA1073C762D2A27D516B4CC7286D6
+        2EE122AC1D601D9520756722D2F60C07992FC43BF96CCF5C3AD36540EA89CD13
+        9E684061458FC72E5EBED25288CFEBFA2B6DAAB58A12CA382A042EB251994474
+        E4A25B46DA569C56E1DC47CCE774E1395E1B4A28E7C31278C923AA9B2E296175
+        3C29C455E8811DD72FCB0346D7C9431A80753CEEAD035E83765C6FEF1E6B10DD
+        1870DC88748C1D3B46EC8D972255A6AD107773906205D1891399EB45D51B0BF1
+        85A71BC254BC74E5D396427CD62DF13227122A74F544582E7583BF63C1292740
+        1DD5D6E76A1089CE911FEFAFC8E96552B318E70E61E9101E1D26A9107BE9BB76
+        16099EA64038FAFD871538BD706A76994E87635ED651AC5DC26EBE37C3682C90
+        919EDCA4FFCB378C6E5DA7F3F2FBFF15E82AC25E6A96684A7AEE94EF0135FC15
+        8A21584B9E9F92A727E4C3FB8C1EFCC6E9ED5B140709616FB3A510F7F3F9BB08
+        A94ED652908127A649D1D9F198E6E2E5CB30F80BB223B2EC98F4748F34D9254D
+        76191CA49CA42F204F09BD0D35F3C9F385F84CB5EC6750A2E2E69812BEEF3A6B
+        7399AF32A22C4B48937FC8867DB2D111C37B0A39EAB0191E61E28060E33986D9
+        5A39ADEBA4211E8727B25A8CADDCC19B00409E1E9125FB64830346C901C3FD04
+        79A0D1A1C1F4624C37444571E99C6B012DEA61C0553D312EEA632F99C4933533
+        909EEE324AEE920EFA0CF606C891424706D3ED10F43AA8401013ACC93D44D505
+        7C1370333557BB106F47223AC602E9E02E6972C0702F471D2B4C68D0DD18D3EB
+        A0C200A52D2A08D620C4B1E8B2E9A29B109E6E08B2FC5C94E1C2EBEF323AFE9B
+        C1EE08756C38EE9D478C46D04822E5AD45D8DE342D336225449F12E33D5DFC30
+        5F55B300F2B75321126D71F2E7970CEEF451830D4C64381F0D311B5D74A8505A
+        2346A3944519BDCA1ED1139EF2CF27BC09B8AC67FDB253F97E1D22E1D364A777
+        7970E347D44984E91A74CF713834885688D6655305A217002DE5B1A70072EFBB
+        0F297A57E18DABAB1F8C0739043DF293430E7FFA027BFF80A0B751BA44AF8B8E
+        429429012B5345BA408531902122C671D402D65A3B11690D844007A0FFF3B5B5
+        1E90E7FD3FC8FB3B98EE3974B787EDBD4D0AA4436038ED1763BFDB024EDDB772
+        A090EA7F44115165A6207207C45DA0E75AC78D056E75B46BCA6BD268D32AF2C2
+        EBAB9639301930021207F2C4B50418B8CF0A6BED04E8E6E9AD0F4079FD34A06A
+        CA6F99B3979F3681E664ECB493426B2DF2E41FDB27A0675FFF0E005694E98C6E
+        C53A450000000049454E44AE426082
+      }
+    end
+    object BitBtn5: TBitBtn
+      AnchorSideBottom.Side = asrBottom
+      Left = 71
+      Height = 25
+      Top = 32
+      Width = 82
+      BorderSpacing.Bottom = 8
+      Caption = 'Buscar'
+      Glyph.Data = {
+        26040000424D2604000000000000360000002800000012000000120000000100
+        180000000000F003000064000000640000000000000000000000FEFEFEFEFEFE
+        FFFFFEFFFFFEF1EEEAD6D3CFCFCBCAD0CBC8D5CCC9D4CDCACFCED2C3C6CACDCE
+        CCC5D0D4A2BDD27A95AF949BAAC8C7D10000FFFFFCFFFFFEFFFFFFFEFCFCE4E0
+        DFC3C0BCB7B6B2B9B6B2BBB5B0B5AEABBDB8BAAFB2B6AAB5B98DA6B0688FAB71
+        97B58FA4B9B6C1CF0000000500000200F1F2F6F6F1FAEBE2E5FBF6F5EBEFE9F1
+        F5EFF2EEE9F3EAE7F5EBEBE1E5EABFDFEC6A9EB563A2C897D5FD9CCAE9A0C6DE
+        0000FFFFF5F7FCF3F2F3F7F9F4FDEAE1E4FFF9F9FCFDF9F2F4EEFAF1EDFFF7F5
+        F0E9ECD4E4F073A9C05BA4C48CD7FE95D6FC90BDD8AED3E90000FFFFF9FFFDF8
+        FBFBFBEFEEF0EEE9EAFFFCFBFFFCFCFFF3F1FFF6F1FDEDEEE3EAF37EA3B756A3
+        C486DEFF99DEFF90BED6A2B8C3D2DBDF0000FFFFFEFFFFFEFFFCFDFEF9FADDD5
+        D5E5DCD9CAC1BEDFD0CDF2D7D3FFEEEFD6DAE56F91A889CDF08CD4F695C6DCBC
+        D6E2B8BFC2E1DDDC0000FAFBFFFFFEFFFFF4F7BDAFB19E8D8A9C8E88B4AFA6B1
+        AAA1B9A7A0C2AFACAFA4AE9298AB93B1CCA1C3DBD5E4EDD5DADDBDBFC0DBDADC
+        0000F8F9FDFFFEFFD0BEBF99807ECAB1A7FBEADDFFFFF0FFFFF3F8EDDFD0BEB3
+        BAA5A3C2B4BAD4DAE7DBE4EEE4E0DFE5DFDABDBBBADADCDD0000FFFEFFE1D5D5
+        A58883CBA99CF7D8C3FFF6DDFFFFEAFAFDE4FFF8DFF2E1C7DDC5AFD6BFB0EBE3
+        DCE8E4DFEDE3D9E1D9CCC0BDB8DDDEDA0000FFFEFEC4B1ACAC8878ECC0A8FAD3
+        B3FFE6C4FCF4D6FCF8DBFCEDCCF7DFBBE4C3A2DCBEA5EBDBCEECE1D9EADDCFE6
+        DBCDBCB9B1D3D4D00000FFFFFBBAA296BE8F73F4BB94F5C297FFD9AFF7DEBCF6
+        E1C1FDDAB2FAD0A6F3C7A2DEBBA1E2D0C9E7DBD9E4D5CCDFD3C9BDB8B5D8D6D6
+        0000FFFFFCB6A598C29677EFB88DFECA9BFFD7AAFFE4BFF0D8B4FFE3B8FFDAB0
+        F5CBA8E4BFA9E9D4D2E4D7D9E1D5CBD1C7BDB8B3B0DAD7D90000F1FFFEBBBCB3
+        B89B86EEC5A4FFDDB2FFE8BBFFF2C8FFFBD3FFEEC8FFEAC6F4D5BCEACABDEBD5
+        D7DFCED1DBD1C7CAC2B5B8B1AEDFDADB0000F1FFFFDADCDCB19E96DCBDA8FFE9
+        C8FFFAD2FDF0CAFFFCD9FFFADCFAEDD3E9D5C3EBD1CAEED8DAE7D5D6D4CBBEC2
+        BCAFCCC7C4F2EDEE0000FFFCFFFBF3FACCB8BDBEA5A1EED5C1FFEFD3FFFEE2FF
+        FFE8FEFAE8EAE4D7D9D0C3E7D8CFF2DED9FFEBE6E9DDD1E1DBD0EBE8E4FFFEFF
+        0000FFFAFFFFFBFFECDEE4CFC0BEC8B8ABD5C7B5EADDCFE9DFD5D7D1CCDDD7D2
+        E8E2D7F7EBDFEFDDD6F6E4DDE3DAD1EBE5DEFEFAF9FFFEFF0000FFFAFDFFFDFE
+        F8F1EEFEF6EFDFDBD0DFDAD1DFD4D6DDD1D7EEE0E4F9ECEAFEF3E5F3E6D6DFD0
+        C7E2D7D3EEEAE9FFFDFDFFFFFFFFFFFF0000FFFEFFFFFFFEFFFFF8FFFDF3F3F3
+        E7E6E6E0ECE3EDEFE2F0EEDDE6F0E1DFE9D9CCDDD1BFE4D8CEF0E7E3FFFEFFF8
+        FAFBFFFDFFFFFDFE0000
+      }
+      OnClick = BitBtn5Click
+      TabOrder = 1
+    end
+    object Label1: TLabel
+      Left = 11
+      Height = 17
+      Top = 8
+      Width = 132
+      Caption = 'Busca articulo en table'
+      ParentColor = False
+    end
+    object GroupBox1: TGroupBox
+      Left = 1
+      Height = 145
+      Top = 244
+      Width = 166
+      Align = alBottom
+      Caption = 'Funcionas>'
+      ClientHeight = 123
+      ClientWidth = 162
+      TabOrder = 2
+      object Memo2: TMemo
+        Left = 0
+        Height = 123
+        Top = 0
+        Width = 162
+        Align = alClient
+        Color = clSkyBlue
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+  end
+  object GetDetallesQuery: TZQuery
+    Params = <>
+    Properties.Strings = (
+      'ValidateUpdateCount=-1'
+    )
+    left = 920
+    top = 368
+  end
+  object DetallesDataSource: TDataSource
+    DataSet = GetDetallesQuery
+    left = 912
+    top = 424
+  end
+  object SumTotalQuery: TZQuery
+    Params = <>
+    left = 925
+    top = 334
+  end
+  object MemDataset1: TMemDataset
+    FieldDefs = <>
+    left = 832
+    top = 312
+  end
+  object DataSource1: TDataSource
+    DataSet = MemDataset1
+    left = 664
+    top = 236
+  end
+  object dbArti: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    left = 768
+    top = 304
+  end
+  object dbTrabajo: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    left = 768
+    top = 368
+  end
+  object SubCateDataSource: TDataSource
+    DataSet = SubCateQuery
+    left = 592
+    top = 360
+  end
+  object SubCateQuery: TZQuery
+    Params = <>
+    left = 584
+    top = 296
+  end
+  object dbCheck: TZQuery
+    Params = <>
+    left = 768
+    top = 440
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    left = 298
+    top = 285
+  end
+end

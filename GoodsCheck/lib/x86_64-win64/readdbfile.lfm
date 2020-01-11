@@ -1,0 +1,663 @@
+object FormImportXLS: TFormImportXLS
+  Left = 349
+  Height = 680
+  Top = 199
+  Width = 1024
+  Caption = '导入表格'
+  ClientHeight = 680
+  ClientWidth = 1024
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 74
+    Top = 0
+    Width = 1024
+    Align = alTop
+    ClientHeight = 74
+    ClientWidth = 1024
+    TabOrder = 0
+    object Edit1: TEdit
+      Left = 15
+      Height = 25
+      Top = 10
+      Width = 402
+      Color = clSilver
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 0
+    end
+    object Button1: TButton
+      Left = 423
+      Height = 25
+      Top = 10
+      Width = 100
+      Caption = '选择文件'
+      OnClick = Button1Click
+      TabOrder = 1
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 672
+      Height = 25
+      Top = 8
+      Width = 228
+      DropDownCount = 32
+      KeyField = 'ID_PROVEEDOR'
+      ListField = 'NAME_COMERCIO'
+      ListFieldIndex = 0
+      ListSource = DataModule2.ProDataSource
+      LookupCache = False
+      OnClick = DBLookupComboBox1Click
+      OnCloseUp = DBLookupComboBox1CloseUp
+      TabOrder = 2
+    end
+    object Button5: TButton
+      Left = 912
+      Height = 25
+      Top = 8
+      Width = 52
+      Caption = '..+'
+      OnClick = Button5Click
+      TabOrder = 3
+    end
+    object Edit2: TEdit
+      Left = 830
+      Height = 25
+      Top = 40
+      Width = 164
+      TabOrder = 5
+    end
+    object Label12: TLabel
+      Left = 776
+      Height = 17
+      Top = 44
+      Width = 48
+      Caption = '单据编号'
+      ParentColor = False
+    end
+    object DBLookupComboBox2: TDBLookupComboBox
+      Left = 581
+      Height = 25
+      Top = 40
+      Width = 163
+      KeyField = 'DOCUMENT'
+      ListField = 'DOCUMENT'
+      ListFieldIndex = 0
+      ListSource = DocDataSource
+      LookupCache = False
+      OnClick = DBLookupComboBox2Click
+      OnCloseUp = DBLookupComboBox2CloseUp
+      TabOrder = 6
+    end
+    object Label14: TLabel
+      Left = 527
+      Height = 17
+      Top = 44
+      Width = 48
+      Alignment = taRightJustify
+      Caption = '票据类型'
+      ParentColor = False
+    end
+    object Label15: TLabel
+      Left = 335
+      Height = 17
+      Top = 44
+      Width = 48
+      Alignment = taRightJustify
+      Caption = '票据日期'
+      ParentColor = False
+    end
+    object DateTimePicker1: TDateTimePicker
+      Left = 400
+      Height = 25
+      Top = 40
+      Width = 91
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 7
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 43255
+      Time = 0.950606504629832
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object StaffDBLookupComboBox: TDBLookupComboBox
+      Left = 144
+      Height = 25
+      Top = 40
+      Width = 164
+      KeyField = 'ID'
+      ListField = 'login_name'
+      ListFieldIndex = 0
+      ListSource = DataSource2
+      LookupCache = False
+      TabOrder = 4
+    end
+    object Label18: TLabel
+      Left = 80
+      Height = 17
+      Top = 44
+      Width = 39
+      Caption = '经手人:'
+      ParentColor = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 630
+    Width = 1024
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 1024
+    TabOrder = 1
+    object Button3: TButton
+      Left = 370
+      Height = 25
+      Top = 15
+      Width = 75
+      Caption = 'Button3'
+      OnClick = Button3Click
+      TabOrder = 0
+      Visible = False
+    end
+    object Button4: TButton
+      Left = 176
+      Height = 25
+      Top = 12
+      Width = 91
+      Caption = '保存表格格式'
+      OnClick = Button4Click
+      TabOrder = 1
+    end
+    object Button6: TButton
+      Left = 830
+      Height = 25
+      Top = 15
+      Width = 75
+      Caption = '退出'
+      OnClick = Button6Click
+      TabOrder = 2
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 556
+    Top = 74
+    Width = 1024
+    Align = alClient
+    ClientHeight = 556
+    ClientWidth = 1024
+    TabOrder = 2
+    object sWorksheetGrid1: TsWorksheetGrid
+      Left = 1
+      Height = 376
+      Top = 1
+      Width = 1022
+      FrozenCols = 0
+      FrozenRows = 0
+      ReadFormulas = False
+      WorkbookSource = sWorkbookSource1
+      Align = alTop
+      AutoAdvance = aaDown
+      DefaultColWidth = 64
+      DefaultRowHeight = 24
+      TabOrder = 0
+      OnGetColHeaderText = sWorksheetGrid1GetColHeaderText
+    end
+    object Panel4: TPanel
+      Left = 1
+      Height = 168
+      Top = 387
+      Width = 1022
+      Align = alBottom
+      ClientHeight = 168
+      ClientWidth = 1022
+      TabOrder = 1
+      object Label3: TLabel
+        Left = 16
+        Height = 17
+        Top = 6
+        Width = 96
+        Caption = '当前被选择行内容'
+        ParentColor = False
+      end
+      object Memo1: TMemo
+        Left = 118
+        Height = 19
+        Top = 6
+        Width = 872
+        TabOrder = 0
+      end
+      object GroupBox1: TGroupBox
+        Left = 17
+        Height = 129
+        Top = 29
+        Width = 357
+        Caption = '单据含有'
+        ClientHeight = 107
+        ClientWidth = 353
+        TabOrder = 1
+        object CheckBox1: TCheckBox
+          Left = 24
+          Height = 21
+          Top = 1
+          Width = 118
+          Caption = '供应商的货品编码'
+          OnClick = CheckBox1Click
+          TabOrder = 0
+        end
+        object CheckBox2: TCheckBox
+          Left = 24
+          Height = 21
+          Top = 22
+          Width = 58
+          Caption = '条形码'
+          OnClick = CheckBox2Click
+          TabOrder = 1
+        end
+        object CheckBox3: TCheckBox
+          Left = 24
+          Height = 21
+          Top = 43
+          Width = 70
+          Caption = '货品名称'
+          OnClick = CheckBox3Click
+          TabOrder = 2
+        end
+        object CheckBox5: TCheckBox
+          Left = 24
+          Height = 21
+          Top = 65
+          Width = 90
+          Caption = '单价(不含税)'
+          OnClick = CheckBox5Click
+          TabOrder = 3
+        end
+        object CheckBox7: TCheckBox
+          Left = 192
+          Height = 21
+          Top = 43
+          Width = 78
+          Caption = '单价(含税)'
+          OnClick = CheckBox7Click
+          TabOrder = 4
+        end
+        object CheckBox6: TCheckBox
+          Left = 192
+          Height = 21
+          Top = 1
+          Width = 46
+          Caption = '税率'
+          OnClick = CheckBox6Click
+          TabOrder = 5
+        end
+        object CheckBox8: TCheckBox
+          Left = 192
+          Height = 21
+          Top = 65
+          Width = 46
+          Caption = '折扣'
+          OnClick = CheckBox8Click
+          TabOrder = 6
+        end
+        object CheckBox18: TCheckBox
+          Left = 192
+          Height = 21
+          Top = 22
+          Width = 125
+          Caption = '税率中带百分号(%)'
+          TabOrder = 7
+        end
+        object CheckBox19: TCheckBox
+          Left = 24
+          Height = 21
+          Top = 85
+          Width = 106
+          Caption = '数量中含有字符'
+          TabOrder = 8
+        end
+        object CheckBox9: TCheckBox
+          Left = 192
+          Height = 21
+          Top = 85
+          Width = 58
+          Caption = '建议价'
+          OnClick = CheckBox9Click
+          TabOrder = 9
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 395
+        Height = 129
+        Top = 31
+        Width = 613
+        Anchors = [akTop, akRight]
+        Caption = '所在列(栏)编号设置'
+        ClientHeight = 107
+        ClientWidth = 609
+        TabOrder = 2
+        object Label9: TLabel
+          Left = 194
+          Height = 17
+          Top = 66
+          Width = 60
+          Caption = '折扣所在列'
+          ParentColor = False
+        end
+        object Label8: TLabel
+          Left = 194
+          Height = 17
+          Top = 23
+          Width = 60
+          Caption = '税率所在列'
+          ParentColor = False
+        end
+        object Label10: TLabel
+          Left = 194
+          Height = 17
+          Top = 45
+          Width = 92
+          Caption = '单价所在列(含税)'
+          ParentColor = False
+        end
+        object Label7: TLabel
+          Left = 194
+          Height = 17
+          Top = 1
+          Width = 104
+          Caption = '单价所在列(不含税)'
+          ParentColor = False
+        end
+        object Label6: TLabel
+          Left = 34
+          Height = 17
+          Top = 65
+          Width = 60
+          Caption = '数量所在列'
+          ParentColor = False
+        end
+        object Label5: TLabel
+          Left = 34
+          Height = 17
+          Top = 45
+          Width = 84
+          Caption = '货品名称所在列'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 34
+          Height = 17
+          Top = 24
+          Width = 72
+          Caption = '条形码所在列'
+          ParentColor = False
+        end
+        object Label13: TLabel
+          Left = 34
+          Height = 17
+          Top = 3
+          Width = 84
+          Caption = '货品编码所在列'
+          ParentColor = False
+        end
+        object Label16: TLabel
+          Left = 384
+          Height = 17
+          Top = 25
+          Width = 24
+          Caption = '仓库'
+          ParentColor = False
+        end
+        object Label17: TLabel
+          Left = 194
+          Height = 17
+          Top = 88
+          Width = 72
+          Caption = '建议价所在列'
+          ParentColor = False
+        end
+        object DBLookupComboBox3: TDBLookupComboBox
+          Left = 384
+          Height = 25
+          Top = 48
+          Width = 217
+          KeyField = 'ID_STOCK'
+          ListField = 'NOMBRE'
+          ListFieldIndex = 0
+          ListSource = DataSource1
+          LookupCache = False
+          OnKeyPress = DBLookupComboBox3KeyPress
+          TabOrder = 1
+        end
+        object Button2: TButton
+          Left = 501
+          Height = 25
+          Top = 77
+          Width = 100
+          Caption = '导入'
+          Enabled = False
+          OnClick = Button2Click
+          TabOrder = 2
+        end
+        object cyEditInteger1: TcyEditInteger
+          Left = 128
+          Height = 21
+          Top = 3
+          Width = 43
+          AutoSize = False
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger1KeyPress
+          ParentFont = False
+          TabOrder = 3
+        end
+        object cyEditInteger2: TcyEditInteger
+          Left = 128
+          Height = 21
+          Top = 24
+          Width = 43
+          AutoSize = False
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger2KeyPress
+          ParentFont = False
+          TabOrder = 4
+        end
+        object cyEditInteger3: TcyEditInteger
+          Left = 128
+          Height = 21
+          Top = 45
+          Width = 43
+          AutoSize = False
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger3KeyPress
+          ParentFont = False
+          TabOrder = 5
+        end
+        object cyEditInteger4: TcyEditInteger
+          Left = 128
+          Height = 21
+          Top = 66
+          Width = 43
+          AutoSize = False
+          Color = clYellow
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger4KeyPress
+          ParentFont = False
+          TabOrder = 6
+        end
+        object cyEditInteger5: TcyEditInteger
+          Left = 304
+          Height = 21
+          Top = -1
+          Width = 43
+          AutoSize = False
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger5KeyPress
+          ParentFont = False
+          TabOrder = 7
+        end
+        object cyEditInteger6: TcyEditInteger
+          Left = 304
+          Height = 21
+          Top = 20
+          Width = 43
+          AutoSize = False
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger6KeyPress
+          ParentFont = False
+          TabOrder = 8
+        end
+        object cyEditInteger7: TcyEditInteger
+          Left = 304
+          Height = 21
+          Top = 41
+          Width = 43
+          AutoSize = False
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger7KeyPress
+          ParentFont = False
+          TabOrder = 9
+        end
+        object cyEditInteger8: TcyEditInteger
+          Left = 304
+          Height = 21
+          Top = 62
+          Width = 43
+          AutoSize = False
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger8KeyPress
+          ParentFont = False
+          TabOrder = 10
+        end
+        object cyEditInteger9: TcyEditInteger
+          Left = 304
+          Height = 21
+          Top = 83
+          Width = 43
+          AutoSize = False
+          Font.Height = -11
+          NumbersOnly = True
+          OnKeyPress = cyEditInteger9KeyPress
+          ParentFont = False
+          TabOrder = 11
+        end
+        object Label11: TLabel
+          Left = 384
+          Height = 17
+          Top = 3
+          Width = 72
+          Caption = '小数点符号为'
+          ParentColor = False
+        end
+        object PuntoC: TComboBox
+          Left = 499
+          Height = 25
+          Top = 1
+          Width = 40
+          AutoSize = False
+          BorderStyle = bsSingle
+          Color = clYellow
+          Font.Style = [fsBold]
+          ItemHeight = 17
+          ItemIndex = 0
+          Items.Strings = (
+            '.'
+            ','
+          )
+          OnKeyPress = PuntoCKeyPress
+          ParentFont = False
+          TabOrder = 0
+          Text = '.'
+        end
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = '读入文件 |*.xls;*.csv;*.txt;*.pdf|CVS文件 (*.csv)|*.csv|txt|*.txt|pdf|*.pdf|Excel文件 (*.xls)|*.xls|all|*.*'
+    FilterIndex = 0
+    left = 552
+  end
+  object sWorkbookSource1: TsWorkbookSource
+    AutoDetectFormat = False
+    FileFormat = sfUser
+    Options = []
+    left = 288
+    top = 126
+  end
+  object ZCon1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Port = 0
+    left = 605
+    top = 125
+  end
+  object ExecutQuery: TZQuery
+    Params = <>
+    left = 665
+    top = 168
+  end
+  object DocQuery: TZQuery
+    Params = <>
+    left = 612
+    top = 259
+  end
+  object DocDataSource: TDataSource
+    DataSet = DocQuery
+    left = 924
+    top = 180
+  end
+  object StockListQuery: TZQuery
+    Params = <>
+    left = 758
+    top = 290
+  end
+  object DataSource1: TDataSource
+    DataSet = StockListQuery
+    left = 820
+    top = 444
+  end
+  object ChangeConfQuery: TZQuery
+    Params = <>
+    left = 644
+    top = 373
+  end
+  object DataSource2: TDataSource
+    DataSet = STAFFQuery
+    left = 409
+    top = 236
+  end
+  object STAFFQuery: TZQuery
+    Params = <>
+    left = 372
+    top = 172
+  end
+  object ProDataSource: TDataSource
+    DataSet = DocQuery
+    left = 116
+    top = 177
+  end
+  object ProvQuery: TZQuery
+    Params = <>
+    left = 138
+    top = 101
+  end
+end

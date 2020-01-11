@@ -1,0 +1,199 @@
+object FormCategorySpec: TFormCategorySpec
+  Left = 474
+  Height = 640
+  Top = 215
+  Width = 716
+  Caption = 'FormCategorySpec'
+  ClientHeight = 640
+  ClientWidth = 716
+  OnCreate = FormCreate
+  LCLVersion = '2.0.0.3'
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 0
+    Width = 716
+    Align = alTop
+    ClientHeight = 41
+    ClientWidth = 716
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 192
+      Height = 17
+      Top = 14
+      Width = 27
+      Caption = '分类:'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 226
+      Height = 17
+      Top = 14
+      Width = 6
+      Caption = 'L'
+      ParentColor = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 41
+    Top = 599
+    Width = 716
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 716
+    TabOrder = 1
+    object Button3: TButton
+      Left = 512
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '退出'
+      OnClick = Button3Click
+      TabOrder = 0
+    end
+    object ButtonNew: TButton
+      Left = 280
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '建新属性'
+      OnClick = ButtonNewClick
+      TabOrder = 1
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 558
+    Top = 41
+    Width = 716
+    Align = alClient
+    ClientHeight = 558
+    ClientWidth = 716
+    TabOrder = 2
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 556
+      Top = 1
+      Width = 208
+      Align = alLeft
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = '编号'
+          Width = 50
+          FieldName = 'attibute_id'
+        end      
+        item
+          Title.Caption = '属性'
+          Width = 120
+          FieldName = 'name'
+        end>
+      DataSource = CategorySpecDS
+      TabOrder = 0
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+    end
+    object Panel4: TPanel
+      Left = 209
+      Height = 556
+      Top = 1
+      Width = 506
+      Align = alClient
+      ClientHeight = 556
+      ClientWidth = 506
+      TabOrder = 1
+      object Panel5: TPanel
+        Left = 1
+        Height = 41
+        Top = 1
+        Width = 504
+        Align = alTop
+        Caption = '可选用的属性'
+        TabOrder = 0
+      end
+      object Panel6: TPanel
+        Left = 1
+        Height = 513
+        Top = 42
+        Width = 504
+        Align = alClient
+        ClientHeight = 513
+        ClientWidth = 504
+        TabOrder = 1
+        object Label4: TLabel
+          Left = 1
+          Height = 17
+          Top = 1
+          Width = 502
+          Align = alTop
+          Caption = '给分类添加分类属性'
+          ParentColor = False
+        end
+        object Button1: TButton
+          Left = 309
+          Height = 25
+          Top = 381
+          Width = 75
+          Caption = '添加'
+          OnClick = Button1Click
+          TabOrder = 0
+        end
+        object DBGrid2: TDBGrid
+          Left = 1
+          Height = 331
+          Top = 18
+          Width = 502
+          Align = alTop
+          Color = clWindow
+          Columns = <          
+            item
+              Title.Caption = '属性编号'
+              FieldName = 'attibute_id'
+            end          
+            item
+              Title.Caption = '属性名称'
+              Width = 400
+              FieldName = 'name'
+            end>
+          DataSource = SpecDS
+          TabOrder = 1
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+        end
+      end
+    end
+  end
+  object TrabajoQuery: TZQuery
+    Params = <>
+    left = 352
+    top = 176
+  end
+  object CategorySpecQuery: TZQuery
+    Params = <>
+    left = 120
+    top = 140
+  end
+  object MemListQuery: TZQuery
+    Params = <>
+    left = 556
+    top = 140
+  end
+  object SpecQuery: TZQuery
+    Params = <>
+    left = 464
+    top = 248
+  end
+  object SpecDS: TDataSource
+    DataSet = SpecQuery
+    left = 440
+    top = 304
+  end
+  object CategorySpecDS: TDataSource
+    DataSet = CategorySpecQuery
+    left = 96
+    top = 240
+  end
+end

@@ -1,0 +1,274 @@
+object frmItem: TfrmItem
+  Left = 906
+  Height = 574
+  Top = 272
+  Width = 757
+  ClientHeight = 574
+  ClientWidth = 757
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 431
+    Height = 464
+    Top = 0
+    Width = 326
+    Align = alRight
+    ClientHeight = 464
+    ClientWidth = 326
+    TabOrder = 0
+    object LabeledEdit1: TLabeledEdit
+      Left = 24
+      Height = 25
+      Top = 32
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'dbHost'
+      EditLabel.ParentColor = False
+      TabOrder = 0
+      Text = '127.0.0.1'
+      OnExit = LabeledEdit1Exit
+    end
+    object LabeledEdit2: TLabeledEdit
+      Left = 24
+      Height = 25
+      Top = 77
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'dbUser'
+      EditLabel.ParentColor = False
+      TabOrder = 1
+      Text = 'zeoslib'
+    end
+    object LabeledEdit3: TLabeledEdit
+      Left = 24
+      Height = 25
+      Top = 122
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'dbPasswd'
+      EditLabel.ParentColor = False
+      TabOrder = 2
+      Text = 'lazarus'
+    end
+    object LabeledEdit4: TLabeledEdit
+      Left = 24
+      Height = 25
+      Top = 167
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'dbProtocolo'
+      EditLabel.ParentColor = False
+      TabOrder = 3
+      Text = 'Mysql'
+    end
+    object LabeledEdit5: TLabeledEdit
+      Left = 24
+      Height = 25
+      Top = 212
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'dbDataBase'
+      EditLabel.ParentColor = False
+      TabOrder = 4
+      Text = 'lazarus'
+    end
+    object LabeledEdit6: TLabeledEdit
+      Left = 24
+      Height = 25
+      Top = 257
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'PORT'
+      EditLabel.ParentColor = False
+      TabOrder = 5
+      Text = '3306'
+    end
+    object LabeledEdit7: TLabeledEdit
+      Left = 24
+      Height = 25
+      Top = 302
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'EMID'
+      EditLabel.ParentColor = False
+      TabOrder = 6
+      Text = '0000'
+    end
+    object BitBtn1: TBitBtn
+      Left = 216
+      Height = 25
+      Top = 257
+      Width = 75
+      Kind = bkOK
+      ModalResult = 1
+      NumGlyphs = 2
+      OnClick = BitBtn1Click
+      TabOrder = 7
+    end
+    object BitBtn2: TBitBtn
+      Left = 216
+      Height = 25
+      Top = 306
+      Width = 75
+      Kind = bkCancel
+      ModalResult = 2
+      NumGlyphs = 2
+      OnClick = BitBtn2Click
+      TabOrder = 8
+    end
+    object LabeledEdit8: TLabeledEdit
+      Left = 24
+      Height = 25
+      Top = 347
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'PCID'
+      EditLabel.ParentColor = False
+      TabOrder = 9
+      Text = 'V0001'
+    end
+    object LabeledEdit9: TLabeledEdit
+      Left = 184
+      Height = 25
+      Top = 112
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'S_Server'
+      EditLabel.ParentColor = False
+      TabOrder = 10
+      Text = '127.0.0.1'
+    end
+    object LabeledEdit10: TLabeledEdit
+      Left = 184
+      Height = 25
+      Top = 167
+      Width = 121
+      EditLabel.Height = 17
+      EditLabel.Width = 121
+      EditLabel.Caption = 'S_PORT'
+      EditLabel.ParentColor = False
+      TabOrder = 11
+      Text = '8888'
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 165
+    Height = 385
+    Top = 8
+    Width = 263
+    Caption = '在线机器:'
+    ClientHeight = 363
+    ClientWidth = 259
+    TabOrder = 1
+    object ListViewIp: TListView
+      Left = 0
+      Height = 363
+      Top = 0
+      Width = 259
+      Align = alClient
+      Columns = <      
+        item
+          Caption = 'IP '
+          Width = 100
+        end      
+        item
+          Caption = '端口3306'
+          Width = 70
+        end      
+        item
+          Caption = '端口8888'
+          Width = 70
+        end>
+      GridLines = True
+      ParentShowHint = False
+      ReadOnly = True
+      RowSelect = True
+      ShowHint = True
+      TabOrder = 0
+      ViewStyle = vsReport
+    end
+  end
+  object LanRang: TGroupBox
+    Left = 8
+    Height = 305
+    Top = 8
+    Width = 153
+    Caption = '本机拥有网络段:'
+    ClientHeight = 283
+    ClientWidth = 149
+    TabOrder = 2
+    object LanList: TListBox
+      Left = 0
+      Height = 283
+      Top = 0
+      Width = 149
+      Align = alClient
+      ItemHeight = 0
+      TabOrder = 0
+    end
+  end
+  object MSGBox: TMemo
+    Left = 0
+    Height = 110
+    Top = 464
+    Width = 757
+    Align = alBottom
+    Lines.Strings = (
+      ''
+    )
+    TabOrder = 3
+  end
+  object PB: TProgressBar
+    Left = 167
+    Height = 21
+    Top = 399
+    Width = 260
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 32
+    Height = 25
+    Top = 395
+    Width = 88
+    Caption = '开始端口扫描'
+    OnClick = Button1Click
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 32
+    Height = 25
+    Top = 336
+    Width = 88
+    Caption = '查看在线机器'
+    OnClick = Button2Click
+    TabOrder = 6
+    Visible = False
+  end
+  object Button3: TButton
+    Left = 32
+    Height = 25
+    Top = 360
+    Width = 88
+    Caption = '查看在线设备'
+    OnClick = Button3Click
+    TabOrder = 7
+  end
+  object Timer: TTimer
+    Enabled = False
+    OnTimer = TimerTimer
+    left = 308
+    top = 180
+  end
+end

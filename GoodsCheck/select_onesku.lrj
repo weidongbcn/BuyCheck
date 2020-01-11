@@ -1,0 +1,11 @@
+{"version":1,"strings":[
+{"hash":68770065,"name":"tformselectonesku.caption","sourcebytes":[233,128,137,230,139,169,83,75,85,229,149,134,229,147,129],"value":"\u9009\u62E9SKU\u5546\u54C1"},
+{"hash":1638657,"name":"tformselectonesku.dbgrid1.columns[0].title.caption","sourcebytes":[230,157,161,229,189,162,231,160,129],"value":"\u6761\u5F62\u7801"},
+{"hash":250200608,"name":"tformselectonesku.dbgrid1.columns[1].title.caption","sourcebytes":[229,144,141,231,167,176],"value":"\u540D\u79F0"},
+{"hash":254647851,"name":"tformselectonesku.dbgrid1.columns[2].title.caption","sourcebytes":[231,177,187,229,136,171],"value":"\u7C7B\u522B"},
+{"hash":250347548,"name":"tformselectonesku.dbgrid1.columns[3].title.caption","sourcebytes":[229,147,129,231,137,140],"value":"\u54C1\u724C"},
+{"hash":252141756,"name":"tformselectonesku.dbgrid1.columns[4].title.caption","sourcebytes":[228,187,183,230,160,188],"value":"\u4EF7\u683C"},
+{"hash":255218049,"name":"tformselectonesku.dbgrid1.columns[5].title.caption","sourcebytes":[231,188,150,231,160,129],"value":"\u7F16\u7801"},
+{"hash":219570377,"name":"tformselectonesku.button1.caption","sourcebytes":[67,101,114,114,97,114,40,233,128,128,229,135,186,41],"value":"Cerrar(\u9000\u51FA)"},
+{"hash":55178249,"name":"tformselectonesku.button2.caption","sourcebytes":[69,108,101,103,105,114,40,233,128,137,230,139,169,41],"value":"Elegir(\u9009\u62E9)"}
+]}

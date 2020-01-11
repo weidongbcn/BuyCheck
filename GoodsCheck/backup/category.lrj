@@ -1,0 +1,9 @@
+{"version":1,"strings":[
+{"hash":209540873,"name":"tformcategory.caption","sourcebytes":[70,111,114,109,67,97,116,101,103,111,114,121],"value":"FormCategory"},
+{"hash":148457676,"name":"tformcategory.button1.caption","sourcebytes":[67,114,101,97,114,32,48,32,76,101,118,101,108],"value":"Crear 0 Level"},
+{"hash":4749113,"name":"tformcategory.btnapply.caption","sourcebytes":[65,112,112,108,121],"value":"Apply"},
+{"hash":345797,"name":"tformcategory.btnmove.caption","sourcebytes":[77,111,118,101],"value":"Move"},
+{"hash":310020,"name":"tformcategory.btnedit.caption","sourcebytes":[69,100,105,116],"value":"Edit"},
+{"hash":78392485,"name":"tformcategory.btndelete.caption","sourcebytes":[68,101,108,101,116,101],"value":"Delete"},
+{"hash":138430655,"name":"tformcategory.button2.caption","sourcebytes":[67,114,101,97,114,32,72,105,106,111],"value":"Crear Hijo"}
+]}

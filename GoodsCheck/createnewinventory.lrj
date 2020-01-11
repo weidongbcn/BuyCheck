@@ -1,0 +1,7 @@
+{"version":1,"strings":[
+{"hash":89026713,"name":"tformnewinventory.caption","sourcebytes":[231,153,187,232,174,176,230,150,176,231,155,152,231,130,185],"value":"\u767B\u8BB0\u65B0\u76D8\u70B9"},
+{"hash":251994419,"name":"tformnewinventory.label16.caption","sourcebytes":[228,187,147,229,186,147],"value":"\u4ED3\u5E93"},
+{"hash":252268785,"name":"tformnewinventory.label1.caption","sourcebytes":[231,144,134,231,148,177],"value":"\u7406\u7531"},
+{"hash":250171880,"name":"tformnewinventory.button3.caption","sourcebytes":[229,143,150,230,182,136],"value":"\u53D6\u6D88"},
+{"hash":253546618,"name":"tformnewinventory.button2.caption","sourcebytes":[231,161,174,229,174,154],"value":"\u786E\u5B9A"}
+]}

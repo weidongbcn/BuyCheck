@@ -1,0 +1,175 @@
+object FormFindGoods_Spu: TFormFindGoods_Spu
+  Left = 888
+  Height = 684
+  Top = 244
+  Width = 1025
+  Caption = '查找货品'
+  ClientHeight = 684
+  ClientWidth = 1025
+  OnCreate = FormCreate
+  LCLVersion = '2.0.0.3'
+  object Panel1: TPanel
+    Left = 0
+    Height = 57
+    Top = 0
+    Width = 1025
+    Align = alTop
+    ClientHeight = 57
+    ClientWidth = 1025
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 24
+      Height = 17
+      Top = 8
+      Width = 102
+      Caption = '  Texto a buscar  '
+      ParentColor = False
+    end
+    object EdTexto: TEdit
+      Left = 24
+      Height = 25
+      Hint = 'Introduce el dato a buscar en la tabla.'
+      Top = 27
+      Width = 460
+      CharCase = ecUppercase
+      OnKeyDown = EdTextoKeyDown
+      TabOrder = 0
+    end
+    object BitBtn14: TBitBtn
+      Left = 500
+      Height = 24
+      Top = 27
+      Width = 86
+      Caption = 'Aplicar'
+      Glyph.Data = {
+        26040000424D2604000000000000360000002800000012000000120000000100
+        180000000000F003000064000000640000000000000000000000FEFEFEFEFEFE
+        FFFFFEFFFFFEF1EEEAD6D3CFCFCBCAD0CBC8D5CCC9D4CDCACFCED2C3C6CACDCE
+        CCC5D0D4A2BDD27A95AF949BAAC8C7D10000FFFFFCFFFFFEFFFFFFFEFCFCE4E0
+        DFC3C0BCB7B6B2B9B6B2BBB5B0B5AEABBDB8BAAFB2B6AAB5B98DA6B0688FAB71
+        97B58FA4B9B6C1CF0000000500000200F1F2F6F6F1FAEBE2E5FBF6F5EBEFE9F1
+        F5EFF2EEE9F3EAE7F5EBEBE1E5EABFDFEC6A9EB563A2C897D5FD9CCAE9A0C6DE
+        0000FFFFF5F7FCF3F2F3F7F9F4FDEAE1E4FFF9F9FCFDF9F2F4EEFAF1EDFFF7F5
+        F0E9ECD4E4F073A9C05BA4C48CD7FE95D6FC90BDD8AED3E90000FFFFF9FFFDF8
+        FBFBFBEFEEF0EEE9EAFFFCFBFFFCFCFFF3F1FFF6F1FDEDEEE3EAF37EA3B756A3
+        C486DEFF99DEFF90BED6A2B8C3D2DBDF0000FFFFFEFFFFFEFFFCFDFEF9FADDD5
+        D5E5DCD9CAC1BEDFD0CDF2D7D3FFEEEFD6DAE56F91A889CDF08CD4F695C6DCBC
+        D6E2B8BFC2E1DDDC0000FAFBFFFFFEFFFFF4F7BDAFB19E8D8A9C8E88B4AFA6B1
+        AAA1B9A7A0C2AFACAFA4AE9298AB93B1CCA1C3DBD5E4EDD5DADDBDBFC0DBDADC
+        0000F8F9FDFFFEFFD0BEBF99807ECAB1A7FBEADDFFFFF0FFFFF3F8EDDFD0BEB3
+        BAA5A3C2B4BAD4DAE7DBE4EEE4E0DFE5DFDABDBBBADADCDD0000FFFEFFE1D5D5
+        A58883CBA99CF7D8C3FFF6DDFFFFEAFAFDE4FFF8DFF2E1C7DDC5AFD6BFB0EBE3
+        DCE8E4DFEDE3D9E1D9CCC0BDB8DDDEDA0000FFFEFEC4B1ACAC8878ECC0A8FAD3
+        B3FFE6C4FCF4D6FCF8DBFCEDCCF7DFBBE4C3A2DCBEA5EBDBCEECE1D9EADDCFE6
+        DBCDBCB9B1D3D4D00000FFFFFBBAA296BE8F73F4BB94F5C297FFD9AFF7DEBCF6
+        E1C1FDDAB2FAD0A6F3C7A2DEBBA1E2D0C9E7DBD9E4D5CCDFD3C9BDB8B5D8D6D6
+        0000FFFFFCB6A598C29677EFB88DFECA9BFFD7AAFFE4BFF0D8B4FFE3B8FFDAB0
+        F5CBA8E4BFA9E9D4D2E4D7D9E1D5CBD1C7BDB8B3B0DAD7D90000F1FFFEBBBCB3
+        B89B86EEC5A4FFDDB2FFE8BBFFF2C8FFFBD3FFEEC8FFEAC6F4D5BCEACABDEBD5
+        D7DFCED1DBD1C7CAC2B5B8B1AEDFDADB0000F1FFFFDADCDCB19E96DCBDA8FFE9
+        C8FFFAD2FDF0CAFFFCD9FFFADCFAEDD3E9D5C3EBD1CAEED8DAE7D5D6D4CBBEC2
+        BCAFCCC7C4F2EDEE0000FFFCFFFBF3FACCB8BDBEA5A1EED5C1FFEFD3FFFEE2FF
+        FFE8FEFAE8EAE4D7D9D0C3E7D8CFF2DED9FFEBE6E9DDD1E1DBD0EBE8E4FFFEFF
+        0000FFFAFFFFFBFFECDEE4CFC0BEC8B8ABD5C7B5EADDCFE9DFD5D7D1CCDDD7D2
+        E8E2D7F7EBDFEFDDD6F6E4DDE3DAD1EBE5DEFEFAF9FFFEFF0000FFFAFDFFFDFE
+        F8F1EEFEF6EFDFDBD0DFDAD1DFD4D6DDD1D7EEE0E4F9ECEAFEF3E5F3E6D6DFD0
+        C7E2D7D3EEEAE9FFFDFDFFFFFFFFFFFF0000FFFEFFFFFFFEFFFFF8FFFDF3F3F3
+        E7E6E6E0ECE3EDEFE2F0EEDDE6F0E1DFE9D9CCDDD1BFE4D8CEF0E7E3FFFEFFF8
+        FAFBFFFDFFFFFDFE0000
+      }
+      OnClick = BitBtn14Click
+      TabOrder = 1
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 41
+    Top = 643
+    Width = 1025
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 1025
+    TabOrder = 1
+    object Button1: TButton
+      Left = 894
+      Height = 25
+      Top = 6
+      Width = 96
+      Anchors = [akTop, akRight]
+      Caption = 'Cerrar(退出)'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 440
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = 'Elegir(选择)'
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 586
+    Top = 57
+    Width = 1025
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = '条形码'
+        Width = 110
+        FieldName = 'ENA'
+      end    
+      item
+        Title.Caption = '名称'
+        Width = 240
+        FieldName = 'GOODS_NAME'
+      end    
+      item
+        Title.Caption = '类别'
+        Width = 120
+        FieldName = 'CATEGORY'
+      end    
+      item
+        Title.Caption = '品牌'
+        Width = 90
+        FieldName = 'BRAND_NAME'
+      end    
+      item
+        Title.Caption = '商品类型'
+        Width = 90
+        FieldName = 'CLASS'
+      end    
+      item
+        Title.Caption = '价格'
+        Width = 120
+        FieldName = 'PVP1C'
+        DisplayFormat = '0.000'
+      end    
+      item
+        Title.Caption = '编码'
+        Width = 120
+        FieldName = 'CODE'
+      end>
+    DataSource = DataSource1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 2
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    OnDblClick = DBGrid1DblClick
+  end
+  object ListUniQuery: TZQuery
+    Params = <>
+    left = 140
+    top = 284
+  end
+  object DataSource1: TDataSource
+    DataSet = ListUniQuery
+    left = 216
+    top = 192
+  end
+end

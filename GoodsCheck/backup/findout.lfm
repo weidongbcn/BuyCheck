@@ -1,0 +1,90 @@
+object FormFindout: TFormFindout
+  Left = 1069
+  Height = 645
+  Top = 232
+  Width = 522
+  Caption = '查找结果'
+  ClientHeight = 645
+  ClientWidth = 522
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.2.0'
+  object GridBusquedas: TDBGrid
+    Left = 0
+    Height = 554
+    Top = 50
+    Width = 522
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = Datasource1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    OnDblClick = GridBusquedasDblClick
+    OnKeyDown = GridBusquedasKeyDown
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 522
+    Align = alTop
+    Caption = 'Listado : '
+    Color = clMoneyGreen
+    ParentColor = False
+    TabOrder = 1
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 41
+    Top = 604
+    Width = 522
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 522
+    TabOrder = 2
+    object BtCerrar: TBitBtn
+      Left = 216
+      Height = 35
+      Top = 6
+      Width = 81
+      Caption = '确定'
+      OnClick = BtCerrarClick
+      TabOrder = 0
+    end
+    object BtCancelar: TBitBtn
+      Left = 336
+      Height = 33
+      Top = 6
+      Width = 75
+      Caption = 'BtCancelar'
+      OnClick = BtCancelarClick
+      TabOrder = 1
+    end
+    object AddButton: TButton
+      Left = 56
+      Height = 33
+      Top = 6
+      Width = 75
+      Caption = '建新&N(F11)'
+      OnClick = AddButtonClick
+      TabOrder = 2
+    end
+  end
+  object dbBusquedas: TZQuery
+    Params = <>
+    left = 384
+    top = 136
+  end
+  object Datasource1: TDataSource
+    DataSet = dbBusquedas
+    left = 245
+    top = 134
+  end
+end

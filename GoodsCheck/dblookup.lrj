@@ -1,0 +1,8 @@
+{"version":1,"strings":[
+{"hash":71246124,"name":"tflookup.caption","sourcebytes":[230,159,165,230,137,190,231,187,147,230,158,156],"value":"\u67E5\u627E\u7ED3\u679C"},
+{"hash":55707402,"name":"tflookup.panel1.caption","sourcebytes":[231,187,147,230,158,156,58],"value":"\u7ED3\u679C:"},
+{"hash":222229198,"name":"tflookup.btcancelar.hint","sourcebytes":[60,69,83,67,65,80,69,62,32,83,97,108,105,114,32,100,101,32,98,195,186,115,113,117,101,100,97,115,32,115,105,110,32,101,108,101,99,99,105,195,179,110,46],"value":"<ESCAPE> Salir de b\u00FAsquedas sin elecci\u00F3n."},
+{"hash":139044882,"name":"tflookup.btcancelar.caption","sourcebytes":[38,67,97,110,99,101,108,97,114],"value":"&Cancelar"},
+{"hash":242993438,"name":"tflookup.btcerrar.hint","sourcebytes":[60,69,78,84,69,82,62,32,65,99,101,112,116,97,32,108,97,32,111,112,99,105,195,179,110,32,115,101,108,101,99,99,105,111,110,97,100,97,32,101,110,32,108,97,32,114,101,106,105,108,108,97,32,100,101,32,100,97,116,111,115,46],"value":"<ENTER> Acepta la opci\u00F3n seleccionada en la rejilla de datos."},
+{"hash":127694882,"name":"tflookup.btcerrar.caption","sourcebytes":[38,65,99,101,112,116,97,114],"value":"&Aceptar"}
+]}

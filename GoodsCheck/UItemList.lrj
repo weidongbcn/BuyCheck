@@ -1,0 +1,5 @@
+{"version":1,"strings":[
+{"hash":253992512,"name":"tformitemlist.btnadd.caption","sourcebytes":[230,183,187,229,138,160],"value":"\u6DFB\u52A0"},
+{"hash":255218801,"name":"tformitemlist.btnedit.caption","sourcebytes":[231,188,150,232,190,145],"value":"\u7F16\u8F91"},
+{"hash":249754420,"name":"tformitemlist.btndel.caption","sourcebytes":[229,136,160,233,153,164],"value":"\u5220\u9664"}
+]}

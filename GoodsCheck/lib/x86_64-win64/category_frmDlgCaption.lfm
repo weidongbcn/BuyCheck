@@ -1,0 +1,75 @@
+object frmDlgCapt: TfrmDlgCapt
+  Left = 1069
+  Height = 207
+  Top = 335
+  Width = 529
+  ClientHeight = 207
+  ClientWidth = 529
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.2.0'
+  object Label1: TLabel
+    Left = 56
+    Height = 17
+    Top = 29
+    Width = 127
+    Caption = 'Nombre de categoria'
+    Color = clBtnFace
+    ParentColor = False
+    Transparent = False
+  end
+  object Label2: TLabel
+    Left = 56
+    Height = 17
+    Top = 94
+    Width = 79
+    Caption = 'Descriptiones'
+    Color = clBtnFace
+    ParentColor = False
+    Transparent = False
+  end
+  object edtCaption: TEdit
+    Left = 56
+    Height = 25
+    Top = 56
+    Width = 222
+    TabOrder = 0
+  end
+  object Description: TEdit
+    Left = 56
+    Height = 25
+    Top = 112
+    Width = 280
+    TabOrder = 1
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 166
+    Width = 529
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 529
+    TabOrder = 2
+    object bitbtnOK: TBitBtn
+      Left = 145
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = '&OK'
+      Kind = bkOK
+      NumGlyphs = 2
+      OnClick = bitbtnOKClick
+      TabOrder = 0
+    end
+    object bitbtnCancel: TBitBtn
+      Left = 261
+      Height = 30
+      Top = 8
+      Width = 75
+      Kind = bkNo
+      NumGlyphs = 2
+      OnClick = bitbtnCancelClick
+      TabOrder = 1
+    end
+  end
+end

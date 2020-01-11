@@ -1,0 +1,8 @@
+{"version":1,"strings":[
+{"hash":145098857,"name":"tformm.label1.caption","sourcebytes":[76,105,115,116,97,100,111,32,40,229,136,151,232,161,168,41],"value":"Listado (\u5217\u8868)"},
+{"hash":253292074,"name":"tformm.button1.caption","sourcebytes":[233,128,128,229,135,186],"value":"\u9000\u51FA"},
+{"hash":252297320,"name":"tformm.button3.caption","sourcebytes":[228,191,157,229,173,152],"value":"\u4FDD\u5B58"},
+{"hash":249754420,"name":"tformm.button4.caption","sourcebytes":[229,136,160,233,153,164],"value":"\u5220\u9664"},
+{"hash":12558,"name":"tformm.label2.caption","sourcebytes":[46,46,46],"value":"..."},
+{"hash":253992512,"name":"tformm.button2.caption","sourcebytes":[230,183,187,229,138,160],"value":"\u6DFB\u52A0"}
+]}

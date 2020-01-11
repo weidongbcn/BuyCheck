@@ -1,0 +1,13 @@
+{"version":1,"strings":[
+{"hash":265502000,"name":"tgoodsfromproveedor.caption","sourcebytes":[230,159,165,232,175,162,232,180,167,229,147,129,230,157,165,230,186,144],"value":"\u67E5\u8BE2\u8D27\u54C1\u6765\u6E90"},
+{"hash":91769513,"name":"tgoodsfromproveedor.label1.caption","sourcebytes":[230,159,165,231,156,139,229,134,133,229,174,185,40,232,180,167,229,147,129,229,144,141,231,167,176,44,230,157,161,229,189,162,231,160,129,44,231,188,150,229,143,183,41],"value":"\u67E5\u770B\u5185\u5BB9(\u8D27\u54C1\u540D\u79F0,\u6761\u5F62\u7801,\u7F16\u53F7)"},
+{"hash":252330315,"name":"tgoodsfromproveedor.button2.caption","sourcebytes":[230,159,165,231,156,139],"value":"\u67E5\u770B"},
+{"hash":249635613,"name":"tgoodsfromproveedor.button1.caption","sourcebytes":[229,133,179,233,151,173],"value":"\u5173\u95ED"},
+{"hash":119956241,"name":"tgoodsfromproveedor.dbgrid1.columns[0].title.caption","sourcebytes":[67,68,46,66,65,82,82,65],"value":"CD.BARRA"},
+{"hash":163777054,"name":"tgoodsfromproveedor.dbgrid1.columns[1].title.caption","sourcebytes":[67,111,110,99,101,112,116,105,111,110],"value":"Conception"},
+{"hash":78237234,"name":"tgoodsfromproveedor.dbgrid1.columns[2].title.caption","sourcebytes":[80,82,79,86,69,69,68,79,82],"value":"PROVEEDOR"},
+{"hash":75769185,"name":"tgoodsfromproveedor.dbgrid1.columns[3].title.caption","sourcebytes":[67,79,77,80,82,65],"value":"COMPRA"},
+{"hash":145185337,"name":"tgoodsfromproveedor.dbgrid1.columns[4].title.caption","sourcebytes":[68,69,83,67,40,37,41],"value":"DESC(%)"},
+{"hash":144441777,"name":"tgoodsfromproveedor.dbgrid1.columns[5].title.caption","sourcebytes":[67,65,84,69,71,79,82,73,65],"value":"CATEGORIA"},
+{"hash":120245233,"name":"tgoodsfromproveedor.dbgrid1.columns[6].title.caption","sourcebytes":[85,108,116,46,70,69,67,72,65],"value":"Ult.FECHA"}
+]}

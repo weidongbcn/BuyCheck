@@ -1,0 +1,5 @@
+{"version":1,"strings":[
+{"hash":159029585,"name":"tfrmdlgcapt.label1.caption","sourcebytes":[78,111,109,98,114,101,32,100,101,32,99,97,116,101,103,111,114,105,97],"value":"Nombre de categoria"},
+{"hash":224923011,"name":"tfrmdlgcapt.label2.caption","sourcebytes":[68,101,115,99,114,105,112,116,105,111,110,101,115],"value":"Descriptiones"},
+{"hash":11067,"name":"tfrmdlgcapt.bitbtnok.caption","sourcebytes":[38,79,75],"value":"&OK"}
+]}

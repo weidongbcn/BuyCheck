@@ -1,0 +1,123 @@
+object FormBuyDetalles: TFormBuyDetalles
+  Left = 601
+  Height = 570
+  Top = 261
+  Width = 950
+  Caption = '购买明细'
+  ClientHeight = 570
+  ClientWidth = 950
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 950
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 950
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 103
+      Height = 17
+      Top = 18
+      Width = 72
+      Caption = '购买单据明细'
+      ParentColor = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 520
+    Width = 950
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 950
+    TabOrder = 1
+    object Button1: TButton
+      Left = 640
+      Height = 25
+      Top = 16
+      Width = 75
+      Caption = '返回'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 470
+    Top = 50
+    Width = 950
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        ReadOnly = True
+        Title.Caption = '条码'
+        Width = 110
+        FieldName = 'ENA'
+      end    
+      item
+        ReadOnly = True
+        Title.Caption = '名称'
+        Width = 280
+        FieldName = 'GOODS_NAME'
+      end    
+      item
+        ReadOnly = True
+        Title.Caption = '数量'
+        FieldName = 'QUANTITY'
+      end    
+      item
+        Title.Caption = '单位'
+        Width = 50
+        FieldName = 'COMMODITY_UNIT'
+      end    
+      item
+        Title.Caption = '税率%'
+        Width = 60
+        FieldName = 'IVA'
+      end    
+      item
+        ReadOnly = True
+        Title.Caption = '成本价'
+        Width = 100
+        FieldName = 'COST'
+        DisplayFormat = '0.000'
+      end    
+      item
+        ReadOnly = True
+        Title.Caption = '折扣(%)'
+        Width = 60
+        FieldName = 'DISCOUNT'
+      end    
+      item
+        ReadOnly = True
+        Title.Caption = '小计'
+        FieldName = 'LINEATOTAL'
+        DisplayFormat = '0.000'
+      end    
+      item
+        Title.Caption = '购买日期'
+        Width = 100
+        FieldName = 'BUY_DATE'
+      end>
+    DataSource = BuyDetallesDS
+    TabOrder = 2
+  end
+  object BuyDetallesDS: TDataSource
+    DataSet = BuyDetalles
+    left = 80
+    top = 176
+  end
+  object BuyDetalles: TZQuery
+    Params = <>
+    left = 112
+    top = 104
+  end
+end

@@ -1,0 +1,17 @@
+2019-04-22 13:16:23	Indy	Login	You Want to Login
+2019-04-22 13:19:12	Indy	Login	You Want to Login
+2019-04-22 13:19:12	Indy	Monitor	Monitor goto start
+2019-04-22 13:19:12	sys	Login	You are Connected.
+2019-04-22 13:19:12	sys	Login	You Do a Connected.
+2019-04-22 13:19:12	sys	main	LoginExito:Bienvenido : V0001
+2019-04-22 13:19:12	Indy	Monitor	LoginExito@Bienvenido : V0001
+2019-04-22 13:19:12	sys	main1	Registed PC: 5
+2019-04-22 13:19:12	sys	main1	Conected Pc Amount: 2
+2019-04-22 13:19:12	sys	main1	Connected to server.
+2019-04-22 13:19:12	sys	main1	ReGisted is True.
+2019-04-22 13:19:12	sys	Login	You Do a Connected.
+2019-04-22 13:21:00	Indy	Login	You Want to Login
+2019-04-22 13:21:00	Indy	Monitor	Monitor goto start
+2019-04-22 13:21:20	sys	main	LoginExito:Bienvenido : V0001
+2019-04-22 13:21:26	sys	error1	Connection Closed Gracefully.
+2019-04-22 13:22:19	Indy	Login	You Want to Login

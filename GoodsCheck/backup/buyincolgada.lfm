@@ -1,0 +1,114 @@
+object FormColgada: TFormColgada
+  Left = 468
+  Height = 410
+  Top = 167
+  Width = 898
+  Caption = '未处理单据'
+  ClientHeight = 410
+  ClientWidth = 898
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 898
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 898
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 124
+      Height = 17
+      Top = 18
+      Width = 96
+      Caption = 'Listado Colgado'
+      ParentColor = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 360
+    Width = 898
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 898
+    TabOrder = 1
+    object Button1: TButton
+      Left = 480
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = '选择'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 576
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Cancelar'
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 310
+    Top = 50
+    Width = 898
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = '编号'
+        Width = 250
+        FieldName = 'B_UUID'
+      end    
+      item
+        Title.Caption = '票据'
+        Width = 120
+        FieldName = 'DOCUMENT'
+      end    
+      item
+        Title.Caption = '号码'
+        Width = 90
+        FieldName = 'N_DOCUMENT'
+      end    
+      item
+        Title.Caption = '供应商'
+        Width = 180
+        FieldName = 'NAME_PROVEEDOR'
+      end    
+      item
+        Title.Caption = '经手人'
+        Width = 120
+        FieldName = 'STAFF'
+      end    
+      item
+        Title.Caption = '日期'
+        FieldName = 'BUYDATE'
+      end>
+    DataSource = DataSource1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 2
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    OnDblClick = DBGrid1DblClick
+    OnKeyDown = DBGrid1KeyDown
+  end
+  object DBList: TZQuery
+    Params = <>
+    left = 173
+    top = 136
+  end
+  object DataSource1: TDataSource
+    DataSet = DBList
+    left = 238
+    top = 209
+  end
+end

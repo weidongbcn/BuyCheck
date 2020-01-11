@@ -1,0 +1,8 @@
+object DataModule1: TDataModule1
+  Left = 983
+  Height = 300
+  Top = 303
+  Width = 400
+  OnCreate = DataModuleCreate
+  LCLVersion = '2.0.2.0'
+end

@@ -1,0 +1,13 @@
+{"version":1,"strings":[
+{"hash":135074005,"name":"tformprogoods.caption","sourcebytes":[228,190,155,229,186,148,229,149,134,232,180,167,229,147,129,229,141,149],"value":"\u4F9B\u5E94\u5546\u8D27\u54C1\u5355"},
+{"hash":169139798,"name":"tformprogoods.label11.caption","sourcebytes":[228,190,155,229,186,148,229,149,134],"value":"\u4F9B\u5E94\u5546"},
+{"hash":12555,"name":"tformprogoods.button5.caption","sourcebytes":[46,46,43],"value":"..+"},
+{"hash":249635613,"name":"tformprogoods.button1.caption","sourcebytes":[229,133,179,233,151,173],"value":"\u5173\u95ED"},
+{"hash":1638657,"name":"tformprogoods.dbgrid1.columns[0].title.caption","sourcebytes":[230,157,161,229,189,162,231,160,129],"value":"\u6761\u5F62\u7801"},
+{"hash":249512089,"name":"tformprogoods.dbgrid1.columns[1].title.caption","sourcebytes":[229,134,133,229,174,185],"value":"\u5185\u5BB9"},
+{"hash":250736748,"name":"tformprogoods.dbgrid1.columns[2].title.caption","sourcebytes":[230,136,144,230,156,172],"value":"\u6210\u672C"},
+{"hash":218523753,"name":"tformprogoods.dbgrid1.columns[3].title.caption","sourcebytes":[231,168,142,231,142,135,40,37,41],"value":"\u7A0E\u7387(%)"},
+{"hash":254647851,"name":"tformprogoods.dbgrid1.columns[4].title.caption","sourcebytes":[231,177,187,229,136,171],"value":"\u7C7B\u522B"},
+{"hash":19665924,"name":"tformprogoods.dbgrid1.columns[5].title.caption","sourcebytes":[230,156,128,229,144,142,230,172,161,230,151,182,233,151,180],"value":"\u6700\u540E\u6B21\u65F6\u95F4"},
+{"hash":256308149,"name":"tformprogoods.dbgrid1.columns[6].title.caption","sourcebytes":[230,138,152,230,137,163,37],"value":"\u6298\u6263%"}
+]}

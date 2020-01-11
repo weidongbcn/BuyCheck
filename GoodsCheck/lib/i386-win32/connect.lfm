@@ -1,0 +1,60 @@
+object DataModule2: TDataModule2
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 310
+  HorizontalOffset = 1276
+  VerticalOffset = 233
+  Width = 545
+  PPI = 96
+  object ZCon1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Port = 0
+    User = 'root'
+    Protocol = 'mysql'
+    left = 152
+    top = 32
+  end
+  object CategQuery: TZQuery
+    Params = <>
+    left = 82
+    top = 45
+  end
+  object CategDataSource: TDataSource
+    DataSet = CategQuery
+    left = 224
+    top = 88
+  end
+  object IVAQuery: TZQuery
+    Params = <>
+    left = 215
+    top = 47
+  end
+  object IVADataSource: TDataSource
+    DataSet = IVAQuery
+    left = 296
+    top = 32
+  end
+  object ProvQuery: TZQuery
+    Params = <>
+    left = 110
+    top = 73
+  end
+  object GetCommuQuery: TZQuery
+    Params = <>
+    left = 155
+    top = 163
+  end
+  object CalPuntoQuery: TZQuery
+    Params = <>
+    left = 274
+    top = 181
+  end
+  object ProDataSource: TDataSource
+    DataSet = ProvQuery
+    left = 88
+    top = 149
+  end
+end

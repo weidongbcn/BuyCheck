@@ -1,0 +1,157 @@
+object FormQUANTIFIER: TFormQUANTIFIER
+  Left = 861
+  Height = 564
+  Top = 302
+  Width = 694
+  ClientHeight = 564
+  ClientWidth = 694
+  OnCreate = FormCreate
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 73
+    Top = 0
+    Width = 694
+    Align = alTop
+    ClientHeight = 73
+    ClientWidth = 694
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 344
+      Height = 17
+      Top = 14
+      Width = 78
+      Caption = 'Listado (列表)'
+      ParentColor = False
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 89
+      Height = 25
+      Top = 43
+      Width = 273
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 273
+      Options = []
+      TabOrder = 0
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbDelete, nbEdit, nbRefresh]
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 41
+    Top = 523
+    Width = 694
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 694
+    TabOrder = 1
+    object Button1: TButton
+      Left = 480
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '退出'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button3: TButton
+      Left = 170
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '保存'
+      OnClick = Button3Click
+      TabOrder = 1
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 450
+    Top = 73
+    Width = 694
+    Align = alClient
+    ClientHeight = 450
+    ClientWidth = 694
+    TabOrder = 2
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 448
+      Top = 1
+      Width = 507
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          ReadOnly = True
+          Title.Caption = '编号'
+          FieldName = 'ID'
+        end      
+        item
+          Title.Caption = '单位'
+          Width = 128
+          FieldName = 'UniDad'
+        end>
+      DataSource = DataSource1
+      TabOrder = 0
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+    end
+    object Panel4: TPanel
+      Left = 508
+      Height = 448
+      Top = 1
+      Width = 185
+      Align = alRight
+      ClientHeight = 448
+      ClientWidth = 185
+      TabOrder = 1
+      object Label2: TLabel
+        Left = 24
+        Height = 17
+        Top = 120
+        Width = 72
+        Caption = '单位名称缩写'
+        ParentColor = False
+      end
+      object Edit1: TEdit
+        Left = 32
+        Height = 25
+        Top = 139
+        Width = 121
+        TabOrder = 0
+      end
+      object Button2: TButton
+        Left = 80
+        Height = 25
+        Top = 166
+        Width = 75
+        Caption = '添加'
+        OnClick = Button2Click
+        TabOrder = 1
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = UnidadQuery
+    left = 224
+    top = 457
+  end
+  object UnidadQuery: TZQuery
+    Params = <>
+    left = 128
+    top = 175
+  end
+  object dbExcute: TZQuery
+    Params = <>
+    left = 552
+    top = 296
+  end
+end
