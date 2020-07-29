@@ -87,7 +87,7 @@ object FormBuyIn: TFormBuyIn
       Caption = '合计'
       ParentColor = False
     end
-    object Cantidad: TCurrencyEdit
+    object Amount: TCurrencyEdit
       Left = 384
       Height = 25
       Top = 23
@@ -99,8 +99,8 @@ object FormBuyIn: TFormBuyIn
       TabOrder = 2
       Value = 0
       ZeroEmpty = False
-      OnExit = CantidadExit
-      OnKeyDown = CantidadKeyDown
+      OnExit = AmountExit
+      OnKeyDown = AmountKeyDown
     end
     object Precio: TCurrencyEdit
       Left = 472

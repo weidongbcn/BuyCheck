@@ -28,7 +28,7 @@ type
     DataSource2: TDataSource;
     Label11: TLabel;
     NewButton: TButton;
-    Cantidad: TCurrencyEdit;
+    Amount: TCurrencyEdit;
     Label10: TLabel;
     PVP1C: TCurrencyEdit;
     Total: TCurrencyEdit;
@@ -63,8 +63,8 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure BuyDetallesAfterPost(DataSet: TDataSet);
-    procedure CantidadExit(Sender: TObject);
-    procedure CantidadKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+    procedure AmountExit(Sender: TObject);
+    procedure AmountKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DescuentoExit(Sender: TObject);
@@ -112,7 +112,7 @@ uses
 procedure TFormBuyIn.ClearInputEdit();
 begin
   Edit2.Text:='';
-  Cantidad.Clear;
+  Amount.Clear;
   Precio.Clear;
   Descuento.Clear;
   Importe.Clear;
@@ -133,7 +133,7 @@ end;
 
 procedure TFormBuyIn.CalImporte();
 begin
-  Importe.Value:=Cantidad.Value * Precio.Value * (1-Descuento.Value/100);
+  Importe.Value:=Amount.Value * Precio.Value * (1-Descuento.Value/100);
 end;
 
 procedure TFormBuyIn.GetTotal;
@@ -300,7 +300,7 @@ begin
       Edit2.Text:=Articulo.FieldByName('GOODS_NAME').AsString;
       Precio.Value:=Articulo.FieldByName('COST').AsCurrency;
       PVP1C.Value:=Articulo.FieldByName('SELLING_P1C').AsCurrency;
-      Cantidad.SetFocus;
+      Amount.SetFocus;
       {
 
       Edit2.Text:=dbArti.FieldByName('CODE').AsString;
@@ -374,12 +374,12 @@ begin
   Buydetalles.RefreshCurrentRow(false);
 end;
 
-procedure TFormBuyIn.CantidadExit(Sender: TObject);
+procedure TFormBuyIn.AmountExit(Sender: TObject);
 begin
   CalImporte();
 end;
 
-procedure TFormBuyIn.CantidadKeyDown(Sender: TObject; var Key: Word;
+procedure TFormBuyIn.AmountKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if Key=VK_Return then SelectNext(ActiveControl,True,True);
@@ -477,7 +477,7 @@ begin
   ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
   ParamByName('COST').AsFloat:= Precio.Value;
   ParamByName('SELLING_P1C').AsFloat:= PVP1C.Value;
-  ParamByName('STOCK').AsFloat:= CANTIDAD.Value;
+  ParamByName('STOCK').AsFloat:= Amount.Value;
   ExecSQL;
 
   /////////仓库中的货品库存//////////
@@ -489,7 +489,7 @@ begin
   ParamByName('ID_STOCK').AsString:=aBUYDoc.ID_STOCK;
   ParamByName('GOODS_ID').AsString:=Articulo.FieldByName('GOODS_ID').AsString;
   ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
-  ParamByName('AMOUNT').AsFloat:= CANTIDAD.Value;
+  ParamByName('AMOUNT').AsFloat:= Amount.Value;
   ParamByName('GOODS_STATUS').AsInteger:= 1;
   ExecSQL;
 
@@ -513,7 +513,7 @@ begin
       SQL.Text:='UPDATE GOODS_SKU SET STOCK=STOCK+:STOCK '
         +'WHERE 1=1 AND SKU_NO=:SKU_NO ';
         ParamByName('SKU_NO').AsString:=CombinaQuery.FieldByName('MEMBER_SKU_NO').AsString;
-        ParamByName('STOCK').AsFloat:= CANTIDAD.Value*CombinaQuery.FieldByName('QUANTITY').AsFloat;
+        ParamByName('STOCK').AsFloat:= Amount.Value*CombinaQuery.FieldByName('QUANTITY').AsFloat;
         ExecSQL;
         sql.Clear;
   sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
@@ -523,7 +523,7 @@ begin
   ParamByName('ID_STOCK').AsString:=aBUYDoc.ID_STOCK;
   ParamByName('GOODS_ID').AsString:=CombinaQuery.FieldByName('GOODS_ID').AsString;
   ParamByName('SKU_NO').AsString:=CombinaQuery.FieldByName('MEMBER_SKU_NO').AsString;
-  ParamByName('AMOUNT').AsFloat:= CANTIDAD.Value;
+  ParamByName('AMOUNT').AsFloat:= Amount.Value;
   ParamByName('GOODS_STATUS').AsInteger:= 1;
   ExecSQL;
       CombinaQuery.Next;
@@ -541,7 +541,7 @@ begin
    ParamByName('GOODS_ID').AsString:=Articulo.FieldByName('GOODS_ID').AsString;
    ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
    ParamByName('ENA').AsString:=trim(Edit1.Text);
-   ParamByName('QUANTITY').AsFloat:= CANTIDAD.Value;
+   ParamByName('QUANTITY').AsFloat:= Amount.Value;
    ParamByName('COMMODITY_UNIT').AsString:=Articulo.FieldByName('UNIT').AsString;
    ParamByName('COST').AsFloat:= Precio.Value;
    ParamByName('DISCOUNT').AsFloat:= Descuento.Value;

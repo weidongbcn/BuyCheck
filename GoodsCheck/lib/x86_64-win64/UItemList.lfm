@@ -8,7 +8,8 @@ object FormItemlist: TFormItemlist
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '2.0.0.4'
+  Position = poDesktopCenter
+  LCLVersion = '2.0.2.0'
   object StringGrid1: TStringGrid
     Left = 0
     Height = 368

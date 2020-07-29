@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="6.3.7" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="预设" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="42177.7283759722" ReportOptions.Description.Text="" ReportOptions.LastChange="44036.8851647569" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="frxDBDataset1" DataSetName="frxDBDataset1"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" PaperWidth="40" PaperHeight="25.8" PaperSize="257" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="0" MirrorMode="0" HGuides.Text="" VGuides.Text="">
+    <TfrxDetailData Name="DetailData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="97.51181102" Left="0" Top="41.57483" Width="151.1812" ColumnWidth="151.181102362205" ColumnGap="0" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" RowCount="0">
+      <TfrxMemoView Name="frxDBDataset1PRO_LANG1" AllowVectorExport="True" Left="3.77952756" Top="1.77953" Width="151.18110236" Height="18.89765" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="[frxDBDataset1.&#34;GOODS_NAME&#34;]"/>
+      <TfrxBarCodeView Name="BarCode1" AllowVectorExport="True" Left="26.11812" Top="22.33859" Width="103" Height="45.35436" BarType="bcCodeEAN13" Expression="&#60;frxDBDataset1.&#34;ENA&#34;&#62;" Frame.Typ="0" HAlign="haCenter" Rotation="0" TestLine="False" Text="12345678" WideBarRatio="2" Zoom="1" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1"/>
+      <TfrxMemoView Name="Memo2" AllowVectorExport="True" Left="3.77953" Top="68.0314960629921" Width="75.5905511811024" Height="22.67716535" DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="0" ParentFont="False" Text="Precio: "/>
+      <TfrxMemoView Name="Memo1" AllowVectorExport="True" Left="79.37013" Top="68.0314960629921" Width="68.03149606" Height="22.67716535" DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haRight" ParentFont="False" Text="[frxDBDataset1.&#34;PVP&#34;] €"/>
+    </TfrxDetailData>
+    <TfrxMasterData Name="MasterData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="0" Left="0" Top="18.89765" Width="151.1812" ColumnWidth="0" ColumnGap="0" DataSet="frxDBDataset1" DataSetName="frxDBDataset1" RowCount="1"/>
+  </TfrxReportPage>
+</TfrxReport>

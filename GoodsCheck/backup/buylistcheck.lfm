@@ -1,29 +1,28 @@
 object Form1: TForm1
-  Left = 695
-  Height = 660
-  Top = 122
-  Width = 1024
+  Left = -8
+  Height = 699
+  Top = -8
+  Width = 1040
   Caption = '核对'
-  ClientHeight = 660
-  ClientWidth = 1024
+  ClientHeight = 790
+  ClientWidth = 1727
   KeyPreview = True
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
   WindowState = wsMaximized
   object Panel1: TPanel
     Left = 0
     Height = 232
     Top = 0
-    Width = 1024
+    Width = 1727
     Align = alTop
     ClientHeight = 232
-    ClientWidth = 1024
+    ClientWidth = 1727
     TabOrder = 0
     object ListView1: TListView
-      Left = 820
+      Left = 1523
       Height = 230
       Top = 1
       Width = 203
@@ -256,13 +255,10 @@ object Form1: TForm1
         DisplayFormat = '0.000;-0.000'
         Font.Color = clWindowText
         Font.Name = 'Tahoma'
-        MaxValue = 0
-        MinValue = 0
         ParentFont = False
         ReadOnly = True
         TabOrder = 3
         TabStop = False
-        Value = 0
         ZeroEmpty = False
         OnKeyDown = PrecioAnterioKeyDown
       end
@@ -290,13 +286,10 @@ object Form1: TForm1
         DisplayFormat = '0.000;-0.000'
         Font.Color = clWindowText
         Font.Name = 'Tahoma'
-        MaxValue = 0
-        MinValue = 0
         ParentFont = False
         ReadOnly = True
         TabOrder = 2
         TabStop = False
-        Value = 0
         ZeroEmpty = False
         OnKeyDown = PrecioCompraKeyDown
       end
@@ -383,11 +376,8 @@ object Form1: TForm1
         Font.Color = clWindowText
         Font.Height = -16
         Font.Name = 'Tahoma'
-        MaxValue = 0
-        MinValue = 0
         ParentFont = False
         TabOrder = 0
-        Value = 0
         ZeroEmpty = False
         OnExit = ChequeEditExit
         OnKeyDown = ChequeEditKeyDown
@@ -412,11 +402,8 @@ object Form1: TForm1
         Font.Color = clWindowText
         Font.Height = -16
         Font.Name = 'Tahoma'
-        MaxValue = 0
-        MinValue = 0
         ParentFont = False
         TabOrder = 1
-        Value = 0
         OnKeyDown = PVPEditKeyDown
       end
       object Label22: TLabel
@@ -447,13 +434,10 @@ object Form1: TForm1
         DisplayFormat = '0'
         Font.Color = clWindowText
         Font.Name = 'Tahoma'
-        MaxValue = 0
-        MinValue = 0
         ParentFont = False
         ReadOnly = True
         TabOrder = 2
         TabStop = False
-        Value = 0
         ZeroEmpty = False
         OnKeyDown = CantidadCompraKeyDown
       end
@@ -469,13 +453,10 @@ object Form1: TForm1
         DisplayFormat = '0'
         Font.Color = clWindowText
         Font.Name = 'Tahoma'
-        MaxValue = 0
-        MinValue = 0
         ParentFont = False
         ReadOnly = True
         TabOrder = 3
         TabStop = False
-        Value = 0
         OnKeyDown = CantidadPasadoKeyDown
       end
       object Benificio: TCurrencyEdit
@@ -489,8 +470,6 @@ object Form1: TForm1
         DisplayFormat = '0;-0'
         Font.Color = clWindowText
         Font.Name = 'Tahoma'
-        MaxValue = 0
-        MinValue = 0
         ParentFont = False
         ReadOnly = True
         TabOrder = 4
@@ -507,13 +486,10 @@ object Form1: TForm1
         DisplayFormat = '0.00;-0.00'
         Font.Color = clWindowText
         Font.Name = 'Tahoma'
-        MaxValue = 0
-        MinValue = 0
         ParentFont = False
         ReadOnly = True
         TabOrder = 5
         TabStop = False
-        Value = 0
         OnKeyDown = PVPRecomedableKeyDown
       end
       object Button2: TButton
@@ -540,11 +516,11 @@ object Form1: TForm1
   object Panel2: TPanel
     Left = 0
     Height = 50
-    Top = 610
-    Width = 1024
+    Top = 740
+    Width = 1727
     Align = alBottom
     ClientHeight = 50
-    ClientWidth = 1024
+    ClientWidth = 1727
     Color = clGradientActiveCaption
     ParentColor = False
     TabOrder = 1
@@ -558,7 +534,7 @@ object Form1: TForm1
       TabOrder = 1
     end
     object Button3: TButton
-      Left = 796
+      Left = 1499
       Height = 25
       Top = 16
       Width = 75
@@ -578,12 +554,12 @@ object Form1: TForm1
     end
   end
   object Panel3: TPanel
-    Left = 856
-    Height = 337
+    Left = 1559
+    Height = 467
     Top = 273
     Width = 168
     Align = alRight
-    ClientHeight = 337
+    ClientHeight = 467
     ClientWidth = 168
     TabOrder = 2
     object ComboBox2: TComboBox
@@ -801,7 +777,7 @@ object Form1: TForm1
     object GroupBox1: TGroupBox
       Left = 1
       Height = 145
-      Top = 191
+      Top = 321
       Width = 166
       Align = alBottom
       Caption = 'Funcionas>'
@@ -831,9 +807,9 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Height = 337
+    Height = 467
     Top = 273
-    Width = 856
+    Width = 1559
     Align = alClient
     Color = clWindow
     Columns = <    
@@ -876,6 +852,7 @@ object Form1: TForm1
       item
         Title.Caption = 'Precio_Compra'
         FieldName = 'PRECIO_CON'
+        DisplayFormat = '0.000'
       end    
       item
         Title.Caption = 'Descuento %'
@@ -987,10 +964,7 @@ object Form1: TForm1
       Width = 70
       Alignment = taRightJustify
       DisplayFormat = '0;-0'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 1
-      Value = 0
       OnKeyDown = ChangeKeyDown
     end
     object Original: TCurrencyEdit
@@ -1000,10 +974,7 @@ object Form1: TForm1
       Width = 70
       Alignment = taRightJustify
       DisplayFormat = '0;-0'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 5
-      Value = 0
       OnKeyDown = OriginalKeyDown
     end
   end
@@ -1011,10 +982,10 @@ object Form1: TForm1
     Left = 0
     Height = 41
     Top = 232
-    Width = 1024
+    Width = 1727
     Align = alTop
     ClientHeight = 41
-    ClientWidth = 1024
+    ClientWidth = 1727
     TabOrder = 5
     object Label28: TLabel
       Left = 40
@@ -1038,106 +1009,106 @@ object Form1: TForm1
   object dbArti: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 696
-    top = 328
+    Left = 696
+    Top = 328
   end
   object dbTrabajo: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 696
-    top = 392
+    Left = 696
+    Top = 392
   end
   object dbCheck: TZQuery
     Params = <>
-    left = 696
-    top = 464
+    Left = 696
+    Top = 464
   end
   object GetDetallesQuery: TZQuery
     Params = <>
     Properties.Strings = (
       'ValidateUpdateCount=-1'
     )
-    left = 816
-    top = 360
+    Left = 816
+    Top = 360
   end
   object dbTest: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 456
+    Left = 456
   end
   object DetallesDataSource: TDataSource
     DataSet = GetDetallesQuery
-    left = 921
-    top = 452
+    Left = 921
+    Top = 452
   end
   object SumTotalQuery: TZQuery
     Params = <>
-    left = 921
-    top = 362
+    Left = 921
+    Top = 362
   end
   object MemDataset1: TMemDataset
     FieldDefs = <>
-    left = 860
-    top = 340
+    Left = 860
+    Top = 340
   end
   object DataSource1: TDataSource
     DataSet = MemDataset1
-    left = 692
-    top = 264
+    Left = 692
+    Top = 264
   end
   object BrandDS: TDataSource
     DataSet = BrandQuery
-    left = 617
-    top = 214
+    Left = 617
+    Top = 214
   end
   object BrandQuery: TZQuery
     Params = <>
-    left = 601
-    top = 185
+    Left = 601
+    Top = 185
   end
   object CombinaQuery: TZQuery
     Params = <>
-    left = 445
-    top = 319
+    Left = 445
+    Top = 319
   end
   object ZUpdateSQL1: TZUpdateSQL
     UseSequenceFieldForRefreshSQL = False
-    left = 224
-    top = 328
+    Left = 224
+    Top = 328
   end
   object CategoryDS: TDataSource
     DataSet = CategoryQuery
-    left = 868
-    top = 108
+    Left = 868
+    Top = 108
   end
   object CategoryQuery: TZQuery
     Params = <>
-    left = 852
-    top = 68
+    Left = 852
+    Top = 68
   end
   object TaxRateDS: TDataSource
     DataSet = TaxRateZQuery
-    left = 309
-    top = 293
+    Left = 309
+    Top = 293
   end
   object TaxRateZQuery: TZQuery
     Params = <>
-    left = 316
-    top = 244
+    Left = 316
+    Top = 244
   end
   object ClasseDS: TDataSource
     DataSet = ClasseQuery
-    left = 561
-    top = 357
+    Left = 561
+    Top = 357
   end
   object ClasseQuery: TZQuery
     Params = <>
-    left = 556
-    top = 284
+    Left = 556
+    Top = 284
   end
   object PopupMenu1: TPopupMenu
-    left = 240
-    top = 376
+    Left = 240
+    Top = 376
     object N1: TMenuItem
       Caption = '-'
     end

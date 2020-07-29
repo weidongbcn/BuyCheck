@@ -215,6 +215,56 @@ begin
     PostMessage(FormHandle , WM_THREAD_MSG , WM_THREAD_MSG_W_RunOver , $111);
 end;
 
+
+{
+function PortTCP_IsOpen(dwPort : Word; ipAddressStr:AnsiString) : boolean;
+var
+  client : sockaddr_in;
+  sock   : Integer;
+
+  ret    : Integer;
+  wsdata : WSAData;
+begin
+ Result:=False;
+ ret := WSAStartup($0002, wsdata); //initiates use of the Winsock DLL
+  if ret<>0 then exit;
+  try
+    client.sin_family      := AF_INET;  //Set the protocol to use , in this case (IPv4)
+    client.sin_port        := htons(dwPort); //convert to TCP/IP network byte order (big-endian)
+    client.sin_addr.s_addr := inet_addr(PAnsiChar(ipAddressStr));  //convert to IN_ADDR  structure
+    sock  :=socket(AF_INET, SOCK_STREAM, 0);    //creates a socket
+    Result:=connect(sock,client,SizeOf(client))=0;  //establishes a connection to a specified socket
+  finally
+  WSACleanup;
+  end;
+end;
+
+}
+
+Function TryIPPort(Const IP : AnsiString; Port : integer) : Boolean;
+ var
+  client : sockaddr_in;
+  sock   : Integer;
+
+  ret    : Integer;
+  wsdata : WSAData;
+begin
+ Result:=False;
+ ret := WSAStartup($0002, wsdata); //initiates use of the Winsock DLL
+  if ret<>0 then exit;
+  try
+    client.sin_family      := AF_INET;  //Set the protocol to use , in this case (IPv4)
+    client.sin_port        := htons(Port); //convert to TCP/IP network byte order (big-endian)
+    client.sin_addr.s_addr := inet_addr(PAnsiChar(ip));  //convert to IN_ADDR  structure
+    sock  :=socket(AF_INET, SOCK_STREAM, 0);    //creates a socket
+    Result:=connect(sock,client,SizeOf(client))=0;  //establishes a connection to a specified socket
+  finally
+  WSACleanup;
+  end;
+end;
+
+
+ {
 Function TryIPPort(Const IP : AnsiString; Port : integer) : Boolean;
 var
   Sock : TSocket;
@@ -248,7 +298,7 @@ begin
     CloseSocket(Sock);
   end;
 end;
-
+}
 
 //获取扫描的任务
 function TTryIPPortThread.GetNextIPPort(

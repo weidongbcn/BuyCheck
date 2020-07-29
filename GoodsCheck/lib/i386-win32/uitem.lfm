@@ -9,7 +9,7 @@ object frmItem: TfrmItem
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 431
     Height = 464
@@ -268,7 +268,7 @@ object frmItem: TfrmItem
   object Timer: TTimer
     Enabled = False
     OnTimer = TimerTimer
-    left = 308
-    top = 180
+    Left = 308
+    Top = 180
   end
 end

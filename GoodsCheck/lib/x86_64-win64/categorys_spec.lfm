@@ -3,11 +3,12 @@ object FormCategorys: TFormCategorys
   Height = 624
   Top = 228
   Width = 879
-  Caption = 'FormCategorys'
+  Caption = '货品分类管理'
   ClientHeight = 624
   ClientWidth = 879
   OnCreate = FormCreate
-  LCLVersion = '2.0.0.4'
+  Position = poDesktopCenter
+  LCLVersion = '2.0.2.0'
   object DBGrid1: TDBGrid
     Left = 0
     Height = 328

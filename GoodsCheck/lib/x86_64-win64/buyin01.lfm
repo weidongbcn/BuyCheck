@@ -3,7 +3,7 @@ object FormBuyIn: TFormBuyIn
   Height = 680
   Top = 190
   Width = 1024
-  Caption = 'Compra'
+  Caption = '货品入库'
   ClientHeight = 680
   ClientWidth = 1024
   KeyPreview = True
@@ -11,7 +11,7 @@ object FormBuyIn: TFormBuyIn
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 97
@@ -87,7 +87,7 @@ object FormBuyIn: TFormBuyIn
       Caption = '合计'
       ParentColor = False
     end
-    object Cantidad: TCurrencyEdit
+    object Amount: TCurrencyEdit
       Left = 384
       Height = 25
       Top = 23
@@ -99,8 +99,8 @@ object FormBuyIn: TFormBuyIn
       TabOrder = 2
       Value = 0
       ZeroEmpty = False
-      OnExit = CantidadExit
-      OnKeyDown = CantidadKeyDown
+      OnExit = AmountExit
+      OnKeyDown = AmountKeyDown
     end
     object Precio: TCurrencyEdit
       Left = 472

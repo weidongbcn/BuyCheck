@@ -5,56 +5,64 @@ object DataModule2: TDataModule2
   HorizontalOffset = 1276
   VerticalOffset = 233
   Width = 545
-  PPI = 96
   object ZCon1: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    ClientCodepage = 'utf8'
     Properties.Strings = (
-      'AutoEncodeStrings='
+      'AutoEncodeStrings=true'
+      'codepage=utf8'
+      'controls_cp=CP_UTF16'
     )
     Port = 0
     User = 'root'
     Protocol = 'mysql'
-    left = 152
-    top = 32
+    Left = 152
+    Top = 32
   end
   object CategQuery: TZQuery
     Params = <>
-    left = 82
-    top = 45
+    Left = 82
+    Top = 45
   end
   object CategDataSource: TDataSource
     DataSet = CategQuery
-    left = 224
-    top = 88
+    Left = 224
+    Top = 88
   end
   object IVAQuery: TZQuery
     Params = <>
-    left = 215
-    top = 47
+    Left = 215
+    Top = 47
   end
   object IVADataSource: TDataSource
     DataSet = IVAQuery
-    left = 296
-    top = 32
+    Left = 296
+    Top = 32
   end
   object ProvQuery: TZQuery
     Params = <>
-    left = 110
-    top = 73
+    Left = 110
+    Top = 73
   end
   object GetCommuQuery: TZQuery
     Params = <>
-    left = 155
-    top = 163
+    Left = 155
+    Top = 163
   end
   object CalPuntoQuery: TZQuery
     Params = <>
-    left = 274
-    top = 181
+    Left = 274
+    Top = 181
   end
   object ProDataSource: TDataSource
     DataSet = ProvQuery
-    left = 88
-    top = 149
+    Left = 88
+    Top = 149
+  end
+  object GetPcConfig: TZQuery
+    Params = <>
+    Left = 155
+    Top = 224
   end
 end

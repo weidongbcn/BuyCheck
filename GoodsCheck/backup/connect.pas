@@ -72,6 +72,7 @@ type
   TDataModule2 = class(TDataModule)
     CategDataSource: TDataSource;
     CategQuery: TZQuery;
+    GetPcConfig: TZQuery;
     ProDataSource: TDataSource;
     ProvQuery: TZQuery;
     IVADataSource: TDataSource;
@@ -90,6 +91,7 @@ type
     procedure DoGetProveedor;
     procedure GetConfigCommu;
     procedure DoUniConn;
+    procedure GetPcPrintConfig;
 
   end;
 
@@ -259,6 +261,7 @@ begin
   DataModule2.DoGetCATEGORIAS;
   DataModule2.DoGetIvas;
   DataModule2.DoGetProveedor;
+  DataModule2.GetPcPrintConfig;
   //GetAllGoods;
   //showmessage('f');
   end;
@@ -354,63 +357,6 @@ ProvQuery.Open;
 
   end;
 
-     with GetCommuQuery do
-  begin
-    Connection:=DataModule1.UniConn;
-     Active:=false;
-     SQL.Clear;
-     SQL.Text:='SELECT * FROM '+UseDBC.EmID+'CONFIGCOMMU WHERE EMID='''+UseDBC.EmID+''' ';
-     Open;
-
-    IF RecordCount = 1 THEN
-      BEGIN
-
-
-      UseConf.WITHCANTDEFAULT:=FieldByName('WITHCANTIDADDEFAULT').ASBOOLEAN;
-      UseConf.CANCHANGEPRICE:=FieldByName('CANCHANGEPRICE').ASBOOLEAN;
-      UseConf.AutoClient:=FieldByName('IDCLIENTAUTO').ASBOOLEAN;
-
-      UseConf.SELLWITHUNITE:=FieldByName('SELLWITHUNITE').ASBOOLEAN;
-      UseConf.EDITWITHPVP:=FieldByName('EDITWITHPVP').ASBOOLEAN;
-      UseConf.INFORMEREAL:=FieldByName('INFORMEREAL').ASBOOLEAN;
-      UseConf.USEPUNTO:=FieldByName('USEPUNTO').ASBOOLEAN;
-      UseConf.PUNTOSIMPLE:=FieldByName('PUNTOSIMPLE').ASBOOLEAN;
-      UseConf.USERETURN:=FieldByName('USERETURN').ASBOOLEAN;
-      UseConf.USERIMAGEPANEL:=FieldByName('USERIMAGEPANEL').ASBOOLEAN;
-      UseConf.CODIGO_ACTUAL:='';
-      UseConf.EmRec:=EMDATO.EM_CAL_REQ;
-      DefaultConf:= UseConf;            //备份用
-      AConfSet:= UseConf;
-      end;
-      if UseConf.USEPUNTO then
-      BEGIN
-      Active:=false;
-     SQL.Clear;
-     SQL.Text:='SELECT * FROM '+UseDBC.EmID+'PUNTOREGLAS ';
-     OPEN;
-
-      Filter:=' CODIGO=''S1'' ';
-      Filtered:=true;
-      SYSPUNTO.S1GASTO:=FieldByName('GASTO').AsFloat;
-      SYSPUNTO.S1PUNTO:=FieldByName('PUNTO').AsFloat;
-      Filter:=' CODIGO=''C1'' ';
-      Filtered:=true;
-      SYSPUNTO.C1GASTO:=FieldByName('GASTO').AsFloat;
-      SYSPUNTO.C1PUNTO:=FieldByName('PUNTO').AsFloat;
-      SYSPUNTO.VT:=FieldByName('VT').AsFloat;
-      Filter:=' CODIGO=''C2'' ';
-      Filtered:=true;
-      SYSPUNTO.C2GASTO:=FieldByName('GASTO').AsFloat;
-      SYSPUNTO.C2PUNTO:=FieldByName('PUNTO').AsFloat;
-
-      Filter:=' CODIGO=''C3'' ';
-      Filtered:=true;
-      SYSPUNTO.C3GASTO:=FieldByName('GASTO').AsFloat;
-      SYSPUNTO.C3PUNTO:=FieldByName('PUNTO').AsFloat;
-      SYSPUNTO.VI:=FieldByName('VI').AsFloat;
-
-      END;
-  end;
 
     {
       if UseConf.USEPUNTO then
@@ -479,6 +425,61 @@ ProvQuery.Open;
     MiQuery.Free;
     if RC=0 then Result := False else Result := True;
   end;
+
+
+  procedure TDataModule2.GetPcPrintConfig;
+begin
+  PCCONFIG.ID_PC:= UseDBC.PCID;
+  with GetPcConfig do
+  begin
+    Connection:=ZCon1;
+     Active:=false;
+    SQL.Clear;
+    SQL.Text:='SELECT * FROM '+UseDBC.EmID+'LOCALPRINTCONFIG '
+            +'WHERE ID_PC=:ID_PC';
+    ParamByName('ID_PC').AsString:=UseDBC.PCID;            //ע��Ͷ�     PCID; //
+    Open;
+    if RecordCount > 0 then
+    begin
+      PCCONFIG.LABELSIZEX:=FieldByName('LABELSIZEX').AsFloat;
+      PCCONFIG.LABELSIZEY:=FieldByName('LABELSIZEY').AsFloat;
+      PCCONFIG.LABELMODE:=FieldByName('LABELMODE').AsInteger;
+
+      PCCONFIG.LABELPRINTNAME:=(FieldByName('LABELPRINTNAME').AsString);
+      PCCONFIG.LABELPAPERDM:=(FieldByName('LABELPAPERDM').AsInteger);
+      PCCONFIG.LABELPRINTPAPER:=(FieldByName('LABELPRINTPAPER').AsString);
+      if FieldByName('ISMANUEL').AsString='Y' then
+       begin
+         PCCONFIG.ISMANUEL:=True;
+       end
+       else
+       BEGIN
+        PCCONFIG.ISMANUEL:=False;
+       END;
+      PCCONFIG.LABELPAPERSIZEX:=FieldByName('LABELPAPERSIZEX').AsFloat;
+      PCCONFIG.LABELPAPERSIZEY:=FieldByName('LABELPAPERSIZEY').AsFloat;
+
+     PCCONFIG.LABELPAPERCOLUMN:=FieldByName('LABELPAPERCOLUMN').AsInteger;
+
+     PCCONFIG.TICKETERANAME:=FieldByName('TICKETERANAME').AsString;
+     PCCONFIG.TICKETPRINTPAPER:= FieldByName('TICKETPRINTPAPER').AsString;
+     PCCONFIG.TICKETPAPERDM:= FieldByName('TICKETPAPERDM').AsInteger;
+     PCCONFIG.TICKETPAPERSIZEX:= FieldByName('TICKETPAPERSIZEX').AsFloat;
+     PCCONFIG.TICKETPAPERSIZEY:= FieldByName('TICKETPAPERSIZEY').AsFloat;
+     PCCONFIG.A4PRINTNAME:=FieldByName('A4PRINTNAME').AsString;
+     PCCONFIG.A4PRINTPAPER:=FieldByName('A4PRINTPAPER').AsString;
+     PCCONFIG.A4PAPERDM:= FieldByName('A4PAPERDM').AsInteger;
+     PCCONFIG.A4PAPERSIZEX:= FieldByName('A4PAPERSIZEX').AsFloat;
+     PCCONFIG.A4PAPERSIZEY:= FieldByName('A4PAPERSIZEY').AsFloat;
+     PCCONFIG.CMDOPENCAJA:=FieldByName('CMDOPENCAJA').AsString;
+     PCCONFIG.CMDCUTPAPER:=FieldByName('CMDCUTPAPER').AsString;
+     PCCONFIG.VISOR_PORT:=FieldByName('VISOR_PORT').AsString;
+
+     Close;
+
+    end;
+  end;
+end;
 
 
 end.

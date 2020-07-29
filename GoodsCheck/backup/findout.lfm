@@ -63,7 +63,7 @@ object FormFindout: TFormFindout
       Height = 33
       Top = 6
       Width = 75
-      Caption = 'BtCancelar'
+      Caption = '取消'
       OnClick = BtCancelarClick
       TabOrder = 1
     end

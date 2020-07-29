@@ -3,12 +3,12 @@ object FormColgada: TFormColgada
   Height = 410
   Top = 167
   Width = 898
-  Caption = 'FormColgada'
+  Caption = '未处理单据'
   ClientHeight = 410
   ClientWidth = 898
   OnCreate = FormCreate
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.3'
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 50
@@ -41,7 +41,7 @@ object FormColgada: TFormColgada
       Height = 25
       Top = 8
       Width = 75
-      Caption = 'Elegir'
+      Caption = '选择'
       OnClick = Button1Click
       TabOrder = 0
     end
@@ -50,7 +50,7 @@ object FormColgada: TFormColgada
       Height = 25
       Top = 8
       Width = 75
-      Caption = 'Cancelar'
+      Caption = '取消'
       OnClick = Button2Click
       TabOrder = 1
     end

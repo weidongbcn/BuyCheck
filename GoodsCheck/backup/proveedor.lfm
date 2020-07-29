@@ -1,7 +1,7 @@
 object FormProveedor: TFormProveedor
-  Left = 656
+  Left = 569
   Height = 680
-  Top = 96
+  Top = 157
   Width = 1024
   ClientHeight = 680
   ClientWidth = 1024
@@ -9,7 +9,7 @@ object FormProveedor: TFormProveedor
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 35
@@ -887,7 +887,6 @@ object FormProveedor: TFormProveedor
         Align = alClient
         BorderStyle = bsSingle
         DBOptions = [dboAutoBmp, dboAlwaysStructured, dboCheckDBStructure, dboParentStructure, dboTrackActive, dboTrackChanges, dboTrackCursor, dboViewAll, dboWriteLevel, dboWriteSecondary]
-        DataSource = ProveedorDB
         DefaultText = 'Node'
         Header.AutoSizeIndex = 0
         Header.Columns = <>
@@ -901,6 +900,33 @@ object FormProveedor: TFormProveedor
         ViewFieldName = 'NAME_COMERCIO'
         DBDataFieldNames = 'ID_PROVEEDOR'
       end
+      object DBGrid3: TDBGrid
+        Left = 1
+        Height = 559
+        Top = 42
+        Width = 246
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'ID_PROVEEDOR'
+            Visible = False
+            FieldName = 'ID_PROVEEDOR'
+          end        
+          item
+            Title.Caption = 'NAME_EMPRESA'
+            Visible = False
+            FieldName = 'NAME_EMPRESA'
+          end        
+          item
+            Title.Caption = 'NAME_COMERCIO'
+            Visible = False
+            FieldName = 'NAME_COMERCIO'
+          end>
+        DataSource = ProveedorDB
+        TabOrder = 2
+        OnDblClick = DBGrid3DblClick
+      end
     end
   end
   object ProveedorQuery: TZQuery
@@ -909,13 +935,13 @@ object FormProveedor: TFormProveedor
       'select * from 0000proveedorlist'
     )
     Params = <>
-    left = 184
-    top = 136
+    Left = 184
+    Top = 136
   end
   object ProveedorDB: TDataSource
     DataSet = ProveedorQuery
-    left = 89
-    top = 90
+    Left = 89
+    Top = 90
   end
   object GuardarQuery: TZQuery
     AutoCalcFields = False
@@ -923,8 +949,8 @@ object FormProveedor: TFormProveedor
       'select * from 0000proveedorlist'
     )
     Params = <>
-    left = 176
-    top = 296
+    Left = 176
+    Top = 296
   end
   object EmTypeUniQuery: TZQuery
     AutoCalcFields = False
@@ -932,13 +958,13 @@ object FormProveedor: TFormProveedor
       'select * from 0000proveedorlist'
     )
     Params = <>
-    left = 712
-    top = 96
+    Left = 712
+    Top = 96
   end
   object EmTypeDataSource: TDataSource
     DataSet = EmTypeUniQuery
-    left = 607
-    top = 96
+    Left = 607
+    Top = 96
   end
   object DBCompra: TZQuery
     AutoCalcFields = False
@@ -946,12 +972,12 @@ object FormProveedor: TFormProveedor
       'select * from 0000proveedorlist'
     )
     Params = <>
-    left = 680
-    top = 80
+    Left = 680
+    Top = 80
   end
   object DBCompraDS: TDataSource
     DataSet = DBCompra
-    left = 712
-    top = 192
+    Left = 712
+    Top = 192
   end
 end

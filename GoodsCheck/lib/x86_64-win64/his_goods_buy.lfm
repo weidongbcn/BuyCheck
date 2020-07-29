@@ -1,13 +1,13 @@
 object FormGoodsBuyHis: TFormGoodsBuyHis
-  Left = 319
+  Left = 440
   Height = 666
-  Top = 182
+  Top = 189
   Width = 967
-  Caption = 'FormGoodsBuyHis'
+  Caption = '货品购买记录'
   ClientHeight = 666
   ClientWidth = 967
   OnCreate = FormCreate
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 80

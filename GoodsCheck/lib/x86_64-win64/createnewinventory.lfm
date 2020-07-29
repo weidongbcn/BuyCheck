@@ -3,12 +3,13 @@ object FormNewInventory: TFormNewInventory
   Height = 463
   Top = 263
   Width = 414
-  Caption = 'FormNewInventory'
+  Caption = '登记新盘点'
   ClientHeight = 463
   ClientWidth = 414
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '2.0.0.4'
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.2.0'
   object DBLookupComboBox3: TDBLookupComboBox
     Left = 106
     Height = 25
@@ -22,12 +23,12 @@ object FormNewInventory: TFormNewInventory
     TabOrder = 0
   end
   object Label16: TLabel
-    Left = 48
+    Left = 73
     Height = 17
     Top = 72
-    Width = 49
+    Width = 24
     Alignment = taRightJustify
-    Caption = 'Almance'
+    Caption = '仓库'
     ParentColor = False
   end
   object Memo1: TMemo
@@ -44,8 +45,8 @@ object FormNewInventory: TFormNewInventory
     Left = 48
     Height = 17
     Top = 109
-    Width = 36
-    Caption = 'Razon'
+    Width = 24
+    Caption = '理由'
     ParentColor = False
   end
   object Button3: TButton

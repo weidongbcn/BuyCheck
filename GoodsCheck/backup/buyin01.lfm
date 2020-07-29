@@ -3,7 +3,7 @@ object FormBuyIn: TFormBuyIn
   Height = 680
   Top = 190
   Width = 1024
-  Caption = 'Compra'
+  Caption = '货品入库'
   ClientHeight = 680
   ClientWidth = 1024
   KeyPreview = True
@@ -11,7 +11,7 @@ object FormBuyIn: TFormBuyIn
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 97

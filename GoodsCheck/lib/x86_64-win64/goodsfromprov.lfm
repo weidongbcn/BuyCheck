@@ -3,11 +3,11 @@ object FormProGoods: TFormProGoods
   Height = 680
   Top = 323
   Width = 1024
-  Caption = 'FormProGoods'
+  Caption = '供应商货品单'
   ClientHeight = 680
   ClientWidth = 1024
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 57

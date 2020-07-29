@@ -4,7 +4,7 @@ object FLookup: TFLookup
   Top = 195
   Width = 866
   BorderStyle = bsSingle
-  Caption = 'FLookup'
+  Caption = '查找结果'
   ClientHeight = 618
   ClientWidth = 866
   Color = clMoneyGreen
@@ -12,8 +12,8 @@ object FLookup: TFLookup
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
-  Position = poScreenCenter
-  LCLVersion = '2.0.0.3'
+  Position = poMainFormCenter
+  LCLVersion = '2.0.2.0'
   object GridBusquedas: TDBGrid
     Left = 0
     Height = 518
@@ -49,7 +49,7 @@ object FLookup: TFLookup
     Top = 0
     Width = 866
     Align = alTop
-    Caption = 'Resultado:'
+    Caption = '结果:'
     TabOrder = 1
   end
   object Panel2: TPanel
@@ -204,7 +204,6 @@ object FLookup: TFLookup
   end
   object dbConect: TZConnection
     ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )

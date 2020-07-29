@@ -91,6 +91,7 @@ begin
 
      Consulta:='SELECT '+Coles+ ' FROM '+ dbTable + ' WHERE 1=1 ';
      ConsultaOriginal:= Consulta;
+
    ShowFormfindout;
    SetLength(result, 2);
   result[0] := Resultado[0];
@@ -114,7 +115,6 @@ begin
   if ColumnSelect[0]='' then Resultado[0] := Consulta
                     else
                       begin
-
                       Resultado[0]:= dbBusquedas.FieldByName(ColumnSelect[0]).Value;
                       Resultado[1]:= dbBusquedas.FieldByName(ColumnSelect[1]).Value;
 

@@ -358,6 +358,7 @@ msgid "Copyright (版权) : Wyldon SoftGest S.L."
 msgstr ""
 
 #: taboutbox.groupbox1.caption
+msgctxt "taboutbox.groupbox1.caption"
 msgid "注册信息"
 msgstr ""
 
@@ -870,6 +871,7 @@ msgid "结单"
 msgstr ""
 
 #: tformbuyin.caption
+msgctxt "tformbuyin.caption"
 msgid "货品入库"
 msgstr ""
 
@@ -929,6 +931,7 @@ msgid "条形码"
 msgstr ""
 
 #: tformbuyin.label10.caption
+msgctxt "tformbuyin.label10.caption"
 msgid "记录编号:"
 msgstr ""
 
@@ -938,6 +941,7 @@ msgid "销售价"
 msgstr ""
 
 #: tformbuyin.label12.caption
+msgctxt "tformbuyin.label12.caption"
 msgid "(F5) Para busqueda"
 msgstr ""
 
@@ -983,6 +987,732 @@ msgstr ""
 #: tformbuyin.newbutton.caption
 msgctxt "tformbuyin.newbutton.caption"
 msgid "新记录.."
+msgstr ""
+
+#: tformbuyin02.avisolimit.text
+msgctxt "tformbuyin02.avisolimit.text"
+msgid "No"
+msgstr ""
+
+#: tformbuyin02.bitbtn12.caption
+msgctxt "tformbuyin02.bitbtn12.caption"
+msgid "..."
+msgstr ""
+
+#: tformbuyin02.bitbtn19.caption
+msgctxt "tformbuyin02.bitbtn19.caption"
+msgid "..."
+msgstr ""
+
+#: tformbuyin02.bitbtn2.caption
+msgctxt "tformbuyin02.bitbtn2.caption"
+msgid "Buscar"
+msgstr ""
+
+#: tformbuyin02.bitbtn20.caption
+msgctxt "tformbuyin02.bitbtn20.caption"
+msgid "..."
+msgstr ""
+
+#: tformbuyin02.bitbtn21.caption
+msgctxt "tformbuyin02.bitbtn21.caption"
+msgid "..."
+msgstr ""
+
+#: tformbuyin02.bitbtn22.caption
+msgctxt "tformbuyin02.bitbtn22.caption"
+msgid "..."
+msgstr ""
+
+#: tformbuyin02.bitbtn3.caption
+msgctxt "tformbuyin02.bitbtn3.caption"
+msgid "Buscar"
+msgstr ""
+
+#: tformbuyin02.bitbtn5.caption
+msgctxt "tformbuyin02.bitbtn5.caption"
+msgid "查找"
+msgstr ""
+
+#: tformbuyin02.button1.caption
+msgctxt "tformbuyin02.button1.caption"
+msgid "确定"
+msgstr ""
+
+#: tformbuyin02.button10.caption
+msgctxt "tformbuyin02.button10.caption"
+msgid "取消"
+msgstr ""
+
+#: tformbuyin02.button11.caption
+msgctxt "tformbuyin02.button11.caption"
+msgid "应用"
+msgstr ""
+
+#: tformbuyin02.button12.caption
+msgctxt "tformbuyin02.button12.caption"
+msgid "删除"
+msgstr ""
+
+#: tformbuyin02.button13.caption
+msgctxt "tformbuyin02.button13.caption"
+msgid "删除"
+msgstr ""
+
+#: tformbuyin02.button14.caption
+msgid "打印全部标签"
+msgstr ""
+
+#: tformbuyin02.button2.caption
+msgctxt "tformbuyin02.button2.caption"
+msgid "挂单"
+msgstr ""
+
+#: tformbuyin02.button3.caption
+msgctxt "tformbuyin02.button3.caption"
+msgid "结单"
+msgstr ""
+
+#: tformbuyin02.button4.caption
+msgctxt "tformbuyin02.button4.caption"
+msgid "开启编辑"
+msgstr ""
+
+#: tformbuyin02.button5.caption
+msgctxt "tformbuyin02.button5.caption"
+msgid "更新"
+msgstr ""
+
+#: tformbuyin02.button6.caption
+msgctxt "tformbuyin02.button6.caption"
+msgid "组成规格商品"
+msgstr ""
+
+#: tformbuyin02.button7.caption
+msgctxt "tformbuyin02.button7.caption"
+msgid "[+]"
+msgstr ""
+
+#: tformbuyin02.button8.caption
+msgctxt "tformbuyin02.button8.caption"
+msgid "增加"
+msgstr ""
+
+#: tformbuyin02.button9.caption
+msgid "打印所选条码标签"
+msgstr ""
+
+#: tformbuyin02.candiscount.text
+msgctxt "tformbuyin02.candiscount.text"
+msgid "Yes"
+msgstr ""
+
+#: tformbuyin02.caption
+msgctxt "tformbuyin02.caption"
+msgid "货品入库"
+msgstr ""
+
+#: tformbuyin02.cbutton.caption
+msgctxt "tformbuyin02.cbutton.caption"
+msgid "保存"
+msgstr ""
+
+#: tformbuyin02.datemod.text
+msgctxt "tformbuyin02.datemod.text"
+msgid "05/10/2017 20:10:32"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[0].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[0].title.caption"
+msgid "编码"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[1].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[1].title.caption"
+msgid "名称"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[2].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[2].title.caption"
+msgid "数量"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[3].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[3].title.caption"
+msgid "单位"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[4].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[4].title.caption"
+msgid "成本"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[5].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[5].title.caption"
+msgid "折扣(%)"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[6].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[6].title.caption"
+msgid "税率%"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[7].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[7].title.caption"
+msgid "小计"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[8].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[8].title.caption"
+msgid "销售价"
+msgstr ""
+
+#: tformbuyin02.dbgrid1.columns[9].title.caption
+msgctxt "tformbuyin02.dbgrid1.columns[9].title.caption"
+msgid "商品唯一码"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[0].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[0].title.caption"
+msgid "SKU名称"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[10].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[10].title.caption"
+msgid "商品唯一码"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[1].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[1].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[2].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[2].title.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[3].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[3].title.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[4].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[4].title.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[5].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[5].title.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[6].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[6].title.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[7].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[7].title.caption"
+msgid "销售折扣%"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[8].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[8].title.caption"
+msgid "库存"
+msgstr ""
+
+#: tformbuyin02.dbgrid2.columns[9].title.caption
+msgctxt "tformbuyin02.dbgrid2.columns[9].title.caption"
+msgid "商品编码"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[0].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[0].title.caption"
+msgid "SKU名称"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[10].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[10].title.caption"
+msgid "SKU编码"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[1].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[1].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[2].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[2].title.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[3].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[3].title.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[4].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[4].title.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[5].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[5].title.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[6].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[6].title.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[7].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[7].title.caption"
+msgid "销售折扣%"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[8].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[8].title.caption"
+msgid "库存"
+msgstr ""
+
+#: tformbuyin02.dbgrid3.columns[9].title.caption
+msgctxt "tformbuyin02.dbgrid3.columns[9].title.caption"
+msgid "商品销售码"
+msgstr ""
+
+#: tformbuyin02.dbgrid4.columns[0].title.caption
+msgctxt "tformbuyin02.dbgrid4.columns[0].title.caption"
+msgid "SKU名称"
+msgstr ""
+
+#: tformbuyin02.dbgrid4.columns[1].title.caption
+msgctxt "tformbuyin02.dbgrid4.columns[1].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformbuyin02.dbgrid4.columns[2].title.caption
+msgctxt "tformbuyin02.dbgrid4.columns[2].title.caption"
+msgid "销售价"
+msgstr ""
+
+#: tformbuyin02.dbgrid4.columns[3].title.caption
+msgctxt "tformbuyin02.dbgrid4.columns[3].title.caption"
+msgid "组合数量"
+msgstr ""
+
+#: tformbuyin02.dbgrid4.columns[4].title.caption
+msgctxt "tformbuyin02.dbgrid4.columns[4].title.caption"
+msgid "单位"
+msgstr ""
+
+#: tformbuyin02.dbgrid4.columns[5].title.caption
+msgctxt "tformbuyin02.dbgrid4.columns[5].title.caption"
+msgid "成员SKU编码"
+msgstr ""
+
+#: tformbuyin02.edit4.text
+msgctxt "tformbuyin02.edit4.text"
+msgid "-1"
+msgstr ""
+
+#: tformbuyin02.imaadd.caption
+msgctxt "tformbuyin02.imaadd.caption"
+msgid "添加"
+msgstr ""
+
+#: tformbuyin02.imanext.caption
+msgid "下一张"
+msgstr ""
+
+#: tformbuyin02.imaprior.caption
+msgid "上一张"
+msgstr ""
+
+#: tformbuyin02.label1.caption
+msgctxt "tformbuyin02.label1.caption"
+msgid "商品条码:"
+msgstr ""
+
+#: tformbuyin02.label10.caption
+msgctxt "tformbuyin02.label10.caption"
+msgid "记录编号:"
+msgstr ""
+
+#: tformbuyin02.label11.caption
+msgid "当前图片"
+msgstr ""
+
+#: tformbuyin02.label12.caption
+msgctxt "tformbuyin02.label12.caption"
+msgid "(F5) Para busqueda"
+msgstr ""
+
+#: tformbuyin02.label13.caption
+msgctxt "tformbuyin02.label13.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformbuyin02.label14.caption
+msgctxt "tformbuyin02.label14.caption"
+msgid "商品的销售规格影响SKU商品的价格"
+msgstr ""
+
+#: tformbuyin02.label15.caption
+msgctxt "tformbuyin02.label15.caption"
+msgid "商品属性不影响价格"
+msgstr ""
+
+#: tformbuyin02.label16.caption
+msgctxt "tformbuyin02.label16.caption"
+msgid "UUID"
+msgstr ""
+
+#: tformbuyin02.label17.caption
+msgctxt "tformbuyin02.label17.caption"
+msgid "商品品牌:"
+msgstr ""
+
+#: tformbuyin02.label18.caption
+msgctxt "tformbuyin02.label18.caption"
+msgid "重量"
+msgstr ""
+
+#: tformbuyin02.label19.caption
+msgctxt "tformbuyin02.label19.caption"
+msgid "包装/体积"
+msgstr ""
+
+#: tformbuyin02.label2.caption
+msgctxt "tformbuyin02.label2.caption"
+msgid "辅助码:"
+msgstr ""
+
+#: tformbuyin02.label20.caption
+msgctxt "tformbuyin02.label20.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformbuyin02.label21.caption
+msgctxt "tformbuyin02.label21.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformbuyin02.label22.caption
+msgctxt "tformbuyin02.label22.caption"
+msgid "PVP(3)"
+msgstr ""
+
+#: tformbuyin02.label23.caption
+msgctxt "tformbuyin02.label23.caption"
+msgid "PVP(2)"
+msgstr ""
+
+#: tformbuyin02.label24.caption
+msgctxt "tformbuyin02.label24.caption"
+msgid "PVP(1)"
+msgstr ""
+
+#: tformbuyin02.label25.caption
+msgctxt "tformbuyin02.label25.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformbuyin02.label26.caption
+msgctxt "tformbuyin02.label26.caption"
+msgid "商品销售码"
+msgstr ""
+
+#: tformbuyin02.label27.caption
+msgctxt "tformbuyin02.label27.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformbuyin02.label28.caption
+msgctxt "tformbuyin02.label28.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformbuyin02.label29.caption
+msgctxt "tformbuyin02.label29.caption"
+msgid "PVP(3)"
+msgstr ""
+
+#: tformbuyin02.label3.caption
+msgctxt "tformbuyin02.label3.caption"
+msgid "名称(1):"
+msgstr ""
+
+#: tformbuyin02.label30.caption
+msgctxt "tformbuyin02.label30.caption"
+msgid "PVP(2)"
+msgstr ""
+
+#: tformbuyin02.label31.caption
+msgctxt "tformbuyin02.label31.caption"
+msgid "PVP(1)"
+msgstr ""
+
+#: tformbuyin02.label32.caption
+msgctxt "tformbuyin02.label32.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformbuyin02.label33.caption
+msgctxt "tformbuyin02.label33.caption"
+msgid "商品销售码"
+msgstr ""
+
+#: tformbuyin02.label34.caption
+msgctxt "tformbuyin02.label34.caption"
+msgid "库存"
+msgstr ""
+
+#: tformbuyin02.label35.caption
+msgctxt "tformbuyin02.label35.caption"
+msgid "名称(2):"
+msgstr ""
+
+#: tformbuyin02.label36.caption
+msgctxt "tformbuyin02.label36.caption"
+msgid "商品类型:"
+msgstr ""
+
+#: tformbuyin02.label37.caption
+msgctxt "tformbuyin02.label37.caption"
+msgid "计件单位:"
+msgstr ""
+
+#: tformbuyin02.label38.caption
+msgctxt "tformbuyin02.label38.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformbuyin02.label39.caption
+msgctxt "tformbuyin02.label39.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tformbuyin02.label4.caption
+msgctxt "tformbuyin02.label4.caption"
+msgid "当前库存量: "
+msgstr ""
+
+#: tformbuyin02.label40.caption
+msgctxt "tformbuyin02.label40.caption"
+msgid "购买数量达到优惠数量时享受的优惠价格"
+msgstr ""
+
+#: tformbuyin02.label41.caption
+msgctxt "tformbuyin02.label41.caption"
+msgid "优惠数量"
+msgstr ""
+
+#: tformbuyin02.label42.caption
+msgctxt "tformbuyin02.label42.caption"
+msgid "优惠价格"
+msgstr ""
+
+#: tformbuyin02.label43.caption
+msgctxt "tformbuyin02.label43.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tformbuyin02.label44.caption
+msgctxt "tformbuyin02.label44.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformbuyin02.label45.caption
+msgctxt "tformbuyin02.label45.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformbuyin02.label46.caption
+msgctxt "tformbuyin02.label46.caption"
+msgid "销售折扣%:"
+msgstr ""
+
+#: tformbuyin02.label47.caption
+msgctxt "tformbuyin02.label47.caption"
+msgid "组合内容"
+msgstr ""
+
+#: tformbuyin02.label48.caption
+msgctxt "tformbuyin02.label48.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tformbuyin02.label49.caption
+msgctxt "tformbuyin02.label49.caption"
+msgid "最后次供应商:"
+msgstr ""
+
+#: tformbuyin02.label5.caption
+msgctxt "tformbuyin02.label5.caption"
+msgid " 更新日期: "
+msgstr ""
+
+#: tformbuyin02.label50.caption
+msgctxt "tformbuyin02.label50.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tformbuyin02.label51.caption
+msgctxt "tformbuyin02.label51.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformbuyin02.label52.caption
+msgctxt "tformbuyin02.label52.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformbuyin02.label53.caption
+msgctxt "tformbuyin02.label53.caption"
+msgid "选择商品"
+msgstr ""
+
+#: tformbuyin02.label54.caption
+msgctxt "tformbuyin02.label54.caption"
+msgid "销售折扣%"
+msgstr ""
+
+#: tformbuyin02.label55.caption
+msgctxt "tformbuyin02.label55.caption"
+msgid "销售折扣%"
+msgstr ""
+
+#: tformbuyin02.label56.caption
+msgctxt "tformbuyin02.label56.caption"
+msgid "参与组合的数量:"
+msgstr ""
+
+#: tformbuyin02.label57.caption
+msgctxt "tformbuyin02.label57.caption"
+msgid "启动库存警戒"
+msgstr ""
+
+#: tformbuyin02.label58.caption
+msgctxt "tformbuyin02.label58.caption"
+msgid "最低警戒数量"
+msgstr ""
+
+#: tformbuyin02.label59.caption
+msgctxt "tformbuyin02.label59.caption"
+msgid "可以打折"
+msgstr ""
+
+#: tformbuyin02.label6.caption
+msgctxt "tformbuyin02.label6.caption"
+msgid "商品分类:"
+msgstr ""
+
+#: tformbuyin02.label60.caption
+msgctxt "tformbuyin02.label60.caption"
+msgid "促销价"
+msgstr ""
+
+#: tformbuyin02.label61.caption
+msgctxt "tformbuyin02.label61.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformbuyin02.label62.caption
+msgctxt "tformbuyin02.label62.caption"
+msgid "销售折扣%:"
+msgstr ""
+
+#: tformbuyin02.label63.caption
+msgctxt "tformbuyin02.label63.caption"
+msgid "数量"
+msgstr ""
+
+#: tformbuyin02.label64.caption
+msgctxt "tformbuyin02.label64.caption"
+msgid "合计"
+msgstr ""
+
+#: tformbuyin02.label65.caption
+msgctxt "tformbuyin02.label65.caption"
+msgid "销售价"
+msgstr ""
+
+#: tformbuyin02.label66.caption
+msgctxt "tformbuyin02.label66.caption"
+msgid "折扣(%)"
+msgstr ""
+
+#: tformbuyin02.label67.caption
+msgctxt "tformbuyin02.label67.caption"
+msgid "成本"
+msgstr ""
+
+#: tformbuyin02.label68.caption
+msgctxt "tformbuyin02.label68.caption"
+msgid "赠送销售积分数"
+msgstr ""
+
+#: tformbuyin02.label7.caption
+msgctxt "tformbuyin02.label7.caption"
+msgid "(%)税率:"
+msgstr ""
+
+#: tformbuyin02.label8.caption
+msgctxt "tformbuyin02.label8.caption"
+msgid "供应商:"
+msgstr ""
+
+#: tformbuyin02.label9.caption
+msgctxt "tformbuyin02.label9.caption"
+msgid "金额:"
+msgstr ""
+
+#: tformbuyin02.newbutton.caption
+msgctxt "tformbuyin02.newbutton.caption"
+msgid "新记录.."
+msgstr ""
+
+#: tformbuyin02.save2.caption
+msgid "SAVE2"
+msgstr ""
+
+#: tformbuyin02.tabsheet1.caption
+msgid "基本信息"
+msgstr ""
+
+#: tformbuyin02.tabsheet2.caption
+msgctxt "tformbuyin02.tabsheet2.caption"
+msgid "规格商品和库存"
+msgstr ""
+
+#: tformbuyin02.tabsheet3.caption
+msgctxt "tformbuyin02.tabsheet3.caption"
+msgid "商品属性"
+msgstr ""
+
+#: tformbuyin02.tabsheet4.caption
+msgctxt "tformbuyin02.tabsheet4.caption"
+msgid "商品优惠价格"
+msgstr ""
+
+#: tformbuyin02.tabsheet5.caption
+msgctxt "tformbuyin02.tabsheet5.caption"
+msgid "添加组合"
+msgstr ""
+
+#: tformbuyin02.tabsheet6.caption
+msgid "图片信息"
+msgstr ""
+
+#: tformbuyin02.tabsheet7.caption
+msgid "组合信息"
+msgstr ""
+
+#: tformbuyin02.typebox.text
+msgctxt "tformbuyin02.typebox.text"
+msgid "普通商品"
 msgstr ""
 
 #: tformbuypay.button1.caption
@@ -1084,6 +1814,120 @@ msgstr ""
 
 #: tformcolgada.label1.caption
 msgid "Listado Colgado"
+msgstr ""
+
+#: tformetipes.button1.caption
+msgctxt "tformetipes.button1.caption"
+msgid "退出"
+msgstr ""
+
+#: tformetipes.button2.caption
+msgctxt "tformetipes.button2.caption"
+msgid "增加"
+msgstr ""
+
+#: tformetipes.button3.caption
+msgid "保存修改"
+msgstr ""
+
+#: tformetipes.button4.caption
+msgid "删除单条"
+msgstr ""
+
+#: tformetipes.button5.caption
+msgid "清空数据"
+msgstr ""
+
+#: tformetipes.button6.caption
+msgid "刷新数据"
+msgstr ""
+
+#: tformetipes.button7.caption
+msgid "打印"
+msgstr ""
+
+#: tformetipes.button8.caption
+msgid "重新读取"
+msgstr ""
+
+#: tformetipes.caption
+msgid "货品的标签打印"
+msgstr ""
+
+#: tformetipes.checkbox1.caption
+msgid "快速输入"
+msgstr ""
+
+#: tformetipes.dbgrid1.columns[0].title.caption
+msgctxt "tformetipes.dbgrid1.columns[0].title.caption"
+msgid "条码(ENA)"
+msgstr ""
+
+#: tformetipes.dbgrid1.columns[1].title.caption
+msgctxt "tformetipes.dbgrid1.columns[1].title.caption"
+msgid "商品名称(Concepcion)"
+msgstr ""
+
+#: tformetipes.dbgrid1.columns[2].title.caption
+msgid "品牌(Marca)"
+msgstr ""
+
+#: tformetipes.dbgrid1.columns[3].title.caption
+msgctxt "tformetipes.dbgrid1.columns[3].title.caption"
+msgid "标量(Medida,Pesos)"
+msgstr ""
+
+#: tformetipes.dbgrid1.columns[4].title.caption
+msgid "单位(QUANTIFIER)"
+msgstr ""
+
+#: tformetipes.dbgrid1.columns[5].title.caption
+msgid "生产日期(Fecha Fb.)"
+msgstr ""
+
+#: tformetipes.dbgrid1.columns[6].title.caption
+msgctxt "tformetipes.dbgrid1.columns[6].title.caption"
+msgid "销售价格(PVP)"
+msgstr ""
+
+#: tformetipes.dbgrid1.columns[7].title.caption
+msgid "份数"
+msgstr ""
+
+#: tformetipes.label1.caption
+msgctxt "tformetipes.label1.caption"
+msgid "条码(ENA)"
+msgstr ""
+
+#: tformetipes.label2.caption
+msgctxt "tformetipes.label2.caption"
+msgid "商品名称(Concepcion)"
+msgstr ""
+
+#: tformetipes.label3.caption
+msgid "品牌(Marca de Ariticulo)"
+msgstr ""
+
+#: tformetipes.label4.caption
+msgctxt "tformetipes.label4.caption"
+msgid "标量(Medida,Pesos)"
+msgstr ""
+
+#: tformetipes.label5.caption
+msgid "单位(cuantificador)"
+msgstr ""
+
+#: tformetipes.label6.caption
+msgid "生产日期(Fecha de Fabrica)"
+msgstr ""
+
+#: tformetipes.label7.caption
+msgctxt "tformetipes.label7.caption"
+msgid "销售价格(PVP)"
+msgstr ""
+
+#: tformetipes.label8.caption
+msgid "份数(Cantidad)"
 msgstr ""
 
 #: tformfindout.addbutton.caption
@@ -1285,6 +2129,7 @@ msgid " 查找的内容  "
 msgstr ""
 
 #: tformgoodsspu.avisolimit.text
+msgctxt "tformgoodsspu.avisolimit.text"
 msgid "No"
 msgstr ""
 
@@ -1338,6 +2183,7 @@ msgid "取消"
 msgstr ""
 
 #: tformgoodsspu.button11.caption
+msgctxt "tformgoodsspu.button11.caption"
 msgid "应用"
 msgstr ""
 
@@ -1352,6 +2198,7 @@ msgid "删除"
 msgstr ""
 
 #: tformgoodsspu.button2.caption
+msgctxt "tformgoodsspu.button2.caption"
 msgid "组成规格商品"
 msgstr ""
 
@@ -1361,18 +2208,22 @@ msgid "保存"
 msgstr ""
 
 #: tformgoodsspu.button4.caption
+msgctxt "tformgoodsspu.button4.caption"
 msgid "开启编辑"
 msgstr ""
 
 #: tformgoodsspu.button5.caption
+msgctxt "tformgoodsspu.button5.caption"
 msgid "更新"
 msgstr ""
 
 #: tformgoodsspu.button6.caption
+msgctxt "tformgoodsspu.button6.caption"
 msgid "[+]"
 msgstr ""
 
 #: tformgoodsspu.button7.caption
+msgctxt "tformgoodsspu.button7.caption"
 msgid "增加"
 msgstr ""
 
@@ -1382,6 +2233,7 @@ msgid "清空"
 msgstr ""
 
 #: tformgoodsspu.candiscount.text
+msgctxt "tformgoodsspu.candiscount.text"
 msgid "Yes"
 msgstr ""
 
@@ -1395,10 +2247,12 @@ msgid "保存"
 msgstr ""
 
 #: tformgoodsspu.dateadd.text
+msgctxt "tformgoodsspu.dateadd.text"
 msgid "14/03/2017 17:34:31"
 msgstr ""
 
 #: tformgoodsspu.datemod.text
+msgctxt "tformgoodsspu.datemod.text"
 msgid "05/10/2017 20:10:32"
 msgstr ""
 
@@ -1528,6 +2382,7 @@ msgid "销售价"
 msgstr ""
 
 #: tformgoodsspu.dbgrid3.columns[3].title.caption
+msgctxt "tformgoodsspu.dbgrid3.columns[3].title.caption"
 msgid "组合数量"
 msgstr ""
 
@@ -1542,10 +2397,12 @@ msgid "成员SKU编码"
 msgstr ""
 
 #: tformgoodsspu.edit4.text
+msgctxt "tformgoodsspu.edit4.text"
 msgid "-1"
 msgstr ""
 
 #: tformgoodsspu.label1.caption
+msgctxt "tformgoodsspu.label1.caption"
 msgid "商品条码:"
 msgstr ""
 
@@ -1570,10 +2427,12 @@ msgid "批发价"
 msgstr ""
 
 #: tformgoodsspu.label14.caption
+msgctxt "tformgoodsspu.label14.caption"
 msgid "商品的销售规格影响SKU商品的价格"
 msgstr ""
 
 #: tformgoodsspu.label15.caption
+msgctxt "tformgoodsspu.label15.caption"
 msgid "商品属性不影响价格"
 msgstr ""
 
@@ -1588,10 +2447,12 @@ msgid "商品品牌:"
 msgstr ""
 
 #: tformgoodsspu.label18.caption
+msgctxt "tformgoodsspu.label18.caption"
 msgid "重量"
 msgstr ""
 
 #: tformgoodsspu.label19.caption
+msgctxt "tformgoodsspu.label19.caption"
 msgid "包装/体积"
 msgstr ""
 
@@ -1681,6 +2542,7 @@ msgid "库存"
 msgstr ""
 
 #: tformgoodsspu.label35.caption
+msgctxt "tformgoodsspu.label35.caption"
 msgid "名称(2):"
 msgstr ""
 
@@ -1690,10 +2552,12 @@ msgid "商品类型:"
 msgstr ""
 
 #: tformgoodsspu.label37.caption
+msgctxt "tformgoodsspu.label37.caption"
 msgid "计件单位:"
 msgstr ""
 
 #: tformgoodsspu.label38.caption
+msgctxt "tformgoodsspu.label38.caption"
 msgid "赠送销售积分数"
 msgstr ""
 
@@ -1702,18 +2566,22 @@ msgid "购买该商品时赠送消费积分, -1表示按商品价格赠送"
 msgstr ""
 
 #: tformgoodsspu.label4.caption
+msgctxt "tformgoodsspu.label4.caption"
 msgid "创建日期: "
 msgstr ""
 
 #: tformgoodsspu.label40.caption
+msgctxt "tformgoodsspu.label40.caption"
 msgid "购买数量达到优惠数量时享受的优惠价格"
 msgstr ""
 
 #: tformgoodsspu.label41.caption
+msgctxt "tformgoodsspu.label41.caption"
 msgid "优惠数量"
 msgstr ""
 
 #: tformgoodsspu.label42.caption
+msgctxt "tformgoodsspu.label42.caption"
 msgid "优惠价格"
 msgstr ""
 
@@ -1723,6 +2591,7 @@ msgid "销售折扣%:"
 msgstr ""
 
 #: tformgoodsspu.label44.caption
+msgctxt "tformgoodsspu.label44.caption"
 msgid "组合内容"
 msgstr ""
 
@@ -1747,10 +2616,12 @@ msgid "零售价(1)"
 msgstr ""
 
 #: tformgoodsspu.label49.caption
+msgctxt "tformgoodsspu.label49.caption"
 msgid "最后次供应商:"
 msgstr ""
 
 #: tformgoodsspu.label5.caption
+msgctxt "tformgoodsspu.label5.caption"
 msgid "修改日期: "
 msgstr ""
 
@@ -1770,6 +2641,7 @@ msgid "销售折扣%:"
 msgstr ""
 
 #: tformgoodsspu.label53.caption
+msgctxt "tformgoodsspu.label53.caption"
 msgid "选择商品"
 msgstr ""
 
@@ -1784,26 +2656,32 @@ msgid "销售折扣%"
 msgstr ""
 
 #: tformgoodsspu.label56.caption
+msgctxt "tformgoodsspu.label56.caption"
 msgid "参与组合的数量:"
 msgstr ""
 
 #: tformgoodsspu.label57.caption
+msgctxt "tformgoodsspu.label57.caption"
 msgid "启动库存警戒"
 msgstr ""
 
 #: tformgoodsspu.label58.caption
+msgctxt "tformgoodsspu.label58.caption"
 msgid "最低警戒数量"
 msgstr ""
 
 #: tformgoodsspu.label59.caption
+msgctxt "tformgoodsspu.label59.caption"
 msgid "可以打折"
 msgstr ""
 
 #: tformgoodsspu.label6.caption
+msgctxt "tformgoodsspu.label6.caption"
 msgid "商品分类:"
 msgstr ""
 
 #: tformgoodsspu.label7.caption
+msgctxt "tformgoodsspu.label7.caption"
 msgid "(%)税率:"
 msgstr ""
 
@@ -1822,18 +2700,22 @@ msgid "价格信息"
 msgstr ""
 
 #: tformgoodsspu.tabsheet2.caption
+msgctxt "tformgoodsspu.tabsheet2.caption"
 msgid "规格商品和库存"
 msgstr ""
 
 #: tformgoodsspu.tabsheet3.caption
+msgctxt "tformgoodsspu.tabsheet3.caption"
 msgid "商品属性"
 msgstr ""
 
 #: tformgoodsspu.tabsheet4.caption
+msgctxt "tformgoodsspu.tabsheet4.caption"
 msgid "商品优惠价格"
 msgstr ""
 
 #: tformgoodsspu.tabsheet5.caption
+msgctxt "tformgoodsspu.tabsheet5.caption"
 msgid "添加组合"
 msgstr ""
 
@@ -2371,6 +3253,18 @@ msgctxt "tformproveedor.checkbox5.caption"
 msgid "Buscar por importe"
 msgstr ""
 
+#: tformproveedor.dbgrid3.columns[0].title.caption
+msgid "ID_PROVEEDOR"
+msgstr ""
+
+#: tformproveedor.dbgrid3.columns[1].title.caption
+msgid "NAME_EMPRESA"
+msgstr ""
+
+#: tformproveedor.dbgrid3.columns[2].title.caption
+msgid "NAME_COMERCIO"
+msgstr ""
+
 #: tformproveedor.label1.caption
 msgid "中文名称(Nombre Comercial)*:"
 msgstr ""
@@ -2737,6 +3631,15 @@ msgctxt "tformwork.checkbutton.hint"
 msgid "Stock Inventory"
 msgstr ""
 
+#: tformwork.checkbutton1.caption
+msgid " 盘点"
+msgstr ""
+
+#: tformwork.checkbutton1.hint
+msgctxt "tformwork.checkbutton1.hint"
+msgid "Stock Inventory"
+msgstr ""
+
 #: tformwork.dbgrid1.columns[0].title.caption
 msgid "处理编号"
 msgstr ""
@@ -2790,6 +3693,15 @@ msgctxt "tformwork.documentobutton.hint"
 msgid "Albaran, Factura"
 msgstr ""
 
+#: tformwork.documentobutton1.caption
+msgid "鞋店进货"
+msgstr ""
+
+#: tformwork.documentobutton1.hint
+msgctxt "tformwork.documentobutton1.hint"
+msgid "Albaran, Factura"
+msgstr ""
+
 #: tformwork.excelbutton.caption
 msgid "XLS"
 msgstr ""
@@ -2825,6 +3737,14 @@ msgstr ""
 msgid "Importar datas por:"
 msgstr ""
 
+#: tformwork.labelbutton.caption
+msgid "标签打印"
+msgstr ""
+
+#: tformwork.labelbutton.hint
+msgid "Etiquetas"
+msgstr ""
+
 #: tformwork.n12.caption
 msgctxt "tformwork.n12.caption"
 msgid "查看"
@@ -2850,6 +3770,11 @@ msgstr ""
 
 #: tformwork.quitbutton.hint
 msgid "Exit"
+msgstr ""
+
+#: tformwork.register.caption
+msgctxt "tformwork.register.caption"
+msgid "注册信息"
 msgstr ""
 
 #: tformwork.register.hint

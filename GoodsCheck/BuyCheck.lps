@@ -4,12 +4,12 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="64">
+    <Units Count="70">
       <Unit0>
         <Filename Value="BuyCheck.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="103"/>
-        <CursorPos X="58" Y="110"/>
+        <TopLine Value="140"/>
+        <CursorPos X="46" Y="157"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -20,7 +20,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ReadDBfile"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="381"/>
         <CursorPos X="19" Y="408"/>
         <UsageCount Value="200"/>
@@ -33,16 +33,16 @@
         <ComponentName Value="DataModule2"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="393"/>
-        <CursorPos X="41" Y="221"/>
+        <EditorIndex Value="17"/>
         <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="Globales\fn_mysql.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="8"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="29"/>
         <CursorPos X="83" Y="48"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
@@ -54,9 +54,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Global"/>
-        <EditorIndex Value="17"/>
-        <TopLine Value="460"/>
-        <CursorPos X="6" Y="507"/>
+        <EditorIndex Value="18"/>
+        <TopLine Value="212"/>
+        <CursorPos X="22" Y="230"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -67,9 +67,9 @@
         <ComponentName Value="FormFindout"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="136"/>
-        <CursorPos X="80" Y="90"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="76"/>
+        <CursorPos X="2" Y="123"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -81,8 +81,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="WorkStation"/>
-        <EditorIndex Value="13"/>
-        <CursorPos X="90" Y="8"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="411"/>
+        <CursorPos X="3" Y="111"/>
+        <ComponentState Value="2"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -93,7 +96,7 @@
         <ComponentName Value="FLookup"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="72"/>
         <CursorPos X="14" Y="35"/>
         <UsageCount Value="206"/>
@@ -107,10 +110,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Proveedor"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="433"/>
-        <CursorPos Y="435"/>
+        <EditorIndex Value="20"/>
+        <TopLine Value="480"/>
+        <CursorPos X="61" Y="515"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="moduleadd.pas"/>
@@ -152,9 +157,12 @@
         <ComponentName Value="FormGoodsList"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="31" Y="11"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="45"/>
+        <CursorPos X="3" Y="58"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="stockactual.pas"/>
@@ -175,23 +183,22 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="BuyInput"/>
-        <EditorIndex Value="12"/>
-        <TopLine Value="185"/>
-        <CursorPos Y="194"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="48"/>
+        <CursorPos X="14" Y="60"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit14>
       <Unit15>
-        <Filename Value="buyin01.pas"/>
+        <Filename Value="buyin02.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormBuyIn"/>
+        <ComponentName Value="FormBuyIn02"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="BuyIn01"/>
-        <EditorIndex Value="11"/>
-        <TopLine Value="443"/>
-        <CursorPos X="93" Y="470"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="834"/>
+        <CursorPos X="4" Y="845"/>
         <UsageCount Value="207"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -203,7 +210,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="BuyInColgada"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="9"/>
         <TopLine Value="98"/>
         <CursorPos X="30" Y="126"/>
         <UsageCount Value="213"/>
@@ -217,11 +224,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="CreateNewInventory"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="23" Y="98"/>
         <UsageCount Value="202"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit17>
       <Unit18>
         <Filename Value="inventory.pas"/>
@@ -231,7 +236,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Inventory"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="484"/>
+        <TopLine Value="475"/>
         <CursorPos X="34" Y="514"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
@@ -256,7 +261,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FindoutGoodsInPro"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="22"/>
         <TopLine Value="13"/>
         <CursorPos X="3" Y="15"/>
         <UsageCount Value="201"/>
@@ -271,7 +276,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="PayofBuy"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="41" Y="9"/>
+        <TopLine Value="122"/>
+        <CursorPos X="17" Y="129"/>
         <UsageCount Value="201"/>
       </Unit21>
       <Unit22>
@@ -327,10 +333,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="BuyListCheck"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="16"/>
-        <TopLine Value="540"/>
-        <CursorPos X="2" Y="549"/>
+        <EditorIndex Value="23"/>
+        <TopLine Value="330"/>
+        <CursorPos X="4" Y="357"/>
+        <ComponentState Value="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -353,9 +359,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AddGoods"/>
-        <EditorIndex Value="21"/>
-        <TopLine Value="1047"/>
-        <CursorPos X="3" Y="1049"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="1605"/>
+        <CursorPos X="84" Y="1622"/>
         <UsageCount Value="206"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -367,10 +373,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Select_SKU"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="78"/>
-        <CursorPos X="44" Y="101"/>
+        <EditorIndex Value="14"/>
+        <CursorPos X="16"/>
         <UsageCount Value="220"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit29>
       <Unit30>
         <Filename Value="U_Conn_Indy.pas"/>
@@ -378,9 +385,8 @@
         <ComponentName Value="DMindy"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="511"/>
-        <CursorPos X="57" Y="529"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="67" Y="14"/>
         <UsageCount Value="225"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -393,8 +399,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UItem"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="397"/>
-        <CursorPos Y="571"/>
+        <TopLine Value="268"/>
+        <CursorPos X="53" Y="258"/>
         <UsageCount Value="225"/>
       </Unit31>
       <Unit32>
@@ -414,15 +420,18 @@
         <ComponentName Value="FormLogin"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="291"/>
-        <CursorPos Y="294"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="419"/>
+        <CursorPos X="56" Y="427"/>
         <UsageCount Value="225"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit33>
       <Unit34>
         <Filename Value="Udata.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
         <CursorPos X="27" Y="103"/>
         <UsageCount Value="223"/>
       </Unit34>
@@ -467,6 +476,34 @@
         <UsageCount Value="247"/>
       </Unit38>
       <Unit39>
+        <Filename Value="buyin01.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormBuyIn"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="BuyIn01"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="242"/>
+        <CursorPos X="7" Y="258"/>
+        <UsageCount Value="99"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="etiquetasarticulos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormEtiPEs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="EtiquetasArticulos"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="91"/>
+        <CursorPos X="3" Y="111"/>
+        <UsageCount Value="55"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit40>
+      <Unit41>
         <Filename Value="checkdb.pas"/>
         <ComponentName Value="FormCheck"/>
         <HasResources Value="True"/>
@@ -475,9 +512,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="160"/>
         <CursorPos X="100" Y="141"/>
-        <UsageCount Value="162"/>
-      </Unit39>
-      <Unit40>
+        <UsageCount Value="153"/>
+      </Unit41>
+      <Unit42>
         <Filename Value="category.pas"/>
         <ComponentName Value="FormCategory"/>
         <HasResources Value="True"/>
@@ -485,9 +522,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="309"/>
         <CursorPos X="45" Y="264"/>
-        <UsageCount Value="160"/>
-      </Unit40>
-      <Unit41>
+        <UsageCount Value="151"/>
+      </Unit42>
+      <Unit43>
         <Filename Value="addgood.pas"/>
         <ComponentName Value="FormGoods"/>
         <HasResources Value="True"/>
@@ -495,58 +532,58 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="19" Y="280"/>
-        <UsageCount Value="145"/>
-      </Unit41>
-      <Unit42>
+        <UsageCount Value="136"/>
+      </Unit43>
+      <Unit44>
         <Filename Value="D:\lazarus\fpc\3.0.4\source\rtl\objpas\math.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="137"/>
         <CursorPos X="8" Y="156"/>
-        <UsageCount Value="6"/>
-      </Unit42>
-      <Unit43>
+        <UsageCount Value="7"/>
+      </Unit44>
+      <Unit45>
         <Filename Value="D:\lazarus\lcl\lcltype.pp"/>
         <UnitName Value="LCLType"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="325"/>
-        <UsageCount Value="62"/>
-      </Unit43>
-      <Unit44>
+        <UsageCount Value="53"/>
+      </Unit45>
+      <Unit46>
         <Filename Value="..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcMySqlUtils.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="279"/>
         <CursorPos Y="296"/>
-        <UsageCount Value="19"/>
-      </Unit44>
-      <Unit45>
+        <UsageCount Value="10"/>
+      </Unit46>
+      <Unit47>
         <Filename Value="..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcIntfs.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1205"/>
         <CursorPos Y="1222"/>
-        <UsageCount Value="74"/>
-      </Unit45>
-      <Unit46>
+        <UsageCount Value="65"/>
+      </Unit47>
+      <Unit48>
         <Filename Value="D:\lazarus\fpc\3.0.4\source\rtl\objpas\sysutils\finah.inc"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="10" Y="23"/>
-        <UsageCount Value="60"/>
-      </Unit46>
-      <Unit47>
+        <UsageCount Value="51"/>
+      </Unit48>
+      <Unit49>
         <Filename Value="D:\lazarus\components\lazutils\lazutf8.pas"/>
         <UnitName Value="LazUTF8"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="186"/>
         <CursorPos X="11" Y="203"/>
-        <UsageCount Value="60"/>
-      </Unit47>
-      <Unit48>
+        <UsageCount Value="51"/>
+      </Unit49>
+      <Unit50>
         <Filename Value="..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcCache.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1812"/>
         <CursorPos X="49" Y="1835"/>
-        <UsageCount Value="74"/>
-      </Unit48>
-      <Unit49>
+        <UsageCount Value="65"/>
+      </Unit50>
+      <Unit51>
         <Filename Value="spec_select.pas"/>
         <ComponentName Value="FormSelectSpec"/>
         <HasResources Value="True"/>
@@ -555,9 +592,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="8"/>
         <CursorPos X="16" Y="10"/>
-        <UsageCount Value="69"/>
-      </Unit49>
-      <Unit50>
+        <UsageCount Value="60"/>
+      </Unit51>
+      <Unit52>
         <Filename Value="categorys_spec.pas"/>
         <ComponentName Value="FormCategorys"/>
         <HasResources Value="True"/>
@@ -565,232 +602,259 @@
         <UnitName Value="Categorys_Spec"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="16"/>
-        <UsageCount Value="95"/>
-      </Unit50>
-      <Unit51>
+        <UsageCount Value="86"/>
+      </Unit52>
+      <Unit53>
         <Filename Value="D:\lazarus\components\zeoslib-code-7.3\src\dbc\ZDbcMySqlUtils.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="372"/>
         <CursorPos Y="378"/>
-        <UsageCount Value="19"/>
-      </Unit51>
-      <Unit52>
+        <UsageCount Value="10"/>
+      </Unit53>
+      <Unit54>
         <Filename Value="D:\lazarus\components\zeoslib-code-7.3\src\dbc\ZDbcUtils.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="370"/>
         <CursorPos Y="387"/>
-        <UsageCount Value="56"/>
-      </Unit52>
-      <Unit53>
+        <UsageCount Value="47"/>
+      </Unit54>
+      <Unit55>
         <Filename Value="D:\lazarus\fpc\3.0.4\source\rtl\objpas\sysutils\sysstrh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="31"/>
         <CursorPos X="10" Y="264"/>
-        <UsageCount Value="47"/>
-      </Unit53>
-      <Unit54>
+        <UsageCount Value="38"/>
+      </Unit55>
+      <Unit56>
         <Filename Value="..\..\AppData\Local\lazarus\onlinepackagemanager\packages\Indy10\Core\IdTCPConnection.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="307"/>
-        <CursorPos Y="937"/>
-        <UsageCount Value="7"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="302"/>
+        <CursorPos X="6" Y="309"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit54>
-      <Unit55>
+      </Unit56>
+      <Unit57>
         <Filename Value="icmpthread.pas"/>
         <UnitName Value="IcmpThread"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="49"/>
         <CursorPos X="17" Y="68"/>
-        <UsageCount Value="83"/>
-      </Unit55>
-      <Unit56>
-        <Filename Value="C:\lazarus\components\zeoslib-7.3\src\plain\ZPlainLoader.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="215"/>
-        <CursorPos Y="232"/>
-        <UsageCount Value="3"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit56>
-      <Unit57>
-        <Filename Value="C:\lazarus\lcl\controls.pp"/>
-        <UnitName Value="Controls"/>
-        <EditorIndex Value="20"/>
-        <TopLine Value="40"/>
-        <CursorPos X="7" Y="57"/>
-        <UsageCount Value="102"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="74"/>
       </Unit57>
       <Unit58>
+        <Filename Value="C:\lazarus\lcl\controls.pp"/>
+        <UnitName Value="Controls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="7" Y="57"/>
+        <UsageCount Value="96"/>
+      </Unit58>
+      <Unit59>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1905"/>
         <CursorPos Y="1921"/>
-        <UsageCount Value="57"/>
-      </Unit58>
-      <Unit59>
-        <Filename Value="..\..\AppData\Local\lazarus\onlinepackagemanager\packages\Indy10\System\IdGlobal.pas"/>
-        <EditorIndex Value="7"/>
-        <UsageCount Value="116"/>
-        <Loaded Value="True"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
+        <UsageCount Value="69"/>
       </Unit59>
       <Unit60>
-        <Filename Value="..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcMySql.pas"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="253"/>
-        <CursorPos X="102" Y="269"/>
-        <UsageCount Value="116"/>
-        <Loaded Value="True"/>
+        <Filename Value="..\..\AppData\Local\lazarus\onlinepackagemanager\packages\Indy10\System\IdGlobal.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="108"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit60>
       <Unit61>
-        <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
-        <UnitName Value="Dialogs"/>
-        <EditorIndex Value="19"/>
-        <TopLine Value="29"/>
-        <CursorPos X="3" Y="44"/>
-        <UsageCount Value="116"/>
-        <Loaded Value="True"/>
+        <Filename Value="..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcMySql.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="142"/>
+        <CursorPos X="102" Y="269"/>
+        <UsageCount Value="108"/>
       </Unit61>
       <Unit62>
-        <Filename Value="C:\lazarus\lcl\lcltype.pp"/>
-        <UnitName Value="LCLType"/>
-        <EditorIndex Value="18"/>
-        <TopLine Value="769"/>
-        <CursorPos X="3" Y="784"/>
-        <UsageCount Value="116"/>
-        <Loaded Value="True"/>
+        <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="29"/>
+        <CursorPos X="3" Y="44"/>
+        <UsageCount Value="110"/>
       </Unit62>
       <Unit63>
+        <Filename Value="C:\lazarus\lcl\lcltype.pp"/>
+        <UnitName Value="LCLType"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="13" Y="31"/>
+        <UsageCount Value="112"/>
+      </Unit63>
+      <Unit64>
         <Filename Value="C:\lazarus\lcl\printers.pas"/>
         <UnitName Value="Printers"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="21"/>
         <TopLine Value="571"/>
         <CursorPos Y="586"/>
-        <UsageCount Value="61"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
-      </Unit63>
+      </Unit64>
+      <Unit65>
+        <Filename Value="u_findgoods_spu.pas"/>
+        <ComponentName Value="FormFindGoods_Spu"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="U_FindGoods_Spu"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="27"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="C:\lazarus\lcl\stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1192"/>
+        <CursorPos X="15" Y="1204"/>
+        <UsageCount Value="8"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="C:\lazarus\components\zeoslib-7.3\src\dbc\ZDbcMySqlUtils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="381"/>
+        <CursorPos Y="393"/>
+        <UsageCount Value="12"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="C:\lazarus\components\zeoslib-7.3\src\component\ZAbstractRODataset.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2407"/>
+        <CursorPos Y="2425"/>
+        <UsageCount Value="10"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="C:\lazarus\fpc\3.2.0\source\packages\rtl-extra\src\win\winsock.pp"/>
+        <UnitName Value="WinSock"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="690"/>
+        <CursorPos X="14" Y="709"/>
+        <UsageCount Value="9"/>
+      </Unit69>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="buylistcheck.pas"/>
-        <Caret Line="545" Column="3" TopLine="540"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1553" Column="30" TopLine="1529"/>
       </Position1>
       <Position2>
-        <Filename Value="buylistcheck.pas"/>
-        <Caret Line="546" Column="4" TopLine="540"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1554" Column="30" TopLine="1530"/>
       </Position2>
       <Position3>
-        <Filename Value="workstation.pas"/>
-        <Caret Line="188" Column="22" TopLine="169"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1555" Column="30" TopLine="1531"/>
       </Position3>
       <Position4>
-        <Filename Value="workstation.pas"/>
-        <Caret Line="213" Column="17" TopLine="204"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1556" Column="33" TopLine="1532"/>
       </Position4>
       <Position5>
-        <Filename Value="workstation.pas"/>
-        <Caret Line="349" Column="3" TopLine="347"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1557" Column="34" TopLine="1533"/>
       </Position5>
       <Position6>
-        <Filename Value="workstation.pas"/>
-        <Caret Line="370" Column="52" TopLine="347"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1558" Column="33" TopLine="1534"/>
       </Position6>
       <Position7>
-        <Filename Value="workstation.pas"/>
-        <Caret Line="373" Column="53" TopLine="337"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1560" Column="30" TopLine="1536"/>
       </Position7>
       <Position8>
-        <Filename Value="workstation.pas"/>
-        <Caret Line="215" Column="10" TopLine="209"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1561" Column="31" TopLine="1537"/>
       </Position8>
       <Position9>
-        <Filename Value="Globales\global.pas"/>
-        <Caret Line="8" Column="40"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1562" Column="31" TopLine="1538"/>
       </Position9>
       <Position10>
-        <Filename Value="buylistcheck.pas"/>
-        <Caret Line="823" Column="3" TopLine="818"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1563" Column="31" TopLine="1539"/>
       </Position10>
       <Position11>
-        <Filename Value="buylistcheck.pas"/>
-        <Caret Line="180" Column="23" TopLine="166"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1564" Column="34" TopLine="1540"/>
       </Position11>
       <Position12>
-        <Filename Value="buylistcheck.pas"/>
-        <Caret Line="568" Column="17" TopLine="544"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1565" Column="35" TopLine="1541"/>
       </Position12>
       <Position13>
-        <Filename Value="buylistcheck.pas"/>
-        <Caret Line="570" Column="19" TopLine="546"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1566" Column="34" TopLine="1542"/>
       </Position13>
       <Position14>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="1169" Column="110" TopLine="1165"/>
+        <Filename Value="addgoods.pas"/>
+        <Caret Line="1611" Column="23" TopLine="1586"/>
       </Position14>
       <Position15>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="1170" Column="110" TopLine="1166"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="1160" Column="68" TopLine="1186"/>
       </Position15>
       <Position16>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="1171" Column="110" TopLine="1167"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="511" Column="3" TopLine="518"/>
       </Position16>
       <Position17>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="1170" Column="110" TopLine="1166"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="169" Column="25" TopLine="155"/>
       </Position17>
       <Position18>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="1171" Column="110" TopLine="1167"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="353" Column="5" TopLine="364"/>
       </Position18>
       <Position19>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="397" Column="22" TopLine="382"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="520" Column="12" TopLine="501"/>
       </Position19>
       <Position20>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="399" Column="35" TopLine="391"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="755" Column="20" TopLine="730"/>
       </Position20>
       <Position21>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="401" Column="8" TopLine="388"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="788" Column="20" TopLine="764"/>
       </Position21>
       <Position22>
         <Filename Value="buylistcheck.pas"/>
-        <Caret Line="1307" Column="4" TopLine="1290"/>
+        <Caret Line="808" Column="60" TopLine="784"/>
       </Position22>
       <Position23>
         <Filename Value="buylistcheck.pas"/>
-        <Caret Line="545" Column="3" TopLine="539"/>
+        <Caret Line="1201" Column="109" TopLine="1177"/>
       </Position23>
       <Position24>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="398" Column="48" TopLine="377"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="1341" Column="26" TopLine="1316"/>
       </Position24>
       <Position25>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="400" Column="35" TopLine="377"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="82" Column="16" TopLine="68"/>
       </Position25>
       <Position26>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="401" Column="58" TopLine="377"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="355" Column="14" TopLine="330"/>
       </Position26>
       <Position27>
-        <Filename Value="readdbfile.pas"/>
-        <Caret Line="405" Column="52" TopLine="381"/>
+        <Filename Value="buylistcheck.pas"/>
+        <Caret Line="82" Column="16" TopLine="68"/>
       </Position27>
       <Position28>
         <Filename Value="buylistcheck.pas"/>
-        <Caret Line="549" Column="17" TopLine="543"/>
+        <Caret Line="355" Column="16" TopLine="330"/>
       </Position28>
       <Position29>
         <Filename Value="buylistcheck.pas"/>
-        <Caret Line="1367" Column="49" TopLine="1334"/>
+        <Caret Line="357" Column="14" TopLine="332"/>
       </Position29>
       <Position30>
         <Filename Value="buylistcheck.pas"/>
-        <Caret Line="545" Column="3" TopLine="540"/>
+        <Caret Line="82" Column="16" TopLine="68"/>
       </Position30>
     </JumpHistory>
     <RunParams>
@@ -798,4 +862,15 @@
       <Modes Count="0" ActiveMode="default"/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="uitem.pas"/>
+        <Line Value="287"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

@@ -1,7 +1,7 @@
 object FormInventory: TFormInventory
-  Left = 516
+  Left = 577
   Height = 680
-  Top = 176
+  Top = 128
   Width = 1024
   Caption = '盘点'
   ClientHeight = 680

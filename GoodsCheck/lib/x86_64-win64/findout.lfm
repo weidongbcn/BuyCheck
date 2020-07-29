@@ -3,13 +3,14 @@ object FormFindout: TFormFindout
   Height = 645
   Top = 232
   Width = 522
-  Caption = 'FormFindout'
+  Caption = '查找结果'
   ClientHeight = 645
   ClientWidth = 522
   KeyPreview = True
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
+  Position = poOwnerFormCenter
   LCLVersion = '2.0.2.0'
   object GridBusquedas: TDBGrid
     Left = 0
@@ -53,7 +54,7 @@ object FormFindout: TFormFindout
       Height = 35
       Top = 6
       Width = 81
-      Caption = 'BtCerrar'
+      Caption = '确定'
       OnClick = BtCerrarClick
       TabOrder = 0
     end
@@ -62,7 +63,7 @@ object FormFindout: TFormFindout
       Height = 33
       Top = 6
       Width = 75
-      Caption = 'BtCancelar'
+      Caption = '取消'
       OnClick = BtCancelarClick
       TabOrder = 1
     end
@@ -71,7 +72,7 @@ object FormFindout: TFormFindout
       Height = 33
       Top = 6
       Width = 75
-      Caption = '&Crear(F11)'
+      Caption = '建新&N(F11)'
       OnClick = AddButtonClick
       TabOrder = 2
     end

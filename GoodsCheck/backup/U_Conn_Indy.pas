@@ -189,7 +189,7 @@ begin
         TLog.AddMsg('10');
         writelog('sys','error1', E.Message);
         //if (FClient.Socket) then FClient.Socket.Close;
-        FClient.Disconnect;
+       // FClient.Disconnect;
         Terminate;
       end;
      end;
@@ -531,7 +531,7 @@ begin
     begin
     IsConected:=False;
     Logined:=False;
-
+    Mt.Suspend;
    // Form_Conn_Terminal.lnames.Clear;
    // Form_Conn_Terminal.edTo.Clear;
    // Form_Conn_Terminal.msg.lines.add(Formatdatetime('yyyy-mm-dd hh:nn:ss', now())+': '+ansistring(AStatusText));

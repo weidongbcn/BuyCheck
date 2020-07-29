@@ -8,7 +8,6 @@
       <MainUnit Value="0"/>
       <Title Value="BuyCheck"/>
       <ResourceType Value="res"/>
-      <UseXPManifest Value="True"/>
       <XPManifest>
         <DpiAware Value="True/PM"/>
       </XPManifest>
@@ -30,51 +29,54 @@
         <Mode0 Name="default"/>
       </Modes>
     </RunParams>
-    <RequiredPackages Count="14">
+    <RequiredPackages Count="15">
       <Item1>
-        <PackageName Value="pl_cindy"/>
+        <PackageName Value="fr6_lazarus"/>
       </Item1>
       <Item2>
-        <PackageName Value="laz_synapse"/>
+        <PackageName Value="pl_cindy"/>
       </Item2>
       <Item3>
-        <PackageName Value="indylaz"/>
+        <PackageName Value="laz_synapse"/>
       </Item3>
       <Item4>
-        <PackageName Value="Printer4Lazarus"/>
+        <PackageName Value="indylaz"/>
       </Item4>
       <Item5>
-        <PackageName Value="virtualdbgrid_package"/>
+        <PackageName Value="Printer4Lazarus"/>
       </Item5>
       <Item6>
-        <PackageName Value="virtualtreeview_package"/>
+        <PackageName Value="virtualdbgrid_package"/>
       </Item6>
       <Item7>
-        <PackageName Value="virtualdbtreeexlaz"/>
+        <PackageName Value="virtualtreeview_package"/>
       </Item7>
       <Item8>
-        <PackageName Value="MemDSLaz"/>
+        <PackageName Value="virtualdbtreeexlaz"/>
       </Item8>
       <Item9>
-        <PackageName Value="rxnew"/>
+        <PackageName Value="MemDSLaz"/>
       </Item9>
       <Item10>
-        <PackageName Value="DateTimeCtrls"/>
+        <PackageName Value="rxnew"/>
       </Item10>
       <Item11>
-        <PackageName Value="FCL"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item11>
       <Item12>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="FCL"/>
       </Item12>
       <Item13>
-        <PackageName Value="laz_fpspreadsheet_visual"/>
+        <PackageName Value="zcomponent"/>
       </Item13>
       <Item14>
-        <PackageName Value="LCL"/>
+        <PackageName Value="laz_fpspreadsheet_visual"/>
       </Item14>
+      <Item15>
+        <PackageName Value="LCL"/>
+      </Item15>
     </RequiredPackages>
-    <Units Count="39">
+    <Units Count="41">
       <Unit0>
         <Filename Value="BuyCheck.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -183,12 +185,11 @@
         <UnitName Value="BuyInput"/>
       </Unit14>
       <Unit15>
-        <Filename Value="buyin01.pas"/>
+        <Filename Value="buyin02.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="FormBuyIn"/>
+        <ComponentName Value="FormBuyIn02"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="BuyIn01"/>
       </Unit15>
       <Unit16>
         <Filename Value="buyincolgada.pas"/>
@@ -355,6 +356,22 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit38>
+      <Unit39>
+        <Filename Value="buyin01.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormBuyIn"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="BuyIn01"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="etiquetasarticulos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormEtiPEs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="EtiquetasArticulos"/>
+      </Unit40>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -368,14 +385,25 @@
       <OtherUnitFiles Value="Globales"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
     <CodeGeneration>
+      <VerifyObjMethodCallValidity Value="True"/>
       <TargetCPU Value="i386"/>
       <TargetOS Value="win32"/>
+      <SmallerCode Value="True"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
+        <GenerateDebugInfo Value="False"/>
         <UseValgrind Value="True"/>
+        <StripSymbols Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
       </Debugging>
+      <LinkSmart Value="True"/>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>
@@ -388,6 +416,8 @@
         <ShowAll Value="True"/>
         <ShowDebugInfo Value="True"/>
         <ShowUsedFiles Value="True"/>
+        <ShowTriedFiles Value="True"/>
+        <ShowCompProc Value="True"/>
         <ShowCond Value="True"/>
         <ShowExecInfo Value="True"/>
       </Verbosity>

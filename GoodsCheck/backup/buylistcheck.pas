@@ -349,10 +349,12 @@ begin
   //   ParamByName('N_DOCUMENT').AsString:=ACheckDoc.N_DOCUMENT;
   Open;
   end;
-  TFloatField(GetDetallesQuery.FieldByName('PRECIO_sin')).DisplayFormat := '0.000';
-  TFloatField(GetDetallesQuery.FieldByName('PRECIO_con')).DisplayFormat := '0.000';
+ // TFloatField(GetDetallesQuery.FieldByName('PRECIO_sin')).DisplayFormat := '0.000';
+  //TFloatField(GetDetallesQuery.FieldByName('PRECIO_con')).DisplayFormat := '0.000';
 
-  MemDataset1.CopyFromDataset(GetDetallesQuery);
+  //MemDataset1.CreateTable;
+
+ // MemDataset1.CopyFromDataset(GetDetallesQuery);
 
 end;
 
@@ -542,11 +544,11 @@ procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
 var
   Product:TGoods;
 begin
-  if key=VK_F3 then
-  OpenCashEspon;
+  //if key=VK_F3 then
+  //OpenCashEspon;
 
- // if key=VK_F3 then
- // AbirCajon();
+  if key=VK_F3 then
+  AbirCajon();
 
   if Key=VK_F5 then
   begin

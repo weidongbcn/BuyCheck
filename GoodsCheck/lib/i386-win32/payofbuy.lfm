@@ -1,11 +1,12 @@
 object FormBuyPay: TFormBuyPay
-  Left = 898
+  Left = 473
   Height = 423
-  Top = 274
+  Top = 180
   Width = 646
   Caption = '支付登记'
   ClientHeight = 423
   ClientWidth = 646
+  KeyPreview = True
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poMainFormCenter
@@ -113,6 +114,7 @@ object FormBuyPay: TFormBuyPay
         MinValue = 0
         TabOrder = 0
         Value = 0
+        OnKeyDown = CurrencyEdit1KeyDown
       end
       object CurrencyEdit2: TCurrencyEdit
         Left = 91
@@ -126,6 +128,8 @@ object FormBuyPay: TFormBuyPay
         MinValue = 0
         TabOrder = 1
         Value = 0
+        OnChange = CurrencyEdit2Change
+        OnKeyDown = CurrencyEdit2KeyDown
       end
       object CurrencyEdit3: TCurrencyEdit
         Left = 91
@@ -139,6 +143,7 @@ object FormBuyPay: TFormBuyPay
         MinValue = 0
         TabOrder = 2
         Value = 0
+        OnKeyDown = CurrencyEdit3KeyDown
       end
       object CurrencyEdit4: TCurrencyEdit
         Left = 91
@@ -152,6 +157,8 @@ object FormBuyPay: TFormBuyPay
         MinValue = 0
         TabOrder = 3
         Value = 0
+        OnChange = CurrencyEdit4Change
+        OnKeyDown = CurrencyEdit4KeyDown
       end
     end
     object Total: TCurrencyEdit
@@ -168,6 +175,7 @@ object FormBuyPay: TFormBuyPay
       TabOrder = 1
       TabStop = False
       Value = 0
+      OnKeyDown = TotalKeyDown
     end
     object Realpago: TCurrencyEdit
       Left = 363
@@ -182,6 +190,7 @@ object FormBuyPay: TFormBuyPay
       TabOrder = 0
       Value = 0
       ZeroEmpty = False
+      OnKeyDown = RealpagoKeyDown
     end
   end
   object Panel2: TPanel

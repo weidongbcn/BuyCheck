@@ -72,6 +72,7 @@ type
   TDataModule2 = class(TDataModule)
     CategDataSource: TDataSource;
     CategQuery: TZQuery;
+    GetPcConfig: TZQuery;
     ProDataSource: TDataSource;
     ProvQuery: TZQuery;
     IVADataSource: TDataSource;
@@ -90,6 +91,7 @@ type
     procedure DoGetProveedor;
     procedure GetConfigCommu;
     procedure DoUniConn;
+    procedure GetPcPrintConfig;
 
   end;
 
@@ -259,6 +261,7 @@ begin
   DataModule2.DoGetCATEGORIAS;
   DataModule2.DoGetIvas;
   DataModule2.DoGetProveedor;
+  DataModule2.GetPcPrintConfig;
   //GetAllGoods;
   //showmessage('f');
   end;
@@ -422,6 +425,61 @@ ProvQuery.Open;
     MiQuery.Free;
     if RC=0 then Result := False else Result := True;
   end;
+
+
+  procedure TDataModule2.GetPcPrintConfig;
+begin
+  PCCONFIG.ID_PC:= UseDBC.PCID;
+  with GetPcConfig do
+  begin
+    Connection:=ZCon1;
+     Active:=false;
+    SQL.Clear;
+    SQL.Text:='SELECT * FROM '+UseDBC.EmID+'LOCALPRINTCONFIG '
+            +'WHERE ID_PC=:ID_PC';
+    ParamByName('ID_PC').AsString:=UseDBC.PCID;            //ע��Ͷ�     PCID; //
+    Open;
+    if RecordCount > 0 then
+    begin
+      PCCONFIG.LABELSIZEX:=FieldByName('LABELSIZEX').AsFloat;
+      PCCONFIG.LABELSIZEY:=FieldByName('LABELSIZEY').AsFloat;
+      PCCONFIG.LABELMODE:=FieldByName('LABELMODE').AsInteger;
+
+      PCCONFIG.LABELPRINTNAME:=(FieldByName('LABELPRINTNAME').AsString);
+      PCCONFIG.LABELPAPERDM:=(FieldByName('LABELPAPERDM').AsInteger);
+      PCCONFIG.LABELPRINTPAPER:=(FieldByName('LABELPRINTPAPER').AsString);
+      if FieldByName('ISMANUEL').AsString='Y' then
+       begin
+         PCCONFIG.ISMANUEL:=True;
+       end
+       else
+       BEGIN
+        PCCONFIG.ISMANUEL:=False;
+       END;
+      PCCONFIG.LABELPAPERSIZEX:=FieldByName('LABELPAPERSIZEX').AsFloat;
+      PCCONFIG.LABELPAPERSIZEY:=FieldByName('LABELPAPERSIZEY').AsFloat;
+
+     PCCONFIG.LABELPAPERCOLUMN:=FieldByName('LABELPAPERCOLUMN').AsInteger;
+
+     PCCONFIG.TICKETERANAME:=FieldByName('TICKETERANAME').AsString;
+     PCCONFIG.TICKETPRINTPAPER:= FieldByName('TICKETPRINTPAPER').AsString;
+     PCCONFIG.TICKETPAPERDM:= FieldByName('TICKETPAPERDM').AsInteger;
+     PCCONFIG.TICKETPAPERSIZEX:= FieldByName('TICKETPAPERSIZEX').AsFloat;
+     PCCONFIG.TICKETPAPERSIZEY:= FieldByName('TICKETPAPERSIZEY').AsFloat;
+     PCCONFIG.A4PRINTNAME:=FieldByName('A4PRINTNAME').AsString;
+     PCCONFIG.A4PRINTPAPER:=FieldByName('A4PRINTPAPER').AsString;
+     PCCONFIG.A4PAPERDM:= FieldByName('A4PAPERDM').AsInteger;
+     PCCONFIG.A4PAPERSIZEX:= FieldByName('A4PAPERSIZEX').AsFloat;
+     PCCONFIG.A4PAPERSIZEY:= FieldByName('A4PAPERSIZEY').AsFloat;
+     PCCONFIG.CMDOPENCAJA:=FieldByName('CMDOPENCAJA').AsString;
+     PCCONFIG.CMDCUTPAPER:=FieldByName('CMDCUTPAPER').AsString;
+     PCCONFIG.VISOR_PORT:=FieldByName('VISOR_PORT').AsString;
+
+     Close;
+
+    end;
+  end;
+end;
 
 
 end.

@@ -1,6 +1,13 @@
 {"version":1,"strings":[
 {"hash":99746051,"name":"tformwork.caption","sourcebytes":[229,183,165,228,189,156,228,184,173,229,191,131],"value":"\u5DE5\u4F5C\u4E2D\u5FC3"},
 {"hash":84196770,"name":"tformwork.register.hint","sourcebytes":[76,105,115,116,32,71,111,111,100,115,32,111,102,32,80,114,111,118,101,101,100,111,114],"value":"List Goods of Proveedor"},
+{"hash":100111183,"name":"tformwork.register.caption","sourcebytes":[230,179,168,229,134,140,228,191,161,230,129,175],"value":"\u6CE8\u518C\u4FE1\u606F"},
+{"hash":154714233,"name":"tformwork.checkbutton1.hint","sourcebytes":[83,116,111,99,107,32,73,110,118,101,110,116,111,114,121],"value":"Stock Inventory"},
+{"hash":253063161,"name":"tformwork.checkbutton1.caption","sourcebytes":[32,231,155,152,231,130,185],"value":" \u76D8\u70B9"},
+{"hash":83767361,"name":"tformwork.documentobutton1.hint","sourcebytes":[65,108,98,97,114,97,110,44,32,70,97,99,116,117,114,97],"value":"Albaran, Factura"},
+{"hash":186663591,"name":"tformwork.documentobutton1.caption","sourcebytes":[233,158,139,229,186,151,232,191,155,232,180,167],"value":"\u978B\u5E97\u8FDB\u8D27"},
+{"hash":9143859,"name":"tformwork.labelbutton.hint","sourcebytes":[69,116,105,113,117,101,116,97,115],"value":"Etiquetas"},
+{"hash":66879504,"name":"tformwork.labelbutton.caption","sourcebytes":[230,160,135,231,173,190,230,137,147,229,141,176],"value":"\u6807\u7B7E\u6253\u5370"},
 {"hash":137878229,"name":"tformwork.almacenbutton.hint","sourcebytes":[69,108,32,65,108,109,97,110,99,101],"value":"El Almance"},
 {"hash":212967761,"name":"tformwork.categorybutton.hint","sourcebytes":[76,105,115,116,97,100,111,32,100,101,32,67,97,116,101,103,111,114,105,97],"value":"Listado de Categoria"},
 {"hash":182124383,"name":"tformwork.goodsbutton.hint","sourcebytes":[67,114,101,97,114,32,78,117,101,118,111,32,65,114,116,105,99,117,108,111],"value":"Crear Nuevo Articulo"},

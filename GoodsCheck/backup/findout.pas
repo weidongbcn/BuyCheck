@@ -91,6 +91,7 @@ begin
 
      Consulta:='SELECT '+Coles+ ' FROM '+ dbTable + ' WHERE 1=1 ';
      ConsultaOriginal:= Consulta;
+     showmessage(ConsultaOriginal);
    ShowFormfindout;
    SetLength(result, 2);
   result[0] := Resultado[0];
@@ -114,13 +115,15 @@ begin
   if ColumnSelect[0]='' then Resultado[0] := Consulta
                     else
                       begin
+                      showmessage(dbBusquedas.FieldByName(ColumnSelect[0]).Value);
 
+                      showmessage(dbBusquedas.FieldByName(ColumnSelect[1]).Value);
                       Resultado[0]:= dbBusquedas.FieldByName(ColumnSelect[0]).Value;
                       Resultado[1]:= dbBusquedas.FieldByName(ColumnSelect[1]).Value;
 
                       end;
   if (Resultado[0] = '') then begin Resultado[0]:=-1; Resultado[1]:=-1; end;
-  Close();
+ // Close();
 end;
 
 procedure TFormFindout.BtCancelarClick(Sender: TObject);

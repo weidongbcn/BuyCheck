@@ -504,7 +504,7 @@ End Sub
 
 
   try
-     Printer.RawMode := true;
+   //  Printer.RawMode := true;
 printer.BeginDoc;
 printer.Canvas.Font.Name:='Control';
 printer.Canvas.Font.Size:=9;

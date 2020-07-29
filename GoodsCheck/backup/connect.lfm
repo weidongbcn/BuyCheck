@@ -57,4 +57,9 @@ object DataModule2: TDataModule2
     left = 88
     top = 149
   end
+  object GetPcConfig: TZQuery
+    Params = <>
+    left = 155
+    top = 224
+  end
 end

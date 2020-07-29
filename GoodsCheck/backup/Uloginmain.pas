@@ -60,9 +60,11 @@ type
     procedure DoIndyConection;
     procedure DoStopIndy;
     function IniciaLogin() : Boolean;
+    function CheckUserInfo(AUserName, APassword: string): Boolean;
   end;
 
   procedure ShowFormLogin;
+  function aLogin(): Boolean;
 
 var
   FormLogin: TFormLogin;
@@ -73,6 +75,18 @@ var
 implementation
 { uses
 U_Main_Shoping; }
+
+ 
+function aLogin(): Boolean;
+begin
+  //动态创建登录窗口
+  with TFormLogin.Create(nil) do
+  begin
+    //只有返回OK的时候认为登录成功
+    Result := ShowModal() = mrOk;
+    Free;
+  end;
+end;
 
 procedure ShowFormLogin;
 begin
@@ -91,34 +105,22 @@ begin
 
 end;
 
-procedure TFormLogin.Button1Click(Sender: TObject);
+function TFormLogin.CheckUserInfo(AUserName, APassword: string): Boolean;
 begin
-if  Self.tvData.Count = 0 then
-begin
-ComboBox1.SetFocus;
-exit;
-end;
-if TRIM(UserEdit.Text)='' then
-BEGIN
-  UserEDIT.SetFocus;
-  EXIT;
-END;
+
 WITH LoginQuery DO
 BEGIN
   Connection:=MyConnection;
   Active:=False;
   SQL.Text:='Select * from '+EMID+'LOGIN'
-               + ' where Nombre=''' +Trim(USEREdit.Text)
-               + ''' and Passwd=md5(''' + PasswdEdit.Text+ ''') LIMIT 1;';
+               + ' where Nombre=''' +AUserName
+               + ''' and Passwd=md5(''' + APassword+ ''') LIMIT 1;';
   Active:=True;
 END;
 if LoginQuery.RecordCount<1 then
   begin
-  showmessage(nMSN17);
-  USEREdit.Text:='';
-  PasswdEdit.Text:='';
-  USEREdit.SetFocus;
-  exit;
+    result:=False
+
   end
   ELSE
   BEGIN
@@ -136,7 +138,7 @@ if LoginQuery.RecordCount<1 then
     DBProtocolo:=MyConnection.Protocol;
     DBPort:=MyConnection.Port;
     UseDBC.EMID:= EMID;
-    LOGIN:=Trim(USEREdit.Text);
+    LOGIN:=AUserName;
     LoginQuery.Active:=False;
     LoginQuery.SQL.Text:='INSERT INTO '+EMID+'INFOLOGINTERMINAL (ID_TERMINAL, IP_TERMINAL, '
     +'USER )'
@@ -146,9 +148,39 @@ if LoginQuery.RecordCount<1 then
     TAG:=1;
     PCIP:=Ci.dbHost;
     hecho:=True;
-    self.modalresult:=mrok;
-    CLOSE;
+    Result :=True;
+   // CLOSE;
   END;
+   //(AUserName = 'lihd' ) and (APassword = 'P@ssw0rd');
+end;
+
+procedure TFormLogin.Button1Click(Sender: TObject);
+begin
+    if  Self.tvData.Count = 0 then
+begin
+ComboBox1.SetFocus;
+exit;
+end;
+if TRIM(UserEdit.Text)='' then
+BEGIN
+  UserEDIT.SetFocus;
+  EXIT;
+END;
+
+   if CheckUserInfo(Trim(USEREdit.Text), PasswdEdit.Text) then
+  begin
+    //如果通过检查，返回OK
+    Self.ModalResult := mrOk;
+  end
+   else
+   begin
+     showmessage(nMSN17);
+  USEREdit.Text:='';
+  PasswdEdit.Text:='';
+  USEREdit.SetFocus;
+  exit;
+   end;
+
 end;
 
 procedure TFormLogin.Button2Click(Sender: TObject);
@@ -327,7 +359,7 @@ procedure TFormLogin.USEREditKeyDown(Sender: TObject; var Key: Word;
 begin
 if key=vk_return then
      begin
-      PasswdEdit.SetFocus;
+      if Key=VK_Return then SelectNext(ActiveControl,True,True);
       //PostMessage(Handle, WM_KEYDOWN, VK_TAB, 0);
      end;
 end;

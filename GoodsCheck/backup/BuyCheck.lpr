@@ -14,8 +14,8 @@ uses
   zcomponent, WorkStation, memdslaz, dblookup, virtualdbtreeexlaz,
   formdlgcaption, printer4lazarus, virtualdbgrid_package,
   StockActual, BuyInput, BuyIn01, BuyInColgada, CreateNewInventory, Inventory,
-  GoodsFromProv, FindoutGoodsInPro, PayofBuy, His_Goods_Buy, his_buys, his_pays,
-  His_buy_detalles, BuyListCheck, Select_SKU, indylaz;
+  GoodsFromProv, FindoutGoodsInPro, PayofBuy, His_Goods_Buy, his_buys, his_pays, Proveedor,
+  His_buy_detalles, BuyListCheck, Select_SKU, indylaz, EtiquetasArticulos;
 
 {$R *.res}
 
@@ -112,6 +112,9 @@ begin
      RutaReports:= RutaIni+'Report\';
      RutaModulos:= RutaIni+'Extras\';
      fileconf:=RutaIni+'Conf.ini';
+
+     ReportPath:=RutaIni + 'Report\';
+
      //DecimalSeparator:='.';
      if AbrirAchivo= '' then AbrirAchivo:= 'explorer.exe';
      //ZCon1.LibraryLocation:=RutaSqlLib+'libmysql.dll';
@@ -144,12 +147,17 @@ begin
   Application.CreateForm(TDMindy, DMindy);
   //Application.CreateForm(TFormImportXLS, FormImportXLS);
   //Application.CreateForm(TFormCheck, FormCheck);
-  if FormLogin.IniciaLogin() = true then
+
+  //Application.CreateForm(TFormLogin, FormLogin);
+
+  if aLogin() then
+
+//  if FormLogin.IniciaLogin() = true then
   begin
-   Application.CreateForm(TFormWork, FormWork);
+   Application.CreateForm(TFormProveedor, FormProveedor);
   end
   else application.Terminate;
-
+ // Application.CreateForm(TFormEtiPEs, FormEtiPEs);
  { Application.CreateForm(TFormBuy, FormBuy);
   Application.CreateForm(TFormBuyIn, FormBuyIn);
   Application.CreateForm(TFormColgada, FormColgada);

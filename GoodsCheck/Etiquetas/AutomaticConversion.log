@@ -1,0 +1,71 @@
+U_EtiquetaParaArticulos.pas Note: Changed encoding from utf8bom to UTF-8
+U_EtiquetaParaArticulos.pas(1,30) Note: Added MODE Delphi syntax modifier after unit name.
+U_EtiquetaParaArticulos.pas Note: Added missing object "BufDatasetStudies:TFDMemTable" to pascal source.
+U_EtiquetaParaArticulos.pas Note: Added missing object "dbTrabajo:TUniQuery" to pascal source.
+U_EtiquetaParaArticulos.pas Note: Added missing object "dbArti:TUniQuery" to pascal source.
+U_EtiquetaParaArticulos.pas Note: Added missing object "BarCode1:TfrxBarCodeView" to pascal source.
+U_EtiquetaParaArticulos.pas Note: Added missing object "GetProductInfoQuery:TUniQuery" to pascal source.
+U_EtiquetaParaArticulos.pas Note: Added missing object "UniQuery1:TUniQuery" to pascal source.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "DBGrids" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "StdCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "DBCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "StdCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "StdCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "DBCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "StdCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "ExtCtrls" to uses section.
+U_EtiquetaParaArticulos.pas Note: Added unit "db" to uses section.
+ Error: Error="Problems when repairing form file C:\Users\weido\Documents\GoodsCheck\Etiquetas\U_EtiquetaParaArticulos.lfm"
+ Fatal: Conversion Aborted.

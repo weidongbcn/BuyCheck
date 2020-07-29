@@ -189,7 +189,8 @@ begin
         TLog.AddMsg('10');
         writelog('sys','error1', E.Message);
         //if (FClient.Socket) then FClient.Socket.Close;
-       // FClient.Disconnect;
+       FClient.Disconnect;
+       sleep(50);
         Terminate;
       end;
      end;

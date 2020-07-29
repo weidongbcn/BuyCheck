@@ -176,6 +176,43 @@ end;
        // procedure LoadFromStream(const aStream: TMemoryStream);
        END;
 
+  TPCCONFIG = packed record
+    ID_PC :string[40];
+   { TICKETERA :string[60];
+    PORT_T :string[16];
+    PapelModel :string[20];
+    CMDCAJON :string[60];
+    CMDPAPEL :string[60];
+    IMPRESORA :string[60];
+    PORT_I :string[16];
+    PORT_V :string[16];
+    ImpresoraBarra :string[60];
+    PORT_B :string[16];     }
+    LABELSIZEX,
+    LABELSIZEY:Double;
+    LABELMODE :Integer;
+    LABELPRINTNAME :string[60];
+    LABELPAPERDM :Integer;
+    LABELPRINTPAPER:string[60];
+    LABELPAPERSIZEX,
+    LABELPAPERSIZEY :Double;
+    ISMANUEL:Boolean;
+    LABELPAPERCOLUMN :Integer;
+    TICKETERANAME :string[60];
+    TICKETPAPERDM :Integer;
+    TICKETPRINTPAPER :string[60];
+    TICKETPAPERSIZEX,
+    TICKETPAPERSIZEY :Double;
+    CMDOPENCAJA:string[60];
+    CMDCUTPAPER:string[60];
+    A4PRINTNAME:string[60];
+    A4PAPERDM :Integer;
+    A4PRINTPAPER:string[60];
+    A4PAPERSIZEX,
+    A4PAPERSIZEY:Double;
+    VISOR_PORT:string[16];
+  end;
+
 procedure BlancoGrid(Grid: TDBGrid);
 procedure ImprimirCodigoEsc(S:String);
 procedure AbirCajon();
@@ -190,6 +227,7 @@ procedure writelog(logtype, section, message: string);
 
 var
   Lang, FallbackLang: String;
+  PCCONFIG:TPCCONFIG;
   DBHost,DBDataBase,DBUsuario,DBPasswd,DBPuerto,DBProtocolo: String;
   DBPort:integer;
   DirConf, POSfileconf, Lutu,ReportPath, LibPath, teststr, LogDir, sLogFile :string;

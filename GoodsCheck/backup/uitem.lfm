@@ -136,7 +136,7 @@ object frmItem: TfrmItem
       EditLabel.Caption = 'PCID'
       EditLabel.ParentColor = False
       TabOrder = 9
-      Text = 'V0001'
+      Text = 'C0002'
     end
     object LabeledEdit9: TLabeledEdit
       Left = 184

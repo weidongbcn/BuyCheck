@@ -3,11 +3,12 @@ object FormSelectOneSKU: TFormSelectOneSKU
   Height = 398
   Top = 376
   Width = 934
-  Caption = 'FormSelectOneSKU'
+  Caption = '选择SKU商品'
   ClientHeight = 398
   ClientWidth = 934
   OnCreate = FormCreate
-  LCLVersion = '2.0.0.3'
+  Position = poDesktopCenter
+  LCLVersion = '2.0.2.0'
   object DBGrid1: TDBGrid
     Left = 0
     Height = 348

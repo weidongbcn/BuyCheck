@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.2.3" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="41288.9088675" ReportOptions.Description.Text="" ReportOptions.LastChange="42651.8236499537" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="DetallesfrxDBDataset" DataSetName="DetallesfrxDBDataset"/>
+    <item DataSet="EmpresafrxDBDataset" DataSetName="EmpresafrxDBDataset"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" Orientation="poLandscape" PaperWidth="297" PaperHeight="210" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="94.48825" Left="0" Top="18.89765" Width="1046.92981">
+      <TfrxMemoView Name="Memo2" Align="baLeft" Left="0" Top="0" Width="260.78757" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Tahoma" Font.Style="1" ParentFont="False" Text="[EmpresafrxDBDataset.&#34;EM_NOM_EMPRESA&#34;]"/>
+      <TfrxMemoView Name="Memo3" Align="baLeft" Left="0" Top="20.89765" Width="219.21274" Height="64.25200024" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Tahoma" Font.Style="0" ParentFont="False" Text="[EmpresafrxDBDataset.&#34;EM_DIRECCION&#34;]&#13;&#10;[EmpresafrxDBDataset.&#34;EM_POSTAL&#34;] [EmpresafrxDBDataset.&#34;EM_CIUDAD&#34;]&#13;&#10;[EmpresafrxDBDataset.&#34;EM_PROVINCIA&#34;]&#13;&#10;NIF:[EmpresafrxDBDataset.&#34;EM_CIF&#34;]&#13;&#10;TEL:[EmpresafrxDBDataset.&#34;EM_TEL1&#34;]"/>
+      <TfrxMemoView Name="Memo9" Align="baRight" Left="786.14224" Top="8.91342" Width="260.78757" Height="56.69295" DataSetName="DocTopfrxDBDataset" Font.Charset="1" Font.Color="0" Font.Height="-21" Font.Name="Tahoma" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="Listado De Cliente&#13;&#10;客户列表"/>
+    </TfrxReportTitle>
+    <TfrxDetailData Name="DetailData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="64.25201" Left="0" Top="219.21274" Width="1046.92981" ColumnWidth="0" ColumnGap="0" DataSet="DetallesfrxDBDataset" DataSetName="DetallesfrxDBDataset" RowCount="0">
+      <TfrxMemoView Name="Memo15" Left="135.96073" Top="4.55906" Width="321.26005" Height="15.11812" DataSet="DetallesfrxDBDataset" DataSetName="DetallesfrxDBDataset" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Tahoma" Font.Style="0" ParentFont="False" Text="[DetallesfrxDBDataset.&#34;CL_NOM_COMERCIO&#34;]"/>
+      <TfrxMemoView Name="Memo16" Left="133.84261" Top="22.45671" Width="154.96073" Height="15.11812" DataSet="DetallesfrxDBDataset" DataSetName="DetallesfrxDBDataset" DisplayFormat.FormatStr="0" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Tahoma" Font.Style="0" ParentFont="False" Text="CIF: [DetallesfrxDBDataset.&#34;CL_CIF&#34;]"/>
+      <TfrxMemoView Name="Memo31" Left="4" Top="4.55906" Width="120.94496" Height="15.11812" DataSet="DetallesfrxDBDataset" DataSetName="DetallesfrxDBDataset" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Tahoma" Font.Style="0" ParentFont="False" Text="ID: [DetallesfrxDBDataset.&#34;CL_CODIGO&#34;]"/>
+      <TfrxMemoView Name="Memo18" Align="baRight" Left="922.20532" Top="4.33859" Width="124.72449" Height="18.89765" DataSet="DetallesfrxDBDataset" DataSetName="DetallesfrxDBDataset" DisplayFormat.FormatStr="%.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Tahoma" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[DetallesfrxDBDataset.&#34;CL_TEL1&#34;]"/>
+      <TfrxMemoView Name="Memo25" Left="466.64595" Top="2.55906" Width="317.48052" Height="18.89765" DisplayFormat.FormatStr="%2.3f" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Tahoma" Font.Style="0" ParentFont="False" Text="[DetallesfrxDBDataset.&#34;CL_DIRECCION&#34;]"/>
+      <TfrxMemoView Name="Memo12" Left="466.64595" Top="23.23624" Width="317.48052" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Tahoma" Font.Style="0" ParentFont="False" Text="[DetallesfrxDBDataset.&#34;CL_POSTAL&#34;] [DetallesfrxDBDataset.&#34;CL_CIUDAD&#34;]"/>
+      <TfrxMemoView Name="DetallesfrxDBDatasetCL_PROVINCIA" Left="466.64595" Top="41.57483" Width="317.48052" Height="18.89765" DataField="CL_PROVINCIA" DataSet="DetallesfrxDBDataset" DataSetName="DetallesfrxDBDataset" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Tahoma" Font.Style="0" ParentFont="False" Text="[DetallesfrxDBDataset.&#34;CL_PROVINCIA&#34;]"/>
+    </TfrxDetailData>
+    <TfrxPageFooter Name="PageFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="22.67718" Left="0" Top="343.93723" Width="1046.92981">
+      <TfrxMemoView Name="Memo35" Align="baRight" Left="714.33117" Top="3.77953" Width="332.59864" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Tahoma" Font.Style="0" HAlign="haRight" ParentFont="False" Text="Total Pagina: [TotalPages#]  Pagina: [ &#60;Page&#62;]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo19" Align="baLeft" Left="0" Top="3.77953" Width="132.28355" Height="18.89765" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Tahoma" Font.Style="0" ParentFont="False" Text="Fecha Ipm: [Date]"/>
+    </TfrxPageFooter>
+    <TfrxMasterData Name="MasterData2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="22.67718" Left="0" Top="173.85838" Width="1046.92981" ColumnWidth="0" ColumnGap="0" DataSet="EmpresafrxDBDataset" DataSetName="EmpresafrxDBDataset" RowCount="0"/>
+  </TfrxReportPage>
+</TfrxReport>

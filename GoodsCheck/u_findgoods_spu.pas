@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, DBGrids, ExtCtrls,
   StdCtrls, Buttons, ZDataset, connect, LCLType,
-   Global;
+   Global, Grids;
 
 type
 
@@ -24,6 +24,10 @@ type
     ListUniQuery: TZQuery;
     Panel1: TPanel;
     Panel2: TPanel;
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure DoFindOut(aStr: string);
     procedure BitBtn14Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -101,14 +105,54 @@ begin
  Connection:=DataModule2.ZCon1;
     Active:=false;
     SQL.Clear;
+    {
     sql.Text:='SELECT T1.GOODS_ID, T1.GOODS_NAME, T1.ENA, T1.CODE, T3.CATEGORY, T4.BRAND_NAME,  T5.CLASS, T2.PVP1C FROM GOODS_SPU AS T1 '
             +'LEFT JOIN GOODS_SPU_PRICE T2 ON T2.GOODS_ID = T1.GOODS_ID '
             +'LEFT JOIN CATEGORYS AS T3 ON T3.ID= T1.CATEGORY_ID '
             +'LEFT JOIN GOODS_BRANDS AS T4 ON T4.BRAND_ID = T1.BRAND_ID '
             +'LEFT JOIN CLASSES AS T5 ON T5.ID = T1.CLASS_ID '
             +'WHERE 1=1  and (GOODS_NAME LIKE ''%' + aStr+'%'' or ENA LIKE ''%' + aStr+'%''or CATEGORY LIKE ''%' + aStr+'%'' or BRAND_NAME LIKE ''%' + aStr+'%'' )';
+       }
+     sql.Text:='SELECT T1.GOODS_ID, T1.GOODS_NAME, T1.ENA, T1.CODE, T3.CATEGORY, T4.BRAND_NAME,  T5.CLASS, t6.IVA, T2.PVP1C, IFNULL(t7.AMOUNT,0) as AMOUNT '
+    +'FROM GOODS_SPU AS T1 '
+            +'LEFT JOIN GOODS_SPU_PRICE T2 ON T2.GOODS_ID = T1.GOODS_ID '
+            +'LEFT JOIN CATEGORYS AS T3 ON T3.ID= T1.CATEGORY_ID '
+            +'LEFT JOIN GOODS_BRANDS AS T4 ON T4.BRAND_ID = T1.BRAND_ID '
+            +'LEFT JOIN CLASSES AS T5 ON T5.ID = T1.CLASS_ID '
+            +'left join goods_taxrate as t6 on t6.ID = t1.taxrate_id '
+            +'left join (select goods_id, sum(amount) as amount from stockgoods where goods_status = 1 group by goods_id) as t7 on T1.GOODS_ID = t7.GOODS_ID '
+            +'WHERE 1=1  and (GOODS_NAME LIKE ''%' + aStr+'%'' or ENA LIKE ''%' + aStr+'%''or CATEGORY LIKE ''%' + aStr+'%'' or BRAND_NAME LIKE ''%' + aStr+'%'' )';
+
     open;
  end;
+end;
+
+procedure TFormFindGoods_Spu.DBGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+
+end;
+
+procedure TFormFindGoods_Spu.DBGrid1PrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+   with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+   if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
+  begin
+    DBGrid1.Canvas.Brush.Color := clRed;
+    DBGrid1.Canvas.Font.Color := clWhite;
+  end;
+end;
 end;
 
 procedure TFormFindGoods_Spu.EdTextoKeyDown(Sender: TObject; var Key: Word;
@@ -122,6 +166,7 @@ procedure TFormFindGoods_Spu.FormCreate(Sender: TObject);
 begin
 OutStr:='';
 Hecho:=False;
+DBGrid1.SelectedColor := clRed;
 end;
 
 

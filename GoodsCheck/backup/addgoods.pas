@@ -1269,7 +1269,7 @@ end;
 
 procedure TFormGoodsSpu.BitBtn20Click(Sender: TObject);
 begin
-  FormMarca.IniciaMExcute('GOODS_BRANDS', ['BRAND_ID','BRAND_NAME'], ['BRAND_ID','BRAND_NAME']);
+  FormMarca.IniciaMExcute('GOODS_BRANDS', ['CODE','BRAND_NAME'], ['CODE','BRAND_NAME']);
   BrandQuery.Refresh;
 end;
 
@@ -1289,7 +1289,7 @@ var
   table:string;
 begin
  table:=EMID+'QUANTIFIER';
-  Result:=FormFindout.IniciaBusquedas( table, ['ID','UNIDAD'], ['ID', 'UNIDADES VENTA'] );
+  Result:=FormFindout.IniciaBusquedas( table, ['CODE','UNIDAD'], ['CODE', 'UNIDADES VENTA'] );
   Unidades.Text:=Result[1];
   if ((Unidades.Text='-') or (Unidades.Text='-1')) then
   begin
@@ -1532,7 +1532,8 @@ begin
   UUIDEdit.Text:= DBGoodsQuery.FieldByName('GOODS_ID').AsString;
   CodingEdit.Text:=DBGoodsQuery.FieldByName('CODE').AsString;
   NameEdit.Text:= DBGoodsQuery.FieldByName('GOODS_NAME').AsString;
-  NameEdit2.Text:= DBGoodsQuery.FieldByName('GOODS_NAME2').AsString;;
+  NameEdit2.Text:= DBGoodsQuery.FieldByName('GOODS_NAME2').AsString;
+  DateMod.Text:=  DBGoodsQuery.FieldByName('UPDATED_AT').AsString;
   CategoryDBBox.KeyValue:= DBGoodsQuery.FieldByName('CATEGORY_ID').Value;
 
   if DBGoodsQuery.FieldByName('BRAND_ID').AsInteger <> 0 then
@@ -1617,7 +1618,8 @@ function TFormGoodsSpu.ExistGoods(CDBarra: string):boolean;
         +'FROM GOODS_SPU AS T1 LEFT JOIN GOODS_SPU_PRICE T2 ON T2.GOODS_ID = T1.GOODS_ID '
         +'WHERE 1=1 AND ENA=:ENA ';
        }
-       SQL.Text:='SELECT T1.GOODS_ID, T1.GOODS_NAME, T1.GOODS_NAME2, T1.ENA, T1.CODE, T1.CATEGORY_ID, T1.BRAND_ID, T1.TYPE, T1.UNIT, T1.TAXRATE_ID, T1.WEIGTH, T1.VOLUME, T1.IS_ACTIVE, T1.PARENT_ID, T1.CLASS_ID, T1.STOCKAVISO, T1.LOWLIMIT, T1.CAN_DISCount, '
+       SQL.Text:='SELECT T1.GOODS_ID, T1.GOODS_NAME, T1.GOODS_NAME2, T1.ENA, T1.CODE, T1.CATEGORY_ID, T1.BRAND_ID, T1.TYPE, T1.UNIT, T1.TAXRATE_ID, T1.WEIGTH, T1.VOLUME, T1.IS_ACTIVE, '
+       +'T1.PARENT_ID, T1.CLASS_ID, T1.STOCKAVISO, T1.LOWLIMIT, T1.CAN_DISCount, T.UPDATED_AT, '
          +'T2.COST, T2.SELLING_P1C, T2.SELLING_P2C, T2.SELLING_P3C, T2.LOWPRICE, T2.WHOLESALE, T2.DISCOUNT, T2.Points, T2.SKU_NO '
          +'FROM GOODS_SPU AS T1 LEFT JOIN GOODS_SKU AS T2 ON T2.GOODS_ID = T1.GOODS_ID '
          +'WHERE 1=1 AND T2.ISCHILD = 0 '
@@ -1668,6 +1670,7 @@ end;
 
 procedure TFormGoodsSpu.FormCreate(Sender: TObject);
 begin
+DateMod.Text:=DateTimeToStr(Now);
 Memo2.Lines.Clear;
 memo2.Lines.Add(nMsg1);
 memo2.Lines.Add('');

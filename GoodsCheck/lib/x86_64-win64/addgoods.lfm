@@ -1,21 +1,24 @@
 object FormGoodsSpu: TFormGoodsSpu
-  Left = 938
-  Height = 700
-  Top = 221
+  Left = 402
+  Height = 687
+  Top = 107
   Width = 1024
-  Caption = 'FormGoodsSpu'
-  ClientHeight = 700
+  Caption = 'SPU货品添加'
+  ClientHeight = 687
   ClientWidth = 1024
+  KeyPreview = True
   OnCreate = FormCreate
-  Position = poOwnerFormCenter
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poDesktopCenter
   LCLVersion = '2.0.2.0'
   object CombinationPanel: TPanel
     Left = 0
-    Height = 395
+    Height = 382
     Top = 264
     Width = 1024
     Align = alClient
-    ClientHeight = 395
+    ClientHeight = 382
     ClientWidth = 1024
     TabOrder = 2
     object Panel11: TPanel
@@ -404,7 +407,7 @@ object FormGoodsSpu: TFormGoodsSpu
   end
   object PageControl1: TPageControl
     Left = 0
-    Height = 395
+    Height = 382
     Top = 264
     Width = 1024
     ActivePage = TabSheet1
@@ -416,24 +419,24 @@ object FormGoodsSpu: TFormGoodsSpu
     end
     object TabSheet2: TTabSheet
       Caption = '规格商品和库存'
-      ClientHeight = 388
-      ClientWidth = 982
+      ClientHeight = 352
+      ClientWidth = 1016
       ImageIndex = 1
       object NewSkuPanel: TPanel
         Left = 0
-        Height = 347
+        Height = 311
         Top = 41
-        Width = 982
+        Width = 1016
         Align = alClient
-        ClientHeight = 347
-        ClientWidth = 982
+        ClientHeight = 311
+        ClientWidth = 1016
         TabOrder = 2
         Visible = False
         object DBGrid1: TDBGrid
           Left = 1
-          Height = 295
+          Height = 259
           Top = 1
-          Width = 967
+          Width = 1001
           Align = alClient
           Color = clWindow
           Columns = <          
@@ -501,13 +504,13 @@ object FormGoodsSpu: TFormGoodsSpu
           TitleFont.Name = 'Tahoma'
         end
         object Panel8: TPanel
-          Left = 968
-          Height = 295
+          Left = 1002
+          Height = 259
           Top = 1
           Width = 13
           Align = alRight
           BorderStyle = bsSingle
-          ClientHeight = 291
+          ClientHeight = 255
           ClientWidth = 9
           TabOrder = 1
           object Label20: TLabel
@@ -682,11 +685,11 @@ object FormGoodsSpu: TFormGoodsSpu
         object Panel10: TPanel
           Left = 1
           Height = 50
-          Top = 296
-          Width = 980
+          Top = 260
+          Width = 1014
           Align = alBottom
           ClientHeight = 50
-          ClientWidth = 980
+          ClientWidth = 1014
           TabOrder = 2
           object Button10: TButton
             Left = 720
@@ -1010,10 +1013,10 @@ object FormGoodsSpu: TFormGoodsSpu
         Left = 0
         Height = 41
         Top = 0
-        Width = 982
+        Width = 1016
         Align = alTop
         ClientHeight = 41
-        ClientWidth = 982
+        ClientWidth = 1016
         TabOrder = 0
         object Label14: TLabel
           Left = 24
@@ -1060,16 +1063,16 @@ object FormGoodsSpu: TFormGoodsSpu
     end
     object TabSheet4: TTabSheet
       Caption = '商品优惠价格'
-      ClientHeight = 388
-      ClientWidth = 982
+      ClientHeight = 352
+      ClientWidth = 1016
       object Panel7: TPanel
         Left = 0
         Height = 50
         Top = 0
-        Width = 982
+        Width = 1016
         Align = alTop
         ClientHeight = 50
-        ClientWidth = 982
+        ClientWidth = 1016
         TabOrder = 0
         object Label40: TLabel
           Left = 45
@@ -1084,10 +1087,10 @@ object FormGoodsSpu: TFormGoodsSpu
         Left = 0
         Height = 50
         Top = 50
-        Width = 982
+        Width = 1016
         Align = alTop
         ClientHeight = 50
-        ClientWidth = 982
+        ClientWidth = 1016
         TabOrder = 1
         object Label41: TLabel
           Left = 81
@@ -1248,9 +1251,9 @@ object FormGoodsSpu: TFormGoodsSpu
       ParentColor = False
     end
     object Label49: TLabel
-      Left = 422
+      Left = 424
       Height = 17
-      Top = 204
+      Top = 148
       Width = 130
       Alignment = taRightJustify
       AutoSize = False
@@ -1263,7 +1266,7 @@ object FormGoodsSpu: TFormGoodsSpu
     object Label18: TLabel
       Left = 528
       Height = 17
-      Top = 151
+      Top = 99
       Width = 24
       Alignment = taRightJustify
       Caption = '重量'
@@ -1272,7 +1275,7 @@ object FormGoodsSpu: TFormGoodsSpu
     object Label19: TLabel
       Left = 499
       Height = 17
-      Top = 179
+      Top = 125
       Width = 53
       Alignment = taRightJustify
       Caption = '包装/体积'
@@ -1301,6 +1304,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Height = 25
       Top = 36
       Width = 121
+      OnEnter = CodingEditEnter
       OnKeyDown = CodingEditKeyDown
       TabOrder = 1
     end
@@ -1320,6 +1324,7 @@ object FormGoodsSpu: TFormGoodsSpu
       OnKeyDown = CategoryDBBoxKeyDown
       ParentFont = False
       ReadOnly = True
+      Style = csDropDownList
       TabOrder = 4
     end
     object BitBtn20: TBitBtn
@@ -1332,7 +1337,8 @@ object FormGoodsSpu: TFormGoodsSpu
       Margin = 0
       OnClick = BitBtn20Click
       Spacing = 0
-      TabOrder = 12
+      TabOrder = 15
+      TabStop = False
     end
     object BitBtn21: TBitBtn
       Left = 320
@@ -1344,7 +1350,8 @@ object FormGoodsSpu: TFormGoodsSpu
       Margin = 0
       OnClick = BitBtn21Click
       Spacing = 0
-      TabOrder = 13
+      TabOrder = 16
+      TabStop = False
     end
     object DateAdd: TEdit
       Left = 561
@@ -1354,7 +1361,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clSkyBlue
       ReadOnly = True
       TabStop = False
-      TabOrder = 14
+      TabOrder = 22
       Text = '14/03/2017 17:34:31'
     end
     object DateMod: TEdit
@@ -1365,7 +1372,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clSkyBlue
       ReadOnly = True
       TabStop = False
-      TabOrder = 15
+      TabOrder = 17
       Text = '05/10/2017 20:10:32'
     end
     object Panel3: TPanel
@@ -1376,7 +1383,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Align = alRight
       ClientHeight = 262
       ClientWidth = 234
-      TabOrder = 16
+      TabOrder = 18
       object DBImage1: TDBImage
         Left = 1
         Height = 260
@@ -1396,7 +1403,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clMoneyGreen
       ReadOnly = True
       TabStop = False
-      TabOrder = 17
+      TabOrder = 20
     end
     object BrandDBBox: TDBLookupComboBox
       Left = 115
@@ -1460,12 +1467,13 @@ object FormGoodsSpu: TFormGoodsSpu
         FAFBFFFDFFFFFDFE0000
       }
       OnClick = BitBtn2Click
-      TabOrder = 18
+      TabOrder = 21
+      TabStop = False
     end
     object UProveedor: TEdit
       Left = 561
       Height = 25
-      Top = 202
+      Top = 148
       Width = 128
       CharCase = ecUppercase
       MaxLength = 11
@@ -1476,27 +1484,28 @@ object FormGoodsSpu: TFormGoodsSpu
     object BitBtn19: TBitBtn
       Left = 704
       Height = 23
-      Top = 204
+      Top = 150
       Width = 22
       Caption = '...'
       Layout = blGlyphTop
       Margin = 0
       OnClick = BitBtn19Click
       Spacing = 0
-      TabOrder = 19
+      TabOrder = 25
+      TabStop = False
     end
     object IdProv: TEdit
-      Left = 712
+      Left = 728
       Height = 25
-      Top = 102
+      Top = 150
       Width = 37
-      TabOrder = 20
+      TabOrder = 24
       Visible = False
     end
     object WeigthEdit: TEdit
       Left = 561
       Height = 25
-      Top = 144
+      Top = 92
       Width = 121
       OnKeyDown = WeigthEditKeyDown
       TabOrder = 9
@@ -1504,7 +1513,7 @@ object FormGoodsSpu: TFormGoodsSpu
     object VolumeEdit: TEdit
       Left = 561
       Height = 25
-      Top = 174
+      Top = 120
       Width = 193
       OnKeyDown = VolumeEditKeyDown
       TabOrder = 10
@@ -1568,7 +1577,8 @@ object FormGoodsSpu: TFormGoodsSpu
       Margin = 0
       OnClick = BitBtn22Click
       Spacing = 0
-      TabOrder = 21
+      TabOrder = 19
+      TabStop = False
     end
     object Label7: TLabel
       Left = 58
@@ -1595,6 +1605,8 @@ object FormGoodsSpu: TFormGoodsSpu
       LookupCache = False
       OnKeyDown = IvaDBLookupComboBox1KeyDown
       ParentFont = False
+      ReadOnly = True
+      Style = csDropDownList
       TabOrder = 8
     end
     object TypeBox: TComboBox
@@ -1614,11 +1626,101 @@ object FormGoodsSpu: TFormGoodsSpu
       TabOrder = 6
       Text = '普通商品'
     end
+    object BitBtn12: TBitBtn
+      Left = 752
+      Height = 23
+      Top = 233
+      Width = 37
+      Anchors = [akTop, akRight]
+      Caption = '...'
+      Layout = blGlyphTop
+      Margin = 0
+      OnClick = BitBtn12Click
+      Spacing = 0
+      TabOrder = 23
+      TabStop = False
+    end
+    object LowLimit: TCurrencyEdit
+      Left = 561
+      Height = 25
+      Top = 207
+      Width = 65
+      Alignment = taRightJustify
+      DisplayFormat = '0.00;-0.00'
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 13
+      Value = 0
+      OnExit = LowLimitExit
+      OnKeyDown = LowLimitKeyDown
+    end
+    object AvisoLimit: TComboBox
+      Left = 561
+      Height = 25
+      Top = 178
+      Width = 100
+      ItemHeight = 17
+      ItemIndex = 0
+      Items.Strings = (
+        'No'
+        'Yes'
+      )
+      OnKeyDown = AvisoLimitKeyDown
+      Style = csDropDownList
+      TabOrder = 12
+      Text = 'No'
+    end
+    object Label57: TLabel
+      Left = 480
+      Height = 17
+      Top = 180
+      Width = 72
+      Alignment = taRightJustify
+      Caption = '启动库存警戒'
+      ParentColor = False
+      OnClick = Label57Click
+    end
+    object Label58: TLabel
+      Left = 480
+      Height = 17
+      Top = 210
+      Width = 72
+      Alignment = taRightJustify
+      Caption = '最低警戒数量'
+      ParentColor = False
+      OnClick = Label58Click
+    end
+    object CanDiscount: TComboBox
+      Left = 561
+      Height = 25
+      Top = 233
+      Width = 100
+      ItemHeight = 17
+      ItemIndex = 1
+      Items.Strings = (
+        'No'
+        'Yes'
+      )
+      OnExit = CanDiscountExit
+      OnKeyDown = CanDiscountKeyDown
+      Style = csDropDownList
+      TabOrder = 14
+      Text = 'Yes'
+    end
+    object Label59: TLabel
+      Left = 504
+      Height = 17
+      Top = 239
+      Width = 48
+      Alignment = taRightJustify
+      Caption = '可以打折'
+      ParentColor = False
+    end
   end
   object Panel2: TPanel
     Left = 0
     Height = 41
-    Top = 659
+    Top = 646
     Width = 1024
     Align = alBottom
     ClientHeight = 41
@@ -1643,7 +1745,7 @@ object FormGoodsSpu: TFormGoodsSpu
       TabOrder = 1
     end
     object CButton: TButton
-      Left = 614
+      Left = 616
       Height = 25
       Top = 6
       Width = 75
@@ -1661,11 +1763,67 @@ object FormGoodsSpu: TFormGoodsSpu
       OnClick = Button8Click
       TabOrder = 3
     end
+    object btnClonar: TBitBtn
+      Left = 768
+      Height = 27
+      Top = 6
+      Width = 82
+      Anchors = [akTop]
+      Caption = 'Cl&onar'
+      Enabled = False
+      Glyph.Data = {
+        46050000424D4605000000000000360000002800000012000000120000000100
+        2000000000001005000064000000640000000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFF8F5F4FFCAB8ABFFD9CFC3FFE9E2DBFFF0EBE8FFF6F3
+        F1FFF9F8F7FFFCFBFBFFFDFDFDFFFEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F3F0FFCDB189FFDDC78FFFD2BA
+        8DFFCDB694FFD1BDA5FFD7C8B7FFDCCEC3FFE0D3CBFFE6DBD5FFE9E1DDFFECE6
+        E3FFEDE9E6FFF7F5F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7F3F0FFCFB4
+        8CFFE9DB9BFFE9DA9AFFE7D799FFE4D098FFDDC897FFD7C197FFD6BE99FFD7C2
+        A1FFD7C4A7FFD8C6AEFFD2BCA7FFDFD6D2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFF0EBE7FFC6A87FFFCABE88FFDDCF96FFEADCA1FFEBDEA7FFECE0AAFFEDE1
+        AEFFEEE1B1FFEEE2B5FFEEE2B8FFEEE2BBFFDCC5A4FFDCD1CAFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFD2C5BCFFC0A782FF878268FFA09979FFE4D9A5FFEDE1
+        AFFFEEE2B2FFEFE4B6FFF0E6BAFFF1E7BFFFF2E9C3FFF3EBC8FFE0CCAEFFE4DB
+        D5FFFFFFFFFFFFFFFFFFFFFFFFFFF4F1F0FFB9CCC4FFCEBB93FF989378FF5969
+        75FFA8B0AEFFE7DEB5FFF0E5BBFFF1E7BEFFF1E9C3FFF3EAC7FFF4ECCBFFF5EE
+        D0FFDFCFB7FFECE6E1FFFFFFFFFFFFFFFFFFFEFDFDFFD7D6D2FFB3E1DCFFDBC8
+        9DFFCCC6A3FF99B5C8FF6D9BD9FF97A4BBFFD6D3BCFFEFE7C4FFF3EBCAFFF4ED
+        CEFFF5EFD3FFF7F1D7FFE0D3BFFFF1EDE9FFFFFFFFFFFFFFFFFFF2F0EFFFC3DB
+        D8FFB5E6E1FFE4D2A7FFEAE1B7FFB7BEC3FF8EB3DCFF396997FF6D8E90FFC4CD
+        9EFFF2ECCFFFF6F0D6FFF7F2DAFFF9F4DFFFE1D7C8FFF3F0EEFFFFFFFFFFFDFD
+        FDFFDCDDD9FFBBEAE7FFBBDBD2FFEADAB1FFF1E7C0FFD3CFBDFF8DB2D3FF4E8E
+        37FF4D8E2CFF6C9C3EFFD1D8B0FFF7F2DCFFF9F4E2FFFAF6E6FFDFD4C9FFF4F2
+        F0FFFEFEFEFFEDEBE9FFC7DFDBFFBFF9F9FFC1C6B9FFF0E6C1FFF3EBC8FFF3EC
+        CCFFA9B88AFF98BF7CFF65AB2FFF529A1BFF649A36FFD6DEBDFFFAF7E9FFF9F3
+        E7FFDDD0C8FFF6F4F2FFF9F8F7FFD6DCD9FFC3EDECFFC8FDFFFFCDC8B6FFF4ED
+        CCFFF5EDD0FFF5EFD4FFEDEACEFFB1C49BFF9BC47CFF6AAB37FF579C22FF77A6
+        4EFFDBE3CDFFF4EEE5FFE0D5D0FFF8F6F6FFE4E4E1FFC8E1DEFFCBFBFDFFCEF7
+        F8FFDACEB7FFF6EFD3FFF6F0D7FFF7F2DBFFF8F3DFFFD8DFC4FFB0C59DFF9AC4
+        7BFF7AB44FFF67A33AFFA0BD86FFD2CEBDFFE2D9D4FFFBFAFAFFCBBFB7FFCCEB
+        E8FFD4FEFFFFCEE0DCFFE5D8C1FFF7F2DAFFF8F3DFFFF9F4E2FFFAF6E6FFF4F3
+        E5FFC9D4BAFFB1C7A0FFA6CA8AFF94C172FFA0BD88FFA8AA8AFFD4CEC4FFFDFC
+        FCFFF0EBEAFFD4CEC7FFD6E0DBFFD1CCC2FFEFE6D2FFF6F0DEFFF8F3E3FFFAF6
+        E9FFFBF8EEFFFDFBF3FFEEF1E7FFB5CAA5FF7FAE5AFFB4D39CFFBCD6A9FFB3C4
+        A4FFB7C2AEFFF3F4F2FFFFFFFFFFFDFCFCFFEBE4E2FFD1B8AEFFD1B6A9FFDBC4
+        B6FFE5D2C5FFECE0D4FFF3EAE3FFF5EEE9FFF5EFECFFD2D5C5FF73A349FF79AB
+        52FFD6E5CAFFD5E2CAFFACBEA1FFD1D7CDFFFFFFFFFFFFFFFFFFFFFFFFFFF8F5
+        F5FFEAE4E1FFE4D7D1FFE2CFC8FFDAC2B4FFDFCBC1FFE2D1CBFFE4D6D1FFE3D6
+        D0FFADB793FF63A132FFA1C289FFE8EEE3FFDAE4D2FFC3CABEFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFEFEFEFFF7F4F2FFF0E9E5FFE7DBD5FFEEE6E3FFF6F3
+        F2FFF9F7F7FFF8F6F5FFF1F1EDFF8EB372FF6AA83BFFC0D4B1FFDAE3D4FFCDD4
+        C8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFDFFFCFB
+        FAFFFDFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE2E9DDFF86AA6BFF779A
+        5DFFBECAB6FFF1F3F0FF
+      }
+      OnClick = btnClonarClick
+      TabOrder = 4
+    end
   end
   object PricePanel: TPanel
-    Left = 120
+    Left = 72
     Height = 288
-    Top = 344
+    Top = 360
     Width = 784
     ClientHeight = 288
     ClientWidth = 784
@@ -1841,7 +1999,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Width = 124
       Alignment = taRightJustify
       AutoSize = False
-      Caption = '销售折扣:'
+      Caption = '销售折扣%:'
       Color = clBtnFace
       ParentColor = False
       Transparent = False
@@ -1861,6 +2019,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Width = 80
       OnExit = Edit4Exit
       OnKeyDown = Edit4KeyDown
+      OnKeyPress = Edit4KeyPress
       TabOrder = 7
       Text = '-1'
     end
@@ -1872,6 +2031,16 @@ object FormGoodsSpu: TFormGoodsSpu
       Caption = '购买该商品时赠送消费积分, -1表示按商品价格赠送'
       ParentColor = False
     end
+    object Memo2: TMemo
+      Left = 619
+      Height = 286
+      Top = 1
+      Width = 164
+      Align = alRight
+      Color = clSkyBlue
+      ReadOnly = True
+      TabOrder = 8
+    end
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -1879,8 +2048,8 @@ object FormGoodsSpu: TFormGoodsSpu
       'AutoEncodeStrings='
     )
     Port = 0
-    left = 715
-    top = 117
+    left = 744
+    top = 72
   end
   object DBGoodsQuery: TZQuery
     Params = <>
@@ -1905,7 +2074,7 @@ object FormGoodsSpu: TFormGoodsSpu
   object BrandDS: TDataSource
     DataSet = BrandQuery
     left = 424
-    top = 165
+    top = 163
   end
   object ClasseQuery: TZQuery
     Params = <>
@@ -2066,8 +2235,8 @@ object FormGoodsSpu: TFormGoodsSpu
   end
   object SKUListDS: TDataSource
     DataSet = SKUListQuery
-    left = 240
-    top = 384
+    left = 208
+    top = 344
   end
   object dbTrabajo: TZQuery
     AutoCalcFields = False
@@ -2168,5 +2337,15 @@ object FormGoodsSpu: TFormGoodsSpu
       Required = False
       Size = 200
     end
+  end
+  object dbClonar: TZQuery
+    Params = <>
+    left = 856
+    top = 168
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Options = [ofNoChangeDir, ofEnableSizing, ofViewDetail, ofAutoPreview]
+    left = 736
+    top = 48
   end
 end

@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, ComCtrls, DbCtrls, EditBtn, Buttons, DBGrids, VirtualTrees,
-  Variants,LCLType,  connect, Global,
+  Variants,LCLType,
   DefaultTranslator, LResources,
   virtualdbtreeex, ZDataset, ZConnection;
 
@@ -28,6 +28,7 @@ type
     CheckBox4: TCheckBox;
     CheckBox5: TCheckBox;
     DBCompraDS: TDataSource;
+    DBGrid3: TDBGrid;
     EmTypeDataSource: TDataSource;
     DateAdd: TDateEdit;
     DateDesde: TDateEdit;
@@ -120,6 +121,7 @@ type
     procedure Button6Click(Sender: TObject);
     procedure DateAddKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure DBGrid3DblClick(Sender: TObject);
     procedure DBLookupComboBox1KeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure Edit10KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -152,9 +154,10 @@ type
     procedure FormShow(Sender: TObject);
     procedure ModeViewChange(Sender: TObject);
     procedure VirtualDBTreeEx1Click(Sender: TObject);
-    procedure GetEmType;
+    procedure GetEmType(Sender: TObject);
     procedure GetHistoricoDeCompra(IDProveedor:string; Date1,Date2:Tdatetime);
     procedure clear;
+    procedure  GetProveedor();
   private
 
   public
@@ -172,6 +175,9 @@ var
 
 implementation
 
+uses
+   connect,  Global;
+
     {$R *.lfm}
 
 { TFormProveedor }
@@ -185,7 +191,7 @@ begin
 end;
 
 { TFormProveedor }
-procedure TFormProveedor.GetEmType;
+procedure TFormProveedor.GetEmType(Sender: TObject);
 begin
    with EmTypeUniQuery do
   begin
@@ -237,21 +243,7 @@ end;
 
 procedure TFormProveedor.FormCreate(Sender: TObject);
 begin
-   DateAdd.Date:=Now();
- Datedesde.Date:=MyDate;
- DateHasta.Date:=Now();
-  Resultado:=0;
-  ModeView.Clear;
-  ModeView.Items.Add(nList1);
-  ModeView.Items.Add(nList2);
-  ModeView.Items.Add(nList3);
-  ModeView.ItemIndex:=0;
-  ProveedorQuery.Connection:=DataModule2.ZCon1;
-  ProveedorQuery.Active:=False;
-  ProveedorQuery.SQL.Clear;
-  proveedorQuery.SQL.Add('select * from '+EmID+'PROVEEDORLIST  WHERE 1=1 order by ID_PROVEEDOR ');
-  ProveedorQuery.Active:=True;
-  GetEmType;
+
 end;
 
 procedure TFormProveedor.FormShow(Sender: TObject);
@@ -261,6 +253,39 @@ begin
    VirtualDBTreeEx1.OnClick(self);
    end;
  }
+    DateAdd.Date:=Now();
+ Datedesde.Date:=MyDate;
+ DateHasta.Date:=Now();
+  Resultado:=0;
+  ModeView.Clear;
+  ModeView.Items.Add(nList1);
+  ModeView.Items.Add(nList2);
+  ModeView.Items.Add(nList3);
+  ModeView.ItemIndex:=0;
+{ ProveedorQuery.Connection:=DataModule2.ZCon1;
+  ProveedorQuery.Active:=False;
+  ProveedorQuery.SQL.Clear;
+  proveedorQuery.SQL.Add('select * from '+EmID+'PROVEEDORLIST  WHERE 1=1 order by ID_PROVEEDOR ');
+  ProveedorQuery.Active:=True;   }
+  GetEmType(self);
+  GetProveedor();
+
+end;
+
+procedure  TFormProveedor.GetProveedor();
+begin
+    with ProveedorQuery do
+  begin
+    Connection:=DataModule2.ZCon1;
+     Active:=false;
+     SQL.Clear;
+     SQL.Text:='select * from '+EmID+'PROVEEDORLIST  WHERE 1=1 order by ID_PROVEEDOR ';
+     Open;
+
+  end;
+
+    ModeViewChange(self);
+   // VirtualDBTreeEx1.DataSource:=ProveedorDB;
 end;
 
 procedure TFormProveedor.ModeViewChange(Sender: TObject);
@@ -269,14 +294,23 @@ begin
    0:
    begin
     VirtualDBTreeEx1.ViewFieldName:='NAME_COMERCIO';
+    DBGrid3.Columns[2].Visible:=true;
+    DBGrid3.Columns[0].Visible:=False;
+    DBGrid3.Columns[1].Visible:=False;
    end;
    1:
    begin
     VirtualDBTreeEx1.ViewFieldName:='NAME_EMPRESA';
+    DBGrid3.Columns[1].Visible:=true;
+    DBGrid3.Columns[2].Visible:=False;
+    DBGrid3.Columns[0].Visible:=False;
    end;
     2:
    begin
     VirtualDBTreeEx1.ViewFieldName:='ID_PROVEEDOR';
+    DBGrid3.Columns[0].Visible:=true;
+    DBGrid3.Columns[1].Visible:=False;
+    DBGrid3.Columns[2].Visible:=False;
    end;
 end;
 
@@ -443,6 +477,41 @@ procedure TFormProveedor.DateAddKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
    if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormProveedor.DBGrid3DblClick(Sender: TObject);
+begin
+   EditCodigo.Text:=ProveedorQuery.FieldByName('ID_PROVEEDOR').Value;
+      DBLookupComboBox1.KeyValue:=UpperCase(ProveedorQuery.FieldByName('TYPE_EM').AsString);
+      Edit1.Text:=ProveedorQuery.FieldByName('NAME_COMERCIO').AsString;
+      Edit2.Text:=ProveedorQuery.FieldByName('NAME_EMPRESA').AsString;
+      Edit3.Text:=ProveedorQuery.FieldByName('CIF').AsString;
+      Edit4.Text:=ProveedorQuery.FieldByName('IDENTIFICATIONNIF').AsString;
+      Edit5.Text:=ProveedorQuery.FieldByName('DIRECCION').AsString;
+      Edit6.Text:=ProveedorQuery.FieldByName('POSTAL').AsString;
+      Edit7.Text:=ProveedorQuery.FieldByName('CIUDAD').AsString;
+      Edit8.Text:=ProveedorQuery.FieldByName('PROVINCIA').AsString;
+      Edit9.Text:=ProveedorQuery.FieldByName('PAIS').AsString;
+      Edit10.Text:=ProveedorQuery.FieldByName('TEL1').AsString;
+      Edit11.Text:=ProveedorQuery.FieldByName('TEL2').AsString;
+      Edit12.Text:=ProveedorQuery.FieldByName('MOVIL').AsString;
+      Edit13.Text:=ProveedorQuery.FieldByName('FAX').AsString;
+      Edit14.Text:=ProveedorQuery.FieldByName('EMAIL').AsString;
+      Edit15.Text:=ProveedorQuery.FieldByName('WEB').AsString;
+      Edit16.Text:=ProveedorQuery.FieldByName('CONTACTO').AsString;
+      ActiveBox.Checked:=ProveedorQuery.FieldByName('ACTIVA').AsBoolean;
+      DateAdd.Date:= ProveedorQuery.FieldByName('ADD_FECHA').AsDateTime;
+      Edit17.Text:=ProveedorQuery.FieldByName('WECHAT').AsString;
+      Edit18.Text:=ProveedorQuery.FieldByName('MY_ID').AsString;
+      Edit19.Text:=ProveedorQuery.FieldByName('MY_NUMTARJETA').AsString;
+      Edit20.Text:=ProveedorQuery.FieldByName('NAME_BANCO').AsString;
+      Edit21.Text:=ProveedorQuery.FieldByName('CUENTA').AsString;
+      Edit22.Text:=ProveedorQuery.FieldByName('TITULAR').AsString;
+      MEMO1.Text:=ProveedorQuery.FieldByName('NOTA').AsString;
+      PageControl1.Pages[0].Show;
+      NewItem:=False;
+    //  EditCodigo.ReadOnly:=True;
+      GetHistoricoDeCompra(editCodigo.Text, myDate, now());
 end;
 
 procedure TFormProveedor.DBLookupComboBox1KeyDown(Sender: TObject;

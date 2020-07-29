@@ -1,13 +1,14 @@
 object FormFindGoods_Spu: TFormFindGoods_Spu
-  Left = 888
+  Left = 575
   Height = 684
-  Top = 244
+  Top = 253
   Width = 1025
   Caption = '查找货品'
   ClientHeight = 684
   ClientWidth = 1025
   OnCreate = FormCreate
-  LCLVersion = '2.0.0.3'
+  Position = poMainFormCenter
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 57
@@ -150,17 +151,27 @@ object FormFindGoods_Spu: TFormFindGoods_Spu
         DisplayFormat = '0.000'
       end    
       item
+        Title.Caption = '库存'
+        FieldName = 'AMOUNT'
+        DisplayFormat = '#0'
+      end    
+      item
+        Alignment = taRightJustify
         Title.Caption = '编码'
         Width = 120
         FieldName = 'CODE'
       end>
     DataSource = DataSource1
+    Font.Color = clWindowText
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
     TabOrder = 2
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
+    OnDrawColumnCell = DBGrid1DrawColumnCell
     OnDblClick = DBGrid1DblClick
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object ListUniQuery: TZQuery
     Params = <>

@@ -1,7 +1,7 @@
 object FormProveedor: TFormProveedor
-  Left = 799
+  Left = 567
   Height = 680
-  Top = 195
+  Top = 94
   Width = 1024
   ClientHeight = 680
   ClientWidth = 1024
@@ -34,7 +34,7 @@ object FormProveedor: TFormProveedor
       Top = 6
       Width = 75
       Anchors = [akTop, akRight]
-      Caption = 'Salir(&X)'
+      Caption = '退出(&X)'
       OnClick = Button1Click
       TabOrder = 0
     end
@@ -44,16 +44,16 @@ object FormProveedor: TFormProveedor
       Top = 6
       Width = 75
       Anchors = [akTop, akRight]
-      Caption = 'Clear(&C)'
+      Caption = '清空(&C)'
       TabOrder = 1
     end
     object Button3: TButton
-      Left = 448
+      Left = 447
       Height = 25
       Top = 6
       Width = 75
       Anchors = [akTop, akRight]
-      Caption = 'Save(&S)'
+      Caption = '保存(&S)'
       OnClick = Button3Click
       TabOrder = 2
     end
@@ -63,7 +63,7 @@ object FormProveedor: TFormProveedor
       Top = 6
       Width = 75
       Anchors = [akTop, akRight]
-      Caption = 'Delete(&D)'
+      Caption = '删除(&D)'
       TabOrder = 3
     end
     object Button6: TButton
@@ -72,7 +72,7 @@ object FormProveedor: TFormProveedor
       Top = 6
       Width = 75
       Anchors = [akTop, akRight]
-      Caption = 'Añadir(&A)'
+      Caption = '添加(&A)'
       OnClick = Button6Click
       TabOrder = 4
     end
@@ -81,7 +81,7 @@ object FormProveedor: TFormProveedor
       Height = 25
       Top = 6
       Width = 75
-      Caption = 'Export'
+      Caption = '导出'
       TabOrder = 5
     end
   end
@@ -120,8 +120,8 @@ object FormProveedor: TFormProveedor
           Left = 24
           Height = 17
           Top = 145
-          Width = 79
-          Caption = 'Razón Social*'
+          Width = 135
+          Caption = '公司名称(Razón Social)*'
           ParentColor = False
         end
         object Label42: TLabel
@@ -208,8 +208,8 @@ object FormProveedor: TFormProveedor
           Left = 24
           Height = 17
           Top = 103
-          Width = 119
-          Caption = 'Nombre Comercial*:'
+          Width = 175
+          Caption = '中文名称(Nombre Comercial)*:'
           ParentColor = False
         end
         object Label11: TLabel
@@ -322,7 +322,8 @@ object FormProveedor: TFormProveedor
           Top = 34
           Width = 121
           CharCase = ecUppercase
-          ReadOnly = True
+          OnExit = EditCodigoExit
+          OnKeyDown = EditCodigoKeyDown
           TabOrder = 0
         end
         object Edit7: TEdit
@@ -331,6 +332,7 @@ object FormProveedor: TFormProveedor
           Top = 292
           Width = 237
           CharCase = ecUppercase
+          OnKeyDown = Edit7KeyDown
           TabOrder = 8
         end
         object Edit16: TEdit
@@ -346,6 +348,7 @@ object FormProveedor: TFormProveedor
           Top = 375
           Width = 135
           Color = 10930928
+          OnKeyDown = Edit10KeyDown
           TabOrder = 11
         end
         object Edit11: TEdit
@@ -353,6 +356,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 375
           Width = 140
+          OnKeyDown = Edit11KeyDown
           TabOrder = 12
         end
         object Edit12: TEdit
@@ -361,6 +365,7 @@ object FormProveedor: TFormProveedor
           Top = 418
           Width = 135
           Color = 10930928
+          OnKeyDown = Edit12KeyDown
           TabOrder = 13
         end
         object Edit13: TEdit
@@ -368,6 +373,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 418
           Width = 141
+          OnChange = Edit13Change
           TabOrder = 14
         end
         object Edit14: TEdit
@@ -375,6 +381,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 461
           Width = 373
+          OnKeyDown = Edit14KeyDown
           TabOrder = 15
         end
         object Edit15: TEdit
@@ -382,15 +389,17 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 500
           Width = 373
+          OnKeyDown = Edit15KeyDown
           TabOrder = 16
         end
         object Edit2: TEdit
-          Left = 24
+          Left = 25
           Height = 25
-          Top = 164
+          Top = 160
           Width = 373
           CharCase = ecUppercase
           Color = clYellow
+          OnKeyDown = Edit2KeyDown
           TabOrder = 3
         end
         object Edit3: TEdit
@@ -399,6 +408,7 @@ object FormProveedor: TFormProveedor
           Top = 206
           Width = 180
           CharCase = ecUppercase
+          OnKeyDown = Edit3KeyDown
           TabOrder = 4
         end
         object Edit4: TEdit
@@ -406,6 +416,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 204
           Width = 133
+          OnKeyDown = Edit4KeyDown
           TabOrder = 5
         end
         object Edit5: TEdit
@@ -414,6 +425,7 @@ object FormProveedor: TFormProveedor
           Top = 248
           Width = 372
           CharCase = ecUppercase
+          OnKeyDown = Edit5KeyDown
           TabOrder = 6
         end
         object Edit6: TEdit
@@ -421,6 +433,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 293
           Width = 97
+          OnKeyDown = Edit6KeyDown
           TabOrder = 7
         end
         object Edit8: TEdit
@@ -429,6 +442,7 @@ object FormProveedor: TFormProveedor
           Top = 335
           Width = 186
           CharCase = ecUppercase
+          OnKeyDown = Edit8KeyDown
           TabOrder = 9
         end
         object Edit9: TEdit
@@ -436,6 +450,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 335
           Width = 160
+          OnKeyDown = Edit9KeyDown
           TabOrder = 10
         end
         object Edit1: TEdit
@@ -445,6 +460,7 @@ object FormProveedor: TFormProveedor
           Width = 373
           CharCase = ecUppercase
           Color = clYellow
+          OnKeyDown = Edit1KeyDown
           TabOrder = 2
         end
         object DBLookupComboBox1: TDBLookupComboBox
@@ -457,6 +473,7 @@ object FormProveedor: TFormProveedor
           ListFieldIndex = 0
           ListSource = EmTypeDataSource
           LookupCache = False
+          OnKeyDown = DBLookupComboBox1KeyDown
           TabOrder = 1
         end
         object Edit18: TEdit
@@ -464,6 +481,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 225
           Width = 300
+          OnKeyDown = Edit18KeyDown
           TabOrder = 20
         end
         object Edit19: TEdit
@@ -471,6 +489,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 271
           Width = 300
+          OnKeyDown = Edit19KeyDown
           TabOrder = 21
         end
         object ActiveBox: TCheckBox
@@ -488,6 +507,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 319
           Width = 300
+          OnKeyDown = Edit20KeyDown
           TabOrder = 22
         end
         object Edit21: TEdit
@@ -495,6 +515,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 368
           Width = 300
+          OnKeyDown = Edit21KeyDown
           TabOrder = 23
         end
         object Edit22: TEdit
@@ -502,6 +523,7 @@ object FormProveedor: TFormProveedor
           Height = 25
           Top = 415
           Width = 300
+          OnKeyDown = Edit22KeyDown
           TabOrder = 24
         end
         object Memo1: TMemo
@@ -517,6 +539,7 @@ object FormProveedor: TFormProveedor
           Top = 170
           Width = 300
           Color = 10930928
+          OnKeyDown = Edit17KeyDown
           TabOrder = 19
         end
         object DateAdd: TDateEdit
@@ -529,6 +552,7 @@ object FormProveedor: TFormProveedor
           ButtonWidth = 23
           NumGlyphs = 2
           MaxLength = 0
+          OnKeyDown = DateAddKeyDown
           TabOrder = 26
         end
       end
@@ -829,11 +853,11 @@ object FormProveedor: TFormProveedor
         TabOrder = 0
         object Label7: TLabel
           Left = 20
-          Height = 17
-          Top = 13
+          Height = 34
+          Top = 4
           Width = 63
           Alignment = taRightJustify
-          Caption = 'Listado en:'
+          Caption = '显示'#13#10'Listado en:'
           ParentColor = False
         end
         object ModeView: TComboBox
@@ -844,14 +868,15 @@ object FormProveedor: TFormProveedor
           ItemHeight = 17
           ItemIndex = 0
           Items.Strings = (
-            'Nombre Comercial'
-            'Razon Social'
-            'Codigo'
+            '简称'
+            '公司名称'
+            '编号'
+            ''
           )
           OnChange = ModeViewChange
           Style = csDropDownList
           TabOrder = 0
-          Text = 'Nombre Comercial'
+          Text = '简称'
         end
       end
       object VirtualDBTreeEx1: TVirtualDBTreeEx

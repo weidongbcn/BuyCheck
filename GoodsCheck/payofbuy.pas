@@ -5,7 +5,7 @@ unit PayofBuy;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, LCLType,
   ZDataset, rxcurredit, Global, connect;
 
 type
@@ -40,9 +40,22 @@ type
     PayQuery: TZQuery;
     UUIDEdit: TEdit;
     procedure Button1Click(Sender: TObject);
+    procedure CurrencyEdit1KeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure CurrencyEdit2Change(Sender: TObject);
+    procedure CurrencyEdit2KeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure CurrencyEdit3KeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure CurrencyEdit4Change(Sender: TObject);
+    procedure CurrencyEdit4KeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure GetTotal;
+    procedure RealpagoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
+    procedure TotalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
 
   public
@@ -89,9 +102,9 @@ begin
   Connection:=DataModule2.ZCon1;
   Active:=False;
   SQL.Clear;
-  SQL.Text:='INSER INTO SPENDING_ITEMS (SPENDING_CONTENT_ID, D_UUID, ID_TIENDA, P0) VALUES (:SPENDING_CONTENT_ID, :D_UUID, :ID_TIENDA, :P0) '
+  SQL.Text:='INSERT INTO SPENDING_ITEMS (SPENDING_CONTENT_ID, D_UUID, ID_TIENDA, P0) VALUES (:SPENDING_CONTENT_ID, :D_UUID, :ID_TIENDA, :P0) '
   +'ON DUPLICATE KEY UPDATE '
-  +'P0=:P0, UPDATE=NOW() ';
+  +'P0=:P0, UPDATED_AT=NOW() ';
   ParamByName('SPENDING_CONTENT_ID').AsInteger:=0;   //0 购买支出
   ParamByName('D_UUID').AsString:=AFinalDOC.B_UUID;
   ParamByName('ID_TIENDA').AsString:=UseDBC.EMID;
@@ -104,7 +117,7 @@ begin
   ParamByName('D_UUID').AsString:=AFinalDOC.B_UUID;
   ParamByName('STAFF').AsString:=AFinalDOC.Staff;
   ParamByName('EFECTIVO').AsFloat:= CurrencyEdit1.Value;
-  ParamByName('VISA').AsFloat:= CurrencyEdit2.Value;
+  ParamByName('TARJETA').AsFloat:= CurrencyEdit2.Value;
   ParamByName('TRANSFERENCIA').AsFloat:= CurrencyEdit3.Value;
   ParamByName('OTHER').AsFloat:= CurrencyEdit4.Value;
   ParamByName('SPENDING_DATE').AsDate:=AFinalDOC.BUY_DATE;
@@ -113,7 +126,7 @@ begin
   SQL.Clear;
   SQL.Text:='UPDATE BUY_HISTORY SET REALPAGO=:REALPAGO, STATUS_LOCK=1, LOCKEDDATE=NOW() '
   +'WHERE 1=1 AND B_UUID=:B_UUID ';
-  ParamByName('D_UUID').AsString:=AFinalDOC.B_UUID;
+  ParamByName('B_UUID').AsString:=AFinalDOC.B_UUID;
   ParamByName('REALPAGO').AsFloat:= Realpago.Value;
   ExecSQL;
   close;
@@ -123,6 +136,40 @@ begin
   Fin:=True;
   showmessage('处理完毕,将被关闭');
   close;
+end;
+
+procedure TFormBuyPay.CurrencyEdit1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormBuyPay.CurrencyEdit2Change(Sender: TObject);
+begin
+
+end;
+
+procedure TFormBuyPay.CurrencyEdit2KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+    if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormBuyPay.CurrencyEdit3KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormBuyPay.CurrencyEdit4Change(Sender: TObject);
+begin
+
+end;
+
+procedure TFormBuyPay.CurrencyEdit4KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
 end;
 
 procedure TFormBuyPay.FormCreate(Sender: TObject);
@@ -149,6 +196,18 @@ begin
     open;
  end;
     Total.Value:=BuyTop.FieldByName('TOTALIMP').AsCurrency;
+end;
+
+procedure TFormBuyPay.RealpagoKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormBuyPay.TotalKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
 end;
 
 end.

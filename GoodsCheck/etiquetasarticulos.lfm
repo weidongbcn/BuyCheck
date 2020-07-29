@@ -1,0 +1,563 @@
+object FormEtiPEs: TFormEtiPEs
+  Left = 714
+  Height = 710
+  Top = 56
+  Width = 1024
+  Caption = '货品的标签打印'
+  ClientHeight = 710
+  ClientWidth = 1024
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.0.10.0'
+  WindowState = wsMaximized
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 0
+    Width = 1024
+    Align = alTop
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 477
+    Top = 41
+    Width = 1024
+    Align = alClient
+    ClientHeight = 477
+    ClientWidth = 1024
+    TabOrder = 1
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 475
+      Top = 1
+      Width = 852
+      Align = alClient
+      Color = clBtnFace
+      Columns = <      
+        item
+          Title.Caption = '条码(ENA)'
+          Width = 128
+          FieldName = 'ENA'
+        end      
+        item
+          Title.Caption = '商品名称(Concepcion)'
+          Width = 200
+          FieldName = 'GOODS_NAME'
+        end      
+        item
+          Title.Caption = '品牌(Marca)'
+          Width = 120
+          FieldName = 'BRAND_NAME'
+        end      
+        item
+          Title.Caption = '标量(Medida,Pesos)'
+          Width = 60
+          FieldName = 'Scalar'
+        end      
+        item
+          Title.Caption = '单位(QUANTIFIER)'
+          Width = 40
+          FieldName = 'UNIT'
+        end      
+        item
+          Title.Caption = '生产日期(Fecha Fb.)'
+          Width = 128
+          FieldName = 'FECHA_FABRICA'
+        end      
+        item
+          Title.Caption = '销售价格(PVP)'
+          Width = 100
+          FieldName = 'PVP'
+          DisplayFormat = '0.00'
+        end      
+        item
+          Title.Caption = '份数'
+          Width = 30
+          FieldName = 'CANTIDAD'
+        end>
+      DataSource = DataSource1
+      TabOrder = 0
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      OnDrawColumnCell = DBGrid1DrawColumnCell
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 831
+      Height = 25
+      Top = 17
+      Width = 200
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 200
+      Options = []
+      TabOrder = 1
+      Visible = False
+    end
+    object Panel4: TPanel
+      Left = 853
+      Height = 475
+      Top = 1
+      Width = 170
+      Align = alRight
+      ClientHeight = 475
+      ClientWidth = 170
+      TabOrder = 2
+      object Button4: TButton
+        Left = 16
+        Height = 25
+        Top = 183
+        Width = 75
+        Caption = '删除单条'
+        OnClick = Button4Click
+        TabOrder = 0
+      end
+      object Button5: TButton
+        Left = 16
+        Height = 25
+        Top = 223
+        Width = 75
+        Caption = '清空数据'
+        OnClick = Button5Click
+        TabOrder = 1
+      end
+      object Button6: TButton
+        Left = 16
+        Height = 25
+        Top = 263
+        Width = 75
+        Caption = '刷新数据'
+        OnClick = Button6Click
+        TabOrder = 2
+      end
+      object Button7: TButton
+        Left = 16
+        Height = 73
+        Top = 319
+        Width = 75
+        Caption = '打印'
+        OnClick = Button7Click
+        TabOrder = 3
+      end
+      object Button3: TButton
+        Left = 16
+        Height = 73
+        Top = 95
+        Width = 75
+        Caption = '保存修改'
+        OnClick = Button3Click
+        TabOrder = 4
+      end
+      object Button8: TButton
+        Left = 16
+        Height = 25
+        Top = 64
+        Width = 75
+        Caption = '重新读取'
+        OnClick = Button8Click
+        TabOrder = 5
+      end
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 192
+    Top = 518
+    Width = 1024
+    Align = alBottom
+    ClientHeight = 192
+    ClientWidth = 1024
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 280
+      Height = 17
+      Top = 16
+      Width = 57
+      Caption = '条码(ENA)'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 504
+      Height = 17
+      Top = 16
+      Width = 124
+      Caption = '商品名称(Concepcion)'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 280
+      Height = 17
+      Top = 62
+      Width = 139
+      Caption = '品牌(Marca de Ariticulo)'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 448
+      Height = 17
+      Top = 64
+      Width = 114
+      Caption = '标量(Medida,Pesos)'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 600
+      Height = 17
+      Top = 64
+      Width = 107
+      Caption = '单位(cuantificador)'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 280
+      Height = 17
+      Top = 107
+      Width = 154
+      Caption = '生产日期(Fecha de Fabrica)'
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 448
+      Height = 17
+      Top = 107
+      Width = 78
+      Caption = '销售价格(PVP)'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 552
+      Height = 17
+      Top = 107
+      Width = 84
+      Caption = '份数(Cantidad)'
+      ParentColor = False
+    end
+    object Button1: TButton
+      Left = 904
+      Height = 73
+      Top = 80
+      Width = 75
+      Caption = '退出'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Edit1: TEdit
+      Left = 290
+      Height = 25
+      Top = 35
+      Width = 144
+      MaxLength = 24
+      OnExit = Edit1Exit
+      OnKeyDown = Edit1KeyDown
+      TabOrder = 1
+    end
+    object Edit2: TEdit
+      Left = 504
+      Height = 25
+      Top = 37
+      Width = 321
+      MaxLength = 120
+      OnKeyDown = Edit2KeyDown
+      TabOrder = 2
+    end
+    object Edit3: TEdit
+      Left = 290
+      Height = 25
+      Top = 80
+      Width = 144
+      MaxLength = 40
+      OnKeyDown = Edit3KeyDown
+      TabOrder = 3
+    end
+    object Edit4: TEdit
+      Left = 455
+      Height = 25
+      Top = 80
+      Width = 121
+      MaxLength = 20
+      OnKeyDown = Edit4KeyDown
+      TabOrder = 4
+    end
+    object Edit5: TEdit
+      Left = 603
+      Height = 25
+      Top = 80
+      Width = 54
+      MaxLength = 5
+      OnKeyDown = Edit5KeyDown
+      TabOrder = 5
+    end
+    object Edit6: TEdit
+      Left = 290
+      Height = 25
+      Top = 126
+      Width = 121
+      MaxLength = 24
+      OnKeyDown = Edit6KeyDown
+      TabOrder = 6
+    end
+    object PvP: TCurrencyEdit
+      Left = 448
+      Height = 25
+      Top = 126
+      Width = 81
+      Alignment = taRightJustify
+      Color = clInfoBk
+      DecimalPlaces = 4
+      DisplayFormat = '0.0000;-0.0000'
+      TabOrder = 7
+      OnKeyDown = PvPKeyDown
+    end
+    object CurrencyEdit2: TCurrencyEdit
+      Left = 555
+      Height = 25
+      Top = 126
+      Width = 75
+      Alignment = taRightJustify
+      DecimalPlaces = 0
+      DisplayFormat = '0;-0'
+      MaxLength = 3
+      TabOrder = 8
+      Value = 1
+      OnKeyDown = CurrencyEdit2KeyDown
+    end
+    object Button2: TButton
+      Left = 750
+      Height = 73
+      Top = 80
+      Width = 75
+      Caption = '增加'
+      OnClick = Button2Click
+      TabOrder = 9
+    end
+    object DBImage1: TDBImage
+      Left = 1
+      Height = 190
+      Top = 1
+      Width = 273
+      Align = alLeft
+      ReadOnly = True
+      Stretch = True
+    end
+    object CheckBox1: TCheckBox
+      Left = 882
+      Height = 21
+      Top = 16
+      Width = 70
+      Caption = '快速输入'
+      TabOrder = 10
+    end
+  end
+  object DataSourceStudies: TDataSource
+    DataSet = BufDatasetLabels
+    Left = 516
+    Top = 300
+  end
+  object frxBarCodeObject1: TfrxBarCodeObject
+    Left = 236
+    Top = 420
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    DataSource = DataSourceStudies
+    BCDToCurrency = False
+    Left = 308
+    Top = 420
+  end
+  object frxReport1: TfrxReport
+    Version = '6.7.3'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1
+    PrintOptions.Printer = '预设'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 41399.9586041667
+    ReportOptions.LastChange = 41399.9586041667
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.'
+    )
+    Left = 172
+    Top = 420
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000
+      Width = 1000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210
+      PaperHeight = 297
+      PaperSize = 9
+      LeftMargin = 10
+      RightMargin = 10
+      TopMargin = 10
+      BottomMargin = 10
+      Columns = 4
+      ColumnWidth = 47.5
+      ColumnPositions.Strings = (
+        '0'
+        '47.50'
+        '95'
+        '142.50'
+      )
+      Frame.Typ = []
+      MirrorMode = []
+      object BarCode1: TfrxBarCodeView
+        AllowVectorExport = True
+        Left = 41.57483
+        Top = 37.7953
+        Width = 103
+        Height = 45.35436
+        BarType = bcCodeEAN13
+        Frame.Typ = []
+        Rotation = 0
+        TestLine = False
+        Text = '12345678'
+        WideBarRatio = 2
+        Zoom = 1
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        ColorBar = clBlack
+      end
+    end
+  end
+  object BufDatasetLabels: TBufDataset
+    FieldDefs = <>
+    Left = 236
+    Top = 276
+    object BufDatasetLabelsSKU_NO: TStringField
+      FieldKind = fkData
+      FieldName = 'SKU_NO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object BufDatasetLabelsGOODS_ID: TStringField
+      FieldKind = fkData
+      FieldName = 'GOODS_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object BufDatasetLabelsENA: TStringField
+      FieldKind = fkData
+      FieldName = 'ENA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object BufDatasetLabelsGOODS_NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'GOODS_NAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 280
+    end
+    object BufDatasetLabelsBRAND_NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'BRAND_NAME'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 128
+    end
+    object BufDatasetLabelsSCALAR: TStringField
+      FieldKind = fkData
+      FieldName = 'SCALAR'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object BufDatasetLabelsUNIT: TStringField
+      FieldKind = fkData
+      FieldName = 'UNIT'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufDatasetLabelsFECHA_FABRICA: TStringField
+      FieldKind = fkData
+      FieldName = 'FECHA_FABRICA'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 24
+    end
+    object BufDatasetLabelsPVP: TCurrencyField
+      FieldKind = fkData
+      FieldName = 'PVP'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dbArti: TZQuery
+    Params = <>
+    Left = 168
+    Top = 144
+  end
+  object dbTrabajo: TZQuery
+    Params = <>
+    Left = 256
+    Top = 152
+  end
+  object UniQuery1: TZQuery
+    Params = <>
+    Left = 360
+    Top = 152
+  end
+  object BrandQuery3: TZQuery
+    Params = <>
+    Left = 408
+    Top = 352
+  end
+  object GetProductInfoQuery: TZQuery
+    Params = <>
+    Left = 464
+    Top = 160
+  end
+  object DataSource1: TDataSource
+    DataSet = UniQuery1
+    Left = 721
+    Top = 267
+  end
+end

@@ -20,9 +20,12 @@ type
     Button1: TButton;
     Button2: TButton;
     ButtonNew: TButton;
+    CheckButton1: TSpeedButton;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DocumentoButton: TSpeedButton;
+    DocumentoButton1: TSpeedButton;
+    LabelButton: TSpeedButton;
     f1: TMenuItem;
     HisBuyButton: TSpeedButton;
     Label1: TLabel;
@@ -62,6 +65,7 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure LabelButtonClick(Sender: TObject);
     procedure DocumentoButtonClick(Sender: TObject);
     procedure ExcelButtonClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -69,6 +73,7 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure N13Click(Sender: TObject);
+    procedure ProveedorButtonClick(Sender: TObject);
     procedure QuitButtonClick(Sender: TObject);
     procedure DemoButtonClick(Sender: TObject);
     procedure RegisterClick(Sender: TObject);
@@ -85,8 +90,8 @@ var
 
 implementation
 uses
-  connect,U_Conn_Indy, Global, Uloginmain, Checkdb, ReadDBfile,  addgoods, Proveedor, BuyIn01, Inventory, BuyListCheck, Categorys_Spec,
-  GoodsFromProv, FindoutGoodsInPro, His_Goods_Buy, his_buys, ABOUT;
+  connect,U_Conn_Indy, Global, Uloginmain, Checkdb, ReadDBfile,  addgoods, Proveedor, BuyIn01, buyin02, Inventory, BuyListCheck, Categorys_Spec,
+  GoodsFromProv, FindoutGoodsInPro, His_Goods_Buy, his_buys, ABOUT, EtiquetasArticulos;
 
 {$R *.lfm}
 
@@ -189,7 +194,7 @@ T1.EMPLEADO, T1.ISIVAINCLUIDO, T1.ISREQINCLUIDO, T1.ISCHECKED, T1.ID_STOCK, IF(T
 
   Open;
 end;
-TFloatField(ListZQuery.FieldByName('UTOTAL')).DisplayFormat := '0.000';
+//TFloatField(ListZQuery.FieldByName('UTOTAL')).DisplayFormat := '0.000';
 
 end;
 
@@ -216,9 +221,19 @@ begin
   end;
 end;
 
+procedure TFormWork.LabelButtonClick(Sender: TObject);
+begin
+  FormEtiPEs:= TFormEtiPEs.Create(self);
+  FormEtiPEs.ShowModal;
+  FormEtiPEs.Free;
+end;
+
 procedure TFormWork.DocumentoButtonClick(Sender: TObject);
 begin
-  Button3.Click;
+   FormBuyIn02:= TFormBuyIn02.Create(self);
+  FormBuyIn02.ShowModal;
+  FormBuyIn02.Free;
+  ListZQuery.Refresh;
 end;
 
 procedure TFormWork.ExcelButtonClick(Sender: TObject);
@@ -229,6 +244,7 @@ end;
 procedure TFormWork.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   DMindy.IdTCPClient1.Disconnect;
+  sleep(10);
   DMindy.Mt.Terminate;
   DMindy.Mt.FreeInstance;
 end;
@@ -407,6 +423,13 @@ begin
   end;
 
   ListZQuery.Refresh;
+end;
+
+procedure TFormWork.ProveedorButtonClick(Sender: TObject);
+begin
+  FormProveedor:=TFormProveedor.Create(self);
+  FormProveedor.ShowModal;
+  FormProveedor.Free;
 end;
 
 procedure TFormWork.QuitButtonClick(Sender: TObject);
