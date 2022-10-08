@@ -1,21 +1,20 @@
 object FormGoodsBuyHis: TFormGoodsBuyHis
   Left = 440
-  Height = 666
+  Height = 686
   Top = 189
-  Width = 967
+  Width = 1024
   Caption = '货品购买记录'
-  ClientHeight = 666
-  ClientWidth = 967
+  ClientHeight = 686
+  ClientWidth = 1024
   OnCreate = FormCreate
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 80
     Top = 0
-    Width = 967
+    Width = 1024
     Align = alTop
     ClientHeight = 80
-    ClientWidth = 967
+    ClientWidth = 1024
     TabOrder = 0
     object DateTimePicker1: TDateTimePicker
       Left = 152
@@ -83,7 +82,7 @@ object FormGoodsBuyHis: TFormGoodsBuyHis
       Left = 272
       Height = 25
       Top = 37
-      Width = 204
+      Width = 256
       TabOrder = 2
     end
     object Label3: TLabel
@@ -95,7 +94,7 @@ object FormGoodsBuyHis: TFormGoodsBuyHis
       ParentColor = False
     end
     object Button1: TButton
-      Left = 536
+      Left = 560
       Height = 25
       Top = 37
       Width = 75
@@ -107,11 +106,11 @@ object FormGoodsBuyHis: TFormGoodsBuyHis
   object Panel2: TPanel
     Left = 0
     Height = 50
-    Top = 616
-    Width = 967
+    Top = 636
+    Width = 1024
     Align = alBottom
     ClientHeight = 50
-    ClientWidth = 967
+    ClientWidth = 1024
     TabOrder = 1
     object Button2: TButton
       Left = 728
@@ -125,9 +124,9 @@ object FormGoodsBuyHis: TFormGoodsBuyHis
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Height = 536
+    Height = 556
     Top = 80
-    Width = 967
+    Width = 1024
     Align = alClient
     Color = clWindow
     Columns = <    
@@ -144,7 +143,7 @@ object FormGoodsBuyHis: TFormGoodsBuyHis
       item
         Title.Caption = '数量'
         Width = 80
-        FieldName = 'CQUANTITY'
+        FieldName = 'QUANTITY'
       end    
       item
         Title.Caption = '成本'
@@ -177,15 +176,16 @@ object FormGoodsBuyHis: TFormGoodsBuyHis
       end>
     DataSource = DataSource1
     TabOrder = 2
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object DataSource1: TDataSource
     DataSet = ZQuery1
-    left = 69
-    top = 131
+    Left = 69
+    Top = 131
   end
   object ZQuery1: TZQuery
     Params = <>
-    left = 416
-    top = 153
+    Left = 416
+    Top = 153
   end
 end

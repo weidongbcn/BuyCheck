@@ -8,7 +8,6 @@ object FormBuy: TFormBuy
   ClientWidth = 433
   OnCreate = FormCreate
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 50
@@ -180,32 +179,32 @@ object FormBuy: TFormBuy
   end
   object BuyHelp: TZQuery
     Params = <>
-    left = 352
-    top = 248
+    Left = 352
+    Top = 248
   end
   object GetBayIDZQuery: TZQuery
     Params = <>
-    left = 96
-    top = 248
+    Left = 96
+    Top = 248
   end
   object StockListQuery: TZQuery
     Params = <>
-    left = 208
-    top = 264
+    Left = 208
+    Top = 264
   end
   object DataSource1: TDataSource
     DataSet = StockListQuery
-    left = 168
-    top = 312
+    Left = 168
+    Top = 312
   end
   object STAFFQuery: TZQuery
     Params = <>
-    left = 344
-    top = 144
+    Left = 344
+    Top = 144
   end
   object DataSource2: TDataSource
     DataSet = STAFFQuery
-    left = 381
-    top = 208
+    Left = 381
+    Top = 208
   end
 end

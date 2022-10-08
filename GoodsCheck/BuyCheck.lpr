@@ -9,13 +9,15 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  FileUtil, IniFiles, SysUtils, connect, Global, DefaultTranslator, U_Conn_Indy,Uloginmain,
-  lcltranslator, LResources, LazUTF8, Forms, ReadDBfile, rxnew, datetimectrls,
-  zcomponent, WorkStation, memdslaz, dblookup, virtualdbtreeexlaz,
-  formdlgcaption, printer4lazarus, virtualdbgrid_package,
+  FileUtil, IniFiles, SysUtils, connect, Global, DefaultTranslator, U_Conn_Indy,
+  Uloginmain, lcltranslator, LResources, LazUTF8, Forms, ReadDBfile, rxnew,
+  datetimectrls, zcomponent, WorkStation, memdslaz, dblookup,
+  virtualdbtreeexlaz, formdlgcaption, printer4lazarus, virtualdbgrid_package,
   StockActual, BuyInput, BuyIn01, BuyInColgada, CreateNewInventory, Inventory,
-  GoodsFromProv, FindoutGoodsInPro, PayofBuy, His_Goods_Buy, his_buys, his_pays, Proveedor,
-  His_buy_detalles, BuyListCheck, Select_SKU, indylaz, EtiquetasArticulos;
+  GoodsFromProv, FindoutGoodsInPro, PayofBuy, His_Goods_Buy, his_buys, his_pays,
+  Proveedor, His_buy_detalles, BuyListCheck, Select_SKU, indylaz,
+  EtiquetasArticulos, cleardb, CreateProveedor, SimpleAdd, create, aGoodsSpec,
+  caduca, Register;
 
 {$R *.res}
 
@@ -156,7 +158,17 @@ begin
   begin
    Application.CreateForm(TFormWork, FormWork);
   end
-  else application.Terminate;
+  else
+  begin
+    DMindy.IdTCPClient1.Disconnect;
+    sleep(20);
+    application.Terminate;
+  end;
+  //Application.CreateForm(TListCaducacionForm, ListCaducacionForm);
+  //Application.CreateForm(TSpecMatrixForm, SpecMatrixForm);
+ // Application.CreateForm(TFAddGoods, FAddGoods);
+ // Application.CreateForm(TClearDbForm, ClearDbForm);
+ // Application.CreateForm(TNewProvForm, NewProvForm);
  // Application.CreateForm(TFormEtiPEs, FormEtiPEs);
  { Application.CreateForm(TFormBuy, FormBuy);
   Application.CreateForm(TFormBuyIn, FormBuyIn);

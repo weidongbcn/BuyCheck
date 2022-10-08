@@ -1,14 +1,14 @@
 object FormFindGoods_Spu: TFormFindGoods_Spu
-  Left = 575
+  Left = 395
   Height = 684
-  Top = 253
+  Top = 347
   Width = 1025
   Caption = '查找货品'
   ClientHeight = 684
   ClientWidth = 1025
   OnCreate = FormCreate
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 57
@@ -20,15 +20,15 @@ object FormFindGoods_Spu: TFormFindGoods_Spu
     TabOrder = 0
     object Label1: TLabel
       Left = 24
-      Height = 17
+      Height = 15
       Top = 8
-      Width = 102
+      Width = 87
       Caption = '  Texto a buscar  '
       ParentColor = False
     end
     object EdTexto: TEdit
       Left = 24
-      Height = 25
+      Height = 23
       Hint = 'Introduce el dato a buscar en la tabla.'
       Top = 27
       Width = 460
@@ -152,6 +152,7 @@ object FormFindGoods_Spu: TFormFindGoods_Spu
       end    
       item
         Title.Caption = '库存'
+        Width = 70
         FieldName = 'AMOUNT'
         DisplayFormat = '#0'
       end    
@@ -171,16 +172,15 @@ object FormFindGoods_Spu: TFormFindGoods_Spu
     TitleFont.Name = 'Tahoma'
     OnDrawColumnCell = DBGrid1DrawColumnCell
     OnDblClick = DBGrid1DblClick
-    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object ListUniQuery: TZQuery
     Params = <>
-    left = 140
-    top = 284
+    Left = 140
+    Top = 284
   end
   object DataSource1: TDataSource
     DataSet = ListUniQuery
-    left = 216
-    top = 192
+    Left = 216
+    Top = 192
   end
 end

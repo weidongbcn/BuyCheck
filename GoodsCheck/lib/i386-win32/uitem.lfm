@@ -1,17 +1,17 @@
 object frmItem: TfrmItem
-  Left = 906
+  Left = 800
   Height = 574
-  Top = 272
-  Width = 757
+  Top = 261
+  Width = 840
   ClientHeight = 574
-  ClientWidth = 757
+  ClientWidth = 840
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
   LCLVersion = '2.0.10.0'
   object Panel1: TPanel
-    Left = 431
+    Left = 514
     Height = 464
     Top = 0
     Width = 326
@@ -21,10 +21,10 @@ object frmItem: TfrmItem
     TabOrder = 0
     object LabeledEdit1: TLabeledEdit
       Left = 24
-      Height = 25
+      Height = 23
       Top = 32
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'dbHost'
       EditLabel.ParentColor = False
@@ -34,10 +34,10 @@ object frmItem: TfrmItem
     end
     object LabeledEdit2: TLabeledEdit
       Left = 24
-      Height = 25
+      Height = 23
       Top = 77
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'dbUser'
       EditLabel.ParentColor = False
@@ -46,10 +46,10 @@ object frmItem: TfrmItem
     end
     object LabeledEdit3: TLabeledEdit
       Left = 24
-      Height = 25
+      Height = 23
       Top = 122
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'dbPasswd'
       EditLabel.ParentColor = False
@@ -58,10 +58,10 @@ object frmItem: TfrmItem
     end
     object LabeledEdit4: TLabeledEdit
       Left = 24
-      Height = 25
+      Height = 23
       Top = 167
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'dbProtocolo'
       EditLabel.ParentColor = False
@@ -70,10 +70,10 @@ object frmItem: TfrmItem
     end
     object LabeledEdit5: TLabeledEdit
       Left = 24
-      Height = 25
+      Height = 23
       Top = 212
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'dbDataBase'
       EditLabel.ParentColor = False
@@ -82,10 +82,10 @@ object frmItem: TfrmItem
     end
     object LabeledEdit6: TLabeledEdit
       Left = 24
-      Height = 25
+      Height = 23
       Top = 257
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'PORT'
       EditLabel.ParentColor = False
@@ -94,10 +94,10 @@ object frmItem: TfrmItem
     end
     object LabeledEdit7: TLabeledEdit
       Left = 24
-      Height = 25
+      Height = 23
       Top = 302
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'EMID'
       EditLabel.ParentColor = False
@@ -128,10 +128,10 @@ object frmItem: TfrmItem
     end
     object LabeledEdit8: TLabeledEdit
       Left = 24
-      Height = 25
+      Height = 23
       Top = 347
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'PCID'
       EditLabel.ParentColor = False
@@ -140,10 +140,10 @@ object frmItem: TfrmItem
     end
     object LabeledEdit9: TLabeledEdit
       Left = 184
-      Height = 25
+      Height = 23
       Top = 112
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'S_Server'
       EditLabel.ParentColor = False
@@ -152,31 +152,31 @@ object frmItem: TfrmItem
     end
     object LabeledEdit10: TLabeledEdit
       Left = 184
-      Height = 25
+      Height = 23
       Top = 167
       Width = 121
-      EditLabel.Height = 17
+      EditLabel.Height = 15
       EditLabel.Width = 121
       EditLabel.Caption = 'S_PORT'
       EditLabel.ParentColor = False
       TabOrder = 11
-      Text = '8888'
+      Text = '8887'
     end
   end
   object GroupBox1: TGroupBox
     Left = 165
     Height = 385
     Top = 8
-    Width = 263
+    Width = 348
     Caption = '在线机器:'
-    ClientHeight = 363
-    ClientWidth = 259
+    ClientHeight = 365
+    ClientWidth = 344
     TabOrder = 1
     object ListViewIp: TListView
       Left = 0
-      Height = 363
+      Height = 365
       Top = 0
-      Width = 259
+      Width = 344
       Align = alClient
       Columns = <      
         item
@@ -189,6 +189,10 @@ object frmItem: TfrmItem
         end      
         item
           Caption = '端口8888'
+          Width = 70
+        end      
+        item
+          Caption = '端口8887'
           Width = 70
         end>
       GridLines = True
@@ -206,12 +210,12 @@ object frmItem: TfrmItem
     Top = 8
     Width = 153
     Caption = '本机拥有网络段:'
-    ClientHeight = 283
+    ClientHeight = 285
     ClientWidth = 149
     TabOrder = 2
     object LanList: TListBox
       Left = 0
-      Height = 283
+      Height = 285
       Top = 0
       Width = 149
       Align = alClient
@@ -223,7 +227,7 @@ object frmItem: TfrmItem
     Left = 0
     Height = 110
     Top = 464
-    Width = 757
+    Width = 840
     Align = alBottom
     Lines.Strings = (
       ''
@@ -234,7 +238,7 @@ object frmItem: TfrmItem
     Left = 167
     Height = 21
     Top = 399
-    Width = 260
+    Width = 345
     TabOrder = 4
   end
   object Button1: TButton

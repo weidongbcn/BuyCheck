@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, connect,
   LCLType,Variants, Global,
   DefaultTranslator, LResources,
-  StdCtrls, Buttons, DbCtrls, DBGrids, ZDataset;
+  StdCtrls, Buttons, DbCtrls, DBGrids, ZDataset, Grids;
 
 type
 
@@ -40,6 +40,8 @@ type
     procedure dbBusquedasAfterScroll(DataSet: TDataSet);
     procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure EdTextoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
     procedure FormCreate(Sender: TObject);
@@ -90,7 +92,7 @@ begin
          +'OR T1.CODE LIKE ''%' + aFindStr+'%'' '
          +'OR T1.GOODS_NAME LIKE ''%' + aFindStr+'%'' '
          +'OR T1.GOODS_NAME2 LIKE ''%' + aFindStr+'%'' '
-         +'OR T3.BRAND_NAME LIKE ''%' + aFindStr+'%'' ' else ref:='';
+         +'OR T3.BRAND_NAME LIKE ''%' + aFindStr+'%'') ' else ref:='';
 
  { SqlCMD:='select A.PRO_REFERENCIA, A.PRO_LANG1, A.PRO_CDBARRA, A.ID_CATE, A.CATEGORIA, A.ID_SUBCATE, A.SUBCATEGORIA, A.MARCA_NOMBRE, A.PRECIO_COMPRAS_CON, A.PVP1C, A.STOCK_ACTUAL, A.IMAGES_DATA, '
               +'B.ID_PROVEEDOR,  C.NAME_COMERCIO '
@@ -203,7 +205,7 @@ var
 cPicStream: TMemoryStream; {to save to the blob}
 cJpegImage: TJpegImage;
 begin
-cPicStream := TMemoryStream.Create();
+//cPicStream := TMemoryStream.Create();
 {DBImage1.Picture.Graphic :=nil;
 if not dbBusquedas.FieldByName('IMAGES_DATA').IsNull then
       begin
@@ -233,6 +235,35 @@ begin
             EdTexto.SetFocus;
 end;
 
+procedure TFormGoodsList.DBGrid1PrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+    with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+   if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clForm; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
+   {
+
+   if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
+  begin
+    DBGrid1.Canvas.Brush.Color := clRed;
+    DBGrid1.Canvas.Font.Color := clWhite;
+  end;    }
+end;
+end;
+
 procedure TFormGoodsList.EdTextoKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -257,7 +288,7 @@ begin
          +'OR T1.CODE LIKE ''%' + aFindStr+'%'' '
          +'OR T1.GOODS_NAME LIKE ''%' + aFindStr+'%'' '
          +'OR T1.GOODS_NAME2 LIKE ''%' + aFindStr+'%'' '
-         +'OR T3.BRAND_NAME LIKE ''%' + aFindStr+'%'' ' else ref:='';
+         +'OR T3.BRAND_NAME LIKE ''%' + aFindStr+'%'') ' else ref:='';
   {SqlCMD:='select A.PRO_REFERENCIA, A.PRO_LANG1, A.PRO_CDBARRA, A.ID_CATE, A.CATEGORIA, A.ID_SUBCATE, A.SUBCATEGORIA, A.MARCA_NOMBRE, A.PRECIO_COMPRAS_CON, A.PVP1C, A.STOCK_ACTUAL, A.IMAGES_DATA, '
               +'B.ID_PROVEEDOR,  C.NAME_COMERCIO '
               +'from '

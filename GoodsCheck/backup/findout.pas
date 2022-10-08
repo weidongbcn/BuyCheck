@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, DBGrids, ExtCtrls, variants,
   Buttons, StdCtrls, ZDataset,connect, LCLType,
-   Global;
+   Global, Grids;
 
 type
 
@@ -31,6 +31,8 @@ type
     procedure GridBusquedasDblClick(Sender: TObject);
     procedure GridBusquedasKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure GridBusquedasPrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
   private
 
   public
@@ -91,7 +93,7 @@ begin
 
      Consulta:='SELECT '+Coles+ ' FROM '+ dbTable + ' WHERE 1=1 ';
      ConsultaOriginal:= Consulta;
-     showmessage(ConsultaOriginal);
+
    ShowFormfindout;
    SetLength(result, 2);
   result[0] := Resultado[0];
@@ -102,6 +104,28 @@ procedure TFormFindout.GridBusquedasKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if (key=VK_RETURN) then begin key:=0; btCerrarClick(Self); end;
+end;
+
+procedure TFormFindout.GridBusquedasPrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+    with Sender as TDBGrid do begin
+if GridBusquedas.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    GridBusquedas.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    GridBusquedas.Canvas.Brush.Color := clSilver;
+  end;
+
+   if ([gdSelected, gdFocused] * AState <> []) and (GridBusquedas.SelectedColumn = Column) then
+  begin
+    GridBusquedas.Canvas.Brush.Color := clRed;
+    GridBusquedas.Canvas.Font.Color := clWhite;
+  end;
+end;
 end;
 
 procedure TFormFindout.GridBusquedasDblClick(Sender: TObject);
@@ -115,15 +139,12 @@ begin
   if ColumnSelect[0]='' then Resultado[0] := Consulta
                     else
                       begin
-                      showmessage(dbBusquedas.FieldByName(ColumnSelect[0]).Value);
-
-                      showmessage(dbBusquedas.FieldByName(ColumnSelect[1]).Value);
                       Resultado[0]:= dbBusquedas.FieldByName(ColumnSelect[0]).Value;
                       Resultado[1]:= dbBusquedas.FieldByName(ColumnSelect[1]).Value;
 
                       end;
   if (Resultado[0] = '') then begin Resultado[0]:=-1; Resultado[1]:=-1; end;
- // Close();
+  Close();
 end;
 
 procedure TFormFindout.BtCancelarClick(Sender: TObject);

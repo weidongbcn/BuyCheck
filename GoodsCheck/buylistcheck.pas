@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, DBGrids, ZDataset, ZSqlUpdate, LCLType, ComCtrls, DBCtrls, connect,
-  rxcurredit, db, memds, Global, Grids, Menus;
+  rxcurredit, db, BufDataset, memds, Global, Grids, Menus, SimpleAdd;
 
 type
 
@@ -19,6 +19,25 @@ type
     BrandDBBox: TDBLookupComboBox;
     BrandDS: TDataSource;
     BrandQuery: TZQuery;
+    BufSun: TBufDataset;
+    BufSunALLOT: TLongintField;
+    BufSunAVISO: TBooleanField;
+    BufSunAVISONUM: TFloatField;
+    BufSunCODE: TStringField;
+    BufSunCOST: TCurrencyField;
+    BufSunDISCOUNT: TFloatField;
+    BufSunENA: TStringField;
+    BufSunID_STOCK: TStringField;
+    BufSunID_TMPLIST: TStringField;
+    BufSunIVA: TFloatField;
+    BufSunNAME: TStringField;
+    BufSunNAME2: TStringField;
+    BufSunPARENTID: TLongintField;
+    BufSunPVP: TCurrencyField;
+    BufSunSKU_NO: TStringField;
+    BufSunUNIT: TStringField;
+    BufSunGOODS_ID: TStringField;
+    BufSunWholePrice: TCurrencyField;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
@@ -38,11 +57,13 @@ type
     ComboBox2: TComboBox;
     DataSource1: TDataSource;
     dbArti: TZQuery;
+    dbParentAllot: TZQuery;
     dbTest: TZQuery;
     dbCheck: TZQuery;
     DBGrid1: TDBGrid;
     dbTrabajo: TZQuery;
     DetallesDataSource: TDataSource;
+    DSSun: TDataSource;
     Edit1: TEdit;
     Edit10: TEdit;
     Edit2: TEdit;
@@ -109,6 +130,8 @@ type
     UUIDEdit: TEdit;
     CombinaQuery: TZQuery;
     ZUpdateSQL1: TZUpdateSQL;
+    ZUpdateSQL2: TZUpdateSQL;
+    ZUpdateSQL3: TZUpdateSQL;
     procedure BitBtn5Click(Sender: TObject);
     procedure BrandDBBoxKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
@@ -177,7 +200,8 @@ type
     procedure DoGetTaxRates;
     procedure UUIDEditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
-    Procedure GetGoods(CdBarra: string);
+    function GetGoods(CdBarra: string):boolean;
+    Procedure GetParentAllot(ParentId:integer);
   private
 
   public
@@ -195,7 +219,7 @@ var
 
 implementation
 uses
-  Select_SKU, AddGoods, dblookup;
+  Select_SKU, AddGoods, dblookup, create;
 
 procedure ShowFormCheckDb(Son:boolean);
 begin
@@ -237,16 +261,19 @@ begin
      Connection:=DataModule2.ZCon1;;
      Active:=false;
      SQL.Clear;
-     SQL.Text:='select * from goods_spu where ENA =:ENA ';
+     SQL.Text:='select * from goods_spu where 1=1 and  ENA =:ENA ';
      ParamByName('ENA').AsString:=CDBarra;
      Open;
      end;
   if dbTest.RecordCount > 0 then
   begin
+
+      dbTest.Close;
     result := True;
   end
   else
   begin
+     dbTest.Close;
      result :=False;
   end;
 end;
@@ -537,6 +564,8 @@ ComboBox2.Clear;
   if FForma_Read = 'CODING' then Combobox1.ItemIndex:=1 else ComboBox1.ItemIndex:=0;
   ShowTables;
   GetSumTotal;
+  BufSun.Close;
+  BufSun.CreateDataset;
 end;
 
 procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
@@ -567,7 +596,26 @@ begin
      Product.COST:=dbArti.Fieldbyname('COST').AsFloat;
         IF FormGoodsSpu.Created(Product) THEN
         begin
-        GetGoods(Trim(Edit1.Text));
+         if GetGoods(Trim(Edit1.Text)) then
+         begin
+          UUIDEdit.Text:=dbArti.FieldByName('SKU_NO').AsString;
+          Edit2.Text:=dbArti.FieldByName('CODE').AsString;
+          Lang1.Text:=dbArti.FieldByName('GOODS_NAME').AsString;
+          Lang2.Text:=dbArti.FieldByName('GOODS_NAME2').AsString;
+          CategoryDBBox.KeyValue:= dbArti.FieldByName('CATEGORY_ID').Value;
+          BrandDBBox.KeyValue:= dbArti.FieldByName('BRAND_ID').Value;
+          IvaDBLookupComboBox1.KeyValue:= dbArti.FieldByName('TAXRATE_ID').Value;
+          PrecioAnterio.Value:= dbArti.fieldbyname('COST').AsCurrency;
+          PVPEdit.Value:=dbArti.fieldbyname('SELLING_P1C').AsCurrency;
+          IsNewGoods:=False;
+          Panel5.Enabled:=True;
+          ChequeEdit.SetFocus;
+         end
+         else
+         begin
+             DoClear;
+            Reader.SetFocus;
+         end;
         end ;
        // GetGoods(Trim(Edit1.Text));
 
@@ -741,20 +789,20 @@ begin
 
 end;
 
-Procedure TForm1.GetGoods(CdBarra: string);
+Function TForm1.GetGoods(CdBarra: string):boolean;
 var
   SKU_NO:string;
   Product:TGOODS;
 begin
-   IsNewGoods:=True;
-   with dbArti do
+  // IsNewGoods:=True;
+      with dbArti do
       begin
       Connection:=DataModule2.ZCon1;
       Active:=false;
       SQL.CLEAR;
       SQL.TEXT:='SELECT T1.SKU_NO, T2.GOODS_NAME, T2.GOODS_NAME2, T2.ENA , T2.CODE, T2.TYPE, T1.COMMODITY_UNIT, '
       +'T1.COST, T1.SELLING_P1C, T1.SELLING_P2C, T1.SELLING_P3C, T1.LOWPRICE, T1.WHOLESALE, T1.STOCK, T1.GOODS_ID, T1.SKU_CODING, T1.ISCHILD, '
-      +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T3.IVA, T3.REQ '
+      +'T2.ID, T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T2.type, T3.IVA, T3.REQ '
       +'FROM GOODS_SKU AS T1 LEFT JOIN GOODS_SPU AS T2 ON T1.GOODS_ID = T2.GOODS_ID '
       +'LEFT JOIN GOODS_TAXRATE AS T3 ON T2.TAXRATE_ID = T3.ID '
       +'WHERE 1=1 AND T1.ISCHILD= 1 '
@@ -764,22 +812,34 @@ begin
       end;
       if dbArti.RecordCount > 1 then
       begin
+      //showmessage('ok');
       SKU_NO:=FormSelectSKU.IniciaSelection(CdBarra);
       if SKU_NO = '' then
           begin
           DoClear;
-          Reader.SetFocus;
+           with dbArti do
+            begin
+            Connection:=DataModule2.ZCon1;
+            Active:=false;
+            SQL.CLEAR;
+            SQL.TEXT:='DELETE FROM GOODS_SPU WHERE 1=1 AND ENA =:ENA ';
+            ParamByName('ENA').AsString:=CdBarra;
+            ExecSQL;
+            END;
+          //Reader.SetFocus;
+          result:=false;
+
           exit;
           end;
       if not (dbArti.Locate('SKU_NO', SKU_NO, [])) then
           begin
-          DoClear;
-            Reader.SetFocus;
+          result:=false;
             exit;
           end;
       end
       ELSE
       BEGIN
+
       with dbArti do
       begin
       Connection:=DataModule2.ZCon1;
@@ -787,7 +847,7 @@ begin
       SQL.CLEAR;
       SQL.TEXT:='SELECT T1.SKU_NO, T2.GOODS_NAME, T2.GOODS_NAME2, T2.ENA , T2.CODE, T2.TYPE, T1.COMMODITY_UNIT, '
       +'T1.COST, T1.SELLING_P1C, T1.SELLING_P2C, T1.SELLING_P3C, T1.LOWPRICE, T1.WHOLESALE, T1.STOCK, T1.GOODS_ID, T1.SKU_CODING, T1.ISCHILD, '
-      +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T3.IVA, T3.REQ '
+      +'T2.ID, T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T3.IVA, T3.REQ '
       +'FROM GOODS_SKU AS T1 LEFT JOIN GOODS_SPU AS T2 ON T1.GOODS_ID = T2.GOODS_ID '
       +'LEFT JOIN GOODS_TAXRATE AS T3 ON T2.TAXRATE_ID = T3.ID '
       +'WHERE 1=1 AND T1.ISCHILD= 0 '
@@ -798,36 +858,77 @@ begin
       SKU_NO:=dbArti.FieldByName('SKU_NO').AsString;
       if SKU_NO = '' then
           begin
+          with dbArti do
+            begin
+            Connection:=DataModule2.ZCon1;
+            Active:=false;
+            SQL.CLEAR;
+            SQL.TEXT:='DELETE FROM GOODS_SPU WHERE 1=1 AND ENA =:ENA ';
+            ParamByName('ENA').AsString:=CdBarra;
+            ExecSQL;
+            END;
           DoClear;
           Reader.SetFocus;
           exit;
           end;
       end;
-      UUIDEdit.Text:=dbArti.FieldByName('SKU_NO').AsString;
-      Edit2.Text:=dbArti.FieldByName('CODE').AsString;
-      Lang1.Text:=dbArti.FieldByName('GOODS_NAME').AsString;
-      Lang2.Text:=dbArti.FieldByName('GOODS_NAME2').AsString;
-      CategoryDBBox.KeyValue:= dbArti.FieldByName('CATEGORY_ID').Value;
-      BrandDBBox.KeyValue:= dbArti.FieldByName('BRAND_ID').Value;
-      IvaDBLookupComboBox1.KeyValue:= dbArti.FieldByName('TAXRATE_ID').Value;
-      PrecioAnterio.Value:= dbArti.fieldbyname('COST').AsCurrency;
-      PVPEdit.Value:=dbArti.fieldbyname('SELLING_P1C').AsCurrency;
-      IsNewGoods:=False;
-      Panel5.Enabled:=True;
-      ChequeEdit.SetFocus;
+
+
+
+      result:=true;
+
+      {
+      with dbArti do
+      begin
+      Connection:=DataModule2.ZCon1;
+      Active:=false;
+      SQL.CLEAR;
+      SQL.TEXT:='SELECT T1.SKU_NO, T2.GOODS_NAME, T2.GOODS_NAME2, T2.ENA , T2.CODE, T2.TYPE, T1.COMMODITY_UNIT, '
+      +'T1.COST, T1.SELLING_P1C, T1.SELLING_P2C, T1.SELLING_P3C, T1.LOWPRICE, T1.WHOLESALE, T1.STOCK, T1.GOODS_ID, T1.SKU_CODING, T1.ISCHILD, '
+      +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T3.IVA, T3.REQ '
+      +'FROM GOODS_SKU AS T1 LEFT JOIN GOODS_SPU AS T2 ON T1.GOODS_ID = T2.GOODS_ID '
+      +'LEFT JOIN GOODS_TAXRATE AS T3 ON T2.TAXRATE_ID = T3.ID '
+      +'WHERE 1=1 '   //AND T1.ISCHILD= 0 '
+      +'AND T2.ENA =:ENA ';
+      ParamByName('ENA').AsString:=CdBarra;
+      open;
+      END;
+      SKU_NO:=dbArti.FieldByName('SKU_NO').AsString;  }
+
 end;
 
 procedure TForm1.Edit1Exit(Sender: TObject);
 var
   SKU_NO:string;
   Product:TGOODS;
+  i:integer;
 begin
   if trim(edit1.Text) = '' then  exit;
    IF ExistGoods(trim(Edit1.Text)) THEN
     BEGIN
     panel5.Enabled:=True;
-       GetGoods(Trim(Edit1.Text));
-       ChequeEdit.SetFocus;
+       //GetGoods(Trim(Edit1.Text));
+         if GetGoods(Trim(Edit1.Text)) then
+         begin
+          UUIDEdit.Text:=dbArti.FieldByName('SKU_NO').AsString;
+          Edit2.Text:=dbArti.FieldByName('CODE').AsString;
+          Lang1.Text:=dbArti.FieldByName('GOODS_NAME').AsString;
+          Lang2.Text:=dbArti.FieldByName('GOODS_NAME2').AsString;
+          CategoryDBBox.KeyValue:= dbArti.FieldByName('CATEGORY_ID').Value;
+          BrandDBBox.KeyValue:= dbArti.FieldByName('BRAND_ID').Value;
+          IvaDBLookupComboBox1.KeyValue:= dbArti.FieldByName('TAXRATE_ID').Value;
+          PrecioAnterio.Value:= dbArti.fieldbyname('COST').AsCurrency;
+          PVPEdit.Value:=dbArti.fieldbyname('SELLING_P1C').AsCurrency;
+          IsNewGoods:=False;
+          Panel5.Enabled:=True;
+          ChequeEdit.SetFocus;
+         end
+         else
+         begin
+             DoClear;
+            Reader.SetFocus;
+         end;
+       //ChequeEdit.SetFocus;
      END
      ELSE
      BEGIN
@@ -835,17 +936,107 @@ begin
      Product.ITEM_NAME:=GetDetallesQuery.Fieldbyname('DESCRIPCION').asstring;
      Product.COST:=GetDetallesQuery.Fieldbyname('PRECIO_CON').AsFloat;
      Product.SKU_NO:='';
-        IF NOT FormGoodsSpu.Created(Product) THEN
+
+       // IF NOT FormGoodsSpu.Created(Product) THEN
+       {FAddGoods:=TFAddGoods.Create(self);
+       FAddGoods.ShowModal;
+       FAddGoods.Free;
+       }
+
+        IF NOT FAddGoods.Created(Product) THEN
         begin
         DoClear;
         Reader.SetFocus;
         EXIT;
         end ;
-        GetGoods(Trim(Edit1.Text));
-       { IsNewGoods:=True;
-        edit1.Text:='';
-        Reader.SetFocus;
-                exit;}
+       // GetGoods(Trim(Edit1.Text));
+         if GetGoods(Trim(Edit1.Text)) then
+         begin
+          UUIDEdit.Text:=dbArti.FieldByName('SKU_NO').AsString;
+          Edit2.Text:=dbArti.FieldByName('CODE').AsString;
+          Lang1.Text:=dbArti.FieldByName('GOODS_NAME').AsString;
+          Lang2.Text:=dbArti.FieldByName('GOODS_NAME2').AsString;
+          CategoryDBBox.KeyValue:= dbArti.FieldByName('CATEGORY_ID').Value;
+          BrandDBBox.KeyValue:= dbArti.FieldByName('BRAND_ID').Value;
+          IvaDBLookupComboBox1.KeyValue:= dbArti.FieldByName('TAXRATE_ID').Value;
+          PrecioAnterio.Value:= dbArti.fieldbyname('COST').AsCurrency;
+          PVPEdit.Value:=dbArti.fieldbyname('SELLING_P1C').AsCurrency;
+          IsNewGoods:=False;
+          Panel5.Enabled:=True;
+          ChequeEdit.SetFocus;
+         end
+         else
+         begin
+             DoClear;
+            Reader.SetFocus;
+            exit;
+         end;
+     end;
+
+      if dbArti.FieldByName('type').AsInteger = 1 then
+      begin
+      BufSun.Open;
+         GetParentAllot(dbArti.FieldByName('ID').AsInteger);
+      if dbParentAllot.RecordCount > 0 then
+      begin
+      dbParentAllot.First;
+
+      for i:=0 to dbParentAllot.RecordCount-1 do
+       begin
+          with dbTrabajo do
+          begin
+          Connection:=DataModule2.ZCon1;
+          Active:=false;
+          SQL.CLEAR;
+          SQL.TEXT:='SELECT T1.SKU_NO, T2.GOODS_NAME, T2.GOODS_NAME2, T2.ENA , T2.CODE, T2.TYPE, T1.COMMODITY_UNIT, '
+          +'T1.COST, T1.SELLING_P1C, T1.SELLING_P2C, T1.SELLING_P3C, T1.LOWPRICE, T1.WHOLESALE, T1.STOCK, T1.GOODS_ID, T1.SKU_CODING, T1.ISCHILD, '
+          +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T3.IVA, T3.REQ '
+          +'FROM GOODS_SKU AS T1 LEFT JOIN GOODS_SPU AS T2 ON T1.GOODS_ID = T2.GOODS_ID '
+          +'LEFT JOIN GOODS_TAXRATE AS T3 ON T2.TAXRATE_ID = T3.ID '
+          +'WHERE 1=1 '
+          +'AND T2.ENA =:ENA ';
+          ParamByName('ENA').AsString:=dbParentAllot.FieldByName('ENA').AsString;
+          open;
+          end;
+          with BufSun do
+          begin
+          Insert;
+          BufSun.FieldByName('ENA').AsString:=dbTrabajo.FieldByName('ENA').AsString;
+          BufSun.FieldByName('CODE').AsString:=dbTrabajo.FieldByName('CODE').AsString;
+          BufSun.FieldByName('GoodsId').AsString:=dbTrabajo.FieldByName('GOODS_ID').AsString;
+          BufSun.FieldByName('Name').AsString:=dbTrabajo.FieldByName('GOODS_NAME').AsString;
+          BufSun.FieldByName('Name2').AsString:=dbTrabajo.FieldByName('GOODS_Name2').AsString;
+          BufSun.FieldByName('Cost').AsCurrency:=dbTrabajo.FieldByName('COST').AsCurrency;
+          BufSun.FieldByName('PVP').AsCurrency:=dbTrabajo.FieldByName('SELLING_P1C').AsCurrency;
+          BufSun.FieldByName('WHOLEPRICE').AsCurrency:=dbTrabajo.FieldByName('WHOLESALE').AsCurrency;
+          BufSun.FieldByName('ALLOT').AsInteger:=dbParentAllot.FieldByName('ALLOT').AsInteger;
+          BufSun.FieldByName('SKU_NO').AsString:=dbTrabajo.FieldByName('SKU_NO').AsString;
+          BufSun.FieldByName('IVA').AsFloat:=dbTrabajo.FieldByName('IVA').AsFloat;
+          BufSun.FieldByName('DISCOUNT').AsFloat:=GetDetallesQuery.Fieldbyname('DISCOUNT').AsFloat;
+          BufSun.FieldByName('ID_STOCK').AsString:=GetDetallesQuery.Fieldbyname('ID_STOCK').AsString;
+          BufSun.FieldByName('ID_TMPLIST').AsString:=GetDetallesQuery.Fieldbyname('ID_TMPLIST').AsString;
+
+          Post;
+          end;
+          dbParentAllot.Next;
+       end;
+      end;
+      end;
+
+end;
+
+Procedure TForm1.GetParentAllot(ParentId:integer);
+var
+  i:integer;
+begin
+   with dbParentAllot do
+     begin
+        Connection:=DataModule2.ZCon1;
+        Active:=false;
+        SQL.Clear;
+        Sql.Text:='select * from ALLOT where 1=1 and Parent_Id = :Parent_Id ';
+        ParamByName('Parent_Id').AsInteger:= ParentId;
+        open;
      end;
 end;
 
@@ -1025,7 +1216,7 @@ end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 VAR
-  I :INTEGER;
+  I, Cap :INTEGER;
   Bookmark: TBookmark;
   SQLModifyFoyerRecord: string;
 begin
@@ -1046,6 +1237,196 @@ begin
     Reader.SetFocus;
     Exit;
     end;
+
+
+    //GetParentAllot
+    if dbArti.FieldByName('TYPE').AsInteger =1 then
+    begin
+    //cap:=dbArti.FieldByName('CAPACITY').AsInteger;
+
+    ////对进货单据的操作///
+
+      SQLModifyFoyerRecord :=  'UPDATE CHECKLIST_ITEMS SET ' +
+                     'GOODS_ID=:GOODS_ID, SKU_NO=:SKU_NO, '+
+                    ' MICODIGO = :MICODIGO, CDBARRA= :CDBARRA, AMOUNT=:AMOUNT,  IVA = :IVA, ' +
+                    ' PRECIO_SIN =:PRECIO_SIN,  PRECIO_CON = :PRECIO_CON, PVPS =:PVPS, PVPC =:PVPC, '+
+                    'ISPASSED =:ISPASSED, ' +
+                    'UPDATED =NOW() '+
+                    'WHERE ID = :ID';
+      GetDetallesQuery.UpdateObject:=ZUpdateSQL1;
+      ZUpdateSQL1.ModifySQL.Text:=SQLModifyFoyerRecord;
+      GetDetallesQuery.Edit;
+      GetDetallesQuery.Fieldbyname('GOODS_ID').AsString:=dbArti.FieldByName('GOODS_ID').AsString;
+      GetDetallesQuery.Fieldbyname('SKU_NO').AsString:=dbArti.FieldByName('SKU_NO').AsString;
+      if ComboBox2.ItemIndex <> 0 then
+      begin
+      GetDetallesQuery.Fieldbyname('CDBARRA').AsString:=Trim(Edit1.Text);
+      end;
+      GetDetallesQuery.Fieldbyname('MICODIGO').AsString:=Trim(Edit2.Text);
+      GetDetallesQuery.Fieldbyname('AMOUNT').AsFloat:=GetDetallesQuery.Fieldbyname('AMOUNT').AsFloat-ChequeEdit.Value;
+      //GetDetallesQuery.Fieldbyname('CONTADO').AsFloat:=GetDetallesQuery.Fieldbyname('CONTADO').AsFloat-ChequeEdit.Value;
+      GetDetallesQuery.Fieldbyname('IVA').AsFloat:=DataModule2.IVAQuery.FieldByName('iva').AsFloat;
+      if GetDetallesQuery.Fieldbyname('PRECIO_SIN').AsFloat=0 then
+      GetDetallesQuery.Fieldbyname('PRECIO_SIN').AsFloat:=GetDetallesQuery.Fieldbyname('PRECIO_CON').AsFloat/(1+DataModule2.ivaQuery.FieldByName('IVA').AsFloat/100);
+      if GetDetallesQuery.Fieldbyname('PRECIO_CON').AsFloat=0 then
+      GetDetallesQuery.Fieldbyname('PRECIO_CON').AsFloat:=GetDetallesQuery.Fieldbyname('PRECIO_SIN').AsFloat*(1+DataModule2.ivaQuery.FieldByName('IVA').AsFloat/100);
+      GetDetallesQuery.Fieldbyname('PVPS').AsFloat:=PVPEdit.Value/(1+DataModule2.ivaQuery.FieldByName('iva').AsFloat/100);
+      GetDetallesQuery.Fieldbyname('PVPC').AsFloat:=PVPEdit.Value;
+      //GetDetallesQuery.Fieldbyname('CATEGORY').AsString:= CategoryDBBox.listsource.dataset.FieldByName('CATEGORY').AsString;
+      GetDetallesQuery.Fieldbyname('ISPASSED').AsBoolean:=True;
+      GetDetallesQuery.Post;
+
+      with dbTrabajo do
+      begin
+        Connection:=DataModule2.ZCon1;
+        Active:=False;
+        SQL.Clear;
+        SQL.Text:='INSERT INTO GOODS_OFPROVEEDOR (GOODS_ID, ENA, SUCODIGO, COST, DISCOUNT, ID_PROVEEDOR ) '
+        +'values (:GOODS_ID, :ENA, :SUCODIGO, :COST, :DISCOUNT, :ID_PROVEEDOR ) '
+        +'ON DUPLICATE KEY UPDATE '
+        +'COST=:COST, DISCOUNT=:DISCOUNT ';
+        ParamByName('GOODS_ID').AsString:=dbArti.FieldByName('GOODS_ID').AsString;
+        ParamByName('ENA').AsString:=dbArti.FieldByName('ENA').AsString;
+        ParamByName('SUCODIGO').AsString:=GetDetallesQuery.Fieldbyname('SUCODIGO').AsString;
+        ParamByName('COST').AsFloat:= GetDetallesQuery.Fieldbyname('PRECIO_con').AsFloat;
+        ParamByName('DISCOUNT').AsFloat:= GetDetallesQuery.Fieldbyname('DISCOUNT').AsFloat;
+        ParamByName('ID_PROVEEDOR').AsString:=SumTotalQuery.Fieldbyname('ID_PROVEEDOR').AsString;
+        ExecSQL;
+        Active:=False;
+        SQL.Clear;
+        SQL.Text:='INSERT INTO GOODS_SPU_PRICE (GOODS_ID, COST, pvp1c) values (:GOODS_ID, :COST, :pvp1c) '
+        +'ON DUPLICATE KEY UPDATE '
+        +'COST=:COST, PVP1C=:PVP1C ';
+        ParamByName('GOODS_ID').AsString:=dbArti.FieldByName('GOODS_ID').AsString;
+        ParamByName('COST').AsFloat:= GetDetallesQuery.Fieldbyname('PRECIO_con').AsFloat;
+        ParamByName('pvp1c').AsFloat:= PVPEdit.Value;
+        ExecSQL;
+        Active:=False;
+        SQL.Clear;
+        SQL.Text:='UPDATE GOODS_SKU SET COST=:COST, SELLING_P1C=:SELLING_P1C, STOCK=STOCK+:STOCK '
+              +'WHERE 1=1 AND ISCHILD=0 AND SKU_NO=:SKU_NO ';
+        ParamByName('SKU_NO').AsString:=dbArti.FieldByName('SKU_NO').AsString;
+        ParamByName('COST').AsFloat:= GetDetallesQuery.Fieldbyname('PRECIO_con').AsFloat;
+        ParamByName('SELLING_P1C').AsFloat:= PVPEdit.Value;
+        ParamByName('STOCK').AsFloat:= CHEQUEEdit.Value;
+        ExecSQL;
+
+        /////////仓库中的货品库存//////////
+        //如果分散了, 不存储数量.
+        {sql.Clear;
+        sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
+        +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, AMOUNT=AMOUNT+:AMOUNT, :GOODS_STATUS) '
+        +'ON DUPLICATE KEY UPDATE '
+        +'AMOUNT=AMOUNT+:AMOUNT ';
+        ParamByName('ID_STOCK').AsString:=GetDetallesQuery.Fieldbyname('ID_STOCK').AsString;
+        ParamByName('GOODS_ID').AsString:=dbArti.FieldByName('GOODS_ID').AsString;
+        ParamByName('SKU_NO').AsString:=dbArti.FieldByName('SKU_NO').AsString;
+        ParamByName('AMOUNT').AsFloat:= CHEQUEEdit.Value;
+        ParamByName('GOODS_STATUS').AsInteger:= 0;
+        ExecSQL;}
+      end;
+
+
+      BufSun.First;
+      for i:=0 to BufSun.RecordCount -1 do
+      begin
+      if GetDetallesQuery.Locate('CDBARRA', BufSun.FieldByName('ENA').AsString, []) then
+        begin
+          //showmessage(GetDetallesQuery.Fieldbyname('DESCRIPCION').AsString);
+          //showmessage(BufSun.FieldByName('NAME').AsString);
+          GetDetallesQuery.UpdateObject:=ZUpdateSQL2;
+          ZUpdateSQL2.ModifySQL.Text:='UPDATE CHECKLIST_ITEMS SET ' +
+          'AMOUNT =:AMOUNT, CONTADO=:CONTADO, '+
+          'UPDATED =NOW() '+        ///用于更新 , 否则   0 records 错误.
+          'WHERE ID = :ID';
+          GetDetallesQuery.Edit;
+          GetDetallesQuery.FieldByName('AMOUNT').AsFloat:=GetDetallesQuery.Fieldbyname('AMOUNT').AsFloat + ChequeEdit.Value* BufSun.FieldByName('Allot').AsInteger;
+          GetDetallesQuery.Fieldbyname('CONTADO').AsFloat:=GetDetallesQuery.Fieldbyname('CONTADO').AsFloat+ChequeEdit.Value* BufSun.FieldByName('Allot').AsInteger;
+          GetDetallesQuery.Post;
+        end
+        else
+        begin
+         GetDetallesQuery.UpdateObject:=ZUpdateSQL1;
+         ZUpdateSQL1.InsertSQL.Text:='insert into  CHECKLIST_ITEMS  (GOODS_ID,  SKU_NO,  CDBARRA, MICODIGO, DESCRIPCION, AMOUNT, PRECIO_SIN, '
+         +'PRECIO_CON, DISCOUNT, IVA, PVPOPTION, ID_TMPLIST, CONTADO, PVPS, PVPC ) '
+         +'VALUES (:GOODS_ID, :SKU_NO,  :CDBARRA, :MICODIGO, :DESCRIPCION, :AMOUNT, :PRECIO_SIN, '
+         +':PRECIO_CON, :DISCOUNT, :IVA, :PVPOPTION, :ID_TMPLIST, :CONTADO, :PVPS, :PVPC ) '
+         +'ON DUPLICATE KEY UPDATE '
+        +'AMOUNT=AMOUNT+:AMOUNT ';
+
+        GetDetallesQuery.Append;
+          GetDetallesQuery.Fieldbyname('GOODS_ID').AsString:=BufSun.FieldByName('GoodsId').AsString;
+          GetDetallesQuery.Fieldbyname('SKU_NO').AsString:=BufSun.FieldByName('SKU_NO').AsString;
+          GetDetallesQuery.Fieldbyname('CDBARRA').AsString:=BufSun.FieldByName('ENA').AsString;
+          GetDetallesQuery.Fieldbyname('MICODIGO').AsString:=BufSun.FieldByName('CODE').AsString;
+          GetDetallesQuery.Fieldbyname('DESCRIPCION').AsString:=BufSun.FieldByName('NAME').AsString;
+          GetDetallesQuery.Fieldbyname('AMOUNT').AsFloat:=ChequeEdit.Value* BufSun.FieldByName('Allot').AsInteger;
+           GetDetallesQuery.Fieldbyname('PRECIO_SIN').AsFloat:=BufSun.Fieldbyname('PVP').AsFloat/(1+BufSun.FieldByName('IVA').AsFloat/100);
+          GetDetallesQuery.Fieldbyname('PRECIO_CON').AsFloat:=BufSun.Fieldbyname('PVP').AsFloat;
+          GetDetallesQuery.Fieldbyname('DISCOUNT').AsFloat:=BufSun.Fieldbyname('DISCOUNT').AsFloat;
+          GetDetallesQuery.Fieldbyname('CONTADO').AsFloat:=ChequeEdit.Value* BufSun.FieldByName('Allot').AsInteger;
+          GetDetallesQuery.Fieldbyname('IVA').AsFloat:=BufSun.FieldByName('iva').AsFloat;
+          GetDetallesQuery.Fieldbyname('PVPOPTION').AsFloat:= 0;
+          GetDetallesQuery.Fieldbyname('ID_TMPLIST').AsString:=BufSun.FieldByName('ID_TMPLIST').AsString;
+          GetDetallesQuery.Fieldbyname('PVPS').AsFloat:=BufSun.Fieldbyname('PVP').AsFloat/(1+BufSun.FieldByName('IVA').AsFloat/100);
+          GetDetallesQuery.Fieldbyname('PVPC').AsFloat:=BufSun.Fieldbyname('PVP').AsFloat;
+          //GetDetallesQuery.Fieldbyname('CATEGORY').AsString:= CategoryDBBox.listsource.dataset.FieldByName('CATEGORY').AsString;
+          GetDetallesQuery.Fieldbyname('ISPASSED').AsBoolean:=True;
+          GetDetallesQuery.Post;
+        end;
+        with dbTrabajo do
+            begin
+            Connection:=DataModule2.ZCon1;
+            Active:=False;
+            SQL.Clear;
+            SQL.Text:='INSERT INTO GOODS_OFPROVEEDOR (GOODS_ID, ENA, SUCODIGO, COST, DISCOUNT, ID_PROVEEDOR ) '
+            +'values (:GOODS_ID, :ENA, :SUCODIGO, :COST, :DISCOUNT, :ID_PROVEEDOR ) '
+            +'ON DUPLICATE KEY UPDATE '
+            +'COST=:COST, DISCOUNT=:DISCOUNT ';
+            ParamByName('GOODS_ID').AsString:=BufSun.FieldByName('GoodsId').AsString;
+            ParamByName('ENA').AsString:=BufSun.FieldByName('ENA').AsString;
+            ParamByName('SUCODIGO').AsString:=GetDetallesQuery.Fieldbyname('SUCODIGO').AsString;
+            ParamByName('COST').AsFloat:= BufSun.Fieldbyname('COST').AsFloat;
+            ParamByName('DISCOUNT').AsFloat:=  BufSun.Fieldbyname('DISCOUNT').AsFloat;
+            ParamByName('ID_PROVEEDOR').AsString:=SumTotalQuery.Fieldbyname('ID_PROVEEDOR').AsString;
+            ExecSQL;
+            Active:=False;
+            SQL.Clear;
+            SQL.Text:='INSERT INTO GOODS_SPU_PRICE (GOODS_ID, COST, pvp1c) values (:GOODS_ID, :COST, :pvp1c) '
+            +'ON DUPLICATE KEY UPDATE '
+            +'COST=:COST, PVP1C=:PVP1C ';
+            ParamByName('GOODS_ID').AsString:=BufSun.FieldByName('GoodsId').AsString;
+            ParamByName('COST').AsFloat:= BufSun.Fieldbyname('COST').AsFloat;
+            ParamByName('pvp1c').AsFloat:= BufSun.Fieldbyname('PVP').AsFloat;
+            ExecSQL;
+
+            /////////仓库中的货品库存//////////
+            sql.Clear;
+            sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
+            +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, AMOUNT=AMOUNT+:AMOUNT, :GOODS_STATUS) '
+            +'ON DUPLICATE KEY UPDATE '
+            +'AMOUNT=AMOUNT+:AMOUNT ';
+            ParamByName('ID_STOCK').AsString:=BufSun.Fieldbyname('ID_STOCK').AsString;
+            ParamByName('GOODS_ID').AsString:=BufSun.FieldByName('GoodsId').AsString;
+            ParamByName('SKU_NO').AsString:=BufSun.FieldByName('SKU_NO').AsString;
+            ParamByName('AMOUNT').AsFloat:= ChequeEdit.Value* BufSun.FieldByName('Allot').AsInteger;
+            ParamByName('GOODS_STATUS').AsInteger:= 0;
+            ExecSQL;
+            end;
+        BufSun.Next;
+      end;
+     // GetDetallesQuery.ApplyUpdates;
+      GetDetallesQuery.Refresh;
+      ClearAllRecords(BufSun);
+      BufSun.Close;
+      Reader.Clear;
+      DoClear;
+      GetSumTotal;
+      Panel5.Enabled:=False;
+      Reader.SetFocus;
+      exit;
+    end;
+
 
  with dbTrabajo do
  begin
@@ -1074,7 +1455,7 @@ begin
   ExecSQL;
 
 
-  IF dbArti.FieldByName('TYPE').AsInteger = 1 THEN
+  IF dbArti.FieldByName('TYPE').AsInteger = 3 THEN
   BEGIN
     WITH CombinaQuery do
     begin
@@ -1268,13 +1649,13 @@ begin
 end;
  Bookmark := GetDetallesQuery.GetBookmark;
  AMOUNT:= GetDetallesQuery.Fieldbyname('AMOUNT').AsFloat-Change.Value;
- GetDetallesQuery.UpdateObject:=ZUpdateSQL1;
-ZUpdateSQL1.ModifySQL.Text:='UPDATE CHECKLIST_ITEMS SET ' +
+ GetDetallesQuery.UpdateObject:=ZUpdateSQL3;
+ZUpdateSQL3.ModifySQL.Text:='UPDATE CHECKLIST_ITEMS SET ' +
 'AMOUNT =:AMOUNT, '+
 'UPDATED =NOW() '+        ///用于更新 , 否则   0 records 错误.
 'WHERE ID = :ID';
 GetDetallesQuery.Edit;
- GetDetallesQuery.Fieldbyname('AMOUNT').AsFloat:= AMOUNT;
+ GetDetallesQuery.Fieldbyname('AMOUNT').AsFloat:= GetDetallesQuery.Fieldbyname('AMOUNT').AsFloat-Change.Value;
  GetDetallesQuery.Post;
 
  with dbTrabajo do
@@ -1284,7 +1665,7 @@ GetDetallesQuery.Edit;
  sql.Clear;
  sql.Text:='insert into  CHECKLIST_ITEMS  (GOODS_ID, SKU_NO, SUCODIGO, CDBARRA, MICODIGO, DESCRIPCION, AMOUNT, PRECIO_SIN, PRECIO_CON, DISCOUNT, IVA, PVPOPTION, ID_TMPLIST, CONTADO, PVPS, PVPC, IMPORTE) '
   +'select * from (select GOODS_ID, SKU_NO, SUCODIGO, :CD, MICODIGO, DESCRIPCION, :AMOUNT, PRECIO_SIN, PRECIO_CON, DISCOUNT, IVA, PVPOPTION, ID_TMPLIST, CONTADO, PVPS, PVPC, IMPORTE from CHECKLIST_ITEMS '
-  +'where 1=1 and  cdbarra =:CDBARRA) as t2 '
+  +'where 1=1 and  CDBARRA =:CDBARRA ) as t2 '
   +'on duplicate key update CHECKLIST_ITEMS.AMOUNT=CHECKLIST_ITEMS.AMOUNT+:AMOUNT ';
  ParamByName('CD').AsString:=Trim(Edit4.Text);
  ParamByName('CDBARRA').AsString:=Trim(Edit3.Text);

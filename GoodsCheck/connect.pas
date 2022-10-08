@@ -76,10 +76,10 @@ type
     ProDataSource: TDataSource;
     ProvQuery: TZQuery;
     IVADataSource: TDataSource;
-    ZCon1: TZConnection;
     IVAQuery: TZQuery;
     GetCommuQuery: TZQuery;
     CalPuntoQuery: TZQuery;
+    ZCon1: TZConnection;
     procedure DataModuleCreate(Sender: TObject);
 
 

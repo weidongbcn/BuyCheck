@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   LCLType, DBGrids, DBCtrls, Buttons, rxcurredit, connect, db, ZDataset,
-  ZSqlUpdate, Global;
+  ZSqlUpdate, Global, Grids;
 
 type
 
@@ -59,6 +59,8 @@ type
     procedure CantidadKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure DBLookupComboBox1Select(Sender: TObject);
     procedure Edit1Enter(Sender: TObject);
     procedure Edit1Exit(Sender: TObject);
@@ -214,7 +216,7 @@ begin
     exit;
   end;
   CheckDoc:=FormNewInventory.IniciaNewInventory();
-  showmessage(CheckDoc.B_UUID);
+  //showmessage(CheckDoc.B_UUID);
   ID.Text:=CheckDoc.B_UUID;
   DBLookupComboBox1.KeyValue:=CheckDoc.ID_STOCK;
   GetDocTop;
@@ -405,6 +407,28 @@ begin
   IF StockCheckDetalles.RecordCount < 1 THEN EXIT;
   EDIT1.Text:=StockCheckDetalles.FieldByName('ENA').AsString;
   EDIT1.SetFocus;
+end;
+
+procedure TFormInventory.DBGrid1PrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+    with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+   if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
+  begin
+    DBGrid1.Canvas.Brush.Color := clRed;
+    DBGrid1.Canvas.Font.Color := clWhite;
+  end;
+end;
 end;
 
 procedure TFormInventory.Edit1Exit(Sender: TObject);

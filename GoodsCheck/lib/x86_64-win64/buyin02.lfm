@@ -12,7 +12,6 @@ object FormBuyIn02: TFormBuyIn02
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 352
@@ -38,10 +37,7 @@ object FormBuyIn02: TFormBuyIn02
         Width = 80
         Alignment = taRightJustify
         DisplayFormat = '0'
-        MaxValue = 0
-        MinValue = 0
         TabOrder = 0
-        Value = 0
         ZeroEmpty = False
         OnExit = AmountExit
         OnKeyDown = AmountKeyDown
@@ -53,10 +49,7 @@ object FormBuyIn02: TFormBuyIn02
         Width = 80
         Alignment = taRightJustify
         DisplayFormat = '0.00'
-        MaxValue = 0
-        MinValue = 0
         TabOrder = 2
-        Value = 0
         ZeroEmpty = False
         OnExit = DescuentoExit
         OnKeyDown = DescuentoKeyDown
@@ -69,10 +62,7 @@ object FormBuyIn02: TFormBuyIn02
         Alignment = taRightJustify
         DecimalPlaces = 3
         DisplayFormat = '0.000'
-        MaxValue = 0
-        MinValue = 0
         TabOrder = 3
-        Value = 0
         ZeroEmpty = False
         OnKeyDown = ImporteKeyDown
       end
@@ -124,10 +114,7 @@ object FormBuyIn02: TFormBuyIn02
         Width = 80
         Alignment = taRightJustify
         DisplayFormat = '0.00'
-        MaxValue = 0
-        MinValue = 0
         TabOrder = 4
-        Value = 0
         ZeroEmpty = False
         OnChange = PVP1CChange
         OnKeyDown = PVP1CKeyDown
@@ -147,10 +134,7 @@ object FormBuyIn02: TFormBuyIn02
         Width = 80
         Alignment = taRightJustify
         DisplayFormat = '0.000'
-        MaxValue = 0
-        MinValue = 0
         TabOrder = 1
-        Value = 0
         ZeroEmpty = False
         OnExit = PrecioExit
         OnKeyDown = PrecioKeyDown
@@ -432,10 +416,7 @@ object FormBuyIn02: TFormBuyIn02
               Color = clInfoBk
               DecimalPlaces = 4
               DisplayFormat = '0.000;-0.000'
-              MaxValue = 0
-              MinValue = 0
               TabOrder = 0
-              Value = 0
               ZeroEmpty = False
               OnChange = DBCostChange
               OnKeyDown = DBCostKeyDown
@@ -458,10 +439,7 @@ object FormBuyIn02: TFormBuyIn02
               Color = clInfoBk
               DecimalPlaces = 4
               DisplayFormat = '0.000;-0.000'
-              MaxValue = 0
-              MinValue = 0
               TabOrder = 1
-              Value = 0
               ZeroEmpty = False
               OnChange = DBPvP1cChange
               OnKeyDown = DBPvP1cKeyDown
@@ -484,10 +462,7 @@ object FormBuyIn02: TFormBuyIn02
               Color = clInfoBk
               DecimalPlaces = 4
               DisplayFormat = '0.000;-0.000'
-              MaxValue = 0
-              MinValue = 0
               TabOrder = 2
-              Value = 0
               ZeroEmpty = False
               OnKeyDown = DBPvP2cKeyDown
             end
@@ -509,10 +484,7 @@ object FormBuyIn02: TFormBuyIn02
               Color = clInfoBk
               DecimalPlaces = 4
               DisplayFormat = '0.000;-0.000'
-              MaxValue = 0
-              MinValue = 0
               TabOrder = 3
-              Value = 0
               ZeroEmpty = False
               OnKeyDown = DBPvP3cKeyDown
             end
@@ -534,10 +506,7 @@ object FormBuyIn02: TFormBuyIn02
               Color = clInfoBk
               DecimalPlaces = 4
               DisplayFormat = '0.000;-0.000'
-              MaxValue = 0
-              MinValue = 0
               TabOrder = 4
-              Value = 0
               ZeroEmpty = False
               OnKeyDown = DBLOWPRICEKeyDown
             end
@@ -559,10 +528,7 @@ object FormBuyIn02: TFormBuyIn02
               Color = clInfoBk
               DecimalPlaces = 4
               DisplayFormat = '0.000;-0.000'
-              MaxValue = 0
-              MinValue = 0
               TabOrder = 5
-              Value = 0
               ZeroEmpty = False
               OnKeyDown = DBWHOLESALEKeyDown
             end
@@ -585,10 +551,7 @@ object FormBuyIn02: TFormBuyIn02
               Width = 81
               Alignment = taRightJustify
               DisplayFormat = '0.00'
-              MaxValue = 0
-              MinValue = 0
               TabOrder = 6
-              Value = 0
               ZeroEmpty = False
               OnKeyDown = DBDISCOUNTKeyDown
             end
@@ -860,10 +823,7 @@ object FormBuyIn02: TFormBuyIn02
             Width = 65
             Alignment = taRightJustify
             DisplayFormat = '0.00;-0.00'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 13
-            Value = 0
             OnKeyDown = LowLimitKeyDown
           end
           object AvisoLimit: TComboBox
@@ -934,12 +894,9 @@ object FormBuyIn02: TFormBuyIn02
             Color = clYellow
             DecimalPlaces = 3
             DisplayFormat = '0.000'
-            MaxValue = 0
-            MinValue = 0
             ReadOnly = True
             TabOrder = 16
             TabStop = False
-            Value = 0
             ZeroEmpty = False
           end
         end
@@ -1140,10 +1097,7 @@ object FormBuyIn02: TFormBuyIn02
                 Color = clInfoBk
                 DecimalPlaces = 3
                 DisplayFormat = '0.000;-0.000'
-                MaxValue = 0
-                MinValue = 0
                 TabOrder = 2
-                Value = 0
                 ZeroEmpty = False
               end
               object Label56: TLabel
@@ -1210,10 +1164,7 @@ object FormBuyIn02: TFormBuyIn02
             Color = clInfoBk
             DecimalPlaces = 4
             DisplayFormat = '0.000;-0.000'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 3
-            Value = 0
             ZeroEmpty = False
           end
           object CDBPvP2c: TCurrencyEdit
@@ -1225,10 +1176,7 @@ object FormBuyIn02: TFormBuyIn02
             Color = clInfoBk
             DecimalPlaces = 4
             DisplayFormat = '0.000;-0.000'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 4
-            Value = 0
             ZeroEmpty = False
           end
           object CDBPvP3c: TCurrencyEdit
@@ -1240,10 +1188,7 @@ object FormBuyIn02: TFormBuyIn02
             Color = clInfoBk
             DecimalPlaces = 4
             DisplayFormat = '0.000;-0.000'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 5
-            Value = 0
             ZeroEmpty = False
           end
           object CDBCost: TCurrencyEdit
@@ -1255,12 +1200,9 @@ object FormBuyIn02: TFormBuyIn02
             Color = clInfoBk
             DecimalPlaces = 4
             DisplayFormat = '0.000;-0.000'
-            MaxValue = 0
-            MinValue = 0
             ReadOnly = True
             TabOrder = 0
             TabStop = False
-            Value = 0
             ZeroEmpty = False
           end
           object Label60: TLabel
@@ -1281,10 +1223,7 @@ object FormBuyIn02: TFormBuyIn02
             Color = clInfoBk
             DecimalPlaces = 4
             DisplayFormat = '0.000;-0.000'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 6
-            Value = 0
             ZeroEmpty = False
           end
           object Label61: TLabel
@@ -1305,10 +1244,7 @@ object FormBuyIn02: TFormBuyIn02
             Color = clInfoBk
             DecimalPlaces = 4
             DisplayFormat = '0.000;-0.000'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 7
-            Value = 0
             ZeroEmpty = False
           end
           object Label62: TLabel
@@ -1330,10 +1266,7 @@ object FormBuyIn02: TFormBuyIn02
             Width = 81
             Alignment = taRightJustify
             DisplayFormat = '0.00'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 8
-            Value = 0
             ZeroEmpty = False
           end
         end
@@ -1939,7 +1872,7 @@ object FormBuyIn02: TFormBuyIn02
             Top = 8
             Width = 99
             Caption = '组成规格商品'
-            OnClick = Button2Click
+            OnClick = Button6Click
             TabOrder = 0
           end
         end
@@ -2030,10 +1963,7 @@ object FormBuyIn02: TFormBuyIn02
             Width = 81
             Alignment = taRightJustify
             DisplayFormat = '0'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 1
-            Value = 0
             ZeroEmpty = False
           end
           object MaxDesc2: TCurrencyEdit
@@ -2044,10 +1974,7 @@ object FormBuyIn02: TFormBuyIn02
             Alignment = taRightJustify
             DecimalPlaces = 3
             DisplayFormat = '0.000'
-            MaxValue = 0
-            MinValue = 0
             TabOrder = 2
-            Value = 0
             ZeroEmpty = False
           end
         end
@@ -2180,7 +2107,9 @@ object FormBuyIn02: TFormBuyIn02
         end>
       DataSource = BuyDetallesDS
       TabOrder = 0
+      OnDrawColumnCell = DBGrid1DrawColumnCell
       OnDblClick = DBGrid1DblClick
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object Panel3: TPanel
@@ -2236,12 +2165,9 @@ object FormBuyIn02: TFormBuyIn02
       Alignment = taRightJustify
       DecimalPlaces = 3
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       ReadOnly = True
       TabOrder = 2
       TabStop = False
-      Value = 0
       ZeroEmpty = False
     end
     object NewButton: TButton
@@ -2360,93 +2286,93 @@ object FormBuyIn02: TFormBuyIn02
   object BuyDetalles: TZQuery
     AfterPost = BuyDetallesAfterPost
     Params = <>
-    left = 170
-    top = 86
+    Left = 170
+    Top = 86
   end
   object Articulo: TZQuery
     Params = <>
-    left = 169
-    top = 176
+    Left = 169
+    Top = 176
   end
   object BuyTop: TZQuery
     Params = <>
-    left = 282
-    top = 86
+    Left = 282
+    Top = 86
   end
   object BuyHelp: TZQuery
     Params = <>
-    left = 295
-    top = 201
+    Left = 295
+    Top = 201
   end
   object BuyDetallesDS: TDataSource
     DataSet = BuyDetalles
-    left = 458
-    top = 194
+    Left = 458
+    Top = 194
   end
   object DataSource2: TDataSource
-    left = 459
-    top = 275
+    Left = 459
+    Top = 275
   end
   object TotalQuery: TZQuery
     Params = <>
-    left = 323
-    top = 229
+    Left = 323
+    Top = 229
   end
   object dbTest: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 496
-    top = 136
+    Left = 496
+    Top = 136
   end
   object CategoryDS: TDataSource
     DataSet = CategoryQuery
-    left = 868
-    top = 108
+    Left = 868
+    Top = 108
   end
   object CategoryQuery: TZQuery
     Params = <>
-    left = 852
-    top = 68
+    Left = 852
+    Top = 68
   end
   object BrandDS: TDataSource
     DataSet = BrandQuery
-    left = 452
-    top = 191
+    Left = 452
+    Top = 191
   end
   object BrandQuery: TZQuery
     Params = <>
-    left = 436
-    top = 164
+    Left = 436
+    Top = 164
   end
   object TaxRateDS: TDataSource
     DataSet = TaxRateZQuery
-    left = 309
-    top = 293
+    Left = 309
+    Top = 293
   end
   object TaxRateZQuery: TZQuery
     Params = <>
-    left = 316
-    top = 244
+    Left = 316
+    Top = 244
   end
   object DBGoodsQuery: TZQuery
     Params = <>
-    left = 396
-    top = 84
+    Left = 396
+    Top = 84
   end
   object ClasseQuery: TZQuery
     Params = <>
-    left = 556
-    top = 284
+    Left = 556
+    Top = 284
   end
   object DataSourceStudies: TDataSource
     DataSet = BufDatasetStudies
-    left = 616
-    top = 264
+    Left = 616
+    Top = 264
   end
   object BufDatasetStudies: TBufDataset
     FieldDefs = <>
-    left = 456
-    top = 264
+    Left = 456
+    Top = 264
     object BfGOODS_ID: TStringField
       FieldKind = fkData
       FieldName = 'GOODS_ID'
@@ -2475,8 +2401,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfSELLING_P1C: TCurrencyField
       FieldKind = fkData
@@ -2486,8 +2410,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfSELLING_P2C: TCurrencyField
       FieldKind = fkData
@@ -2497,8 +2419,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfSELLING_P3C: TCurrencyField
       FieldKind = fkData
@@ -2508,8 +2428,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfLOWPRICE: TCurrencyField
       FieldKind = fkData
@@ -2519,8 +2437,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfWHOLESALE: TCurrencyField
       FieldKind = fkData
@@ -2530,8 +2446,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfSTOCK: TFloatField
       FieldKind = fkData
@@ -2541,8 +2455,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfMERCHANT_CODING: TStringField
       FieldKind = fkData
@@ -2562,14 +2474,12 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
   end
   object CombinaBD: TBufDataset
     FieldDefs = <>
-    left = 579
-    top = 135
+    Left = 579
+    Top = 135
     object CombinaBDITEM_NAME: TStringField
       FieldKind = fkData
       FieldName = 'ITEM_NAME'
@@ -2588,8 +2498,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object CombinaBDSELLING_P1C: TFloatField
       FieldKind = fkData
@@ -2599,8 +2507,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object CombinaBDCOMMODITY_UNIT: TStringField
       FieldKind = fkData
@@ -2619,8 +2525,6 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object CombinaBDMEMBER_SKU_NO: TStringField
       FieldKind = fkData
@@ -2634,61 +2538,61 @@ object FormBuyIn02: TFormBuyIn02
     end
   end
   object CombinaDS: TDataSource
-    left = 720
-    top = 184
+    Left = 720
+    Top = 184
   end
   object dbCombina: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 680
-    top = 56
+    Left = 680
+    Top = 56
   end
   object SkuQuery: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 800
-    top = 65504
+    Left = 800
+    Top = 65504
   end
   object SKUListQuery: TZQuery
     Params = <>
-    left = 352
-    top = 65488
+    Left = 352
+    Top = 65488
   end
   object SpecQuery: TZQuery
     Params = <>
-    left = 408
-    top = 65528
+    Left = 408
+    Top = 65528
   end
   object SKUListDS: TDataSource
     DataSet = SKUListQuery
-    left = 200
-    top = 8
+    Left = 200
+    Top = 8
   end
   object dbTrabajo: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 780
-    top = 292
+    Left = 780
+    Top = 292
   end
   object CombinaQuery: TZQuery
     Params = <>
-    left = 501
-    top = 375
+    Left = 501
+    Top = 375
   end
   object TempListDS: TDataSource
-    left = 900
-    top = 276
+    Left = 900
+    Top = 276
   end
   object dbUuid: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 808
-    top = 320
+    Left = 808
+    Top = 320
   end
   object GetStock: TZQuery
     Params = <>
-    left = 192
-    top = 256
+    Left = 192
+    Top = 256
   end
   object frxReport1: TfrxReport
     Version = '6.7.3'
@@ -2706,15 +2610,13 @@ object FormBuyIn02: TFormBuyIn02
       ''
       'end.'
     )
-    left = 288
-    top = 488
+    Left = 288
+    Top = 488
     Datasets = <>
     Variables = <>
     Style = <>
     object Data: TfrxDataPage
       Height = 1000
-      Left = 0
-      Top = 0
       Width = 1000
     end
     object Page1: TfrxReportPage
@@ -2756,21 +2658,21 @@ object FormBuyIn02: TFormBuyIn02
     end
   end
   object frxBarCodeObject1: TfrxBarCodeObject
-    left = 360
-    top = 496
+    Left = 360
+    Top = 496
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
     DataSource = DataSourceLabels
     BCDToCurrency = False
-    left = 432
-    top = 488
+    Left = 432
+    Top = 488
   end
   object BufDatasetLabels: TBufDataset
     FieldDefs = <>
-    left = 344
-    top = 592
+    Left = 344
+    Top = 592
     object BufDatasetLabelsSKU_NO: TStringField
       FieldKind = fkData
       FieldName = 'SKU_NO'
@@ -2858,13 +2760,11 @@ object FormBuyIn02: TFormBuyIn02
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
   end
   object DataSourceLabels: TDataSource
     DataSet = BufDatasetLabels
-    left = 396
-    top = 584
+    Left = 396
+    Top = 584
   end
 end

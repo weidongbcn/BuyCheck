@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, ExtCtrls, DBGrids, LCLType,
-  StdCtrls, ZDataset, Global, connect, rxcurredit;
+  StdCtrls, ZDataset, Global, connect, rxcurredit, Grids;
 
 type
 
@@ -25,6 +25,8 @@ type
     Payed: TCurrencyEdit;
     TotalQuery: TZQuery;
     procedure Button1Click(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure GetPayList();
@@ -99,6 +101,28 @@ end;
 procedure TFormPayInfo.Button1Click(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TFormPayInfo.DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+  Column: TColumn; AState: TGridDrawState);
+begin
+  with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
+
+  end;
 end;
 
 procedure TFormPayInfo.FormKeyDown(Sender: TObject; var Key: Word;

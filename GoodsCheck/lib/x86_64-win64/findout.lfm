@@ -11,7 +11,7 @@ object FormFindout: TFormFindout
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   Position = poOwnerFormCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object GridBusquedas: TDBGrid
     Left = 0
     Height = 554
@@ -28,6 +28,7 @@ object FormFindout: TFormFindout
     TitleFont.Name = 'Tahoma'
     OnDblClick = GridBusquedasDblClick
     OnKeyDown = GridBusquedasKeyDown
+    OnPrepareCanvas = GridBusquedasPrepareCanvas
   end
   object Panel1: TPanel
     Left = 0
@@ -79,12 +80,12 @@ object FormFindout: TFormFindout
   end
   object dbBusquedas: TZQuery
     Params = <>
-    left = 384
-    top = 136
+    Left = 384
+    Top = 136
   end
   object Datasource1: TDataSource
     DataSet = dbBusquedas
-    left = 245
-    top = 134
+    Left = 245
+    Top = 134
   end
 end

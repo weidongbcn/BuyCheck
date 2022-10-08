@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DBGrids, ExtCtrls,
-  StdCtrls, ZDataset,LCLType, connect, db, Global;
+  StdCtrls, ZDataset,LCLType, connect, db, Global, Grids;
 
 type
 
@@ -24,6 +24,8 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure FormCreate(Sender: TObject);
     procedure GetSkuList(CDBarra: string);
   private
@@ -67,6 +69,7 @@ begin
       +'where 1=1 '
       +'and t2.ENA =:ENA ';
       ParamByName('ENA').AsString:=CDBarra;
+      open;
       end
 END;
 
@@ -99,6 +102,33 @@ procedure TFormSelectSKU.DBGrid1KeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if key=VK_RETURN then Button2Click(self);
+end;
+
+procedure TFormSelectSKU.DBGrid1PrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+    with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+   if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
+   {
+
+   if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
+  begin
+    DBGrid1.Canvas.Brush.Color := clRed;
+    DBGrid1.Canvas.Font.Color := clWhite;
+  end;  }
+end;
 end;
 
 

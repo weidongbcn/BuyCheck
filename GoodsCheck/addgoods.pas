@@ -6,14 +6,36 @@ interface
 
 uses
   Classes, SysUtils, db, BufDataset, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, DBCtrls, Buttons, ComCtrls, DBGrids, ZConnection, LCLType,  printers,
-  ExtDlgs, ZDataset, rxcurredit, connect, Global, fpjson, jsonparser;
+  ExtCtrls, StdCtrls, DBCtrls, Buttons, ComCtrls, DBGrids, ZConnection, LCLType,
+  printers, ExtDlgs, ZDataset, ZSqlUpdate, rxcurredit, connect, Global, fpjson,
+  jsonparser;
 
 type
 
   { TFormGoodsSpu }
 
   TFormGoodsSpu = class(TForm)
+    ALLOTDS: TDataSource;
+    ALLOTUpdateSQL: TZUpdateSQL;
+    BufSun: TBufDataset;
+    BufSunALLOT: TLongintField;
+    BufSunAVISO: TLongintField;
+    BufSunAVISONUM: TFloatField;
+    BufSunCODE: TStringField;
+    BufSunCOST: TCurrencyField;
+    BufSunENA: TStringField;
+    BufSunMUINT: TStringField;
+    BufSunNAME: TStringField;
+    BufSunNAME2: TStringField;
+    BufSunPARENTID: TLongintField;
+    BufSunPVP: TCurrencyField;
+    BufSunSKU_NO: TStringField;
+    BufSunUUID: TStringField;
+    BufSunVOLUMN: TStringField;
+    BufSunWHOLEPRICE: TCurrencyField;
+    Button14: TButton;
+    Button15: TButton;
+    Button9: TButton;
     CanDiscount: TComboBox;
     BfCOST: TCurrencyField;
     BfGOODS_ID: TStringField;
@@ -69,7 +91,25 @@ type
     CombinaBDMEMBER_SKU_NO: TStringField;
     CombinaBDQUANTITY: TFloatField;
     CombinaBDSELLING_P1C: TFloatField;
+    DBGoods2: TZQuery;
+    DBGrid4: TDBGrid;
+    dbParentAllot: TZQuery;
+    DSSun: TDataSource;
+    GroupBox1: TGroupBox;
     Label59: TLabel;
+    Label60: TLabel;
+    Label61: TLabel;
+    Label62: TLabel;
+    Label63: TLabel;
+    Label64: TLabel;
+    Label65: TLabel;
+    Label66: TLabel;
+    Label67: TLabel;
+    Label68: TLabel;
+    Label69: TLabel;
+    Label70: TLabel;
+    Label71: TLabel;
+    Label72: TLabel;
     LowLimit: TCurrencyEdit;
     dbClonar: TZQuery;
     DBCost: TCurrencyEdit;
@@ -79,9 +119,21 @@ type
     Label56: TLabel;
     Label57: TLabel;
     Label58: TLabel;
+    MAvisoLimit: TComboBox;
+    MCodingEdit: TEdit;
     Memo2: TMemo;
+    MENAEdit: TEdit;
+    MLowLimit: TCurrencyEdit;
+    MNameEdit: TEdit;
+    MNum: TCurrencyEdit;
+    MUnidades: TEdit;
+    MVolumeEdit: TEdit;
     OpenPictureDialog1: TOpenPictureDialog;
     AvisoLimit: TComboBox;
+    PanelHijo: TPanel;
+    SDBCost: TCurrencyEdit;
+    SDBPvP1c: TCurrencyEdit;
+    SDBWHOLESALE: TCurrencyEdit;
     SkuQuery: TZQuery;
     DBLOWPRICE: TCurrencyEdit;
     DBPvP1c: TCurrencyEdit;
@@ -103,6 +155,7 @@ type
     Panel10: TPanel;
     Panel16: TPanel;
     PricePanel: TPanel;
+    SNum: TCurrencyEdit;
     TypeBox: TComboBox;
     CombinaDS: TDataSource;
     DBGrid3: TDBGrid;
@@ -192,7 +245,6 @@ type
     Label32: TLabel;
     Label33: TLabel;
     Label34: TLabel;
-    Label4: TLabel;
     Label49: TLabel;
     Label5: TLabel;
     Label6: TLabel;
@@ -222,6 +274,7 @@ type
     SKUListQuery: TZQuery;
     SpecQuery: TZQuery;
     TaxRateZQuery: TZQuery;
+    ZUpdateSQL1: TZUpdateSQL;
     procedure AvisoLimitKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure BitBtn12Click(Sender: TObject);
@@ -239,6 +292,8 @@ type
     procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
     procedure Button13Click(Sender: TObject);
+    procedure Button14Click(Sender: TObject);
+    procedure Button15Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
@@ -247,9 +302,13 @@ type
     procedure CanDiscountExit(Sender: TObject);
     procedure CanDiscountKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure CantidadKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
     procedure CategoryDBBoxKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure CButtonClick(Sender: TObject);
+    procedure CDBPvP1cKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
     procedure CodingEditEnter(Sender: TObject);
     procedure CodingEditKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
@@ -273,6 +332,8 @@ type
       );
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
+    procedure ItemNameKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
     procedure IvaDBLookupComboBox1KeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure Label57Click(Sender: TObject);
@@ -280,11 +341,36 @@ type
     procedure LowLimitExit(Sender: TObject);
     procedure LowLimitKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure MAvisoLimitKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure MCodingEditKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure MENAEditExit(Sender: TObject);
+    procedure MENAEditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
+    procedure MLowLimitKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure MNameEditKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure MNumKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure MUnidadesKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure MVolumeEditKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure NameEdit2KeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure NameEditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure SDBCostKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
+    procedure SDBPvP1cKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
+    procedure SDBWHOLESALEKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure Sku_NoEditExit(Sender: TObject);
+    procedure Sku_NoEditKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure SNumKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure TypeBoxKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
     procedure TypeBoxSelect(Sender: TObject);
@@ -298,7 +384,10 @@ type
     Procedure GetBrand();
     Procedure GetClasse();
     procedure ItemsClear();
+    procedure ClearHijo();
     procedure DoGetTaxRates;
+    Function GetTotalAllot():integer;
+    Procedure GetParentAllot(ParentId:integer);
     Function GetGoodsSKUitems(aGOODS_ID:STRING):Boolean;
      function GetCategorySpec(Category_id: integer):boolean;
      procedure GetCombination(aSKU_NO:STRING);
@@ -328,9 +417,10 @@ var
   NewGoods:TGOODS;
    Uid: TGuid;
   UResult: HResult;
-  GOODS_ID, SKUUUID: string;
+  GOODS_ID, SKUUUID, MGOODS_ID: string;
   IsNewGoods, HaveSkuItems, HaveNewSkuItem: Boolean;
   Hecho:boolean;
+  Pid:integer;
   aProveedor:TStringArray;
 
 implementation
@@ -504,6 +594,21 @@ end;
 procedure TFormGoodsSpu.Button1Click(Sender: TObject);
 begin
   close;
+end;
+
+
+procedure TFormGoodsSpu.ClearHijo();
+begin
+      MENAEdit.Text:='';
+      MCodingEdit.Text:='';
+      MNameEdit.Text:= '';
+      MUnidades.Text:='';
+      MVolumeEdit.Text:='';
+      MAvisoLimit.ItemIndex:=0;
+      MLOWLIMIT.Value:=0;
+      SDBCost.Value:=0;
+      SDBPvP1c.Value:=0;
+      SDBWHOLESALE.Value:=0;
 end;
 
 procedure TFormGoodsSpu.ItemsClear();
@@ -796,8 +901,10 @@ end;
 
 procedure TFormGoodsSpu.Button9Click(Sender: TObject);
 begin
-  if SKUListDS.DataSet.Modified then
-  SKUListQuery.ApplyUpdates;
+  //if SKUListDS.DataSet.Modified then
+  //SKUListQuery.ApplyUpdates;
+  GroupBox1.Enabled:=True;
+  MENAEdit.SetFocus;
 end;
 
 procedure TFormGoodsSpu.CanDiscountExit(Sender: TObject);
@@ -808,6 +915,12 @@ begin
 end;
 
 procedure TFormGoodsSpu.CanDiscountKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.CantidadKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if Key=VK_Return then SelectNext(ActiveControl,True,True);
@@ -912,7 +1025,7 @@ begin
     sql.Text:='INSERT INTO GOODS_SKU (SKU_NO, SKU_NAME, COST, SELLING_P1C, SELLING_P2C, SELLING_P3C, LOWPRICE, WHOLESALE, DISCOUNT, GOODS_ID, SKU_CODING, ISCHILD, STOCKAVISO, LOWLIMIT, CAN_DISCount, Points ) '
     +'VALUES (UUID(), :SKU_NAME, :COST, :SELLING_P1C, :SELLING_P2C, :SELLING_P3C, :LOWPRICE, :WHOLESALE, :DISCOUNT, :GOODS_ID, :SKU_CODING, :ISCHILD, :STOCKAVISO, :LOWLIMIT, :CAN_DISCount, :Points)'
     +'ON DUPLICATE KEY UPDATE '
-    +'COST=:COST, SELLING_P1C=:SELLING_P1C, SELLING_P2C=:SELLING_P2C, SELLING_P3C=:SELLING_P3C, LOWPRICE=:LOWPRICE, WHOLESALE=:WHOLESALE, DISCOUNT=:DISCOUNT, ISCHILD=:ISCHILD '
+    +'COST=:COST, SELLING_P1C=:SELLING_P1C, SELLING_P2C=:SELLING_P2C, SELLING_P3C=:SELLING_P3C, LOWPRICE=:LOWPRICE, WHOLESALE=:WHOLESALE, DISCOUNT=:DISCOUNT, ISCHILD=:ISCHILD, '
     +'STOCKAVISO=:STOCKAVISO, LOWLIMIT=:LOWLIMIT, CAN_DISCount=:CAN_DISCount, Points=:Points ';
      ParamByName('SKU_NAME').AsString:='';     //只允许spec的商品用有SKU_NAME.
      ParamByName('COST').AsCurrency:=CDBCost.Value;
@@ -988,6 +1101,12 @@ begin
    ENAEdit.SetFocus;
 
    Hecho:=True;
+
+end;
+
+procedure TFormGoodsSpu.CDBPvP1cKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
 
 end;
 
@@ -1099,6 +1218,12 @@ begin
   IvaDBLookupComboBox1.KeyValue:=IvaDBLookupComboBox1.ListSource.DataSet.FieldByName(IvaDBLookupComboBox1.KeyField).Value;
 end;
 
+procedure TFormGoodsSpu.ItemNameKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
 procedure TFormGoodsSpu.IvaDBLookupComboBox1KeyDown(Sender: TObject;
   var Key: Word; Shift: TShiftState);
 begin
@@ -1128,6 +1253,105 @@ begin
   //if PageControl1.Pages[0].TabVisible then DBcost.SetFocus;
 end;
 
+procedure TFormGoodsSpu.MAvisoLimitKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.MCodingEditKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.MENAEditExit(Sender: TObject);
+begin
+  with DBGoods2 do
+     begin
+      Connection:=DataModule2.ZCon1;
+      Active:=false;
+      SQL.Clear;
+      SQL.Text:='SELECT T1.GOODS_ID, T1.GOODS_NAME, T1.GOODS_NAME2, T1.ENA, T1.CODE, T1.CATEGORY_ID, T1.BRAND_ID, T1.TYPE, T1.UNIT, T1.TAXRATE_ID, T1.WEIGTH, T1.VOLUME, T1.IS_ACTIVE, '
+      +'T1.PARENT_ID, T1.CLASS_ID, T1.STOCKAVISO, T1.LOWLIMIT, T1.CAN_DISCount, T1.UPDATED_AT, '
+      +'T2.COST, T2.SELLING_P1C, T2.SELLING_P2C, T2.SELLING_P3C, T2.LOWPRICE, T2.WHOLESALE, T2.DISCOUNT, T2.Points, T2.SKU_NO '
+      +'FROM GOODS_SPU AS T1 LEFT JOIN GOODS_SKU AS T2 ON T2.GOODS_ID = T1.GOODS_ID '
+      +'WHERE 1=1  '         //AND T2.ISCHILD = 0
+      +'AND T1.ENA=:ENA Limit 1';
+      ParamByName('ENA').AsString:=Trim(MENAEdit.Text);
+      OPEN;
+     end;
+    if DBGoods2.RecordCount > 0 then
+    begin
+      if DBGoods2.FieldByName('Type').AsInteger <> 0 then
+      begin
+        showmessage('此编号不适合用于此处, 请更换!');
+        MENAEdit.SetFocus;
+        exit;
+      end;
+        MGOODS_ID:=DBGoods2.FieldByName('GOODS_ID').AsString;
+        MGOODS_ID:=DBGoods2.FieldByName('GOODS_ID').AsString;
+        ///这里的sku编码是本身的编码, 不是属性商品.
+        SKUUUID:=DBGoods2.FieldByName('SKU_NO').AsString;
+        MCodingEdit.Text:=DBGoods2.FieldByName('CODE').AsString;
+        MNameEdit.Text:= DBGoods2.FieldByName('GOODS_NAME').AsString;
+        MUnidades.Text:=DBGoods2.FieldByName('UNIT').AsString;
+        MVolumeEdit.Text:=DBGoods2.FieldByName('Volume').AsString;
+        if DBGoods2.FieldByName('STOCKAVISO').AsInteger = 1 then
+        MAvisoLimit.ItemIndex:=1 else MAvisoLimit.ItemIndex:=0;
+        MLOWLIMIT.Value:=DBGoods2.FieldByName('LOWLIMIT').AsFloat;
+        SDBCost.Value:=DBGoods2.FieldByName('COST').AsFloat;
+        SDBPvP1c.Value:=DBGoods2.FieldByName('SELLING_P1C').AsFloat;
+        SDBWHOLESALE.Value:=DBGoods2.FieldByName('WHOLESALE').AsFloat;
+    end
+    else
+    begin
+      Mgoods_id:=Get36UUID();
+      MCodingEdit.Text:=RightStr(MENAEdit.Text, 6);
+      MNameEdit.Text:=NameEdit.Text;
+      SDBCost.Value:=DBCost.Value;
+      //MSKUUUID:string;
+    end;
+    MNameEdit.SetFocus;
+end;
+
+procedure TFormGoodsSpu.MENAEditKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+
+end;
+
+procedure TFormGoodsSpu.MLowLimitKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.MNameEditKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.MNumKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.MUnidadesKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.MVolumeEditKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
 procedure TFormGoodsSpu.NameEdit2KeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -1135,6 +1359,24 @@ begin
 end;
 
 procedure TFormGoodsSpu.NameEditKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.SDBCostKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.SDBPvP1cKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.SDBWHOLESALEKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if Key=VK_Return then SelectNext(ActiveControl,True,True);
@@ -1231,6 +1473,18 @@ begin
 
 end;
 
+procedure TFormGoodsSpu.Sku_NoEditKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormGoodsSpu.SNumKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
 procedure TFormGoodsSpu.TypeBoxKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -1239,7 +1493,7 @@ end;
 
 procedure TFormGoodsSpu.TypeBoxSelect(Sender: TObject);
 begin
-  if TypeBox.ItemIndex=1 then
+ { if TypeBox.ItemIndex=2 then    //2.组合
   begin
   if not IsNewGoods then
   BEGIN
@@ -1265,6 +1519,49 @@ begin
   CButton.Visible:=False;
   Button3.Visible:=True;
   end;
+  }
+
+   case  TypeBox.ItemIndex   of
+   0:
+     begin
+       PanelHijo.Visible:=False;
+       CombinationPanel.Visible:=False;
+      PageControl1.Visible:=True;
+      CButton.Visible:=False;
+      Button3.Visible:=True;
+     end;
+   1:
+     begin
+
+       CombinationPanel.Visible:=False;
+       PageControl1.Visible:=False;
+       PanelHijo.Visible:=True;
+       //PanelHijo.Parent:=PanelM;
+       PanelHijo.Align:=alClient;
+     end;
+   2:
+     begin
+      if not IsNewGoods then
+      BEGIN
+      GetCombination(SKUUUID);
+      CombinaDS.DataSet:=dbCombina;
+      END
+      ELSE
+      BEGIN
+      CombinaBD.Close;
+      CombinaBD.CreateDataset;
+      CombinaBD.Open;
+      CombinaDS.DataSet:=CombinaBD;
+      END;
+      PageControl1.Visible:=False;
+      PanelHijo.Visible:=False;
+      CombinationPanel.Visible:=True;
+     // CombinationPanel.Parent:=PanelM;
+      CombinationPanel.Align:=alClient;
+      CButton.Visible:=True;
+      Button3.Visible:=False;
+     end;
+   end;
 end;
 
 procedure TFormGoodsSpu.BitBtn20Click(Sender: TObject);
@@ -1432,6 +1729,8 @@ end;
 
 procedure TFormGoodsSpu.Button10Click(Sender: TObject);
 begin
+
+  ClearAllRecords(BufDatasetStudies);
   BufDatasetStudies.Close;
   HaveNewSkuItem:=False;
   SkuPanel.Align:=AlClient;
@@ -1504,9 +1803,198 @@ end;
 
 procedure TFormGoodsSpu.Button13Click(Sender: TObject);
 begin
-  CombinaDS.DataSet.Delete;
+ if CombinaDS.DataSet = dbCombina then
+ begin
+  dbCombina.UpdateObject:=ZUpdateSQL1;
+   ZUpdateSQL1.DeleteSQL.Text:='delete from GOODS_SKU_COMBINATION  where ID=:ID ';
+  dbCombina.Delete;
+ end;
+ if CombinaDS.DataSet = CombinaBD then
+ begin
+  CombinaBD.Delete;
+ end;
 end;
 
+procedure TFormGoodsSpu.Button14Click(Sender: TObject);
+begin
+   if IsNewGoods then
+  begin
+  if BufSun.RecordCount <=0 then exit;
+  BufSun.Delete;
+  end
+  else
+  begin
+  dbParentAllot.UpdateObject:=ALLOTUpdateSQL;
+    ALLOTUpdateSQL.InsertSQL.Text:='';
+    ALLOTUpdateSQL.DeleteSQL.Text:='DELETE FROM ALLOT WHERE ID=:ID';
+    dbParentAllot.Delete;
+  end;
+end;
+
+procedure TFormGoodsSpu.Button15Click(Sender: TObject);
+var
+   AllotTotal: integer;
+begin
+if SNum.AsInteger < 1 then
+begin
+SNum.SetFocus;
+exit;
+end;
+   if IsNewGoods then
+   begin
+       try
+       BufSun.DisableControls;
+       BufSun.Open;
+       with BufSun do
+       begin
+       Insert;
+       BufSun.FieldByName('ENA').AsString:=Trim(MENAEdit.Text);
+       BufSun.FieldByName('CODE').AsString:=Trim(MCodingEdit.Text);
+       BufSun.FieldByName('UUID').Value:=Mgoods_id;
+       BufSun.FieldByName('Name').Value:=Trim(MNameEdit.Text);
+       if DBGoods2.RecordCount > 0 then
+       BEGIN
+       BufSun.FieldByName('Name2').Value:=DBGoods2.FieldByName('GOODS_NAME2').AsString;
+       BufSun.FieldByName('SKU_NO').Value:=DBGoods2.FieldByName('SKU_NO').AsString;
+       end
+       else
+       BEGIN
+         BufSun.FieldByName('Name2').Value:=Trim(MNameEdit.Text);
+       BufSun.FieldByName('SKU_NO').Value:='';
+       end;
+       BufSun.FieldByName('ALLOT').AsInteger:=SNum.AsInteger;
+       BufSun.FieldByName('COST').AsCurrency:=SDBCost.Value;
+       BufSun.FieldByName('PVP').AsCurrency:=SDBPvP1c.Value;
+       BufSun.FieldByName('WholePrice').AsCurrency:=SDBWHOLESALE.Value;
+       BufSun.FieldByName('VOLUMN').AsString:=MVolumeEdit.Text;
+       BufSun.FieldByName('AVISO').AsInteger:=MAvisoLimit.ItemIndex;
+       BufSun.FieldByName('AVISONUM').AsFloat:=MLowLimit.Value;
+       BufSun.FieldByName('MUNIT').AsString:=MUnidades.Text;
+       Post;
+       end;
+       finally
+       BufSun.EnableControls;
+       end;
+   end
+   else
+   begin
+   AllotTotal:=GetTotalAllot();
+
+   if AllotTotal+SNum.AsInteger > MNum.AsInteger then
+   begin
+     showmessage('数量超过了, 不可添加');
+     ClearHijo();
+     MENAEdit.SetFocus ;
+     Exit;
+   end;
+   ALLOTUpdateSQL.DeleteSQL.Text:='';
+   dbParentAllot.UpdateObject:=ALLOTUpdateSQL;
+   ALLOTUpdateSQL.InsertSQL.Text:='INSERT INTO ALLOT (ALLOT, GOODS_ID, ENA, PARENT_ID) '
+   +'VALUES ( :ALLOT, :GOODS_ID, :ENA, :PARENT_ID) '
+   +'ON DUPLICATE KEY UPDATE '
+   +'ALLOT=ALLOT +:ALLOT ';
+   dbParentAllot.Append;
+   dbParentAllot.FieldByName('ALLOT').AsInteger:=SNum.AsInteger;
+   dbParentAllot.FieldByName('GOODS_ID').AsString:=Mgoods_id;
+   dbParentAllot.FieldByName('ENA').AsString:= Trim(MENAEdit.Text);
+   dbParentAllot.FieldByName('PARENT_ID').AsInteger:=Pid;
+   dbParentAllot.Post;
+   end;
+
+   ClearHijo();
+   GroupBox1.Enabled:=False;
+   Button1.SetFocus;
+end;
+
+
+Function TFormGoodsSpu.GetTotalAllot():integer;
+var
+  allot:integer;
+  I: integer;
+begin
+  allot:=0;
+  if IsNewGoods then
+  begin
+  DSSun.DataSet.First;
+  for I := 0 to DSSun.DataSet.RecordCount-1 do
+    begin
+      allot:=allot+DSSun.DataSet.FieldByName('ALLOT').AsInteger;
+      DSSun.DataSet.Next;
+    end;
+  end
+  else
+  begin
+   ALLOTDS.DataSet.First;
+   for I := 0 to ALLOTDS.DataSet.RecordCount-1 do
+    begin
+      allot:=allot+ALLOTDS.DataSet.FieldByName('ALLOT').AsInteger;
+      ALLOTDS.DataSet.Next;
+    end;
+  end;
+
+  result:=allot;
+end;
+
+
+Procedure TFormGoodsSpu.GetParentAllot(ParentId:integer);
+var
+  i:integer;
+begin
+   with dbParentAllot do
+     begin
+        Connection:=DataModule2.ZCon1;
+        Active:=false;
+        SQL.Clear;
+        Sql.Text:='SELECT T1.ID, T1.ALLOT, T1.GOODS_ID, T1.ENA, T1.PARENT_ID, T2.COST, T2.PVP1C AS PVP FROM ALLOT AS T1 LEFT JOIN GOODS_SPU_PRICE AS T2 ON T1.GOODS_ID = T2.GOODS_ID WHERE 1=1 and T1.PARENT_ID = :Parent_Id ';
+        ParamByName('Parent_Id').AsInteger:= ParentId;
+        open;
+     end;
+
+   {
+   if dbParentAllot.RecordCount > 0 then
+   begin
+     dbParentAllot.First;
+     BufSun.Open;
+     for I := 0 to dbParentAllot.RecordCount-1 do
+      begin
+        with DBGoods2 do
+        begin
+        Connection:=DataModule2.ZCon1;
+        Active:=false;
+        SQL.Clear;
+        SQL.Text:='SELECT T1.GOODS_ID, T1.GOODS_NAME, T1.GOODS_NAME2, T1.ENA, T1.CODE, T1.CATEGORY_ID, T1.BRAND_ID, T1.TYPE, T1.UNIT, T1.TAXRATE_ID, T1.WEIGTH, T1.VOLUME, T1.IS_ACTIVE, '
+        +'T1.PARENT_ID, T1.CLASS_ID, T1.STOCKAVISO, T1.LOWLIMIT, T1.CAN_DISCount, T1.UPDATED_AT, '
+        +'T2.COST, T2.SELLING_P1C, T2.SELLING_P2C, T2.SELLING_P3C, T2.LOWPRICE, T2.WHOLESALE, T2.DISCOUNT, T2.Points, T2.SKU_NO '
+        +'FROM GOODS_SPU AS T1 LEFT JOIN GOODS_SKU AS T2 ON T2.GOODS_ID = T1.GOODS_ID '
+        +'WHERE 1=1  '         //AND T2.ISCHILD = 0
+        +'AND T1.ENA=:ENA Limit 1';
+        ParamByName('ENA').AsString:=dbParentAllot.FieldByName('ENA').AsString;
+        OPEN;
+        end;
+
+        with BufSun do
+        begin
+          Insert;
+          BufSun.FieldByName('ENA').AsString:=DBGoods2.FieldByName('ENA').AsString;
+          BufSun.FieldByName('CODE').AsString:=DBGoods2.FieldByName('CODE').AsString;
+          BufSun.FieldByName('UUID').AsString:=DBGoods2.FieldByName('GOODS_ID').AsString;
+          BufSun.FieldByName('Name').AsString:=DBGoods2.FieldByName('GOODS_NAME').AsString;
+          BufSun.FieldByName('Name2').AsString:=DBGoods2.FieldByName('GOODS_Name2').AsString;
+          BufSun.FieldByName('Cost').AsCurrency:=DBGoods2.FieldByName('COST').AsCurrency;
+          BufSun.FieldByName('PVP').AsCurrency:=DBGoods2.FieldByName('SELLING_P1C').AsCurrency;
+          BufSun.FieldByName('WHOLEPRICE').AsCurrency:=DBGoods2.FieldByName('WHOLESALE').AsCurrency;
+          BufSun.FieldByName('ALLOT').AsInteger:=dbParentAllot.FieldByName('ALLOT').AsInteger;
+          BufSun.FieldByName('SKU_NO').AsString:=DBGoods2.FieldByName('SKU_NO').AsString;
+
+          Post;
+        end;
+        dbParentAllot.Next;
+     end;
+   end;
+   DBGoods2.Close;
+   dbParentAllot.Close;
+   }
+end;
 
 function TFormGoodsSpu.Get36UUID():string;
 var
@@ -1525,7 +2013,9 @@ if Trim(ENAEdit.Text)='' then exit;
 if ExistGoods(Trim(ENAEdit.Text)) then
 begin
   /////
+
   GOODS_ID:=DBGoodsQuery.FieldByName('GOODS_ID').AsString;
+  Pid:=DBGoodsQuery.FieldByName('ID').AsInteger;
   ///这里的sku编码是本身的编码, 不是属性商品.
   SKUUUID:=DBGoodsQuery.FieldByName('SKU_NO').AsString;
   ///
@@ -1538,7 +2028,7 @@ begin
 
   if DBGoodsQuery.FieldByName('BRAND_ID').AsInteger <> 0 then
   BrandDBBox.KeyValue:= DBGoodsQuery.FieldByName('BRAND_ID').Value;
-  //CombinaDS.DataSet:=DBCOMBINA;
+  CombinaDS.DataSet:=DBCOMBINA;
   TypeBox.ItemIndex:=DBGoodsQuery.FieldByName('TYPE').Value;
   TypeBoxSelect(self);
   Unidades.Text:=DBGoodsQuery.FieldByName('UNIT').AsString;
@@ -1549,6 +2039,7 @@ begin
   LOWLIMIT.Value:=DBGoodsQuery.FieldByName('LOWLIMIT').Value;
   CanDiscount.ItemIndex:=DBGoodsQuery.FieldByName('CAN_DISCount').AsInteger;
   Edit4.Text:=formatfloat('#,##0.00',  DBGoodsQuery.FieldByName('Points').AsFloat);
+  MNum.Value:=DBGoodsQuery.FieldByName('CAPACITY').Value;
   DBCost.Value:=DBGoodsQuery.FieldByName('COST').Value;
   DBPvP1c.Value:=DBGoodsQuery.FieldByName('SELLING_P1C').Value;
   DBPvP2c.Value:=DBGoodsQuery.FieldByName('SELLING_P2C').Value;
@@ -1565,6 +2056,9 @@ begin
   CDBWHOLESALE.Value:=DBGoodsQuery.FieldByName('WHOLESALE').Value;
   CDBDISCOUNT.Value:=DBGoodsQuery.FieldByName('DISCOUNT').Value;
   ;
+
+  GetParentAllot(DBGoodsQuery.FieldByName('ID').AsInteger);
+  DBGrid4.DataSource:=ALLOTDS;
 
   if  GetGoodsSKUitems(GOODS_ID) then
   begin
@@ -1589,6 +2083,7 @@ end
 else
 begin
   GOODS_ID:=Get36UUID();
+  DBGrid4.DataSource:=DSSun;
   UUIDEdit.Text:=GOODS_ID;
   IsNewGoods:=True;
   btnClonar.Enabled:=True;
@@ -1618,8 +2113,8 @@ function TFormGoodsSpu.ExistGoods(CDBarra: string):boolean;
         +'FROM GOODS_SPU AS T1 LEFT JOIN GOODS_SPU_PRICE T2 ON T2.GOODS_ID = T1.GOODS_ID '
         +'WHERE 1=1 AND ENA=:ENA ';
        }
-       SQL.Text:='SELECT T1.GOODS_ID, T1.GOODS_NAME, T1.GOODS_NAME2, T1.ENA, T1.CODE, T1.CATEGORY_ID, T1.BRAND_ID, T1.TYPE, T1.UNIT, T1.TAXRATE_ID, T1.WEIGTH, T1.VOLUME, T1.IS_ACTIVE, '
-       +'T1.PARENT_ID, T1.CLASS_ID, T1.STOCKAVISO, T1.LOWLIMIT, T1.CAN_DISCount, T1.UPDATED_AT, '
+       SQL.Text:='SELECT T1.ID, T1.GOODS_ID, T1.GOODS_NAME, T1.GOODS_NAME2, T1.ENA, T1.CODE, T1.CATEGORY_ID, T1.BRAND_ID, T1.TYPE, T1.UNIT, T1.TAXRATE_ID, T1.WEIGTH, T1.VOLUME, T1.IS_ACTIVE, '
+       +'T1.PARENT_ID, T1.CLASS_ID, T1.STOCKAVISO, T1.LOWLIMIT, T1.CAN_DISCount, T1.CAPACITY, T1.UPDATED_AT, '
          +'T2.COST, T2.SELLING_P1C, T2.SELLING_P2C, T2.SELLING_P3C, T2.LOWPRICE, T2.WHOLESALE, T2.DISCOUNT, T2.Points, T2.SKU_NO '
          +'FROM GOODS_SPU AS T1 LEFT JOIN GOODS_SKU AS T2 ON T2.GOODS_ID = T1.GOODS_ID '
          +'WHERE 1=1 AND T2.ISCHILD = 0 '
@@ -1658,7 +2153,7 @@ begin
         Connection:=DataModule2.ZCon1;
         Active:=false;
         SQL.Clear;
-       SQL.TEXT:='SELECT CONCAT(T3.GOODS_NAME, T2.SKU_NAME) AS ITEM_NAME, T2.COST, T2.SELLING_P1C, T1.QUANTITY, T2.COMMODITY_UNIT, T1.MEMBER_SKU_NO '
+       SQL.TEXT:='SELECT CONCAT(T3.GOODS_NAME, T2.SKU_NAME) AS ITEM_NAME, T2.COST, T2.SELLING_P1C, T1.ID, T1.QUANTITY, T2.COMMODITY_UNIT, T1.MEMBER_SKU_NO '
        +'FROM GOODS_SKU_COMBINATION as T1 LEFT JOIN goods_sku AS T2 ON T1.MEMBER_SKU_NO = T2.SKU_NO '
        +'LEFT JOIN goods_spu AS T3 ON T3.GOODS_ID = T2.GOODS_ID '
        +'WHERE 1=1 AND T2.ISCHILD = 0 AND T1.SKU_NO=:SKU_NO ';
@@ -1711,6 +2206,9 @@ var
 
 begin
   if TRim(ENAEdit.Text)='' then exit;
+  if TRIM(CodingEdit.Text) ='' then exit;
+  if TRIM(NameEdit.Text)='' then exit;
+
    str:=TRim(ENAEdit.Text);
   Category_id:=CategoryDBBox.KeyValue;
   Data:=FormSelectSpec.IniciarSelect(Category_id, GOODS_ID);
@@ -1826,9 +2324,11 @@ begin
   //      [sftUTF8Text,sftUTF8Text, sftCurrency, sftCurrency, sftCurrency, sftCurrency, sftCurrency,sftFloat, sftUTF8Text]);       //[sftInteger,sftUTF8Text,sftUTF8Text,sftBlob,sftInteger,sftInteger]
   //JsonToDataSet(ClientDataSet1,json);
 
+
   HaveNewSkuItem:=True;
   NewSkuPanel.Align:=AlClient;
   SkuPanel.Visible:=False;
+  PricePanel.Visible:=false;
   NewSkuPanel.Visible:=True;
 
 end;

@@ -3,11 +3,10 @@ object FormGoodsBuyHis: TFormGoodsBuyHis
   Height = 666
   Top = 189
   Width = 967
-  Caption = 'FormGoodsBuyHis'
+  Caption = '货品购买记录'
   ClientHeight = 666
   ClientWidth = 967
   OnCreate = FormCreate
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 80
@@ -177,15 +176,16 @@ object FormGoodsBuyHis: TFormGoodsBuyHis
       end>
     DataSource = DataSource1
     TabOrder = 2
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object DataSource1: TDataSource
     DataSet = ZQuery1
-    left = 69
-    top = 131
+    Left = 69
+    Top = 131
   end
   object ZQuery1: TZQuery
     Params = <>
-    left = 416
-    top = 153
+    Left = 416
+    Top = 153
   end
 end

@@ -571,7 +571,7 @@ begin
 SetLength(paPortArray,0);
 AppendToPorts(3306);
 AppendToPorts(8888);
-
+AppendToPorts(8887);
   pbSendaChar := true;                        //是否发送一个字符
   piProcSel := 0;   //按照IP分配任务（适合于IP多，端口少的情况）
   pbRuning := True;
@@ -702,6 +702,7 @@ begin
   sleep(100);
   Lst:= ListViewIp.Items.Add;
       Lst.Caption := '127.0.0.1';
+      Lst.SubItems.Add('');
       Lst.SubItems.Add('');
       Lst.SubItems.Add('');
 
@@ -889,6 +890,8 @@ begin
             ListViewIp.Items[x].SubItems.Strings[0]:='OK';
             END;
              8888:
+             ListViewIp.Items[x].SubItems.Strings[1]:='OK';
+             8887:
              ListViewIp.Items[x].SubItems.Strings[1]:='OK';
             end;
           end;

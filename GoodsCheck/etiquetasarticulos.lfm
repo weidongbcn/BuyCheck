@@ -1,11 +1,11 @@
 object FormEtiPEs: TFormEtiPEs
-  Left = 714
-  Height = 710
-  Top = 56
-  Width = 1024
+  Left = 504
+  Height = 749
+  Top = 401
+  Width = 1040
   Caption = '货品的标签打印'
-  ClientHeight = 710
-  ClientWidth = 1024
+  ClientHeight = 749
+  ClientWidth = 1040
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   OnShow = FormShow
@@ -16,24 +16,24 @@ object FormEtiPEs: TFormEtiPEs
     Left = 0
     Height = 41
     Top = 0
-    Width = 1024
+    Width = 1040
     Align = alTop
     TabOrder = 0
   end
   object Panel2: TPanel
     Left = 0
-    Height = 477
+    Height = 516
     Top = 41
-    Width = 1024
+    Width = 1040
     Align = alClient
-    ClientHeight = 477
-    ClientWidth = 1024
+    ClientHeight = 516
+    ClientWidth = 1040
     TabOrder = 1
     object DBGrid1: TDBGrid
       Left = 1
-      Height = 475
+      Height = 514
       Top = 1
-      Width = 852
+      Width = 868
       Align = alClient
       Color = clBtnFace
       Columns = <      
@@ -84,6 +84,7 @@ object FormEtiPEs: TFormEtiPEs
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       OnDrawColumnCell = DBGrid1DrawColumnCell
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
     object DBNavigator1: TDBNavigator
       Left = 831
@@ -104,12 +105,12 @@ object FormEtiPEs: TFormEtiPEs
       Visible = False
     end
     object Panel4: TPanel
-      Left = 853
-      Height = 475
+      Left = 869
+      Height = 514
       Top = 1
       Width = 170
       Align = alRight
-      ClientHeight = 475
+      ClientHeight = 514
       ClientWidth = 170
       TabOrder = 2
       object Button4: TButton
@@ -171,11 +172,11 @@ object FormEtiPEs: TFormEtiPEs
   object Panel3: TPanel
     Left = 0
     Height = 192
-    Top = 518
-    Width = 1024
+    Top = 557
+    Width = 1040
     Align = alBottom
     ClientHeight = 192
-    ClientWidth = 1024
+    ClientWidth = 1040
     TabOrder = 2
     object Label1: TLabel
       Left = 280

@@ -40,15 +40,15 @@ begin
   with TfrmDlgCapt.Create(Application) do
     begin
       Caption:=Cp;
-      if FTitle='ĞŞ¸Ä' then
+      if FTitle='ä¿®æ”¹' then
       begin
        // Caption:=Cp;
         edtCaption.Text:=E1;
         Description.Text:=E2;
       end;
-      if FTitle='´´½¨×Ó·ÖÀà' then
+      if FTitle='åˆ›å»ºå­åˆ†ç±»' then
         begin
-          Caption:=Cp+' | Ö÷·ÖÀàÎª:'+E1;
+          Caption:=Cp+' | ä¸»åˆ†ç±»ä¸º:'+E1;
         end;
       ShowModal;
     end;
@@ -59,6 +59,7 @@ end;
 procedure TfrmDlgCapt.bitbtnCancelClick(Sender: TObject);
 begin
   Hecho:=False;
+  self.close;
 end;
 
 procedure TfrmDlgCapt.bitbtnOKClick(Sender: TObject);
@@ -70,6 +71,7 @@ begin
   str2:=Description.Text;
   Hecho:=True;
   end;
+  self.Close;
 end;
 
 procedure TfrmDlgCapt.FormCreate(Sender: TObject);
@@ -84,7 +86,7 @@ begin
    if (title='Edit') or (title='Hijo') then
    begin
    if (title='Edit') then
-     FTitle:='ĞŞ¸Ä' else FTitle:='´´½¨×Ó·ÖÀà';
+     FTitle:='ä¿®æ”¹' else FTitle:='åˆ›å»ºå­åˆ†ç±»';
      str1:=Name;
      Str2:=Descri;
      ShowfrmDlgCaption(Ftitle, str1, str2);

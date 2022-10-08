@@ -9,7 +9,6 @@ object FormInventory: TFormInventory
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 128
@@ -135,10 +134,7 @@ object FormInventory: TFormInventory
         Width = 80
         Alignment = taRightJustify
         DisplayFormat = '0'
-        MaxValue = 0
-        MinValue = 0
         TabOrder = 2
-        Value = 0
         ZeroEmpty = False
         OnKeyDown = CantidadKeyDown
       end
@@ -166,11 +162,8 @@ object FormInventory: TFormInventory
         Width = 80
         Alignment = taRightJustify
         DisplayFormat = '0.000'
-        MaxValue = 0
-        MinValue = 0
         TabOrder = 3
         TabStop = False
-        Value = 0
         ZeroEmpty = False
         OnKeyDown = PrecioKeyDown
       end
@@ -278,6 +271,7 @@ object FormInventory: TFormInventory
     DataSource = DataSource1
     TabOrder = 1
     OnDblClick = DBGrid1DblClick
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object Panel3: TPanel
     Left = 0
@@ -373,56 +367,56 @@ object FormInventory: TFormInventory
   end
   object StockCheckDetalles: TZQuery
     Params = <>
-    left = 198
-    top = 114
+    Left = 198
+    Top = 114
   end
   object StockCheckTop: TZQuery
     Params = <>
-    left = 310
-    top = 114
+    Left = 310
+    Top = 114
   end
   object StockNameDS: TDataSource
     DataSet = StockNameQuery
-    left = 848
-    top = 296
+    Left = 848
+    Top = 296
   end
   object StockNameQuery: TZQuery
     SQL.Strings = (
       'select * from 0000estanteria'
     )
     Params = <>
-    left = 848
-    top = 216
+    Left = 848
+    Top = 216
   end
   object DataSource1: TDataSource
     DataSet = StockCheckDetalles
-    left = 201
-    top = 267
+    Left = 201
+    Top = 267
   end
   object FinalQuery: TZQuery
     Params = <>
-    left = 462
-    top = 188
+    Left = 462
+    Top = 188
   end
   object Articulo: TZQuery
     Params = <>
-    left = 197
-    top = 204
+    Left = 197
+    Top = 204
   end
   object ArticuloUpdate: TZUpdateSQL
     UseSequenceFieldForRefreshSQL = False
-    left = 280
-    top = 200
+    Left = 280
+    Top = 200
   end
   object ZUpdateSQL1: TZUpdateSQL
     UseSequenceFieldForRefreshSQL = True
-    left = 324
-    top = 374
+    Left = 324
+    Top = 374
   end
   object dbTest: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 524
-    top = 164
+    Left = 524
+    Top = 164
   end
 end

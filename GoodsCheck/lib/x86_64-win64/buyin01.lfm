@@ -11,7 +11,6 @@ object FormBuyIn: TFormBuyIn
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 97
@@ -94,10 +93,7 @@ object FormBuyIn: TFormBuyIn
       Width = 80
       Alignment = taRightJustify
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 2
-      Value = 0
       ZeroEmpty = False
       OnExit = AmountExit
       OnKeyDown = AmountKeyDown
@@ -109,10 +105,7 @@ object FormBuyIn: TFormBuyIn
       Width = 80
       Alignment = taRightJustify
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 3
-      Value = 0
       ZeroEmpty = False
       OnExit = PrecioExit
       OnKeyDown = PrecioKeyDown
@@ -124,10 +117,7 @@ object FormBuyIn: TFormBuyIn
       Width = 80
       Alignment = taRightJustify
       DisplayFormat = '0.00'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 4
-      Value = 0
       ZeroEmpty = False
       OnExit = DescuentoExit
       OnKeyDown = DescuentoKeyDown
@@ -140,10 +130,7 @@ object FormBuyIn: TFormBuyIn
       Alignment = taRightJustify
       DecimalPlaces = 3
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 5
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = ImporteKeyDown
     end
@@ -171,10 +158,7 @@ object FormBuyIn: TFormBuyIn
       Width = 80
       Alignment = taRightJustify
       DisplayFormat = '0.00'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 6
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = PVP1CKeyDown
     end
@@ -327,6 +311,7 @@ object FormBuyIn: TFormBuyIn
       DataSource = BuyDetallesDS
       TabOrder = 0
       OnDblClick = DBGrid1DblClick
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object Panel3: TPanel
@@ -382,12 +367,9 @@ object FormBuyIn: TFormBuyIn
       Alignment = taRightJustify
       DecimalPlaces = 3
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       ReadOnly = True
       TabOrder = 2
       TabStop = False
-      Value = 0
       ZeroEmpty = False
     end
     object NewButton: TButton
@@ -422,63 +404,63 @@ object FormBuyIn: TFormBuyIn
     UpdateObject = ZUpdateSQL1
     AfterPost = BuyDetallesAfterPost
     Params = <>
-    left = 170
-    top = 86
+    Left = 170
+    Top = 86
   end
   object Articulo: TZQuery
     Params = <>
-    left = 169
-    top = 176
+    Left = 169
+    Top = 176
   end
   object BuyTop: TZQuery
     Params = <>
-    left = 282
-    top = 86
+    Left = 282
+    Top = 86
   end
   object BuyHelp: TZQuery
     Params = <>
-    left = 295
-    top = 201
+    Left = 295
+    Top = 201
   end
   object BuyDetallesDS: TDataSource
     DataSet = BuyDetalles
-    left = 458
-    top = 194
+    Left = 458
+    Top = 194
   end
   object DataSource2: TDataSource
-    left = 459
-    top = 275
+    Left = 459
+    Top = 275
   end
   object ZUpdateSQL1: TZUpdateSQL
     UseSequenceFieldForRefreshSQL = True
-    left = 296
-    top = 346
+    Left = 296
+    Top = 346
   end
   object ArticuloUpdate: TZUpdateSQL
     UseSequenceFieldForRefreshSQL = False
-    left = 304
-    top = 411
+    Left = 304
+    Top = 411
   end
   object TotalQuery: TZQuery
     Params = <>
-    left = 323
-    top = 229
+    Left = 323
+    Top = 229
   end
   object dbTest: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 496
-    top = 136
+    Left = 496
+    Top = 136
   end
   object dbTrabajo: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 724
-    top = 420
+    Left = 724
+    Top = 420
   end
   object CombinaQuery: TZQuery
     Params = <>
-    left = 473
-    top = 347
+    Left = 473
+    Top = 347
   end
 end

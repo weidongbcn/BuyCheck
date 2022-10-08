@@ -3,11 +3,11 @@ object Formspec: TFormspec
   Height = 716
   Top = 197
   Width = 1036
-  Caption = 'Formspec'
+  Caption = '属性值生成'
   ClientHeight = 716
   ClientWidth = 1036
   OnCreate = FormCreate
-  LCLVersion = '2.0.0.3'
+  Position = poOwnerFormCenter
   object Panel1: TPanel
     Left = 0
     Height = 41
@@ -96,7 +96,7 @@ object Formspec: TFormspec
         end      
         item
           Title.Caption = '属性'
-          Width = 120
+          Width = 180
           FieldName = 'NAME'
         end      
         item
@@ -105,7 +105,8 @@ object Formspec: TFormspec
           FieldName = 'definition'
         end      
         item
-          Title.Caption = 'SPEC_VALUE'
+          Title.Caption = '属性值'
+          Width = 400
           FieldName = 'SPEC_VALUE'
         end>
       DataSource = DataSource1
@@ -115,6 +116,7 @@ object Formspec: TFormspec
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       OnDblClick = DBGrid1DblClick
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object Panel4: TPanel
@@ -303,27 +305,27 @@ object Formspec: TFormspec
   object SpecQuery: TZQuery
     AfterScroll = SpecQueryAfterScroll
     Params = <>
-    left = 160
-    top = 176
+    Left = 160
+    Top = 176
   end
   object SpecValuesQuery: TZQuery
     Params = <>
-    left = 432
-    top = 88
+    Left = 432
+    Top = 88
   end
   object TrabajoQuery: TZQuery
     Params = <>
-    left = 636
-    top = 276
+    Left = 636
+    Top = 276
   end
   object DataSource2: TDataSource
     DataSet = SpecValuesQuery
-    left = 651
-    top = 360
+    Left = 651
+    Top = 360
   end
   object DataSource1: TDataSource
     DataSet = SpecQuery
-    left = 548
-    top = 28
+    Left = 548
+    Top = 28
   end
 end

@@ -1,7 +1,7 @@
 object FormBuyIn: TFormBuyIn
-  Left = 622
+  Left = 499
   Height = 680
-  Top = 190
+  Top = 26
   Width = 1024
   Caption = '货品入库'
   ClientHeight = 680
@@ -11,7 +11,7 @@ object FormBuyIn: TFormBuyIn
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 97
@@ -23,15 +23,15 @@ object FormBuyIn: TFormBuyIn
     TabOrder = 0
     object Label1: TLabel
       Left = 16
-      Height = 17
+      Height = 15
       Top = 8
-      Width = 36
+      Width = 39
       Caption = '条形码'
       ParentColor = False
     end
     object Edit1: TEdit
       Left = 16
-      Height = 25
+      Height = 23
       Top = 23
       Width = 152
       OnEnter = Edit1Enter
@@ -41,7 +41,7 @@ object FormBuyIn: TFormBuyIn
     end
     object Edit2: TEdit
       Left = 176
-      Height = 25
+      Height = 23
       Top = 23
       Width = 200
       OnKeyDown = Edit2KeyDown
@@ -49,101 +49,90 @@ object FormBuyIn: TFormBuyIn
     end
     object Label2: TLabel
       Left = 176
-      Height = 17
+      Height = 15
       Top = 8
-      Width = 24
+      Width = 26
       Caption = '内容'
       ParentColor = False
     end
     object Label3: TLabel
       Left = 384
-      Height = 17
+      Height = 15
       Top = 8
-      Width = 24
+      Width = 26
       Caption = '数量'
       ParentColor = False
     end
     object Label4: TLabel
       Left = 472
-      Height = 17
+      Height = 15
       Top = 9
-      Width = 24
+      Width = 26
       Caption = '成本'
       ParentColor = False
     end
     object Label5: TLabel
       Left = 560
-      Height = 17
+      Height = 15
       Top = 8
-      Width = 43
+      Width = 44
       Caption = '折扣(%)'
       ParentColor = False
     end
     object Label6: TLabel
       Left = 648
-      Height = 17
+      Height = 15
       Top = 8
-      Width = 24
+      Width = 26
       Caption = '合计'
       ParentColor = False
     end
-    object Cantidad: TCurrencyEdit
+    object Amount: TCurrencyEdit
       Left = 384
-      Height = 25
+      Height = 23
       Top = 23
       Width = 80
       Alignment = taRightJustify
-      DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
+      DecimalPlaces = 3
+      DisplayFormat = '0.00'
       TabOrder = 2
-      Value = 0
       ZeroEmpty = False
-      OnExit = CantidadExit
-      OnKeyDown = CantidadKeyDown
+      OnExit = AmountExit
+      OnKeyDown = AmountKeyDown
     end
     object Precio: TCurrencyEdit
       Left = 472
-      Height = 25
+      Height = 23
       Top = 23
       Width = 80
       Alignment = taRightJustify
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 3
-      Value = 0
       ZeroEmpty = False
       OnExit = PrecioExit
       OnKeyDown = PrecioKeyDown
     end
     object Descuento: TCurrencyEdit
       Left = 560
-      Height = 25
+      Height = 23
       Top = 23
       Width = 80
       Alignment = taRightJustify
       DisplayFormat = '0.00'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 4
-      Value = 0
       ZeroEmpty = False
       OnExit = DescuentoExit
       OnKeyDown = DescuentoKeyDown
     end
     object Importe: TCurrencyEdit
       Left = 648
-      Height = 25
+      Height = 23
       Top = 23
       Width = 80
       Alignment = taRightJustify
       DecimalPlaces = 3
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 5
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = ImporteKeyDown
     end
@@ -158,31 +147,28 @@ object FormBuyIn: TFormBuyIn
     end
     object Label11: TLabel
       Left = 736
-      Height = 17
+      Height = 15
       Top = 8
-      Width = 36
+      Width = 39
       Caption = '销售价'
       ParentColor = False
     end
     object PVP1C: TCurrencyEdit
       Left = 736
-      Height = 25
+      Height = 23
       Top = 23
       Width = 80
       Alignment = taRightJustify
       DisplayFormat = '0.00'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 6
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = PVP1CKeyDown
     end
     object Label12: TLabel
       Left = 16
-      Height = 17
-      Top = 64
-      Width = 113
+      Height = 15
+      Top = 66
+      Width = 101
       Anchors = [akLeft, akBottom]
       Caption = '(F5) Para busqueda'
       ParentColor = False
@@ -238,9 +224,9 @@ object FormBuyIn: TFormBuyIn
     end
     object Label13: TLabel
       Left = 304
-      Height = 17
+      Height = 15
       Top = 64
-      Width = 102
+      Width = 92
       Caption = '(F9) Para Finalizar'
       ParentColor = False
     end
@@ -284,8 +270,14 @@ object FormBuyIn: TFormBuyIn
           FieldName = 'GOODS_NAME'
         end      
         item
+          Title.Caption = '属性'
+          Width = 200
+          FieldName = 'SKU_NAME'
+        end      
+        item
           ReadOnly = True
           Title.Caption = '数量'
+          Width = 60
           FieldName = 'QUANTITY'
         end      
         item
@@ -296,27 +288,32 @@ object FormBuyIn: TFormBuyIn
         item
           ReadOnly = True
           Title.Caption = '成本'
+          Width = 60
           FieldName = 'COST'
           DisplayFormat = '0.000'
         end      
         item
           ReadOnly = True
           Title.Caption = '折扣(%)'
+          Width = 50
           FieldName = 'DISCOUNT'
         end      
         item
           Title.Caption = '税率%'
+          Width = 60
           FieldName = 'IVA'
         end      
         item
           ReadOnly = True
           Title.Caption = '小计'
+          Width = 80
           FieldName = 'LINEATOTAL'
           DisplayFormat = '0.000'
         end      
         item
           Color = clMoneyGreen
           Title.Caption = '销售价'
+          Width = 80
           FieldName = 'SELLING_P1C'
           DisplayFormat = '0.000'
         end      
@@ -327,6 +324,7 @@ object FormBuyIn: TFormBuyIn
       DataSource = BuyDetallesDS
       TabOrder = 0
       OnDblClick = DBGrid1DblClick
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object Panel3: TPanel
@@ -340,7 +338,7 @@ object FormBuyIn: TFormBuyIn
     TabOrder = 2
     object Id: TEdit
       Left = 128
-      Height = 25
+      Height = 23
       Top = 8
       Width = 251
       ReadOnly = True
@@ -349,25 +347,25 @@ object FormBuyIn: TFormBuyIn
     end
     object Label8: TLabel
       Left = 81
-      Height = 17
+      Height = 15
       Top = 42
-      Width = 39
+      Width = 42
       Alignment = taRightJustify
       Caption = '供应商:'
       ParentColor = False
     end
     object Label9: TLabel
       Left = 477
-      Height = 17
+      Height = 15
       Top = 12
-      Width = 27
+      Width = 29
       Alignment = taRightJustify
       Caption = '金额:'
       ParentColor = False
     end
     object N_Proveedor: TEdit
       Left = 128
-      Height = 25
+      Height = 23
       Top = 40
       Width = 144
       ReadOnly = True
@@ -376,18 +374,15 @@ object FormBuyIn: TFormBuyIn
     end
     object Total: TCurrencyEdit
       Left = 512
-      Height = 25
+      Height = 23
       Top = 8
       Width = 120
       Alignment = taRightJustify
       DecimalPlaces = 3
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       ReadOnly = True
       TabOrder = 2
       TabStop = False
-      Value = 0
       ZeroEmpty = False
     end
     object NewButton: TButton
@@ -401,9 +396,9 @@ object FormBuyIn: TFormBuyIn
     end
     object Label10: TLabel
       Left = 72
-      Height = 17
+      Height = 15
       Top = 12
-      Width = 51
+      Width = 55
       Alignment = taRightJustify
       Caption = '记录编号:'
       ParentColor = False
@@ -418,67 +413,179 @@ object FormBuyIn: TFormBuyIn
       TabOrder = 4
     end
   end
+  object TimePanel: TPanel
+    Left = 255
+    Height = 186
+    Top = 240
+    Width = 394
+    ClientHeight = 186
+    ClientWidth = 394
+    TabOrder = 3
+    object DateTimePicker1: TDateTimePicker
+      Left = 143
+      Height = 23
+      Top = 34
+      Width = 83
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 0
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44791
+      Time = 0.289001331017062
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+      OnCloseUp = DateTimePicker1CloseUp
+    end
+    object DateTimePicker2: TDateTimePicker
+      Left = 143
+      Height = 23
+      Top = 96
+      Width = 83
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 1
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 44791
+      Time = 0.289076689812646
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+      OnCloseUp = DateTimePicker2CloseUp
+    end
+    object Label7: TLabel
+      Left = 58
+      Height = 15
+      Top = 40
+      Width = 52
+      Caption = '生产日期'
+      ParentColor = False
+    end
+    object Label14: TLabel
+      Left = 64
+      Height = 15
+      Top = 101
+      Width = 52
+      Caption = '过期日期'
+      ParentColor = False
+    end
+    object Label15: TLabel
+      Left = 67
+      Height = 15
+      Top = 68
+      Width = 39
+      Caption = '保质期'
+      ParentColor = False
+    end
+    object Conserva: TCurrencyEdit
+      Left = 143
+      Height = 23
+      Top = 64
+      Width = 81
+      Alignment = taRightJustify
+      DecimalPlaces = 0
+      DisplayFormat = '0'
+      ReadOnly = True
+      TabOrder = 2
+      TabStop = False
+      ZeroEmpty = False
+    end
+    object Button4: TButton
+      Left = 296
+      Height = 25
+      Top = 120
+      Width = 75
+      Caption = '确定'
+      OnClick = Button4Click
+      TabOrder = 3
+    end
+  end
   object BuyDetalles: TZQuery
-    UpdateObject = ZUpdateSQL1
     AfterPost = BuyDetallesAfterPost
+    UpdateObject = ZUpdateSQL1
     Params = <>
-    left = 170
-    top = 86
+    Left = 170
+    Top = 86
   end
   object Articulo: TZQuery
     Params = <>
-    left = 169
-    top = 176
+    Left = 169
+    Top = 176
   end
   object BuyTop: TZQuery
     Params = <>
-    left = 282
-    top = 86
+    Left = 282
+    Top = 86
   end
   object BuyHelp: TZQuery
     Params = <>
-    left = 295
-    top = 201
+    Left = 280
+    Top = 144
   end
   object BuyDetallesDS: TDataSource
     DataSet = BuyDetalles
-    left = 458
-    top = 194
+    Left = 752
+    Top = 160
   end
   object DataSource2: TDataSource
-    left = 459
-    top = 275
+    Left = 800
+    Top = 216
   end
   object ZUpdateSQL1: TZUpdateSQL
     UseSequenceFieldForRefreshSQL = True
-    left = 296
-    top = 346
+    Left = 112
+    Top = 352
   end
   object ArticuloUpdate: TZUpdateSQL
     UseSequenceFieldForRefreshSQL = False
-    left = 304
-    top = 411
+    Left = 64
+    Top = 440
   end
   object TotalQuery: TZQuery
     Params = <>
-    left = 323
-    top = 229
+    Left = 376
+    Top = 136
   end
   object dbTest: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 496
-    top = 136
+    Left = 496
+    Top = 136
   end
   object dbTrabajo: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 724
-    top = 420
+    Left = 724
+    Top = 420
   end
   object CombinaQuery: TZQuery
     Params = <>
-    left = 473
-    top = 347
+    Left = 432
+    Top = 456
+  end
+  object dbFoods: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    Left = 752
+    Top = 448
+  end
+  object SpuQuery: TZQuery
+    Params = <>
+    Left = 197
+    Top = 204
   end
 end

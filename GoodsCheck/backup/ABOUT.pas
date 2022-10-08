@@ -163,6 +163,7 @@ procedure TAboutBox.Button2Click(Sender: TObject);
 var
 StrSend, StrSendHex:string;
 begin
+
   //StrSendHex:=toHEXSTRING('regdat@'+TCPServer.PCID+'|regfile#'+inttostr(filesize),2);
   StrSendHex:=toHEXSTRING('RigisterDb@'+TCPServer.PCID+'|Venta#',2);
   //  IdTCPClient1.IOHandler.Writeln(StrSendHex, IndyTextEncoding_UTF8);

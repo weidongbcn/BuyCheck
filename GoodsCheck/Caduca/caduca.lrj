@@ -1,0 +1,15 @@
+{"version":1,"strings":[
+{"hash":250218893,"name":"tlistcaducacionform.caption","sourcebytes":[76,105,115,116,67,97,100,117,99,97,99,105,111,110,70,111,114,109],"value":"ListCaducacionForm"},
+{"hash":151532369,"name":"tlistcaducacionform.combobox1.text","sourcebytes":[232,173,166,229,145,138,230,156,159,229,149,134,229,147,129],"value":"\u8B66\u544A\u671F\u5546\u54C1"},
+{"hash":252330315,"name":"tlistcaducacionform.button1.caption","sourcebytes":[230,159,165,231,156,139],"value":"\u67E5\u770B"},
+{"hash":254647851,"name":"tlistcaducacionform.dbgrid1.columns[0].title.caption","sourcebytes":[231,177,187,229,136,171],"value":"\u7C7B\u522B"},
+{"hash":252182913,"name":"tlistcaducacionform.dbgrid1.columns[1].title.caption","sourcebytes":[230,157,161,231,160,129],"value":"\u6761\u7801"},
+{"hash":249512089,"name":"tlistcaducacionform.dbgrid1.columns[2].title.caption","sourcebytes":[229,134,133,229,174,185],"value":"\u5185\u5BB9"},
+{"hash":251834464,"name":"tlistcaducacionform.dbgrid1.columns[3].title.caption","sourcebytes":[231,137,140,229,173,144],"value":"\u724C\u5B50"},
+{"hash":205496527,"name":"tlistcaducacionform.dbgrid1.columns[4].title.caption","sourcebytes":[228,191,157,232,180,168,230,156,159],"value":"\u4FDD\u8D28\u671F"},
+{"hash":52678719,"name":"tlistcaducacionform.dbgrid1.columns[5].title.caption","sourcebytes":[229,136,176,230,156,159,230,151,165,230,156,159],"value":"\u5230\u671F\u65E5\u671F"},
+{"hash":251720191,"name":"tlistcaducacionform.dbgrid1.columns[6].title.caption","sourcebytes":[230,149,176,233,135,143],"value":"\u6570\u91CF"},
+{"hash":250036317,"name":"tlistcaducacionform.dbgrid1.columns[7].title.caption","sourcebytes":[229,141,149,228,189,141],"value":"\u5355\u4F4D"},
+{"hash":253805055,"name":"tlistcaducacionform.dbgrid1.columns[8].title.caption","sourcebytes":[233,135,141,233,135,143],"value":"\u91CD\u91CF"},
+{"hash":253292074,"name":"tlistcaducacionform.button2.caption","sourcebytes":[233,128,128,229,135,186],"value":"\u9000\u51FA"}
+]}

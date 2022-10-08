@@ -11,7 +11,7 @@ object FormGoodsList: TFormGoodsList
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   Position = poDesktopCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 57
@@ -27,14 +27,14 @@ object FormGoodsList: TFormGoodsList
       Top = 4
       Width = 478
       Caption = ' 查找的内容  '
-      ClientHeight = 29
+      ClientHeight = 31
       ClientWidth = 474
       Color = clMoneyGreen
       ParentColor = False
       TabOrder = 0
       object EdTexto: TEdit
         Left = 6
-        Height = 25
+        Height = 23
         Hint = 'Introduce el dato a buscar en la tabla.'
         Top = 1
         Width = 460
@@ -104,7 +104,7 @@ object FormGoodsList: TFormGoodsList
       Top = 4
       Width = 263
       Caption = '   实现排列的栏目'
-      ClientHeight = 29
+      ClientHeight = 31
       ClientWidth = 259
       TabOrder = 2
       object CBCampos: TComboBox
@@ -361,20 +361,20 @@ object FormGoodsList: TFormGoodsList
       TitleFont.Name = 'Tahoma'
       OnDblClick = BtCerrarClick
       OnKeyDown = DBGrid1KeyDown
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object dbBusquedas: TZQuery
-    Connection = DataModule2.ZCon1
     AutoCalcFields = False
     AfterOpen = dbBusquedasAfterOpen
-    AfterScroll = dbBusquedasAfterScroll
+    Connection = DataModule2.ZCon1
     Params = <>
-    left = 156
-    top = 108
+    Left = 156
+    Top = 108
   end
   object Datasource1: TDataSource
     DataSet = dbBusquedas
-    left = 61
-    top = 62
+    Left = 61
+    Top = 62
   end
 end

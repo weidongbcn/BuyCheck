@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, ExtCtrls, DBCtrls,
-  DBGrids, StdCtrls, Global, connect, ZDataset, Grids;
+  DBGrids, StdCtrls, Global, connect, ZDataset, Grids, rxcurredit;
 
 type
 
@@ -19,17 +19,21 @@ type
     CategDataSource: TDataSource;
     CategQuery: TZQuery;
     ComboBox1: TComboBox;
+    DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DBLookupComboBox1: TDBLookupComboBox;
     DBLookupComboBox2: TDBLookupComboBox;
     Edit1: TEdit;
     FmDBLookupComboBox1: TDBLookupComboBox;
+    Importe: TCurrencyEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    Label5: TLabel;
     Label7: TLabel;
     Panel2: TPanel;
+    CapitanQuery: TZQuery;
     StockNameDS: TDataSource;
     StockNameQuery: TZQuery;
     Panel1: TPanel;
@@ -39,12 +43,16 @@ type
     procedure ComboBox1Select(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure DBLookupComboBox1Select(Sender: TObject);
     procedure FmDBLookupComboBox1Select(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure GetStockList;
     procedure GetStockAllGoods;
     procedure DoGetCATEGORIAS;
+    procedure StockAllGoodsQueryAfterOpen(DataSet: TDataSet);
   private
 
   public
@@ -97,6 +105,19 @@ begin
      Open;
   end;
 
+ with CapitanQuery do
+  begin
+    Connection:=DataModule2.ZCon1;
+     Active:=false;
+     SQL.Clear;
+     sql.Text:='SELECT SUM(CASE WHEN T1.AMOUNT >0  THEN T1.AMOUNT * T5.COST ELSE 0 END) AS CAPITAN FROM STOCKGOODS AS T1 '
+	 +'LEFT JOIN GOODS_SKU AS T5 ON T1.SKU_NO = T5.SKU_NO '
+     +'WHERE 1=1 '  //and T1.GOODS_STATUS = 1 '
+     +'AND ID_STOCK like ''%'+DBLookupComboBox1.Text+'%'' ';
+     open;
+  end;
+
+  Importe.Value:=CapitanQuery.FieldByName('CAPITAN').AsCurrency;
   Label4.Caption:='共有: '+inttostr(StockAllGoodsQuery.RecordCount)+' 条记录';
 
 
@@ -127,10 +148,22 @@ i:integer;
   end;
   end;
 
+procedure TFormStock.StockAllGoodsQueryAfterOpen(DataSet: TDataSet);
+begin
+  //TFloatfield(StockAllGoodsQuery.FieldByName('AMOUNT')).Displayformat := '####0';
+// if Field.Name = 'PVP' then
+  //   TFloatField(StockAllGoodsQuery.FieldByName('AMOUNT')).DisplayFormat := '0.00';
+end;
+
 procedure TFormStock.FormCreate(Sender: TObject);
 begin
   DoGetCATEGORIAS;
   GetStockList;
+
+end;
+
+procedure TFormStock.FormShow(Sender: TObject);
+begin
   GetStockAllGoods;
 end;
 
@@ -207,8 +240,10 @@ procedure TFormStock.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
 var
     sText : String;
+    aValue: double;
 begin
-  if (UpperCase(Column.Field.FieldName) = 'GOODS_STATUS') then
+ if (UpperCase(Column.Field.FieldName) = 'GOODS_STATUS') then
+ //if ((Column.Field.FieldName) = 'GOODS_STATUS') then
   begin
   if Column.Field.Value = 0 then
         sText := '好'
@@ -219,6 +254,32 @@ begin
           sText := '';
   (Sender as TDBGrid).Canvas.FillRect(Rect);
   (Sender as TDBGrid).Canvas.TextRect(Rect, Rect.Left+3, Rect.Top+2, sText);
+  end;
+
+
+
+
+end;
+
+procedure TFormStock.DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+  Column: TColumn; AState: TGridDrawState);
+begin
+  with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
+
   end;
 end;
 

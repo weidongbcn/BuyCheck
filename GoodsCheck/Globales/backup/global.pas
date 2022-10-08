@@ -5,7 +5,7 @@ unit Global;
 interface
 
 uses
-  Classes, SysUtils, Inifiles, DBGrids, printers, Controls,StdCtrls, ExtCtrls;
+  Classes, SysUtils, Inifiles, DBGrids, printers, Controls,StdCtrls, ExtCtrls, db, BufDataset;
 
 
 const
@@ -23,6 +23,7 @@ type
    TGOODS = record
    SKU_NO, GOODS_ID, ENA, ITEM_NAME, COMMODITY_UNIT:STRING;
    QUANTITY, COST, PRICE, DISCOUNT, TAXRATE :DOUBLE;
+   FECHA_CADUCA: TDate;
   end;
 
   TTCPServer = packed record
@@ -176,6 +177,43 @@ end;
        // procedure LoadFromStream(const aStream: TMemoryStream);
        END;
 
+  TPCCONFIG = packed record
+    ID_PC :string[40];
+   { TICKETERA :string[60];
+    PORT_T :string[16];
+    PapelModel :string[20];
+    CMDCAJON :string[60];
+    CMDPAPEL :string[60];
+    IMPRESORA :string[60];
+    PORT_I :string[16];
+    PORT_V :string[16];
+    ImpresoraBarra :string[60];
+    PORT_B :string[16];     }
+    LABELSIZEX,
+    LABELSIZEY:Double;
+    LABELMODE :Integer;
+    LABELPRINTNAME :string[60];
+    LABELPAPERDM :Integer;
+    LABELPRINTPAPER:string[60];
+    LABELPAPERSIZEX,
+    LABELPAPERSIZEY :Double;
+    ISMANUEL:Boolean;
+    LABELPAPERCOLUMN :Integer;
+    TICKETERANAME :string[60];
+    TICKETPAPERDM :Integer;
+    TICKETPRINTPAPER :string[60];
+    TICKETPAPERSIZEX,
+    TICKETPAPERSIZEY :Double;
+    CMDOPENCAJA:string[60];
+    CMDCUTPAPER:string[60];
+    A4PRINTNAME:string[60];
+    A4PAPERDM :Integer;
+    A4PRINTPAPER:string[60];
+    A4PAPERSIZEX,
+    A4PAPERSIZEY:Double;
+    VISOR_PORT:string[16];
+  end;
+
 procedure BlancoGrid(Grid: TDBGrid);
 procedure ImprimirCodigoEsc(S:String);
 procedure AbirCajon();
@@ -185,11 +223,14 @@ function CreateUUID():string;
 function Get36UUID():string;
 function ToHexString(s: string; encode: Integer): string;
 function HexToString(H: String): String;
+procedure ClearAllRecords(ADataset: TDataset);
 procedure writelog(logtype, section, message: string);
+function GetNumbers(const aString: string): string;
 
 
 var
   Lang, FallbackLang: String;
+  PCCONFIG:TPCCONFIG;
   DBHost,DBDataBase,DBUsuario,DBPasswd,DBPuerto,DBProtocolo: String;
   DBPort:integer;
   DirConf, POSfileconf, Lutu,ReportPath, LibPath, teststr, LogDir, sLogFile :string;
@@ -208,6 +249,7 @@ var
   USER_DERECHO:INTEGER;
 
   TCPServer:TTCPServer;
+  passwordhash: string ='21232f297a57a5a743894a0e4a801fc3';
 
   IniReader : TIniFile;
 
@@ -235,6 +277,12 @@ var
   nMSG9 = 'Tienes que elegir un record en table primero!';
   nMSG10 = 'Tienes que acabar el trabajo que esta haciendo!';
   nMSG11 = 'Trabajo Echo. Ha modificado el database.';
+  nMSG12 = '没有密码, 操作取消';
+  nMSG13 = '密码:';
+  nMSG14 = '密码错误';
+  nMSG15 = '此操作需要密码才能进行';
+  nMSG16 = '密码错误, 操作取消.';
+
 
   StaInitText             = '服务器未开启';
   StaText                 = '客户端连接数:%d个';
@@ -273,7 +321,7 @@ var
   nMSN19= '您的权限不够,无法打开!';
 
   nLBN49='No Esta Connectado.(还未连接到任何数据库)';
-  nLBN50='Ya Esta Connectado a:(已经连接到:)';
+  nLBN50='Ya Esta Connectado a Database:(已经连接到数据库:)';
 
 
   nMSN49= '全部';//'Todos';
@@ -374,6 +422,17 @@ begin
   end;
 end;
 
+procedure ClearAllRecords(ADataset: TDataset);
+begin
+  ADataset.DisableControls;
+  try
+    ADataset.First;
+    while not ADataset.EoF do
+      ADataset.Delete;
+  finally
+    ADataset.EnableControls;
+  end;
+end;
 
 
 procedure writelog(logtype, section, message: string);
@@ -513,6 +572,19 @@ printer.EndDoc;
 finally
 end;
 
+end;
+
+function GetNumbers(const aString: string): string;
+var
+  C: Char;
+begin
+  Result := '';
+  for C in aString do begin
+      if CharInSet(C, ['0'..'9']) then
+      begin
+        Result := Result + C;
+      end;
+    end;
 end;
 
 { nfFixed, nfFixedTh, , nfPercentage, nfFraction,

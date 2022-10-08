@@ -8,7 +8,6 @@ object Form_His_BuyFromProveedor: TForm_His_BuyFromProveedor
   ClientWidth = 1024
   OnCreate = FormCreate
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
   object Panel1: TPanel
     Left = 0
     Height = 73
@@ -208,6 +207,7 @@ object Form_His_BuyFromProveedor: TForm_His_BuyFromProveedor
         Title.Caption = '应付金额'
         Width = 80
         FieldName = 'REALPAGO'
+        DisplayFormat = '0.000'
       end    
       item
         Title.Caption = '登记编号'
@@ -232,6 +232,7 @@ object Form_His_BuyFromProveedor: TForm_His_BuyFromProveedor
       end>
     DataSource = DataSource1
     TabOrder = 2
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object Panel3: TPanel
     Left = 854
@@ -263,22 +264,22 @@ object Form_His_BuyFromProveedor: TForm_His_BuyFromProveedor
   end
   object ProvQuery: TZQuery
     Params = <>
-    left = 129
-    top = 121
+    Left = 129
+    Top = 121
   end
   object BuyListQuery: TZQuery
     Params = <>
-    left = 205
-    top = 115
+    Left = 205
+    Top = 115
   end
   object DataSource1: TDataSource
     DataSet = BuyListQuery
-    left = 401
-    top = 144
+    Left = 401
+    Top = 144
   end
   object DataSource2: TDataSource
     DataSet = ProvQuery
-    left = 382
-    top = 283
+    Left = 382
+    Top = 283
   end
 end

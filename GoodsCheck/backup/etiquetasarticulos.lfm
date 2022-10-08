@@ -1,40 +1,40 @@
 object FormEtiPEs: TFormEtiPEs
-  Left = 714
-  Height = 710
-  Top = 56
-  Width = 1024
+  Left = -8
+  Height = 749
+  Top = -8
+  Width = 1040
   Caption = '货品的标签打印'
-  ClientHeight = 710
-  ClientWidth = 1024
+  ClientHeight = 749
+  ClientWidth = 1040
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   WindowState = wsMaximized
   object Panel1: TPanel
     Left = 0
     Height = 41
     Top = 0
-    Width = 1024
+    Width = 1746
     Align = alTop
     TabOrder = 0
   end
   object Panel2: TPanel
     Left = 0
-    Height = 477
+    Height = 541
     Top = 41
-    Width = 1024
+    Width = 1746
     Align = alClient
-    ClientHeight = 477
-    ClientWidth = 1024
+    ClientHeight = 541
+    ClientWidth = 1746
     TabOrder = 1
     object DBGrid1: TDBGrid
       Left = 1
-      Height = 475
+      Height = 539
       Top = 1
-      Width = 848
-      Align = alLeft
+      Width = 1574
+      Align = alClient
       Color = clBtnFace
       Columns = <      
         item
@@ -84,51 +84,7 @@ object FormEtiPEs: TFormEtiPEs
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       OnDrawColumnCell = DBGrid1DrawColumnCell
-    end
-    object Button4: TButton
-      Left = 872
-      Height = 25
-      Top = 168
-      Width = 75
-      Caption = '删除单条'
-      OnClick = Button4Click
-      TabOrder = 1
-    end
-    object Button5: TButton
-      Left = 872
-      Height = 25
-      Top = 208
-      Width = 75
-      Caption = '清空数据'
-      OnClick = Button5Click
-      TabOrder = 2
-    end
-    object Button6: TButton
-      Left = 872
-      Height = 25
-      Top = 248
-      Width = 75
-      Caption = '刷新数据'
-      OnClick = Button6Click
-      TabOrder = 3
-    end
-    object Button7: TButton
-      Left = 872
-      Height = 73
-      Top = 304
-      Width = 75
-      Caption = '打印'
-      OnClick = Button7Click
-      TabOrder = 4
-    end
-    object Button3: TButton
-      Left = 872
-      Height = 73
-      Top = 80
-      Width = 75
-      Caption = '保存修改'
-      OnClick = Button3Click
-      TabOrder = 5
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
     object DBNavigator1: TDBNavigator
       Left = 831
@@ -145,27 +101,82 @@ object FormEtiPEs: TFormEtiPEs
       ClientHeight = 25
       ClientWidth = 200
       Options = []
-      TabOrder = 6
+      TabOrder = 1
       Visible = False
     end
-    object Button8: TButton
-      Left = 872
-      Height = 25
-      Top = 49
-      Width = 75
-      Caption = '重新读取'
-      OnClick = Button8Click
-      TabOrder = 7
+    object Panel4: TPanel
+      Left = 1575
+      Height = 539
+      Top = 1
+      Width = 170
+      Align = alRight
+      ClientHeight = 539
+      ClientWidth = 170
+      TabOrder = 2
+      object Button4: TButton
+        Left = 16
+        Height = 25
+        Top = 183
+        Width = 75
+        Caption = '删除单条'
+        OnClick = Button4Click
+        TabOrder = 0
+      end
+      object Button5: TButton
+        Left = 16
+        Height = 25
+        Top = 223
+        Width = 75
+        Caption = '清空数据'
+        OnClick = Button5Click
+        TabOrder = 1
+      end
+      object Button6: TButton
+        Left = 16
+        Height = 25
+        Top = 263
+        Width = 75
+        Caption = '刷新数据'
+        OnClick = Button6Click
+        TabOrder = 2
+      end
+      object Button7: TButton
+        Left = 16
+        Height = 73
+        Top = 319
+        Width = 75
+        Caption = '打印'
+        OnClick = Button7Click
+        TabOrder = 3
+      end
+      object Button3: TButton
+        Left = 16
+        Height = 73
+        Top = 95
+        Width = 75
+        Caption = '保存修改'
+        OnClick = Button3Click
+        TabOrder = 4
+      end
+      object Button8: TButton
+        Left = 16
+        Height = 25
+        Top = 64
+        Width = 75
+        Caption = '重新读取'
+        OnClick = Button8Click
+        TabOrder = 5
+      end
     end
   end
   object Panel3: TPanel
     Left = 0
     Height = 192
-    Top = 518
-    Width = 1024
+    Top = 582
+    Width = 1746
     Align = alBottom
     ClientHeight = 192
-    ClientWidth = 1024
+    ClientWidth = 1746
     TabOrder = 2
     object Label1: TLabel
       Left = 280
@@ -304,10 +315,7 @@ object FormEtiPEs: TFormEtiPEs
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.0000;-0.0000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 7
-      Value = 0
       OnKeyDown = PvPKeyDown
     end
     object CurrencyEdit2: TCurrencyEdit
@@ -319,8 +327,6 @@ object FormEtiPEs: TFormEtiPEs
       DecimalPlaces = 0
       DisplayFormat = '0;-0'
       MaxLength = 3
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 8
       Value = 1
       OnKeyDown = CurrencyEdit2KeyDown
@@ -354,20 +360,20 @@ object FormEtiPEs: TFormEtiPEs
   end
   object DataSourceStudies: TDataSource
     DataSet = BufDatasetLabels
-    left = 516
-    top = 300
+    Left = 516
+    Top = 300
   end
   object frxBarCodeObject1: TfrxBarCodeObject
-    left = 236
-    top = 420
+    Left = 236
+    Top = 420
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
     DataSource = DataSourceStudies
     BCDToCurrency = False
-    left = 308
-    top = 420
+    Left = 308
+    Top = 420
   end
   object frxReport1: TfrxReport
     Version = '6.7.3'
@@ -385,15 +391,13 @@ object FormEtiPEs: TFormEtiPEs
       ''
       'end.'
     )
-    left = 172
-    top = 420
+    Left = 172
+    Top = 420
     Datasets = <>
     Variables = <>
     Style = <>
     object Data: TfrxDataPage
       Height = 1000
-      Left = 0
-      Top = 0
       Width = 1000
     end
     object Page1: TfrxReportPage
@@ -436,8 +440,8 @@ object FormEtiPEs: TFormEtiPEs
   end
   object BufDatasetLabels: TBufDataset
     FieldDefs = <>
-    left = 236
-    top = 276
+    Left = 236
+    Top = 276
     object BufDatasetLabelsSKU_NO: TStringField
       FieldKind = fkData
       FieldName = 'SKU_NO'
@@ -525,38 +529,36 @@ object FormEtiPEs: TFormEtiPEs
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
   end
   object dbArti: TZQuery
     Params = <>
-    left = 168
-    top = 144
+    Left = 168
+    Top = 144
   end
   object dbTrabajo: TZQuery
     Params = <>
-    left = 256
-    top = 152
+    Left = 256
+    Top = 152
   end
   object UniQuery1: TZQuery
     Params = <>
-    left = 360
-    top = 152
+    Left = 360
+    Top = 152
   end
   object BrandQuery3: TZQuery
     Params = <>
-    left = 408
-    top = 352
+    Left = 408
+    Top = 352
   end
   object GetProductInfoQuery: TZQuery
     Params = <>
-    left = 464
-    top = 160
+    Left = 464
+    Top = 160
   end
   object DataSource1: TDataSource
     DataSet = UniQuery1
-    left = 721
-    top = 267
+    Left = 721
+    Top = 267
   end
 end

@@ -1,7 +1,7 @@
 {"version":1,"strings":[
 {"hash":135667439,"name":"tformpayinfo.caption","sourcebytes":[230,148,175,228,187,152,228,191,161,230,129,175],"value":"\u652F\u4ED8\u4FE1\u606F"},
 {"hash":21839786,"name":"tformpayinfo.label9.caption","sourcebytes":[229,186,148,228,187,152,233,135,145,233,162,157,58],"value":"\u5E94\u4ED8\u91D1\u989D:"},
-{"hash":267584138,"name":"tformpayinfo.label1.caption","sourcebytes":[228,187,165,230,148,175,228,187,152,58],"value":"\u4EE5\u652F\u4ED8:"},
+{"hash":267581370,"name":"tformpayinfo.label1.caption","sourcebytes":[229,183,178,230,148,175,228,187,152,58],"value":"\u5DF2\u652F\u4ED8:"},
 {"hash":256454478,"name":"tformpayinfo.button1.caption","sourcebytes":[232,191,148,229,155,158],"value":"\u8FD4\u56DE"},
 {"hash":233991450,"name":"tformpayinfo.dbgrid1.columns[0].title.caption","sourcebytes":[231,187,143,230,137,139,228,186,186],"value":"\u7ECF\u624B\u4EBA"},
 {"hash":136306703,"name":"tformpayinfo.dbgrid1.columns[1].title.caption","sourcebytes":[230,148,175,228,187,152,230,151,165,230,156,159],"value":"\u652F\u4ED8\u65E5\u671F"},

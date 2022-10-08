@@ -1,0 +1,595 @@
+object Fsimple: TFsimple
+  Left = 417
+  Height = 322
+  Top = 245
+  Width = 1088
+  BorderStyle = bsSingle
+  Caption = ' 货品简单添加'
+  ClientHeight = 322
+  ClientWidth = 1088
+  OnCreate = FormCreate
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.10.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 272
+    Top = 0
+    Width = 1088
+    Align = alClient
+    ClientHeight = 272
+    ClientWidth = 1088
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 57
+      Height = 17
+      Top = 11
+      Width = 51
+      Alignment = taRightJustify
+      Caption = '商品条码:'
+      Color = clBtnFace
+      ParentColor = False
+      Transparent = False
+    end
+    object Label3: TLabel
+      Left = 67
+      Height = 17
+      Top = 68
+      Width = 42
+      Alignment = taRightJustify
+      Caption = '名称(1):'
+      Color = clBtnFace
+      ParentColor = False
+      Transparent = False
+    end
+    object Label2: TLabel
+      Left = 70
+      Height = 17
+      Top = 40
+      Width = 39
+      Alignment = taRightJustify
+      Caption = '辅助码:'
+      Color = clBtnFace
+      ParentColor = False
+      Transparent = False
+    end
+    object Label6: TLabel
+      Left = 58
+      Height = 17
+      Top = 130
+      Width = 51
+      Alignment = taRightJustify
+      Caption = '商品分类:'
+      Color = clBtnFace
+      ParentColor = False
+      Transparent = False
+    end
+    object Label17: TLabel
+      Left = -11
+      Height = 17
+      Top = 156
+      Width = 120
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '商品品牌:'
+      Color = clBtnFace
+      ParentBidiMode = False
+      ParentColor = False
+      Transparent = False
+    end
+    object Label16: TLabel
+      Left = 352
+      Height = 17
+      Top = 11
+      Width = 31
+      Alignment = taRightJustify
+      Caption = 'UUID'
+      ParentColor = False
+    end
+    object Label18: TLabel
+      Left = 528
+      Height = 17
+      Top = 47
+      Width = 24
+      Alignment = taRightJustify
+      Caption = '重量'
+      ParentColor = False
+    end
+    object Label19: TLabel
+      Left = 499
+      Height = 17
+      Top = 77
+      Width = 53
+      Alignment = taRightJustify
+      Caption = '包装/体积'
+      ParentColor = False
+    end
+    object ENAEdit: TEdit
+      Left = 115
+      Height = 25
+      Top = 8
+      Width = 121
+      OnExit = ENAEditExit
+      OnKeyDown = ENAEditKeyDown
+      TabOrder = 0
+    end
+    object NameEdit: TEdit
+      Left = 115
+      Height = 25
+      Top = 64
+      Width = 293
+      OnExit = NameEditExit
+      OnKeyDown = NameEditKeyDown
+      TabOrder = 2
+    end
+    object CodingEdit: TEdit
+      Left = 115
+      Height = 25
+      Top = 36
+      Width = 121
+      OnKeyDown = CodingEditKeyDown
+      TabOrder = 1
+    end
+    object CategoryDBBox: TDBLookupComboBox
+      Left = 115
+      Height = 24
+      Top = 120
+      Width = 184
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      KeyField = 'ID'
+      ListField = 'CATEGORY'
+      ListFieldIndex = 0
+      ListSource = CategoryDS
+      LookupCache = False
+      OnKeyDown = CategoryDBBoxKeyDown
+      ParentFont = False
+      ReadOnly = True
+      Style = csDropDownList
+      TabOrder = 4
+    end
+    object BitBtn20: TBitBtn
+      Left = 320
+      Height = 23
+      Top = 151
+      Width = 22
+      Caption = '...'
+      Layout = blGlyphTop
+      Margin = 0
+      OnClick = BitBtn20Click
+      Spacing = 0
+      TabOrder = 15
+      TabStop = False
+    end
+    object BitBtn21: TBitBtn
+      Left = 320
+      Height = 25
+      Top = 120
+      Width = 22
+      Caption = '...'
+      Layout = blGlyphTop
+      Margin = 0
+      OnClick = BitBtn21Click
+      Spacing = 0
+      TabOrder = 16
+      TabStop = False
+    end
+    object Panel3: TPanel
+      Left = 853
+      Height = 270
+      Top = 1
+      Width = 234
+      Align = alRight
+      ClientHeight = 270
+      ClientWidth = 234
+      TabOrder = 18
+      object DBImage1: TDBImage
+        Left = 1
+        Height = 268
+        Top = 1
+        Width = 232
+        Align = alClient
+        DataField = 'IMAGES_DATA'
+        ReadOnly = True
+        Stretch = True
+      end
+    end
+    object UUIDEdit: TEdit
+      Left = 390
+      Height = 25
+      Top = 8
+      Width = 359
+      Color = clMoneyGreen
+      ReadOnly = True
+      TabStop = False
+      TabOrder = 20
+    end
+    object BrandDBBox: TDBLookupComboBox
+      Left = 115
+      Height = 24
+      Top = 147
+      Width = 184
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      KeyField = 'BRAND_ID'
+      ListField = 'BRAND_NAME'
+      ListFieldIndex = 0
+      ListSource = BrandDS
+      LookupCache = False
+      OnKeyDown = BrandDBBoxKeyDown
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 5
+    end
+    object WeigthEdit: TEdit
+      Left = 561
+      Height = 25
+      Top = 40
+      Width = 121
+      OnKeyDown = WeigthEditKeyDown
+      TabOrder = 9
+    end
+    object VolumeEdit: TEdit
+      Left = 561
+      Height = 25
+      Top = 72
+      Width = 193
+      OnKeyDown = VolumeEditKeyDown
+      TabOrder = 10
+    end
+    object Label35: TLabel
+      Left = 67
+      Height = 17
+      Top = 96
+      Width = 42
+      Alignment = taRightJustify
+      Caption = '名称(2):'
+      Color = clBtnFace
+      ParentColor = False
+      Transparent = False
+    end
+    object NameEdit2: TEdit
+      Left = 115
+      Height = 25
+      Top = 92
+      Width = 293
+      OnKeyDown = NameEdit2KeyDown
+      TabOrder = 3
+    end
+    object Label36: TLabel
+      Left = -11
+      Height = 17
+      Top = 184
+      Width = 120
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '条码类型:'
+      Color = clBtnFace
+      ParentBidiMode = False
+      ParentColor = False
+      Transparent = False
+    end
+    object Label37: TLabel
+      Left = 54
+      Height = 17
+      Top = 213
+      Width = 51
+      Alignment = taRightJustify
+      Caption = '计件单位:'
+      ParentColor = False
+    end
+    object Unidades: TEdit
+      Left = 115
+      Height = 25
+      Top = 202
+      Width = 80
+      OnKeyDown = UnidadesKeyDown
+      TabOrder = 7
+    end
+    object BitBtn22: TBitBtn
+      Left = 214
+      Height = 23
+      Top = 204
+      Width = 22
+      Caption = '...'
+      Layout = blGlyphTop
+      Margin = 0
+      OnClick = BitBtn22Click
+      Spacing = 0
+      TabOrder = 19
+      TabStop = False
+    end
+    object Label7: TLabel
+      Left = 58
+      Height = 17
+      Top = 239
+      Width = 46
+      Alignment = taRightJustify
+      Caption = '(%)税率:'
+      ParentBidiMode = False
+      ParentColor = False
+    end
+    object IvaDBLookupComboBox1: TDBLookupComboBox
+      Left = 115
+      Height = 24
+      Top = 230
+      Width = 92
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      KeyField = 'ID'
+      ListField = 'IVA'
+      ListFieldIndex = 0
+      ListSource = TaxRateDS
+      LookupCache = False
+      OnKeyDown = IvaDBLookupComboBox1KeyDown
+      ParentFont = False
+      ReadOnly = True
+      Style = csDropDownList
+      TabOrder = 8
+    end
+    object TypeBox: TComboBox
+      Left = 115
+      Height = 25
+      Top = 174
+      Width = 100
+      Enabled = False
+      ItemHeight = 17
+      ItemIndex = 0
+      Items.Strings = (
+        '普通商品'
+        '整装商品'
+        '组合商品'
+      )
+      OnKeyDown = TypeBoxKeyDown
+      TabOrder = 6
+      Text = '普通商品'
+    end
+    object BitBtn12: TBitBtn
+      Left = 816
+      Height = 23
+      Top = 233
+      Width = 37
+      Anchors = [akTop, akRight]
+      Caption = '...'
+      Layout = blGlyphTop
+      Margin = 0
+      Spacing = 0
+      TabOrder = 17
+      TabStop = False
+    end
+    object LowLimit: TCurrencyEdit
+      Left = 770
+      Height = 25
+      Top = 105
+      Width = 65
+      Alignment = taRightJustify
+      DisplayFormat = '0.00;-0.00'
+      Enabled = False
+      TabOrder = 12
+      OnKeyDown = LowLimitKeyDown
+    end
+    object AvisoLimit: TComboBox
+      Left = 561
+      Height = 25
+      Top = 104
+      Width = 100
+      ItemHeight = 17
+      ItemIndex = 0
+      Items.Strings = (
+        'No'
+        'Yes'
+      )
+      OnKeyDown = AvisoLimitKeyDown
+      OnSelect = AvisoLimitSelect
+      Style = csDropDownList
+      TabOrder = 11
+      Text = 'No'
+    end
+    object Label57: TLabel
+      Left = 480
+      Height = 17
+      Top = 106
+      Width = 72
+      Alignment = taRightJustify
+      Caption = '启动库存警戒'
+      ParentColor = False
+    end
+    object Label58: TLabel
+      Left = 688
+      Height = 17
+      Top = 107
+      Width = 72
+      Alignment = taRightJustify
+      Caption = '最低警戒数量'
+      ParentColor = False
+    end
+    object CanDiscount: TComboBox
+      Left = 561
+      Height = 25
+      Top = 136
+      Width = 100
+      ItemHeight = 17
+      ItemIndex = 1
+      Items.Strings = (
+        'No'
+        'Yes'
+      )
+      OnKeyDown = CanDiscountKeyDown
+      Style = csDropDownList
+      TabOrder = 13
+      Text = 'Yes'
+    end
+    object Label59: TLabel
+      Left = 504
+      Height = 17
+      Top = 142
+      Width = 48
+      Alignment = taRightJustify
+      Caption = '可以打折'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 519
+      Height = 17
+      Top = 178
+      Width = 36
+      Alignment = taRightJustify
+      Caption = '成本价'
+      ParentColor = False
+    end
+    object DBCost: TCurrencyEdit
+      Left = 559
+      Height = 25
+      Top = 168
+      Width = 81
+      Alignment = taRightJustify
+      Color = clInfoBk
+      DecimalPlaces = 4
+      DisplayFormat = '0.000;-0.000'
+      TabOrder = 21
+      ZeroEmpty = False
+      OnKeyDown = DBCostKeyDown
+    end
+    object Label9: TLabel
+      Left = 504
+      Height = 17
+      Top = 205
+      Width = 51
+      Alignment = taRightJustify
+      Caption = '零售价(1)'
+      ParentColor = False
+    end
+    object DBPvP1c: TCurrencyEdit
+      Left = 559
+      Height = 25
+      Top = 197
+      Width = 81
+      Alignment = taRightJustify
+      Color = clInfoBk
+      DecimalPlaces = 4
+      DisplayFormat = '0.000;-0.000'
+      TabOrder = 22
+      ZeroEmpty = False
+      OnKeyDown = DBPvP1cKeyDown
+    end
+    object Label43: TLabel
+      Left = 665
+      Height = 17
+      Top = 140
+      Width = 100
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '销售折扣%:'
+      Color = clBtnFace
+      ParentColor = False
+      Transparent = False
+    end
+    object DBDISCOUNT: TCurrencyEdit
+      Left = 768
+      Height = 25
+      Top = 136
+      Width = 66
+      Alignment = taRightJustify
+      DisplayFormat = '0.00'
+      TabOrder = 14
+      ZeroEmpty = False
+      OnKeyDown = DBDISCOUNTKeyDown
+    end
+    object Label68: TLabel
+      Left = 516
+      Height = 17
+      Top = 232
+      Width = 36
+      Alignment = taRightJustify
+      Caption = '积分值'
+      ParentColor = False
+    end
+    object Edit4: TEdit
+      Left = 559
+      Height = 25
+      Top = 224
+      Width = 80
+      OnKeyDown = Edit4KeyDown
+      TabOrder = 23
+      Text = '-1'
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 50
+    Top = 272
+    Width = 1088
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 1088
+    TabOrder = 1
+    object Button1: TButton
+      Left = 792
+      Height = 25
+      Top = 12
+      Width = 75
+      Caption = ' 保存'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+  end
+  object TaxRateDS: TDataSource
+    DataSet = TaxRateZQuery
+    Left = 344
+    Top = 272
+  end
+  object TaxRateZQuery: TZQuery
+    Params = <>
+    Left = 316
+    Top = 244
+  end
+  object CategoryDS: TDataSource
+    DataSet = CategoryQuery
+    Left = 868
+    Top = 108
+  end
+  object CategoryQuery: TZQuery
+    Params = <>
+    Left = 852
+    Top = 68
+  end
+  object BrandDS: TDataSource
+    DataSet = BrandQuery
+    Left = 452
+    Top = 191
+  end
+  object BrandQuery: TZQuery
+    Params = <>
+    Left = 436
+    Top = 164
+  end
+  object DBGoodsQuery: TZQuery
+    Params = <>
+    Left = 396
+    Top = 84
+  end
+  object dbTrabajo: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    Left = 752
+    Top = 216
+  end
+  object SpecQuery: TZQuery
+    Params = <>
+    Left = 444
+    Top = 356
+  end
+  object ClasseQuery: TZQuery
+    Params = <>
+    Left = 592
+    Top = 272
+  end
+  object dbUuid: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    Left = 836
+    Top = 348
+  end
+end

@@ -6,7 +6,7 @@ object FormQUANTIFIER: TFormQUANTIFIER
   ClientHeight = 564
   ClientWidth = 694
   OnCreate = FormCreate
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 73
@@ -18,9 +18,9 @@ object FormQUANTIFIER: TFormQUANTIFIER
     TabOrder = 0
     object Label1: TLabel
       Left = 344
-      Height = 17
+      Height = 15
       Top = 14
-      Width = 78
+      Width = 75
       Caption = 'Listado (列表)'
       ParentColor = False
     end
@@ -38,6 +38,7 @@ object FormQUANTIFIER: TFormQUANTIFIER
       ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 273
+      DataSource = DataSource1
       Options = []
       TabOrder = 0
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbDelete, nbEdit, nbRefresh]
@@ -91,13 +92,14 @@ object FormQUANTIFIER: TFormQUANTIFIER
         item
           ReadOnly = True
           Title.Caption = '编号'
-          FieldName = 'ID'
+          FieldName = 'CODE'
         end      
         item
           Title.Caption = '单位'
           Width = 128
           FieldName = 'UniDad'
         end>
+      DataSource = DataSource1
       TabOrder = 0
       TitleFont.Color = clWindowText
       TitleFont.Height = -11
@@ -114,18 +116,18 @@ object FormQUANTIFIER: TFormQUANTIFIER
       TabOrder = 1
       object Label2: TLabel
         Left = 24
-        Height = 17
+        Height = 15
         Top = 120
-        Width = 72
+        Width = 78
         Caption = '单位名称缩写'
         ParentColor = False
       end
       object Edit1: TEdit
         Left = 32
-        Height = 25
+        Height = 23
         Top = 139
         Width = 121
-        TabOrder = 0
+        TabOrder = 1
       end
       object Button2: TButton
         Left = 80
@@ -134,22 +136,38 @@ object FormQUANTIFIER: TFormQUANTIFIER
         Width = 75
         Caption = '添加'
         OnClick = Button2Click
-        TabOrder = 1
+        TabOrder = 2
+      end
+      object Edit2: TEdit
+        Left = 32
+        Height = 23
+        Top = 96
+        Width = 80
+        TabOrder = 0
+      end
+      object Label3: TLabel
+        Left = 20
+        Height = 15
+        Top = 75
+        Width = 26
+        Caption = '编号'
+        ParentColor = False
       end
     end
   end
   object DataSource1: TDataSource
-    left = 224
-    top = 457
+    DataSet = UnidadQuery
+    Left = 224
+    Top = 457
   end
   object UnidadQuery: TZQuery
     Params = <>
-    left = 128
-    top = 175
+    Left = 128
+    Top = 175
   end
   object dbExcute: TZQuery
     Params = <>
-    left = 552
-    top = 296
+    Left = 552
+    Top = 296
   end
 end

@@ -117,10 +117,13 @@ type
     VirtualDBTreeEx1: TVirtualDBTreeEx;
 
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure DateAddKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure DBGrid3CellClick(Column: TColumn);
     procedure DBGrid3DblClick(Sender: TObject);
     procedure DBLookupComboBox1KeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
@@ -162,13 +165,14 @@ type
 
   public
     function IniciaMExcute(dbTable: string) : integer;
+    Resultado: variant;
 
    end;
    procedure ShowFormProveedor;
 
 var
       FormProveedor: TFormProveedor;
-      Resultado: variant;
+
       NewItem:boolean;
       yearstring:string;
       myDate : TDateTime;
@@ -176,7 +180,7 @@ var
 implementation
 
 uses
-   connect,  Global;
+   connect,  Global, CreateProveedor;
 
     {$R *.lfm}
 
@@ -380,6 +384,11 @@ begin
   close;
 end;
 
+procedure TFormProveedor.Button2Click(Sender: TObject);
+begin
+
+end;
+
 procedure TFormProveedor.Button3Click(Sender: TObject);
 begin
   if not PageControl1.Pages[0].Showing then Exit;
@@ -464,13 +473,21 @@ with GuardarQuery do
   Resultado:=1;
 end;
 
+procedure TFormProveedor.Button4Click(Sender: TObject);
+begin
+
+end;
+
 procedure TFormProveedor.Button6Click(Sender: TObject);
 begin
-EditCodigo.Text:='';
+//EditCodigo.Text:='';
   clear;
 NewItem:=True;
 //EditCodigo.ReadOnly:=False;
-EditCodigo.SetFocus;
+//EditCodigo.SetFocus;
+NewProvForm:= TNewProvForm.Create(self);
+NewProvForm.ShowModal;
+NewProvForm.Free;
 end;
 
 procedure TFormProveedor.DateAddKeyDown(Sender: TObject; var Key: Word;
@@ -479,7 +496,7 @@ begin
    if Key=VK_Return then SelectNext(ActiveControl,True,True);
 end;
 
-procedure TFormProveedor.DBGrid3DblClick(Sender: TObject);
+procedure TFormProveedor.DBGrid3CellClick(Column: TColumn);
 begin
    EditCodigo.Text:=ProveedorQuery.FieldByName('ID_PROVEEDOR').Value;
       DBLookupComboBox1.KeyValue:=UpperCase(ProveedorQuery.FieldByName('TYPE_EM').AsString);
@@ -512,6 +529,11 @@ begin
       NewItem:=False;
     //  EditCodigo.ReadOnly:=True;
       GetHistoricoDeCompra(editCodigo.Text, myDate, now());
+end;
+
+procedure TFormProveedor.DBGrid3DblClick(Sender: TObject);
+begin
+
 end;
 
 procedure TFormProveedor.DBLookupComboBox1KeyDown(Sender: TObject;

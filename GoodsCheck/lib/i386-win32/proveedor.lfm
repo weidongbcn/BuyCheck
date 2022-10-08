@@ -9,7 +9,6 @@ object FormProveedor: TFormProveedor
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 35
@@ -45,10 +44,11 @@ object FormProveedor: TFormProveedor
       Width = 75
       Anchors = [akTop, akRight]
       Caption = '清空(&C)'
+      OnClick = Button2Click
       TabOrder = 1
     end
     object Button3: TButton
-      Left = 447
+      Left = 448
       Height = 25
       Top = 6
       Width = 75
@@ -64,6 +64,7 @@ object FormProveedor: TFormProveedor
       Width = 75
       Anchors = [akTop, akRight]
       Caption = '删除(&D)'
+      OnClick = Button4Click
       TabOrder = 3
     end
     object Button6: TButton

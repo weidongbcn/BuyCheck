@@ -9,7 +9,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, DbCtrls, ZConnection, ZDataset, cyEditInteger, fpspreadsheetctrls,
   fpspreadsheetgrid, fpsallformats, fpsTypes, typinfo, fpsutils, math, Proveedor,
-  connect, global, DateTimePicker, db;
+  connect, global, DateTimePicker, db, RegExpr;
 
 const
   OK = 0;
@@ -26,6 +26,7 @@ type
     Button5: TButton;
     Button6: TButton;
     CheckBox1: TCheckBox;
+    CheckBox10: TCheckBox;
     CheckBox4: TCheckBox;
     CheckBox9: TCheckBox;
     CheckBox2: TCheckBox;
@@ -37,9 +38,12 @@ type
     CheckBox18: TCheckBox;
     CheckBox19: TCheckBox;
     DataSource2: TDataSource;
+    dbTrabajo: TZQuery;
     Edit3: TEdit;
+    IvaDBLookupComboBox1: TDBLookupComboBox;
     Label1: TLabel;
     Label18: TLabel;
+    Label19: TLabel;
     ProDataSource: TDataSource;
     ProvQuery: TZQuery;
     PuntoC: TComboBox;
@@ -87,6 +91,8 @@ type
     STAFFQuery: TZQuery;
     sWorkbookSource1: TsWorkbookSource;
     sWorksheetGrid1: TsWorksheetGrid;
+    TaxRateDS: TDataSource;
+    TaxRateZQuery: TZQuery;
     ZCon1: TZConnection;
     ExecutQuery: TZQuery;
     DocQuery: TZQuery;
@@ -115,6 +121,7 @@ type
     procedure cyEditInteger7KeyPress(Sender: TObject; var Key: char);
     procedure cyEditInteger8KeyPress(Sender: TObject; var Key: char);
     procedure cyEditInteger9KeyPress(Sender: TObject; var Key: char);
+    procedure DataSource2DataChange(Sender: TObject; Field: TField);
     procedure DBLookupComboBox1Click(Sender: TObject);
     procedure DBLookupComboBox1CloseUp(Sender: TObject);
     procedure DBLookupComboBox2Click(Sender: TObject);
@@ -123,6 +130,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure GetSTAFFList;
+    procedure DoGetTaxRates;
     procedure DoGetProveedor;
     procedure PuntoCKeyPress(Sender: TObject; var Key: char);
     procedure sWorksheetGrid1GetColHeaderText(Sender: TObject;
@@ -199,6 +207,18 @@ begin
 
 end;
 
+procedure TFormImportXLS.DoGetTaxRates;
+   begin
+   with TaxRateZQuery do
+   begin
+   Connection:=DataModule2.ZCon1;
+      Active:=false;
+      SQL.Clear;
+      SQL.Text:='SELECT * FROM GOODS_TAXRATE';
+      Open;
+   end;
+   end;
+
 procedure TFormImportXLS.sWorksheetGrid1GetColHeaderText(Sender: TObject;
   AIndex: Integer; var AText: String);
 begin
@@ -235,7 +255,10 @@ var
   Lanjie, Ena:TStringArray;
   KeyText:string;
   EnaText:string;
+  sqlname:string;
+  re: TRegExpr;
 begin
+
   KeyText:=Edit3.Text;
   Lanjie:=KeyText.Split([';',',', ' ']);
   sWorksheetGrid1.Workbook.FormatSettings.DecimalSeparator := PuntoC.Text[1];
@@ -319,12 +342,15 @@ if (PuntoC.Text='') or (PuntoC.ItemIndex < 0) then PuntoC.SetFocus;
 
 
 
+
   //如果是新单
   if not ct then
    begin
       with ExecutQuery do
+     // with dbTrabajo do
       begin
       Connection:=zcon1;
+    //  Connection:=DataModule2.ZCon1;
       Active:=false;
       SQL.Clear;
       //SQL.Text:='INSERT INTO '+UseDBC.EmID+'TMPLISTCTOPS '
@@ -356,7 +382,9 @@ if (PuntoC.Text='') or (PuntoC.ItemIndex < 0) then PuntoC.SetFocus;
        ParamByName('ISCHECKED').AsString:='N';
        ParamByName('ID_STOCK').AsString:=DBLookupComboBox3.KeyValue;
 
+
        ExecSQL;
+
        SQL.Clear;
        SQL.Text:='select max(ID_TMPLIST) as ID_TMPLIST from CHECKLIST_ORDERS ';
        open;
@@ -399,12 +427,16 @@ if (PuntoC.Text='') or (PuntoC.ItemIndex < 0) then PuntoC.SetFocus;
       if EnaText='' then  AEXCELLINE.CODBARRA:=''
       else begin
        Ena:=EnaText.Split(Lanjie);
-       if length(Ena)=0 then AEXCELLINE.CODBARRA:='' else
+       if length(Ena)=0 then AEXCELLINE.CODBARRA:='' else begin
        AEXCELLINE.CODBARRA:=Ena[0];
          if CheckBox4.Checked then begin
              AEXCELLINE.CODBARRA:=LeftStr(Ena[0],13);
           end;
+         if CheckBox10.Checked then begin
+             AEXCELLINE.CODBARRA:= GetNumbers(EnaText);                   //TRegExpr.Replace(ENA, '\D', '');
+          end;
 
+          end
          end
       end
       else AEXCELLINE.CODBARRA:='';
@@ -475,10 +507,28 @@ if (PuntoC.Text='') or (PuntoC.ItemIndex < 0) then PuntoC.SetFocus;
         AEXCELLINE.IVA:=sWorksheetGrid1.Worksheet.ReadAsNumber(Y,COLOFTAXRATE);
         END;
          if isNan(AEXCELLINE.IVA) then AEXCELLINE.IVA := 0;
-
        END else AEXCELLINE.IVA:=0;
+
+       if AEXCELLINE.IVA = 0 then
+       begin
+          AEXCELLINE.IVA:=IvaDBLookupComboBox1.ListSource.DataSet.FieldByName('IVA').AsFloat;
+       end;
+       if CheckBox5.Checked and not CheckBox7.Checked then
+       AEXCELLINE.PRICE_CON:=(AEXCELLINE.PRICE_SIN * (1+ AEXCELLINE.IVA/100));
+
       end
-      else AEXCELLINE.IVA:=0;
+      else
+      begin
+        AEXCELLINE.IVA:=0;
+
+       if CheckBox5.Checked and not CheckBox7.Checked then
+       begin
+       AEXCELLINE.IVA:=IvaDBLookupComboBox1.ListSource.DataSet.FieldByName('IVA').AsFloat;
+       AEXCELLINE.PRICE_CON:=(AEXCELLINE.PRICE_SIN * (1+ AEXCELLINE.IVA/100));
+       end;
+      end;
+
+
 
       //折扣
       if (CheckBox8.Checked) then
@@ -505,6 +555,18 @@ if (PuntoC.Text='') or (PuntoC.ItemIndex < 0) then PuntoC.SetFocus;
         if isNan(AEXCELLINE.PVPOPTION) then AEXCELLINE.PVPOPTION := 0;
       END
       ELSE AEXCELLINE.PVPOPTION:=0;
+
+      //没有选择税率
+      if not CheckBox5.Checked and not CheckBox6.Checked and not CheckBox7.Checked then
+       begin
+       showmessage('s');
+       AEXCELLINE.IVA:=IvaDBLookupComboBox1.ListSource.DataSet.FieldByName('IVA').AsFloat;
+       AEXCELLINE.PRICE_CON:=(AEXCELLINE.PRICE_SIN * (1+ AEXCELLINE.IVA/100));
+       end
+      else
+      begin
+        showmessage('d');
+        end;
 
        //开始输入
   // ShowMessage(AEXCELLINE.CODING+':'+AEXCELLINE.CODBARRA+':'+AEXCELLINE.NAMEITEM);
@@ -890,6 +952,11 @@ begin
   end;
 end;
 
+procedure TFormImportXLS.DataSource2DataChange(Sender: TObject; Field: TField);
+begin
+
+end;
+
 procedure TFormImportXLS.DBLookupComboBox1Click(Sender: TObject);
 begin
 
@@ -1174,11 +1241,12 @@ DocQuery.Connection:=ZCon1;
 DocQuery.Close;
 DocQuery.SQL.Text:='select * from ' + UseDBC.EMID+'TYPEDOC';
 DocQuery.Open;
+DoGetTaxRates;
 GetStockList;
 GetSTAFFList;
 DoGetProveedor;
 ct:=false;
-
+ IvaDBLookupComboBox1.KeyValue:=IvaDBLookupComboBox1.ListSource.DataSet.FieldByName(IvaDBLookupComboBox1.KeyField).Value;
 end;
 
 procedure TFormImportXLS.FormShow(Sender: TObject);

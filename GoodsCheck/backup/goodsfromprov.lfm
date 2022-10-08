@@ -3,11 +3,10 @@ object FormProGoods: TFormProGoods
   Height = 680
   Top = 323
   Width = 1024
-  Caption = 'FormProGoods'
+  Caption = '供应商货品单'
   ClientHeight = 680
   ClientWidth = 1024
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
   object Panel1: TPanel
     Left = 0
     Height = 57
@@ -135,16 +134,17 @@ object FormProGoods: TFormProGoods
         end>
       DataSource = DataSource1
       TabOrder = 1
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object ListQuery: TZQuery
     Params = <>
-    left = 380
-    top = 276
+    Left = 380
+    Top = 276
   end
   object DataSource1: TDataSource
     DataSet = ListQuery
-    left = 290
-    top = 264
+    Left = 290
+    Top = 264
   end
 end

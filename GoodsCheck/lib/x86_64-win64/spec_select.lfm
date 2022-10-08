@@ -3,11 +3,11 @@ object FormSelectSpec: TFormSelectSpec
   Height = 704
   Top = 178
   Width = 1024
-  Caption = 'FormSelectSpec'
+  Caption = '属性选择'
   ClientHeight = 704
   ClientWidth = 1024
   OnCreate = FormCreate
-  LCLVersion = '2.0.0.3'
+  Position = poMainFormCenter
   object Panel1: TPanel
     Left = 0
     Height = 41
@@ -89,7 +89,7 @@ object FormSelectSpec: TFormSelectSpec
         Top = 585
         Width = 246
         Align = alBottom
-        Caption = 'GroupBox1'
+        Caption = '添加'
         ClientHeight = 53
         ClientWidth = 242
         TabOrder = 2
@@ -109,7 +109,17 @@ object FormSelectSpec: TFormSelectSpec
         Top = 1
         Width = 246
         Align = alTop
+        ClientHeight = 41
+        ClientWidth = 246
         TabOrder = 3
+        object Label4: TLabel
+          Left = 1
+          Height = 17
+          Top = 13
+          Width = 48
+          Caption = '类别属性'
+          ParentColor = False
+        end
       end
       object ListBox3: TListBox
         Left = 1
@@ -189,8 +199,8 @@ object FormSelectSpec: TFormSelectSpec
         end
         object Button2: TButton
           Left = 182
-          Height = 25
-          Top = 6
+          Height = 26
+          Top = 9
           Width = 75
           Caption = '添加规格值'
           OnClick = Button2Click
@@ -240,53 +250,53 @@ object FormSelectSpec: TFormSelectSpec
   end
   object ListUniQuery: TZQuery
     Params = <>
-    left = 120
-    top = 88
+    Left = 120
+    Top = 88
   end
   object AllSpecQuery: TZQuery
     Params = <>
-    left = 112
-    top = 256
+    Left = 112
+    Top = 256
   end
   object SpecValuesQuery: TZQuery
     Params = <>
-    left = 376
-    top = 107
+    Left = 376
+    Top = 107
   end
   object TrabajoQuery: TZQuery
     Params = <>
-    left = 608
-    top = 248
+    Left = 608
+    Top = 248
   end
   object MemListQuery: TZQuery
     Params = <>
-    left = 528
-    top = 112
+    Left = 528
+    Top = 112
   end
   object DataSource3: TDataSource
     DataSet = MemTable
-    left = 728
-    top = 400
+    Left = 728
+    Top = 400
   end
   object DataSource2: TDataSource
     DataSet = SpecValuesQuery
-    left = 736
-    top = 208
+    Left = 736
+    Top = 208
   end
   object AllSpecDS: TDataSource
     DataSet = AllSpecQuery
-    left = 133
-    top = 413
+    Left = 133
+    Top = 413
   end
   object DataSource1: TDataSource
     DataSet = ListUniQuery
-    left = 116
-    top = 133
+    Left = 116
+    Top = 133
   end
   object MemTable: TBufDataset
     FieldDefs = <>
-    left = 443
-    top = 426
+    Left = 443
+    Top = 426
     object MemTableGOODS_ID: TStringField
       FieldKind = fkData
       FieldName = 'GOODS_ID'

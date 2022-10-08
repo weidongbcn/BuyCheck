@@ -1,7 +1,7 @@
 object FormLogin: TFormLogin
-  Left = 739
+  Left = 1117
   Height = 379
-  Top = 148
+  Top = 160
   Width = 559
   Caption = 'TPV核对    登入'
   ClientHeight = 379
@@ -754,12 +754,12 @@ object FormLogin: TFormLogin
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object Label3: TLabel
     Left = 155
-    Height = 17
+    Height = 15
     Top = 120
-    Width = 48
+    Width = 52
     Caption = '已连接到'
     ParentColor = False
   end
@@ -953,7 +953,7 @@ object FormLogin: TFormLogin
   end
   object PasswdEdit: TEdit
     Left = 323
-    Height = 25
+    Height = 23
     Top = 241
     Width = 121
     EchoMode = emPassword
@@ -963,7 +963,7 @@ object FormLogin: TFormLogin
   end
   object USEREdit: TEdit
     Left = 155
-    Height = 25
+    Height = 23
     Top = 241
     Width = 121
     OnKeyDown = USEREditKeyDown
@@ -980,17 +980,17 @@ object FormLogin: TFormLogin
   end
   object Label2: TLabel
     Left = 323
-    Height = 17
+    Height = 15
     Top = 222
-    Width = 98
+    Width = 94
     Caption = 'Contraseña(密码)'
     ParentColor = False
   end
   object Label1: TLabel
     Left = 155
-    Height = 17
+    Height = 15
     Top = 222
-    Width = 82
+    Width = 80
     Caption = 'Usario(用户名)'
     ParentColor = False
   end
@@ -1019,12 +1019,12 @@ object FormLogin: TFormLogin
     )
     Port = 0
     Protocol = 'mysql'
-    left = 64
-    top = 224
+    Left = 64
+    Top = 224
   end
   object LoginQuery: TZQuery
     Params = <>
-    left = 80
-    top = 144
+    Left = 80
+    Top = 144
   end
 end

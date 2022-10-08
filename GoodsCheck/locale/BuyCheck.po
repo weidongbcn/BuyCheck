@@ -175,7 +175,7 @@ msgid "No Esta Connectado.(还未连接到任何数据库)"
 msgstr ""
 
 #: global.nlbn50
-msgid "Ya Esta Connectado a:(已经连接到:)"
+msgid "Ya Esta Connectado a Database:(已经连接到数据库:)"
 msgstr ""
 
 #: global.nlist1
@@ -205,6 +205,26 @@ msgstr ""
 
 #: global.nmsg11
 msgid "Trabajo Echo. Ha modificado el database."
+msgstr ""
+
+#: global.nmsg12
+msgid "没有密码, 操作取消"
+msgstr ""
+
+#: global.nmsg13
+msgid "密码:"
+msgstr ""
+
+#: global.nmsg14
+msgid "密码错误"
+msgstr ""
+
+#: global.nmsg15
+msgid "此操作需要密码才能进行"
+msgstr ""
+
+#: global.nmsg16
+msgid "密码错误, 操作取消."
 msgstr ""
 
 #: global.nmsg2
@@ -394,6 +414,411 @@ msgstr ""
 msgid "Version 3.0  (版本1.0-20190501)"
 msgstr ""
 
+#: tcleardbform.button1.caption
+msgid "操作"
+msgstr ""
+
+#: tcleardbform.button2.caption
+msgid "全操作"
+msgstr ""
+
+#: tcleardbform.button3.caption
+msgctxt "tcleardbform.button3.caption"
+msgid "退出"
+msgstr ""
+
+#: tcleardbform.caption
+msgid "数据归零操作"
+msgstr ""
+
+#: tcleardbform.label1.caption
+msgid ""
+"这是一种危险的行为, \n"
+"一不小心就会造成数据错误,\n"
+" 请谨慎使用. !!!!!\n"
+msgstr ""
+
+#: tcleardbform.label2.caption
+msgid "对所有数量少于0的货品全部归零."
+msgstr ""
+
+#: tcleardbform.label3.caption
+msgid "对所有货品的数据归零."
+msgstr ""
+
+#: tfaddgoods.avisolimit.text
+msgctxt "tfaddgoods.avisolimit.text"
+msgid "No"
+msgstr ""
+
+#: tfaddgoods.bitbtn2.caption
+msgctxt "tfaddgoods.bitbtn2.caption"
+msgid "Buscar"
+msgstr ""
+
+#: tfaddgoods.bitbtn20.caption
+msgctxt "tfaddgoods.bitbtn20.caption"
+msgid "..."
+msgstr ""
+
+#: tfaddgoods.bitbtn21.caption
+msgctxt "tfaddgoods.bitbtn21.caption"
+msgid "..."
+msgstr ""
+
+#: tfaddgoods.bitbtn22.caption
+msgctxt "tfaddgoods.bitbtn22.caption"
+msgid "..."
+msgstr ""
+
+#: tfaddgoods.bitbtn3.caption
+msgctxt "tfaddgoods.bitbtn3.caption"
+msgid "Buscar"
+msgstr ""
+
+#: tfaddgoods.btnclonar.caption
+msgctxt "tfaddgoods.btnclonar.caption"
+msgid "Cl&onar"
+msgstr ""
+
+#: tfaddgoods.button1.caption
+msgctxt "tfaddgoods.button1.caption"
+msgid "添加"
+msgstr ""
+
+#: tfaddgoods.button13.caption
+msgctxt "tfaddgoods.button13.caption"
+msgid "删除"
+msgstr ""
+
+#: tfaddgoods.button2.caption
+msgctxt "tfaddgoods.button2.caption"
+msgid " 确定"
+msgstr ""
+
+#: tfaddgoods.button3.caption
+msgctxt "tfaddgoods.button3.caption"
+msgid "软删除"
+msgstr ""
+
+#: tfaddgoods.button4.caption
+msgctxt "tfaddgoods.button4.caption"
+msgid "关闭"
+msgstr ""
+
+#: tfaddgoods.button5.caption
+msgid "+   添加新属性"
+msgstr ""
+
+#: tfaddgoods.button6.caption
+msgid "查看/修改属性商品明显"
+msgstr ""
+
+#: tfaddgoods.button7.caption
+msgctxt "tfaddgoods.button7.caption"
+msgid "增加"
+msgstr ""
+
+#: tfaddgoods.button8.caption
+msgctxt "tfaddgoods.button8.caption"
+msgid "清空"
+msgstr ""
+
+#: tfaddgoods.candiscount.text
+msgctxt "tfaddgoods.candiscount.text"
+msgid "Yes"
+msgstr ""
+
+#: tfaddgoods.caption
+msgid "新货品"
+msgstr ""
+
+#: tfaddgoods.dbgrid1.columns[0].title.caption
+msgctxt "tfaddgoods.dbgrid1.columns[0].title.caption"
+msgid "分配量"
+msgstr ""
+
+#: tfaddgoods.dbgrid1.columns[1].title.caption
+msgctxt "tfaddgoods.dbgrid1.columns[1].title.caption"
+msgid "条码"
+msgstr ""
+
+#: tfaddgoods.dbgrid1.columns[2].title.caption
+msgctxt "tfaddgoods.dbgrid1.columns[2].title.caption"
+msgid "销售价"
+msgstr ""
+
+#: tfaddgoods.dbgrid3.columns[0].title.caption
+msgctxt "tfaddgoods.dbgrid3.columns[0].title.caption"
+msgid "SKU名称"
+msgstr ""
+
+#: tfaddgoods.dbgrid3.columns[1].title.caption
+msgctxt "tfaddgoods.dbgrid3.columns[1].title.caption"
+msgid "成本价"
+msgstr ""
+
+#: tfaddgoods.dbgrid3.columns[2].title.caption
+msgctxt "tfaddgoods.dbgrid3.columns[2].title.caption"
+msgid "销售价"
+msgstr ""
+
+#: tfaddgoods.dbgrid3.columns[3].title.caption
+msgctxt "tfaddgoods.dbgrid3.columns[3].title.caption"
+msgid "组合数量"
+msgstr ""
+
+#: tfaddgoods.dbgrid3.columns[4].title.caption
+msgctxt "tfaddgoods.dbgrid3.columns[4].title.caption"
+msgid "单位"
+msgstr ""
+
+#: tfaddgoods.dbgrid3.columns[5].title.caption
+msgctxt "tfaddgoods.dbgrid3.columns[5].title.caption"
+msgid "成员SKU编码"
+msgstr ""
+
+#: tfaddgoods.label1.caption
+msgctxt "tfaddgoods.label1.caption"
+msgid "商品条码:"
+msgstr ""
+
+#: tfaddgoods.label10.caption
+msgctxt "tfaddgoods.label10.caption"
+msgid "名称(1):"
+msgstr ""
+
+#: tfaddgoods.label11.caption
+msgctxt "tfaddgoods.label11.caption"
+msgid "成本价"
+msgstr ""
+
+#: tfaddgoods.label12.caption
+msgctxt "tfaddgoods.label12.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tfaddgoods.label13.caption
+msgctxt "tfaddgoods.label13.caption"
+msgid "批发价"
+msgstr ""
+
+#: tfaddgoods.label14.caption
+msgctxt "tfaddgoods.label14.caption"
+msgid "批发价"
+msgstr ""
+
+#: tfaddgoods.label15.caption
+msgctxt "tfaddgoods.label15.caption"
+msgid "包装容量"
+msgstr ""
+
+#: tfaddgoods.label16.caption
+msgctxt "tfaddgoods.label16.caption"
+msgid "分配量"
+msgstr ""
+
+#: tfaddgoods.label17.caption
+msgctxt "tfaddgoods.label17.caption"
+msgid "商品品牌:"
+msgstr ""
+
+#: tfaddgoods.label18.caption
+msgctxt "tfaddgoods.label18.caption"
+msgid "重量 /容量"
+msgstr ""
+
+#: tfaddgoods.label19.caption
+msgctxt "tfaddgoods.label19.caption"
+msgid "包装/体积"
+msgstr ""
+
+#: tfaddgoods.label2.caption
+msgctxt "tfaddgoods.label2.caption"
+msgid "辅助码:"
+msgstr ""
+
+#: tfaddgoods.label20.caption
+msgctxt "tfaddgoods.label20.caption"
+msgid "UUID"
+msgstr ""
+
+#: tfaddgoods.label21.caption
+msgctxt "tfaddgoods.label21.caption"
+msgid "包含货"
+msgstr ""
+
+#: tfaddgoods.label22.caption
+msgctxt "tfaddgoods.label22.caption"
+msgid "包装/体积"
+msgstr ""
+
+#: tfaddgoods.label23.caption
+msgctxt "tfaddgoods.label23.caption"
+msgid " 普通商品"
+msgstr ""
+
+#: tfaddgoods.label24.caption
+msgctxt "tfaddgoods.label24.caption"
+msgid "保质期"
+msgstr ""
+
+#: tfaddgoods.label25.caption
+msgid "提前提醒天数"
+msgstr ""
+
+#: tfaddgoods.label26.caption
+msgid "天"
+msgstr ""
+
+#: tfaddgoods.label27.caption
+msgid "属性: "
+msgstr ""
+
+#: tfaddgoods.label3.caption
+msgctxt "tfaddgoods.label3.caption"
+msgid " 西语名称(1):"
+msgstr ""
+
+#: tfaddgoods.label35.caption
+msgctxt "tfaddgoods.label35.caption"
+msgid "中文名称(2):"
+msgstr ""
+
+#: tfaddgoods.label36.caption
+msgctxt "tfaddgoods.label36.caption"
+msgid "条码类型:"
+msgstr ""
+
+#: tfaddgoods.label37.caption
+msgctxt "tfaddgoods.label37.caption"
+msgid "计件单位:"
+msgstr ""
+
+#: tfaddgoods.label38.caption
+msgctxt "tfaddgoods.label38.caption"
+msgid "计件单位:"
+msgstr ""
+
+#: tfaddgoods.label4.caption
+msgctxt "tfaddgoods.label4.caption"
+msgid "商品条码:"
+msgstr ""
+
+#: tfaddgoods.label44.caption
+msgctxt "tfaddgoods.label44.caption"
+msgid "组合内容"
+msgstr ""
+
+#: tfaddgoods.label45.caption
+msgctxt "tfaddgoods.label45.caption"
+msgid "零售价(2)"
+msgstr ""
+
+#: tfaddgoods.label46.caption
+msgctxt "tfaddgoods.label46.caption"
+msgid "零售价(3)"
+msgstr ""
+
+#: tfaddgoods.label47.caption
+msgctxt "tfaddgoods.label47.caption"
+msgid "成本价"
+msgstr ""
+
+#: tfaddgoods.label48.caption
+msgctxt "tfaddgoods.label48.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tfaddgoods.label5.caption
+msgctxt "tfaddgoods.label5.caption"
+msgid "辅助码:"
+msgstr ""
+
+#: tfaddgoods.label50.caption
+msgctxt "tfaddgoods.label50.caption"
+msgid "促销价"
+msgstr ""
+
+#: tfaddgoods.label51.caption
+msgctxt "tfaddgoods.label51.caption"
+msgid "批发价"
+msgstr ""
+
+#: tfaddgoods.label52.caption
+msgctxt "tfaddgoods.label52.caption"
+msgid "销售折扣%:"
+msgstr ""
+
+#: tfaddgoods.label53.caption
+msgctxt "tfaddgoods.label53.caption"
+msgid "选择商品"
+msgstr ""
+
+#: tfaddgoods.label56.caption
+msgctxt "tfaddgoods.label56.caption"
+msgid "参与组合的数量:"
+msgstr ""
+
+#: tfaddgoods.label57.caption
+msgctxt "tfaddgoods.label57.caption"
+msgid "启动库存警戒"
+msgstr ""
+
+#: tfaddgoods.label58.caption
+msgctxt "tfaddgoods.label58.caption"
+msgid "最低警戒数量"
+msgstr ""
+
+#: tfaddgoods.label59.caption
+msgctxt "tfaddgoods.label59.caption"
+msgid "可以打折"
+msgstr ""
+
+#: tfaddgoods.label6.caption
+msgctxt "tfaddgoods.label6.caption"
+msgid "商品分类:"
+msgstr ""
+
+#: tfaddgoods.label60.caption
+msgctxt "tfaddgoods.label60.caption"
+msgid "启动库存警戒"
+msgstr ""
+
+#: tfaddgoods.label61.caption
+msgctxt "tfaddgoods.label61.caption"
+msgid "最低警戒数量"
+msgstr ""
+
+#: tfaddgoods.label7.caption
+msgctxt "tfaddgoods.label7.caption"
+msgid "(%)税率:"
+msgstr ""
+
+#: tfaddgoods.label8.caption
+msgctxt "tfaddgoods.label8.caption"
+msgid "成本价"
+msgstr ""
+
+#: tfaddgoods.label9.caption
+msgctxt "tfaddgoods.label9.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tfaddgoods.mavisolimit.text
+msgctxt "tfaddgoods.mavisolimit.text"
+msgid "No"
+msgstr ""
+
+#: tfaddgoods.savebtn.caption
+msgctxt "tfaddgoods.savebtn.caption"
+msgid "保存"
+msgstr ""
+
+#: tfaddgoods.typebox.text
+msgid "单个商品"
+msgstr ""
+
 #: tfbusquedas.btaplicar.caption
 msgid "Filtrar"
 msgstr ""
@@ -547,16 +972,21 @@ msgstr ""
 
 #: tform1.dbgrid1.columns[10].title.caption
 msgctxt "tform1.dbgrid1.columns[10].title.caption"
-msgid "Precio_Venta"
+msgid "Descuento %"
 msgstr ""
 
 #: tform1.dbgrid1.columns[11].title.caption
 msgctxt "tform1.dbgrid1.columns[11].title.caption"
-msgid "Importe"
+msgid "Precio_Venta"
 msgstr ""
 
 #: tform1.dbgrid1.columns[12].title.caption
 msgctxt "tform1.dbgrid1.columns[12].title.caption"
+msgid "Importe"
+msgstr ""
+
+#: tform1.dbgrid1.columns[13].title.caption
+msgctxt "tform1.dbgrid1.columns[13].title.caption"
 msgid "PVPOPTION"
 msgstr ""
 
@@ -592,17 +1022,17 @@ msgstr ""
 
 #: tform1.dbgrid1.columns[7].title.caption
 msgctxt "tform1.dbgrid1.columns[7].title.caption"
-msgid "IVA %"
+msgid "Precio_Sin"
 msgstr ""
 
 #: tform1.dbgrid1.columns[8].title.caption
 msgctxt "tform1.dbgrid1.columns[8].title.caption"
-msgid "Precio_Compra"
+msgid "IVA %"
 msgstr ""
 
 #: tform1.dbgrid1.columns[9].title.caption
 msgctxt "tform1.dbgrid1.columns[9].title.caption"
-msgid "Descuento %"
+msgid "Precio_Compra"
 msgstr ""
 
 #: tform1.groupbox1.caption
@@ -798,6 +1228,7 @@ msgid "返回"
 msgstr ""
 
 #: tformbuydetalles.caption
+msgctxt "tformbuydetalles.caption"
 msgid "购买明细"
 msgstr ""
 
@@ -870,14 +1301,34 @@ msgctxt "tformbuyin.button3.caption"
 msgid "结单"
 msgstr ""
 
+#: tformbuyin.button4.caption
+msgctxt "tformbuyin.button4.caption"
+msgid "确定"
+msgstr ""
+
 #: tformbuyin.caption
 msgctxt "tformbuyin.caption"
 msgid "货品入库"
 msgstr ""
 
+#: tformbuyin.datetimepicker1.textfornulldate
+msgctxt "tformbuyin.datetimepicker1.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tformbuyin.datetimepicker2.textfornulldate
+msgctxt "tformbuyin.datetimepicker2.textfornulldate"
+msgid "NULL"
+msgstr ""
+
 #: tformbuyin.dbgrid1.columns[0].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[0].title.caption"
 msgid "编码"
+msgstr ""
+
+#: tformbuyin.dbgrid1.columns[10].title.caption
+msgctxt "tformbuyin.dbgrid1.columns[10].title.caption"
+msgid "商品唯一码"
 msgstr ""
 
 #: tformbuyin.dbgrid1.columns[1].title.caption
@@ -887,42 +1338,42 @@ msgstr ""
 
 #: tformbuyin.dbgrid1.columns[2].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[2].title.caption"
-msgid "数量"
+msgid "属性"
 msgstr ""
 
 #: tformbuyin.dbgrid1.columns[3].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[3].title.caption"
-msgid "单位"
+msgid "数量"
 msgstr ""
 
 #: tformbuyin.dbgrid1.columns[4].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[4].title.caption"
-msgid "成本"
+msgid "单位"
 msgstr ""
 
 #: tformbuyin.dbgrid1.columns[5].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[5].title.caption"
-msgid "折扣(%)"
+msgid "成本"
 msgstr ""
 
 #: tformbuyin.dbgrid1.columns[6].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[6].title.caption"
-msgid "税率%"
+msgid "折扣(%)"
 msgstr ""
 
 #: tformbuyin.dbgrid1.columns[7].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[7].title.caption"
-msgid "小计"
+msgid "税率%"
 msgstr ""
 
 #: tformbuyin.dbgrid1.columns[8].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[8].title.caption"
-msgid "销售价"
+msgid "小计"
 msgstr ""
 
 #: tformbuyin.dbgrid1.columns[9].title.caption
 msgctxt "tformbuyin.dbgrid1.columns[9].title.caption"
-msgid "商品唯一码"
+msgid "销售价"
 msgstr ""
 
 #: tformbuyin.label1.caption
@@ -949,6 +1400,15 @@ msgstr ""
 msgid "(F9) Para Finalizar"
 msgstr ""
 
+#: tformbuyin.label14.caption
+msgid "过期日期"
+msgstr ""
+
+#: tformbuyin.label15.caption
+msgctxt "tformbuyin.label15.caption"
+msgid "保质期"
+msgstr ""
+
 #: tformbuyin.label2.caption
 msgctxt "tformbuyin.label2.caption"
 msgid "内容"
@@ -972,6 +1432,10 @@ msgstr ""
 #: tformbuyin.label6.caption
 msgctxt "tformbuyin.label6.caption"
 msgid "合计"
+msgstr ""
+
+#: tformbuyin.label7.caption
+msgid "生产日期"
 msgstr ""
 
 #: tformbuyin.label8.caption
@@ -1654,6 +2118,11 @@ msgctxt "tformbuyin02.label68.caption"
 msgid "赠送销售积分数"
 msgstr ""
 
+#: tformbuyin02.label69.caption
+msgctxt "tformbuyin02.label69.caption"
+msgid " 普通商品"
+msgstr ""
+
 #: tformbuyin02.label7.caption
 msgctxt "tformbuyin02.label7.caption"
 msgid "(%)税率:"
@@ -2169,6 +2638,7 @@ msgid "Buscar"
 msgstr ""
 
 #: tformgoodsspu.btnclonar.caption
+msgctxt "tformgoodsspu.btnclonar.caption"
 msgid "Cl&onar"
 msgstr ""
 
@@ -2195,6 +2665,16 @@ msgstr ""
 #: tformgoodsspu.button13.caption
 msgctxt "tformgoodsspu.button13.caption"
 msgid "删除"
+msgstr ""
+
+#: tformgoodsspu.button14.caption
+msgctxt "tformgoodsspu.button14.caption"
+msgid "软删除"
+msgstr ""
+
+#: tformgoodsspu.button15.caption
+msgctxt "tformgoodsspu.button15.caption"
+msgid " 确定"
 msgstr ""
 
 #: tformgoodsspu.button2.caption
@@ -2230,6 +2710,11 @@ msgstr ""
 #: tformgoodsspu.button8.caption
 msgctxt "tformgoodsspu.button8.caption"
 msgid "清空"
+msgstr ""
+
+#: tformgoodsspu.button9.caption
+msgctxt "tformgoodsspu.button9.caption"
+msgid "添加"
 msgstr ""
 
 #: tformgoodsspu.candiscount.text
@@ -2394,6 +2879,21 @@ msgstr ""
 #: tformgoodsspu.dbgrid3.columns[5].title.caption
 msgctxt "tformgoodsspu.dbgrid3.columns[5].title.caption"
 msgid "成员SKU编码"
+msgstr ""
+
+#: tformgoodsspu.dbgrid4.columns[0].title.caption
+msgctxt "tformgoodsspu.dbgrid4.columns[0].title.caption"
+msgid "分配量"
+msgstr ""
+
+#: tformgoodsspu.dbgrid4.columns[1].title.caption
+msgctxt "tformgoodsspu.dbgrid4.columns[1].title.caption"
+msgid "条码"
+msgstr ""
+
+#: tformgoodsspu.dbgrid4.columns[2].title.caption
+msgctxt "tformgoodsspu.dbgrid4.columns[2].title.caption"
+msgid "销售价"
 msgstr ""
 
 #: tformgoodsspu.edit4.text
@@ -2565,11 +3065,6 @@ msgstr ""
 msgid "购买该商品时赠送消费积分, -1表示按商品价格赠送"
 msgstr ""
 
-#: tformgoodsspu.label4.caption
-msgctxt "tformgoodsspu.label4.caption"
-msgid "创建日期: "
-msgstr ""
-
 #: tformgoodsspu.label40.caption
 msgctxt "tformgoodsspu.label40.caption"
 msgid "购买数量达到优惠数量时享受的优惠价格"
@@ -2680,9 +3175,74 @@ msgctxt "tformgoodsspu.label6.caption"
 msgid "商品分类:"
 msgstr ""
 
+#: tformgoodsspu.label60.caption
+msgctxt "tformgoodsspu.label60.caption"
+msgid "包含货"
+msgstr ""
+
+#: tformgoodsspu.label61.caption
+msgctxt "tformgoodsspu.label61.caption"
+msgid "商品条码:"
+msgstr ""
+
+#: tformgoodsspu.label62.caption
+msgctxt "tformgoodsspu.label62.caption"
+msgid "辅助码:"
+msgstr ""
+
+#: tformgoodsspu.label63.caption
+msgctxt "tformgoodsspu.label63.caption"
+msgid "名称(1):"
+msgstr ""
+
+#: tformgoodsspu.label64.caption
+msgctxt "tformgoodsspu.label64.caption"
+msgid "成本价"
+msgstr ""
+
+#: tformgoodsspu.label65.caption
+msgctxt "tformgoodsspu.label65.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tformgoodsspu.label66.caption
+msgctxt "tformgoodsspu.label66.caption"
+msgid "批发价"
+msgstr ""
+
+#: tformgoodsspu.label67.caption
+msgctxt "tformgoodsspu.label67.caption"
+msgid "包装/体积"
+msgstr ""
+
+#: tformgoodsspu.label68.caption
+msgctxt "tformgoodsspu.label68.caption"
+msgid "启动库存警戒"
+msgstr ""
+
+#: tformgoodsspu.label69.caption
+msgctxt "tformgoodsspu.label69.caption"
+msgid "最低警戒数量"
+msgstr ""
+
 #: tformgoodsspu.label7.caption
 msgctxt "tformgoodsspu.label7.caption"
 msgid "(%)税率:"
+msgstr ""
+
+#: tformgoodsspu.label70.caption
+msgctxt "tformgoodsspu.label70.caption"
+msgid "分配量"
+msgstr ""
+
+#: tformgoodsspu.label71.caption
+msgctxt "tformgoodsspu.label71.caption"
+msgid "计件单位:"
+msgstr ""
+
+#: tformgoodsspu.label72.caption
+msgctxt "tformgoodsspu.label72.caption"
+msgid "包装容量"
 msgstr ""
 
 #: tformgoodsspu.label8.caption
@@ -2693,6 +3253,11 @@ msgstr ""
 #: tformgoodsspu.label9.caption
 msgctxt "tformgoodsspu.label9.caption"
 msgid "零售价(1)"
+msgstr ""
+
+#: tformgoodsspu.mavisolimit.text
+msgctxt "tformgoodsspu.mavisolimit.text"
+msgid "No"
 msgstr ""
 
 #: tformgoodsspu.tabsheet1.caption
@@ -2758,6 +3323,10 @@ msgstr ""
 
 #: tformimportxls.checkbox1.caption
 msgid "供应商的货品编码"
+msgstr ""
+
+#: tformimportxls.checkbox10.caption
+msgid "拦截条形码中非数字的字符"
 msgstr ""
 
 #: tformimportxls.checkbox18.caption
@@ -2859,6 +3428,10 @@ msgstr ""
 #: tformimportxls.label18.caption
 msgctxt "tformimportxls.label18.caption"
 msgid "经手人:"
+msgstr ""
+
+#: tformimportxls.label19.caption
+msgid "默认税率:"
 msgstr ""
 
 #: tformimportxls.label3.caption
@@ -3145,7 +3718,7 @@ msgid "其他"
 msgstr ""
 
 #: tformpayinfo.label1.caption
-msgid "以支付:"
+msgid "已支付:"
 msgstr ""
 
 #: tformpayinfo.label9.caption
@@ -3207,6 +3780,7 @@ msgid "供应商"
 msgstr ""
 
 #: tformproveedor.activebox.caption
+msgctxt "tformproveedor.activebox.caption"
 msgid "Activa"
 msgstr ""
 
@@ -3216,18 +3790,22 @@ msgid "Aplicar"
 msgstr ""
 
 #: tformproveedor.button1.caption
+msgctxt "tformproveedor.button1.caption"
 msgid "退出(&X)"
 msgstr ""
 
 #: tformproveedor.button2.caption
+msgctxt "tformproveedor.button2.caption"
 msgid "清空(&C)"
 msgstr ""
 
 #: tformproveedor.button3.caption
+msgctxt "tformproveedor.button3.caption"
 msgid "保存(&S)"
 msgstr ""
 
 #: tformproveedor.button4.caption
+msgctxt "tformproveedor.button4.caption"
 msgid "删除(&D)"
 msgstr ""
 
@@ -3266,6 +3844,7 @@ msgid "NAME_COMERCIO"
 msgstr ""
 
 #: tformproveedor.label1.caption
+msgctxt "tformproveedor.label1.caption"
 msgid "中文名称(Nombre Comercial)*:"
 msgstr ""
 
@@ -3275,58 +3854,72 @@ msgid "Tel."
 msgstr ""
 
 #: tformproveedor.label13.caption
+msgctxt "tformproveedor.label13.caption"
 msgid "传真(Fax)"
 msgstr ""
 
 #: tformproveedor.label16.caption
+msgctxt "tformproveedor.label16.caption"
 msgid "TIPO"
 msgstr ""
 
 #: tformproveedor.label17.caption
+msgctxt "tformproveedor.label17.caption"
 msgid "Contacto"
 msgstr ""
 
 #: tformproveedor.label18.caption
+msgctxt "tformproveedor.label18.caption"
 msgid "Mi ID"
 msgstr ""
 
 #: tformproveedor.label19.caption
+msgctxt "tformproveedor.label19.caption"
 msgid "Mi Tarjeta VIP"
 msgstr ""
 
 #: tformproveedor.label22.caption
+msgctxt "tformproveedor.label22.caption"
 msgid "Nombre de Banco"
 msgstr ""
 
 #: tformproveedor.label23.caption
+msgctxt "tformproveedor.label23.caption"
 msgid "Numero de la Cuenta"
 msgstr ""
 
 #: tformproveedor.label24.caption
+msgctxt "tformproveedor.label24.caption"
 msgid "observacion"
 msgstr ""
 
 #: tformproveedor.label26.caption
+msgctxt "tformproveedor.label26.caption"
 msgid "Nombre de la cuenta"
 msgstr ""
 
 #: tformproveedor.label27.caption
+msgctxt "tformproveedor.label27.caption"
 msgid "Cod. Proveedor"
 msgstr ""
 
 #: tformproveedor.label3.caption
+msgctxt "tformproveedor.label3.caption"
 msgid "公司名称(Razón Social)*"
 msgstr ""
 
 #: tformproveedor.label34.caption
+msgctxt "tformproveedor.label34.caption"
 msgid "http/Web"
 msgstr ""
 
 #: tformproveedor.label35.caption
+msgctxt "tformproveedor.label35.caption"
 msgid "Email."
 msgstr ""
 
 #: tformproveedor.label36.caption
+msgctxt "tformproveedor.label36.caption"
 msgid "Movil."
 msgstr ""
 
@@ -3336,26 +3929,32 @@ msgid "Tel."
 msgstr ""
 
 #: tformproveedor.label38.caption
+msgctxt "tformproveedor.label38.caption"
 msgid "Provincia"
 msgstr ""
 
 #: tformproveedor.label39.caption
+msgctxt "tformproveedor.label39.caption"
 msgid "Poblacion"
 msgstr ""
 
 #: tformproveedor.label4.caption
+msgctxt "tformproveedor.label4.caption"
 msgid "INTER. CIF Europea"
 msgstr ""
 
 #: tformproveedor.label40.caption
+msgctxt "tformproveedor.label40.caption"
 msgid "Codigo Postal"
 msgstr ""
 
 #: tformproveedor.label41.caption
+msgctxt "tformproveedor.label41.caption"
 msgid "Direccion*"
 msgstr ""
 
 #: tformproveedor.label42.caption
+msgctxt "tformproveedor.label42.caption"
 msgid "CIF/NIF*"
 msgstr ""
 
@@ -3370,6 +3969,7 @@ msgid "Hasta Fecha"
 msgstr ""
 
 #: tformproveedor.label5.caption
+msgctxt "tformproveedor.label5.caption"
 msgid "微信，QQ，wechat, whatapp, etc.."
 msgstr ""
 
@@ -3378,6 +3978,7 @@ msgid "Periodo a visualizar"
 msgstr ""
 
 #: tformproveedor.label6.caption
+msgctxt "tformproveedor.label6.caption"
 msgid "Fecha de alta"
 msgstr ""
 
@@ -3388,6 +3989,7 @@ msgid ""
 msgstr ""
 
 #: tformproveedor.label9.caption
+msgctxt "tformproveedor.label9.caption"
 msgid "Pais"
 msgstr ""
 
@@ -3475,7 +4077,7 @@ msgid "Elegir(选择)"
 msgstr ""
 
 #: tformselectsku.caption
-msgid "FormSelectSKU"
+msgid "SKU货品选择"
 msgstr ""
 
 #: tformselectsku.dbgrid1.columns[0].title.caption
@@ -3583,6 +4185,10 @@ msgstr ""
 msgid "查询货品"
 msgstr ""
 
+#: tformstock.label5.caption
+msgid "总资产: "
+msgstr ""
+
 #: tformstock.label7.caption
 msgctxt "tformstock.label7.caption"
 msgid "类别: "
@@ -3615,6 +4221,16 @@ msgstr ""
 
 #: tformwork.buttonnew.caption
 msgid "导入 XLS 文件"
+msgstr ""
+
+#: tformwork.caducabutton.caption
+msgctxt "tformwork.caducabutton.caption"
+msgid "过期查看"
+msgstr ""
+
+#: tformwork.caducabutton.hint
+msgctxt "tformwork.caducabutton.hint"
+msgid "Albaran, Factura"
 msgstr ""
 
 #: tformwork.caption
@@ -3708,7 +4324,7 @@ msgstr ""
 
 #: tformwork.excelbutton.hint
 msgctxt "tformwork.excelbutton.hint"
-msgid "Excel Documento"
+msgid "Excel, Ods Documento"
 msgstr ""
 
 #: tformwork.f1.caption
@@ -3722,6 +4338,16 @@ msgstr ""
 
 #: tformwork.hisbuybutton.hint
 msgctxt "tformwork.hisbuybutton.hint"
+msgid "Tree in grid simulation"
+msgstr ""
+
+#: tformwork.hisbuybutton1.caption
+msgctxt "tformwork.hisbuybutton1.caption"
+msgid "购买明细"
+msgstr ""
+
+#: tformwork.hisbuybutton1.hint
+msgctxt "tformwork.hisbuybutton1.hint"
 msgid "Tree in grid simulation"
 msgstr ""
 
@@ -3757,6 +4383,15 @@ msgstr ""
 
 #: tformwork.n19.caption
 msgid "合并"
+msgstr ""
+
+#: tformwork.newgoodsbutton.caption
+msgid "建新货品"
+msgstr ""
+
+#: tformwork.newgoodsbutton.hint
+msgctxt "tformwork.newgoodsbutton.hint"
+msgid "Tree in grid simulation"
 msgstr ""
 
 #: tformwork.panel6.caption
@@ -3797,6 +4432,23 @@ msgstr ""
 #: tformwork.storebutton.hint
 msgctxt "tformwork.storebutton.hint"
 msgid "Stock Actual"
+msgstr ""
+
+#: tformwork.storebutton1.caption
+msgid "数据清零"
+msgstr ""
+
+#: tformwork.storebutton1.hint
+msgctxt "tformwork.storebutton1.hint"
+msgid "Stock Actual"
+msgstr ""
+
+#: tformwork.storebutton2.caption
+msgid "货品流水"
+msgstr ""
+
+#: tformwork.storebutton2.hint
+msgid "Historia de Compra"
 msgstr ""
 
 #: tformwork.xpdemobutton.hint
@@ -3978,7 +4630,7 @@ msgid "S_PORT"
 msgstr ""
 
 #: tfrmitem.labelededit10.text
-msgid "8888"
+msgid "8887"
 msgstr ""
 
 #: tfrmitem.labelededit2.editlabel.caption
@@ -4064,6 +4716,152 @@ msgstr ""
 msgid "端口8888"
 msgstr ""
 
+#: tfrmitem.listviewip.columns[3].caption
+msgid "端口8887"
+msgstr ""
+
+#: tfsimple.avisolimit.text
+msgctxt "tfsimple.avisolimit.text"
+msgid "No"
+msgstr ""
+
+#: tfsimple.bitbtn12.caption
+msgctxt "tfsimple.bitbtn12.caption"
+msgid "..."
+msgstr ""
+
+#: tfsimple.bitbtn20.caption
+msgctxt "tfsimple.bitbtn20.caption"
+msgid "..."
+msgstr ""
+
+#: tfsimple.bitbtn21.caption
+msgctxt "tfsimple.bitbtn21.caption"
+msgid "..."
+msgstr ""
+
+#: tfsimple.bitbtn22.caption
+msgctxt "tfsimple.bitbtn22.caption"
+msgid "..."
+msgstr ""
+
+#: tfsimple.button1.caption
+msgid " 保存"
+msgstr ""
+
+#: tfsimple.candiscount.text
+msgctxt "tfsimple.candiscount.text"
+msgid "Yes"
+msgstr ""
+
+#: tfsimple.caption
+msgid " 货品简单添加"
+msgstr ""
+
+#: tfsimple.edit4.text
+msgctxt "tfsimple.edit4.text"
+msgid "-1"
+msgstr ""
+
+#: tfsimple.label1.caption
+msgctxt "tfsimple.label1.caption"
+msgid "商品条码:"
+msgstr ""
+
+#: tfsimple.label16.caption
+msgctxt "tfsimple.label16.caption"
+msgid "UUID"
+msgstr ""
+
+#: tfsimple.label17.caption
+msgctxt "tfsimple.label17.caption"
+msgid "商品品牌:"
+msgstr ""
+
+#: tfsimple.label18.caption
+msgctxt "tfsimple.label18.caption"
+msgid "重量"
+msgstr ""
+
+#: tfsimple.label19.caption
+msgctxt "tfsimple.label19.caption"
+msgid "包装/体积"
+msgstr ""
+
+#: tfsimple.label2.caption
+msgctxt "tfsimple.label2.caption"
+msgid "辅助码:"
+msgstr ""
+
+#: tfsimple.label3.caption
+msgctxt "tfsimple.label3.caption"
+msgid "名称(1):"
+msgstr ""
+
+#: tfsimple.label35.caption
+msgctxt "tfsimple.label35.caption"
+msgid "名称(2):"
+msgstr ""
+
+#: tfsimple.label36.caption
+msgctxt "tfsimple.label36.caption"
+msgid "条码类型:"
+msgstr ""
+
+#: tfsimple.label37.caption
+msgctxt "tfsimple.label37.caption"
+msgid "计件单位:"
+msgstr ""
+
+#: tfsimple.label43.caption
+msgctxt "tfsimple.label43.caption"
+msgid "销售折扣%:"
+msgstr ""
+
+#: tfsimple.label57.caption
+msgctxt "tfsimple.label57.caption"
+msgid "启动库存警戒"
+msgstr ""
+
+#: tfsimple.label58.caption
+msgctxt "tfsimple.label58.caption"
+msgid "最低警戒数量"
+msgstr ""
+
+#: tfsimple.label59.caption
+msgctxt "tfsimple.label59.caption"
+msgid "可以打折"
+msgstr ""
+
+#: tfsimple.label6.caption
+msgctxt "tfsimple.label6.caption"
+msgid "商品分类:"
+msgstr ""
+
+#: tfsimple.label68.caption
+msgid "积分值"
+msgstr ""
+
+#: tfsimple.label7.caption
+msgctxt "tfsimple.label7.caption"
+msgid "(%)税率:"
+msgstr ""
+
+#: tfsimple.label8.caption
+msgctxt "tfsimple.label8.caption"
+msgid "成本价"
+msgstr ""
+
+#: tfsimple.label9.caption
+msgctxt "tfsimple.label9.caption"
+msgid "零售价(1)"
+msgstr ""
+
+#: tfsimple.typebox.text
+msgctxt "tfsimple.typebox.text"
+msgid "普通商品"
+msgstr ""
+
 #: tgoodsfromproveedor.button1.caption
 msgctxt "tgoodsfromproveedor.button1.caption"
 msgid "关闭"
@@ -4115,5 +4913,240 @@ msgstr ""
 
 #: tgoodsfromproveedor.label1.caption
 msgid "查看内容(货品名称,条形码,编号)"
+msgstr ""
+
+#: tlistcaducacionform.button1.caption
+msgctxt "tlistcaducacionform.button1.caption"
+msgid "查看"
+msgstr ""
+
+#: tlistcaducacionform.button2.caption
+msgctxt "tlistcaducacionform.button2.caption"
+msgid "退出"
+msgstr ""
+
+#: tlistcaducacionform.caption
+msgid "ListCaducacionForm"
+msgstr ""
+
+#: tlistcaducacionform.combobox1.text
+msgid "警告期商品"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[0].title.caption
+msgctxt "tlistcaducacionform.dbgrid1.columns[0].title.caption"
+msgid "类别"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[1].title.caption
+msgctxt "tlistcaducacionform.dbgrid1.columns[1].title.caption"
+msgid "条码"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[2].title.caption
+msgctxt "tlistcaducacionform.dbgrid1.columns[2].title.caption"
+msgid "内容"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[3].title.caption
+msgid "牌子"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[4].title.caption
+msgctxt "tlistcaducacionform.dbgrid1.columns[4].title.caption"
+msgid "保质期"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[5].title.caption
+msgctxt "tlistcaducacionform.dbgrid1.columns[5].title.caption"
+msgid "到期日期"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[6].title.caption
+msgctxt "tlistcaducacionform.dbgrid1.columns[6].title.caption"
+msgid "数量"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[7].title.caption
+msgctxt "tlistcaducacionform.dbgrid1.columns[7].title.caption"
+msgid "单位"
+msgstr ""
+
+#: tlistcaducacionform.dbgrid1.columns[8].title.caption
+msgctxt "tlistcaducacionform.dbgrid1.columns[8].title.caption"
+msgid "重量"
+msgstr ""
+
+#: tnewprovform.activebox.caption
+msgctxt "tnewprovform.activebox.caption"
+msgid "Activa"
+msgstr ""
+
+#: tnewprovform.button1.caption
+msgctxt "tnewprovform.button1.caption"
+msgid "退出(&X)"
+msgstr ""
+
+#: tnewprovform.button2.caption
+msgctxt "tnewprovform.button2.caption"
+msgid "清空(&C)"
+msgstr ""
+
+#: tnewprovform.button3.caption
+msgctxt "tnewprovform.button3.caption"
+msgid "保存(&S)"
+msgstr ""
+
+#: tnewprovform.button4.caption
+msgctxt "tnewprovform.button4.caption"
+msgid "删除(&D)"
+msgstr ""
+
+#: tnewprovform.caption
+msgid "Nuevo Proveedor"
+msgstr ""
+
+#: tnewprovform.label1.caption
+msgctxt "tnewprovform.label1.caption"
+msgid "中文名称(Nombre Comercial)*:"
+msgstr ""
+
+#: tnewprovform.label11.caption
+msgctxt "tnewprovform.label11.caption"
+msgid "Tel."
+msgstr ""
+
+#: tnewprovform.label13.caption
+msgctxt "tnewprovform.label13.caption"
+msgid "传真(Fax)"
+msgstr ""
+
+#: tnewprovform.label16.caption
+msgctxt "tnewprovform.label16.caption"
+msgid "TIPO"
+msgstr ""
+
+#: tnewprovform.label17.caption
+msgctxt "tnewprovform.label17.caption"
+msgid "Contacto"
+msgstr ""
+
+#: tnewprovform.label18.caption
+msgctxt "tnewprovform.label18.caption"
+msgid "Mi ID"
+msgstr ""
+
+#: tnewprovform.label19.caption
+msgctxt "tnewprovform.label19.caption"
+msgid "Mi Tarjeta VIP"
+msgstr ""
+
+#: tnewprovform.label22.caption
+msgctxt "tnewprovform.label22.caption"
+msgid "Nombre de Banco"
+msgstr ""
+
+#: tnewprovform.label23.caption
+msgctxt "tnewprovform.label23.caption"
+msgid "Numero de la Cuenta"
+msgstr ""
+
+#: tnewprovform.label24.caption
+msgctxt "tnewprovform.label24.caption"
+msgid "observacion"
+msgstr ""
+
+#: tnewprovform.label26.caption
+msgctxt "tnewprovform.label26.caption"
+msgid "Nombre de la cuenta"
+msgstr ""
+
+#: tnewprovform.label27.caption
+msgctxt "tnewprovform.label27.caption"
+msgid "Cod. Proveedor"
+msgstr ""
+
+#: tnewprovform.label3.caption
+msgctxt "tnewprovform.label3.caption"
+msgid "公司名称(Razón Social)*"
+msgstr ""
+
+#: tnewprovform.label34.caption
+msgctxt "tnewprovform.label34.caption"
+msgid "http/Web"
+msgstr ""
+
+#: tnewprovform.label35.caption
+msgctxt "tnewprovform.label35.caption"
+msgid "Email."
+msgstr ""
+
+#: tnewprovform.label36.caption
+msgctxt "tnewprovform.label36.caption"
+msgid "Movil."
+msgstr ""
+
+#: tnewprovform.label37.caption
+msgctxt "tnewprovform.label37.caption"
+msgid "Tel."
+msgstr ""
+
+#: tnewprovform.label38.caption
+msgctxt "tnewprovform.label38.caption"
+msgid "Provincia"
+msgstr ""
+
+#: tnewprovform.label39.caption
+msgctxt "tnewprovform.label39.caption"
+msgid "Poblacion"
+msgstr ""
+
+#: tnewprovform.label4.caption
+msgctxt "tnewprovform.label4.caption"
+msgid "INTER. CIF Europea"
+msgstr ""
+
+#: tnewprovform.label40.caption
+msgctxt "tnewprovform.label40.caption"
+msgid "Codigo Postal"
+msgstr ""
+
+#: tnewprovform.label41.caption
+msgctxt "tnewprovform.label41.caption"
+msgid "Direccion*"
+msgstr ""
+
+#: tnewprovform.label42.caption
+msgctxt "tnewprovform.label42.caption"
+msgid "CIF/NIF*"
+msgstr ""
+
+#: tnewprovform.label5.caption
+msgctxt "tnewprovform.label5.caption"
+msgid "微信，QQ，wechat, whatapp, etc.."
+msgstr ""
+
+#: tnewprovform.label6.caption
+msgctxt "tnewprovform.label6.caption"
+msgid "Fecha de alta"
+msgstr ""
+
+#: tnewprovform.label9.caption
+msgctxt "tnewprovform.label9.caption"
+msgid "Pais"
+msgstr ""
+
+#: tspecmatrixform.button1.caption
+msgctxt "tspecmatrixform.button1.caption"
+msgid "确定"
+msgstr ""
+
+#: tspecmatrixform.button2.caption
+msgctxt "tspecmatrixform.button2.caption"
+msgid "退出"
+msgstr ""
+
+#: tspecmatrixform.caption
+msgid "选择属性值"
 msgstr ""
 

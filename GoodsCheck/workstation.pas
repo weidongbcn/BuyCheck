@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, LCLType,
-  StdCtrls, DBGrids, ComCtrls, Buttons, Menus, ZDataset,StockActual;
+  StdCtrls, DBGrids, ComCtrls, Buttons, Menus, ZDataset,StockActual, md5, Grids, create;
 
 type
 
@@ -24,21 +24,26 @@ type
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DocumentoButton: TSpeedButton;
+    CaducaButton: TSpeedButton;
     DocumentoButton1: TSpeedButton;
-    LabelButton: TSpeedButton;
+    HisBuyButton1: TSpeedButton;
     f1: TMenuItem;
     HisBuyButton: TSpeedButton;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     DelZQuery: TZQuery;
+    LabelButton: TSpeedButton;
     MainPanel: TPanel;
     N11: TMenuItem;
     N12: TMenuItem;
     N13: TMenuItem;
     N14: TMenuItem;
     N19: TMenuItem;
+    NewGoodsButton: TSpeedButton;
     PopupMenu1: TPopupMenu;
+    Register: TSpeedButton;
+    ScrollBox1: TScrollBox;
     StatusBar: TStatusBar;
     StoreButton: TSpeedButton;
     Panel1: TPanel;
@@ -54,9 +59,10 @@ type
     SpeedButton2: TSpeedButton;
     AlmacenButton: TSpeedButton;
     ProveedorButton: TSpeedButton;
+    StoreButton1: TSpeedButton;
+    StoreButton2: TSpeedButton;
     XPDemoButton: TSpeedButton;
     ExcelButton: TSpeedButton;
-    Register: TSpeedButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -65,6 +71,8 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure LabelButtonClick(Sender: TObject);
     procedure DocumentoButtonClick(Sender: TObject);
     procedure ExcelButtonClick(Sender: TObject);
@@ -73,10 +81,13 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure N13Click(Sender: TObject);
+    procedure NewGoodsButtonClick(Sender: TObject);
     procedure ProveedorButtonClick(Sender: TObject);
     procedure QuitButtonClick(Sender: TObject);
     procedure DemoButtonClick(Sender: TObject);
     procedure RegisterClick(Sender: TObject);
+    procedure StoreButton1Click(Sender: TObject);
+    procedure StoreButton2Click(Sender: TObject);
   private
     procedure GetListDB;
   public
@@ -91,7 +102,7 @@ var
 implementation
 uses
   connect,U_Conn_Indy, Global, Uloginmain, Checkdb, ReadDBfile,  addgoods, Proveedor, BuyIn01, buyin02, Inventory, BuyListCheck, Categorys_Spec,
-  GoodsFromProv, FindoutGoodsInPro, His_Goods_Buy, his_buys, ABOUT, EtiquetasArticulos;
+  GoodsFromProv, FindoutGoodsInPro, His_Goods_Buy, his_buys, ABOUT, EtiquetasArticulos, cleardb, caduca;
 
 {$R *.lfm}
 
@@ -129,6 +140,8 @@ begin
       NewDemoClass := TFormProGoods;
     10:
       NewDemoClass := TGoodsFromProveedor;
+    11:
+      NewDemoClass := TListCaducacionForm;
   else
     NewDemoClass := nil;
   end;
@@ -163,6 +176,33 @@ begin
   AboutBox:=TAboutBox.Create(self);
   AboutBox.ShowModal;
   AboutBox.Free;
+end;
+
+procedure TFormWork.StoreButton1Click(Sender: TObject);
+var
+  key:string;
+begin
+   key := PasswordBox(nMSG15,'');
+   if key = '' then
+   begin
+     showmessage(nMSG12);
+     exit;
+   end;
+   if MD5Print(MD5String(key)) <> passwordhash then
+   begin
+     showmessage(nMSG16);
+     exit;
+   end;
+  ClearDbForm:=TClearDbForm.Create(self);
+  ClearDbForm.ShowModal;
+  ClearDbForm.Free;
+end;
+
+procedure TFormWork.StoreButton2Click(Sender: TObject);
+begin
+  FormGoodsBuyHis:= TFormGoodsBuyHis.Create(self);
+  FormGoodsBuyHis.ShowModal;
+  FormGoodsBuyHis.Free;
 end;
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -216,9 +256,39 @@ procedure TFormWork.DBGrid1KeyDown(Sender: TObject; var Key: Word;
 begin
   If Key=VK_RETURN then
   begin
-  Button1.Click;
-  key:=0;
+   key:=0;
+   Button1.Click;
+
   end;
+end;
+
+procedure TFormWork.DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+  Column: TColumn; AState: TGridDrawState);
+begin
+  with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+  { if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
+  begin
+    DBGrid1.Canvas.Brush.Color := clRed;
+    DBGrid1.Canvas.Font.Color := clWhite;
+
+  end;  }
+    if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
+
+end;
 end;
 
 procedure TFormWork.LabelButtonClick(Sender: TObject);
@@ -230,9 +300,13 @@ end;
 
 procedure TFormWork.DocumentoButtonClick(Sender: TObject);
 begin
-   FormBuyIn02:= TFormBuyIn02.Create(self);
+   {FormBuyIn02:= TFormBuyIn02.Create(self);
   FormBuyIn02.ShowModal;
   FormBuyIn02.Free;
+  ListZQuery.Refresh;   }
+  FormBuyIn:= TFormBuyIn.Create(self);
+  FormBuyIn.ShowModal;
+  FormBuyIn.Free;
   ListZQuery.Refresh;
 end;
 
@@ -245,8 +319,8 @@ procedure TFormWork.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   DMindy.IdTCPClient1.Disconnect;
   sleep(10);
-  DMindy.Mt.Terminate;
-  DMindy.Mt.FreeInstance;
+  //DMindy.Mt.Terminate;
+  //DMindy.Mt.FreeInstance;
 end;
 
 FUNCTION GetTmpLists(DB: TDBGrid):TStringArray;
@@ -358,9 +432,9 @@ end;
 
 procedure TFormWork.Button4Click(Sender: TObject);
 begin
-  Form_His_BuyFromProveedor:= TForm_His_BuyFromProveedor.Create(self);
-  Form_His_BuyFromProveedor.ShowModal;
-  Form_His_BuyFromProveedor.Free;
+  FAddGoods:= TFAddGoods.Create(self);
+  FAddGoods.ShowModal;
+  FAddGoods.Free;
 end;
 
 procedure TFormWork.FormCreate(Sender: TObject);
@@ -423,6 +497,13 @@ begin
   end;
 
   ListZQuery.Refresh;
+end;
+
+procedure TFormWork.NewGoodsButtonClick(Sender: TObject);
+begin
+  FAddGoods:=TFAddGoods.Create(self);
+  FAddGoods.ShowModal;
+  FAddGoods.Free;
 end;
 
 procedure TFormWork.ProveedorButtonClick(Sender: TObject);

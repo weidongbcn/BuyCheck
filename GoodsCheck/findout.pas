@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, DBGrids, ExtCtrls, variants,
   Buttons, StdCtrls, ZDataset,connect, LCLType,
-   Global;
+   Global, Grids;
 
 type
 
@@ -31,6 +31,8 @@ type
     procedure GridBusquedasDblClick(Sender: TObject);
     procedure GridBusquedasKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure GridBusquedasPrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
   private
 
   public
@@ -102,6 +104,34 @@ procedure TFormFindout.GridBusquedasKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if (key=VK_RETURN) then begin key:=0; btCerrarClick(Self); end;
+end;
+
+procedure TFormFindout.GridBusquedasPrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+    with Sender as TDBGrid do begin
+if GridBusquedas.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    GridBusquedas.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    GridBusquedas.Canvas.Brush.Color := clSilver;
+  end;
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    GridBusquedas.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    GridBusquedas.Canvas.pen.mode := pmmask;
+  end;
+    {
+   if ([gdSelected, gdFocused] * AState <> []) and (GridBusquedas.SelectedColumn = Column) then
+  begin
+    GridBusquedas.Canvas.Brush.Color := clRed;
+    GridBusquedas.Canvas.Font.Color := clWhite;
+  end; }
+end;
 end;
 
 procedure TFormFindout.GridBusquedasDblClick(Sender: TObject);

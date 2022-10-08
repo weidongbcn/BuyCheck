@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, LCLType,
-  DBGrids, ZDataset, Global, connect;
+  DBGrids, ZDataset, Global, connect, Grids;
 
 type
 
@@ -25,6 +25,8 @@ type
     Panel2: TPanel;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure findoutGoods(FindStr: string);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -83,6 +85,26 @@ begin
   exit;
 end;
   findoutGoods(TRIM(EDIT1.Text));
+end;
+
+procedure TGoodsFromProveedor.DBGrid1PrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+  with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
 end;
 
 procedure TGoodsFromProveedor.Button1Click(Sender: TObject);

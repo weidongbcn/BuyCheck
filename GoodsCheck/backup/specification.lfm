@@ -1,0 +1,329 @@
+object Formspec: TFormspec
+  Left = 519
+  Height = 716
+  Top = 197
+  Width = 1036
+  Caption = '属性值生成'
+  ClientHeight = 716
+  ClientWidth = 1036
+  OnCreate = FormCreate
+  Position = poOwnerFormCenter
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 0
+    Width = 1036
+    Align = alTop
+    ClientHeight = 41
+    ClientWidth = 1036
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 32
+      Height = 17
+      Top = 16
+      Width = 72
+      Caption = '添加商品规格'
+      ParentColor = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 41
+    Top = 675
+    Width = 1036
+    Align = alBottom
+    ClientHeight = 41
+    ClientWidth = 1036
+    TabOrder = 1
+    object Button2: TButton
+      Left = 832
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '退出'
+      OnClick = Button2Click
+      TabOrder = 0
+    end
+    object Button3: TButton
+      Left = 504
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '修改规格值'
+      OnClick = Button3Click
+      TabOrder = 1
+    end
+    object Button7: TButton
+      Left = 307
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '创建新规格'
+      OnClick = Button7Click
+      TabOrder = 2
+    end
+    object Button9: TButton
+      Left = 160
+      Height = 25
+      Top = 6
+      Width = 75
+      Caption = '删除规格'
+      OnClick = Button9Click
+      TabOrder = 3
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 634
+    Top = 41
+    Width = 1036
+    Align = alClient
+    ClientHeight = 634
+    ClientWidth = 1036
+    TabOrder = 2
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 632
+      Top = 1
+      Width = 1034
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = '编号'
+          Width = 50
+          FieldName = 'ATTIBUTE_ID'
+        end      
+        item
+          Title.Caption = '属性'
+          Width = 120
+          FieldName = 'NAME'
+        end      
+        item
+          Title.Caption = '说明'
+          Width = 300
+          FieldName = 'definition'
+        end      
+        item
+          Title.Caption = 'SPEC_VALUE'
+          FieldName = 'SPEC_VALUE'
+        end>
+      DataSource = DataSource1
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+      TabOrder = 0
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      OnDblClick = DBGrid1DblClick
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Height = 298
+    Top = 304
+    Width = 1006
+    Align = alCustom
+    BorderStyle = bsSingle
+    ClientHeight = 294
+    ClientWidth = 1002
+    TabOrder = 3
+    Visible = False
+    object Label2: TLabel
+      Left = 73
+      Height = 17
+      Top = 18
+      Width = 48
+      Caption = '规格名称'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 73
+      Height = 17
+      Top = 53
+      Width = 36
+      Caption = '规格值'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 140
+      Height = 17
+      Top = 268
+      Width = 207
+      Caption = '一行一个规格值，多个规格值换行输入.'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 557
+      Height = 17
+      Top = 21
+      Width = 48
+      Caption = '规格说明'
+      ParentColor = False
+    end
+    object Edit1: TEdit
+      Left = 140
+      Height = 25
+      Top = 15
+      Width = 121
+      OnExit = Edit1Exit
+      TabOrder = 0
+    end
+    object Memo1: TMemo
+      Left = 140
+      Height = 212
+      Top = 50
+      Width = 289
+      TabOrder = 1
+    end
+    object Memo2: TMemo
+      Left = 611
+      Height = 153
+      Top = 18
+      Width = 289
+      MaxLength = 256
+      TabOrder = 2
+    end
+    object Button1: TButton
+      Left = 719
+      Height = 25
+      Top = 246
+      Width = 75
+      Caption = '保存'
+      OnClick = Button1Click
+      TabOrder = 3
+    end
+    object Button8: TButton
+      Left = 828
+      Height = 25
+      Top = 248
+      Width = 75
+      Caption = '返回'
+      OnClick = Button8Click
+      TabOrder = 4
+    end
+  end
+  object Panel5: TPanel
+    Left = 240
+    Height = 385
+    Top = 152
+    Width = 505
+    BorderStyle = bsSingle
+    ClientHeight = 381
+    ClientWidth = 501
+    TabOrder = 4
+    Visible = False
+    object DBGrid2: TDBGrid
+      Left = 1
+      Height = 254
+      Top = 42
+      Width = 499
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      DataSource = DataSource2
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgMultiselect]
+      TabOrder = 0
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      OnMouseUp = DBGrid2MouseUp
+    end
+    object Panel6: TPanel
+      Left = 1
+      Height = 41
+      Top = 1
+      Width = 499
+      Align = alTop
+      ClientHeight = 41
+      ClientWidth = 499
+      TabOrder = 1
+      object Label6: TLabel
+        Left = 88
+        Height = 17
+        Top = 16
+        Width = 80
+        Caption = '按Ctrl可以多选'
+        ParentColor = False
+      end
+    end
+    object Panel7: TPanel
+      Left = 1
+      Height = 84
+      Top = 296
+      Width = 499
+      Align = alBottom
+      ClientHeight = 84
+      ClientWidth = 499
+      TabOrder = 2
+      object Label7: TLabel
+        Left = 64
+        Height = 17
+        Top = 40
+        Width = 36
+        Caption = '规格值'
+        ParentColor = False
+      end
+      object Button4: TButton
+        Left = 392
+        Height = 25
+        Top = 15
+        Width = 75
+        Caption = '删除'
+        OnClick = Button4Click
+        TabOrder = 0
+      end
+      object Button5: TButton
+        Left = 392
+        Height = 25
+        Top = 46
+        Width = 75
+        Caption = '返回'
+        OnClick = Button5Click
+        TabOrder = 1
+      end
+      object Edit2: TEdit
+        Left = 112
+        Height = 25
+        Top = 40
+        Width = 121
+        MaxLength = 32
+        TabOrder = 2
+      end
+      object Button6: TButton
+        Left = 247
+        Height = 25
+        Top = 40
+        Width = 75
+        Caption = '添加'
+        OnClick = Button6Click
+        TabOrder = 3
+      end
+    end
+  end
+  object SpecQuery: TZQuery
+    AfterScroll = SpecQueryAfterScroll
+    Params = <>
+    Left = 160
+    Top = 176
+  end
+  object SpecValuesQuery: TZQuery
+    Params = <>
+    Left = 432
+    Top = 88
+  end
+  object TrabajoQuery: TZQuery
+    Params = <>
+    Left = 636
+    Top = 276
+  end
+  object DataSource2: TDataSource
+    DataSet = SpecValuesQuery
+    Left = 651
+    Top = 360
+  end
+  object DataSource1: TDataSource
+    DataSet = SpecQuery
+    Left = 548
+    Top = 28
+  end
+end

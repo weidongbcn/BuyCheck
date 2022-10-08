@@ -1,13 +1,12 @@
 object FormProGoods: TFormProGoods
   Left = 651
-  Height = 680
+  Height = 686
   Top = 323
   Width = 1024
   Caption = '供应商货品单'
-  ClientHeight = 680
+  ClientHeight = 686
   ClientWidth = 1024
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 57
@@ -56,7 +55,7 @@ object FormProGoods: TFormProGoods
   object Panel3: TPanel
     Left = 0
     Height = 41
-    Top = 639
+    Top = 645
     Width = 1024
     Align = alBottom
     ClientHeight = 41
@@ -75,26 +74,26 @@ object FormProGoods: TFormProGoods
   end
   object Panel2: TPanel
     Left = 0
-    Height = 582
+    Height = 588
     Top = 57
     Width = 1024
     Align = alClient
-    ClientHeight = 582
+    ClientHeight = 588
     ClientWidth = 1024
     TabOrder = 2
     object Panel4: TPanel
-      Left = 838
-      Height = 580
+      Left = 858
+      Height = 586
       Top = 1
-      Width = 185
+      Width = 165
       Align = alRight
       TabOrder = 0
     end
     object DBGrid1: TDBGrid
       Left = 1
-      Height = 580
+      Height = 586
       Top = 1
-      Width = 837
+      Width = 857
       Align = alClient
       Color = clWindow
       Columns = <      
@@ -135,16 +134,17 @@ object FormProGoods: TFormProGoods
         end>
       DataSource = DataSource1
       TabOrder = 1
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object ListQuery: TZQuery
     Params = <>
-    left = 380
-    top = 276
+    Left = 380
+    Top = 276
   end
   object DataSource1: TDataSource
     DataSet = ListQuery
-    left = 290
-    top = 264
+    Left = 290
+    Top = 264
   end
 end

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, ExtCtrls, ExtDlgs,
-  EditBtn, StdCtrls, DBGrids, ZDataset, DateTimePicker, Global, connect;
+  EditBtn, StdCtrls, DBGrids, ZDataset, DateTimePicker, Global, connect, Grids;
 
 type
 
@@ -28,6 +28,8 @@ type
     ZQuery1: TZQuery;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure FormCreate(Sender: TObject);
   private
 
@@ -82,6 +84,29 @@ end;
 procedure TFormGoodsBuyHis.Button2Click(Sender: TObject);
 begin
   CLOSE;
+end;
+
+procedure TFormGoodsBuyHis.DBGrid1PrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+  with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+end;
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlue; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+    DBGrid1.Canvas.Font.Color := clWhite;
+  end;
+
 end;
 
 end.

@@ -1,0 +1,504 @@
+object FormGoodsSkuList: TFormGoodsSkuList
+  Left = 500
+  Height = 726
+  Top = 176
+  Width = 1024
+  Caption = 'Skus'
+  ClientHeight = 726
+  ClientWidth = 1024
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  LCLVersion = '2.0.10.0'
+  object TitilePanel: TPanel
+    Left = 0
+    Height = 60
+    Top = 0
+    Width = 1024
+    Align = alTop
+    ClientHeight = 60
+    ClientWidth = 1024
+    TabOrder = 0
+    object Panel1: TPanel
+      Left = 1
+      Height = 58
+      Top = 1
+      Width = 170
+      Align = alLeft
+      ClientHeight = 58
+      ClientWidth = 170
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 46
+        Height = 15
+        Top = 22
+        Width = 81
+        Caption = '当前商品信息:'
+        ParentColor = False
+      end
+    end
+    object Panel2: TPanel
+      Left = 171
+      Height = 58
+      Top = 1
+      Width = 852
+      Align = alClient
+      ClientHeight = 58
+      ClientWidth = 852
+      TabOrder = 1
+      object Label2: TLabel
+        Left = 64
+        Height = 15
+        Top = 10
+        Width = 29
+        Alignment = taRightJustify
+        Caption = '条码:'
+        Color = clBtnFace
+        ParentColor = False
+        Transparent = False
+      end
+      object ENAEdit: TEdit
+        Left = 96
+        Height = 23
+        Top = 7
+        Width = 121
+        TabOrder = 0
+      end
+      object Label3: TLabel
+        Left = 64
+        Height = 15
+        Top = 37
+        Width = 29
+        Alignment = taRightJustify
+        Caption = '名称:'
+        Color = clBtnFace
+        ParentColor = False
+        Transparent = False
+      end
+      object NameEdit: TEdit
+        Left = 96
+        Height = 23
+        Top = 32
+        Width = 299
+        TabOrder = 1
+      end
+    end
+  end
+  object SwitchPanel: TPanel
+    Left = 0
+    Height = 50
+    Top = 676
+    Width = 1024
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 1024
+    TabOrder = 1
+    object Button5: TButton
+      Left = 872
+      Height = 25
+      Top = 16
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = '返回'
+      OnClick = Button5Click
+      TabOrder = 0
+    end
+  end
+  object CentrePanel: TPanel
+    Left = 0
+    Height = 616
+    Top = 60
+    Width = 1024
+    Align = alClient
+    ClientHeight = 616
+    ClientWidth = 1024
+    TabOrder = 2
+    object Panel3: TPanel
+      Left = 1
+      Height = 327
+      Top = 288
+      Width = 1022
+      Align = alBottom
+      ClientHeight = 327
+      ClientWidth = 1022
+      TabOrder = 0
+      object ScrollBox1: TScrollBox
+        Left = 1
+        Height = 325
+        Top = 1
+        Width = 768
+        HorzScrollBar.Page = 1
+        HorzScrollBar.Visible = False
+        VertScrollBar.Page = 1
+        Align = alClient
+        TabOrder = 0
+      end
+      object BasePanel: TPanel
+        Left = 769
+        Height = 325
+        Top = 1
+        Width = 252
+        Align = alRight
+        ClientHeight = 325
+        ClientWidth = 252
+        TabOrder = 1
+        object Panel8: TPanel
+          Left = 1
+          Height = 323
+          Top = 1
+          Width = 250
+          Align = alClient
+          BorderStyle = bsSingle
+          ClientHeight = 319
+          ClientWidth = 246
+          TabOrder = 0
+          object Button1: TButton
+            Left = 128
+            Height = 25
+            Top = 264
+            Width = 75
+            Caption = '插入'
+            OnClick = Button1Click
+            TabOrder = 0
+          end
+          object Label8: TLabel
+            Left = 81
+            Height = 15
+            Top = 15
+            Width = 39
+            Alignment = taRightJustify
+            Caption = '成本价'
+            ParentColor = False
+          end
+          object Label10: TLabel
+            Left = 66
+            Height = 15
+            Top = 76
+            Width = 53
+            Alignment = taRightJustify
+            Caption = '零售价(2)'
+            ParentColor = False
+          end
+          object Label11: TLabel
+            Left = 66
+            Height = 15
+            Top = 105
+            Width = 53
+            Alignment = taRightJustify
+            Caption = '零售价(3)'
+            ParentColor = False
+          end
+          object Label9: TLabel
+            Left = 66
+            Height = 15
+            Top = 45
+            Width = 53
+            Alignment = taRightJustify
+            Caption = '零售价(1)'
+            ParentColor = False
+          end
+          object Label12: TLabel
+            Left = 81
+            Height = 15
+            Top = 136
+            Width = 39
+            Alignment = taRightJustify
+            Caption = '促销价'
+            ParentColor = False
+          end
+          object Label13: TLabel
+            Left = 81
+            Height = 15
+            Top = 162
+            Width = 39
+            Alignment = taRightJustify
+            Caption = '批发价'
+            ParentColor = False
+          end
+          object DBCost: TCurrencyEdit
+            Left = 121
+            Height = 23
+            Top = 7
+            Width = 81
+            Alignment = taRightJustify
+            Color = clInfoBk
+            DecimalPlaces = 4
+            DisplayFormat = '0.000;-0.000'
+            TabOrder = 1
+            ZeroEmpty = False
+          end
+          object DBPvP1c: TCurrencyEdit
+            Left = 121
+            Height = 23
+            Top = 37
+            Width = 81
+            Alignment = taRightJustify
+            Color = clInfoBk
+            DecimalPlaces = 4
+            DisplayFormat = '0.000;-0.000'
+            TabOrder = 2
+            ZeroEmpty = False
+          end
+          object DBPvP2c: TCurrencyEdit
+            Left = 121
+            Height = 23
+            Top = 69
+            Width = 81
+            Alignment = taRightJustify
+            Color = clInfoBk
+            DecimalPlaces = 4
+            DisplayFormat = '0.000;-0.000'
+            TabOrder = 3
+            ZeroEmpty = False
+          end
+          object DBPvP3c: TCurrencyEdit
+            Left = 121
+            Height = 23
+            Top = 100
+            Width = 81
+            Alignment = taRightJustify
+            Color = clInfoBk
+            DecimalPlaces = 4
+            DisplayFormat = '0.000;-0.000'
+            TabOrder = 4
+            ZeroEmpty = False
+          end
+          object DBLOWPRICE: TCurrencyEdit
+            Left = 121
+            Height = 23
+            Top = 132
+            Width = 81
+            Alignment = taRightJustify
+            Color = clInfoBk
+            DecimalPlaces = 4
+            DisplayFormat = '0.000;-0.000'
+            TabOrder = 5
+            ZeroEmpty = False
+          end
+          object DBWHOLESALE: TCurrencyEdit
+            Left = 121
+            Height = 23
+            Top = 160
+            Width = 81
+            Alignment = taRightJustify
+            Color = clInfoBk
+            DecimalPlaces = 4
+            DisplayFormat = '0.000;-0.000'
+            TabOrder = 6
+            ZeroEmpty = False
+          end
+          object DBDISCOUNT: TCurrencyEdit
+            Left = 120
+            Height = 23
+            Top = 214
+            Width = 81
+            Alignment = taRightJustify
+            DisplayFormat = '0.00'
+            TabOrder = 8
+            ZeroEmpty = False
+          end
+          object Label43: TLabel
+            Left = -9
+            Height = 17
+            Top = 216
+            Width = 124
+            Alignment = taRightJustify
+            AutoSize = False
+            Caption = '销售折扣%:'
+            Color = clBtnFace
+            ParentColor = False
+            Transparent = False
+          end
+          object Label38: TLabel
+            Left = 52
+            Height = 15
+            Top = 243
+            Width = 65
+            Alignment = taRightJustify
+            Caption = '赠送积分数'
+            ParentColor = False
+          end
+          object Edit4: TEdit
+            Left = 123
+            Height = 23
+            Top = 240
+            Width = 80
+            TabOrder = 9
+            Text = '-1'
+          end
+          object Label58: TLabel
+            Left = 42
+            Height = 15
+            Top = 192
+            Width = 78
+            Alignment = taRightJustify
+            Caption = '最低警戒数量'
+            ParentColor = False
+          end
+          object LowLimit: TCurrencyEdit
+            Left = 121
+            Height = 23
+            Top = 188
+            Width = 65
+            Alignment = taRightJustify
+            DisplayFormat = '0'
+            TabOrder = 7
+            ZeroEmpty = False
+          end
+        end
+      end
+    end
+    object DataPanel: TPanel
+      Left = 1
+      Height = 287
+      Top = 1
+      Width = 1022
+      Align = alClient
+      ClientHeight = 287
+      ClientWidth = 1022
+      TabOrder = 1
+      object Panel4: TPanel
+        Left = 944
+        Height = 285
+        Top = 1
+        Width = 77
+        Align = alRight
+        ClientHeight = 285
+        ClientWidth = 77
+        TabOrder = 0
+        object Button2: TButton
+          Left = 0
+          Height = 25
+          Top = 32
+          Width = 60
+          Caption = '删除'
+          OnClick = Button2Click
+          TabOrder = 0
+        end
+        object Button3: TButton
+          Left = 0
+          Height = 25
+          Top = 64
+          Width = 60
+          Caption = '更新'
+          OnClick = Button3Click
+          TabOrder = 1
+        end
+        object Button4: TButton
+          Left = 0
+          Height = 25
+          Top = 96
+          Width = 75
+          Caption = '保存修改'
+          OnClick = Button4Click
+          TabOrder = 2
+        end
+      end
+      object DBGrid2: TDBGrid
+        Left = 1
+        Height = 285
+        Top = 1
+        Width = 943
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            ReadOnly = True
+            Title.Caption = 'SKU名称'
+            Width = 220
+            FieldName = 'SKU_NAME'
+          end        
+          item
+            ReadOnly = True
+            Title.Caption = '属性值Ids'
+            Width = 110
+            FieldName = 'ATTIBUTE_VALUE_IDS'
+          end        
+          item
+            Title.Caption = '成本价'
+            Width = 60
+            FieldName = 'COST'
+            DisplayFormat = '0.000'
+          end        
+          item
+            Title.Caption = '零售价(1)'
+            Width = 80
+            FieldName = 'SELLING_P1C'
+            DisplayFormat = '0.000'
+          end        
+          item
+            Title.Caption = '零售价(2)'
+            Width = 80
+            FieldName = 'SELLING_P2C'
+            DisplayFormat = '0.000'
+          end        
+          item
+            Title.Caption = '零售价(3)'
+            Width = 80
+            FieldName = 'SELLING_P3C'
+            DisplayFormat = '0.000'
+          end        
+          item
+            Title.Caption = '促销价'
+            Width = 80
+            FieldName = 'LOWPRICE'
+            DisplayFormat = '0.000'
+          end        
+          item
+            Title.Caption = '批发价'
+            Width = 80
+            FieldName = 'WHOLESALE'
+            DisplayFormat = '0.000'
+          end        
+          item
+            Title.Caption = '折扣%'
+            Width = 50
+            FieldName = 'DISCOUNT'
+          end        
+          item
+            ReadOnly = True
+            Title.Caption = '库存'
+            Width = 70
+            FieldName = 'STOCK'
+          end        
+          item
+            ReadOnly = True
+            Title.Caption = 'SKU编码'
+            FieldName = 'SKU_NO'
+          end>
+        DataSource = DSSkus
+        TabOrder = 1
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+      end
+    end
+  end
+  object DBGoodsSkuQuery: TZQuery
+    Params = <>
+    Left = 592
+    Top = 72
+  end
+  object DSSkus: TDataSource
+    DataSet = DBGoodsSkuQuery
+    Left = 560
+    Top = 216
+  end
+  object SpecValuesQuery: TZQuery
+    Params = <>
+    Left = 200
+    Top = 272
+  end
+  object SpuSpecQuery: TZQuery
+    Params = <>
+    Left = 224
+    Top = 368
+  end
+  object dbTrabajo: TZQuery
+    AutoCalcFields = False
+    Params = <>
+    Left = 808
+    Top = 320
+  end
+end

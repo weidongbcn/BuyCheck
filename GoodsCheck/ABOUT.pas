@@ -110,10 +110,11 @@ filesize:integer;
 StrSend, StrSendHex:string;
 begin
 Transferred:=False;
+
  if OpenDialog1.Execute then
  begin
-  //copyfile(OpenDialog1.FileName, Regfile);
-  //ShowMessage(MsgReg7);
+  if ci.S_Port = 8888 then
+  begin
   if DMindy.IdTCPClient1.Connected  then
   begin
 
@@ -140,6 +141,8 @@ Transferred:=False;
   begin
    MessageBox(Handle,'没有连接服务器','Error',MB_Ok);
   end;
+  end;
+
 
 
  end;
@@ -163,11 +166,15 @@ procedure TAboutBox.Button2Click(Sender: TObject);
 var
 StrSend, StrSendHex:string;
 begin
-  //StrSendHex:=toHEXSTRING('regdat@'+TCPServer.PCID+'|regfile#'+inttostr(filesize),2);
+  if ci.S_Port =8888 then
+  begin
+
   StrSendHex:=toHEXSTRING('RigisterDb@'+TCPServer.PCID+'|Venta#',2);
   //  IdTCPClient1.IOHandler.Writeln(StrSendHex, IndyTextEncoding_UTF8);
   DMindy.IdTCPClient1.IOHandler.Writeln(StrSendHex, IndyTextEncoding_UTF8);
   writelog('sys','About', 'You Want to get RegisterDB.');
+  end;
+
 end;
 
 procedure TAboutBox.Button3Click(Sender: TObject);

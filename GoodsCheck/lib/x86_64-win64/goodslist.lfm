@@ -11,7 +11,7 @@ object FormGoodsList: TFormGoodsList
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   Position = poDesktopCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 57
@@ -109,13 +109,13 @@ object FormGoodsList: TFormGoodsList
       TabOrder = 2
       object CBCampos: TComboBox
         Left = 9
-        Height = 21
+        Height = 24
         Hint = 'Selecciona la columna por la que ordenar/buscar.'
         Top = -1
         Width = 233
         Font.Height = -13
         Font.Name = 'DejaVu Serif'
-        ItemHeight = 13
+        ItemHeight = 16
         Items.Strings = (
           ''
         )
@@ -361,6 +361,7 @@ object FormGoodsList: TFormGoodsList
       TitleFont.Name = 'Tahoma'
       OnDblClick = BtCerrarClick
       OnKeyDown = DBGrid1KeyDown
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object dbBusquedas: TZQuery
@@ -369,12 +370,12 @@ object FormGoodsList: TFormGoodsList
     AfterOpen = dbBusquedasAfterOpen
     AfterScroll = dbBusquedasAfterScroll
     Params = <>
-    left = 156
-    top = 108
+    Left = 156
+    Top = 108
   end
   object Datasource1: TDataSource
     DataSet = dbBusquedas
-    left = 61
-    top = 62
+    Left = 61
+    Top = 62
   end
 end

@@ -1,8 +1,13 @@
 object DataModule1: TDataModule1
-  Left = 983
+  Left = 669
   Height = 300
-  Top = 303
+  Top = 304
   Width = 400
   OnCreate = DataModuleCreate
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
+  object BufDataset1: TBufDataset
+    FieldDefs = <>
+    Left = 114
+    Top = 46
+  end
 end

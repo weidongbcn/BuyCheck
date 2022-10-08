@@ -235,6 +235,7 @@ procedure TFormBuy.FormCreate(Sender: TObject);
 begin
   GetStockList;
   GetSTAFFList;
+  DateTimePicker1.DateTime:=now();
   aBUYDoc.B_UUID:='';
   aBUYDoc.DOCUMENT:='';
   aBUYDoc.N_DOCUMENT:='';

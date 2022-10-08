@@ -3,12 +3,13 @@ object FormStock: TFormStock
   Height = 680
   Top = 188
   Width = 1024
-  Caption = 'FormStock'
+  BorderStyle = bsSizeToolWin
+  Caption = '库存明细'
   ClientHeight = 680
   ClientWidth = 1024
   OnCreate = FormCreate
+  OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
   object Panel1: TPanel
     Left = 0
     Height = 80
@@ -131,6 +132,25 @@ object FormStock: TFormStock
       Caption = '查询货品'
       ParentColor = False
     end
+    object Importe: TCurrencyEdit
+      Left = 864
+      Height = 25
+      Top = 40
+      Width = 128
+      Alignment = taRightJustify
+      DecimalPlaces = 3
+      DisplayFormat = '0.000'
+      TabOrder = 6
+      ZeroEmpty = False
+    end
+    object Label5: TLabel
+      Left = 865
+      Height = 17
+      Top = 19
+      Width = 43
+      Caption = '总资产: '
+      ParentColor = False
+    end
   end
   object Panel2: TPanel
     Left = 0
@@ -182,8 +202,9 @@ object FormStock: TFormStock
       end    
       item
         Title.Caption = '数量'
-        Width = 64
+        Width = 80
         FieldName = 'AMOUNT'
+        DisplayFormat = '#0'
       end    
       item
         Title.Caption = '成本'
@@ -213,38 +234,50 @@ object FormStock: TFormStock
     DataSource = AllGoodsDS
     TabOrder = 2
     OnDrawColumnCell = DBGrid1DrawColumnCell
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object StockNameDS: TDataSource
     DataSet = StockNameQuery
-    left = 656
-    top = 280
+    Left = 656
+    Top = 280
   end
   object StockNameQuery: TZQuery
     SQL.Strings = (
       'select * from 0000estanteria'
     )
     Params = <>
-    left = 656
-    top = 200
+    Left = 656
+    Top = 200
   end
   object StockAllGoodsQuery: TZQuery
+    AfterOpen = StockAllGoodsQueryAfterOpen
     Params = <>
-    left = 436
-    top = 155
+    Left = 436
+    Top = 155
   end
   object AllGoodsDS: TDataSource
     DataSet = StockAllGoodsQuery
-    left = 444
-    top = 215
+    Left = 444
+    Top = 215
   end
   object CategQuery: TZQuery
     Params = <>
-    left = 110
-    top = 73
+    Left = 110
+    Top = 73
   end
   object CategDataSource: TDataSource
     DataSet = CategQuery
-    left = 252
-    top = 116
+    Left = 252
+    Top = 116
+  end
+  object CapitanQuery: TZQuery
+    Params = <>
+    Left = 252
+    Top = 232
+  end
+  object DataSource1: TDataSource
+    DataSet = CapitanQuery
+    Left = 289
+    Top = 319
   end
 end

@@ -6,9 +6,15 @@ interface
 
 uses
   Classes, SysUtils, db, Forms, Dialogs, LCLType, Controls, Graphics,  ExtCtrls, StdCtrls,
-  DBGrids, ZDataset, connect,Global;
+  DBGrids, ZDataset, connect,Global, Grids;
 
 type
+
+  MemoDifier = class
+  public
+    procedure DBGridOnGetText(Sender: TField; var aText: string;
+      DisplayText: boolean);
+  end;
 
   { TFormspec }
 
@@ -57,6 +63,8 @@ type
     procedure Button8Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure DBGrid2MouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure Edit1Exit(Sender: TObject);
@@ -82,6 +90,15 @@ Hecho:boolean;
 implementation
 
 {$R *.lfm}
+
+
+procedure MemoDifier.DBGridOnGetText(Sender: TField; var aText: string;
+  DisplayText: boolean);
+begin
+  if (DisplayText) then
+    aText := Sender.AsString;
+end;
+
 
 
 procedure ShowFormspec;
@@ -332,6 +349,50 @@ procedure TFormspec.DBGrid1DblClick(Sender: TObject);
 begin
 // EDIT1.Text:=SpecQuery.FieldByName('NAME').AsString;
 // Edit1.SetFocus;
+end;
+
+procedure TFormspec.DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+  Column: TColumn; AState: TGridDrawState);
+var
+  MemoFieldReveal: MemoDifier;
+begin
+   if (DataCol = 1) then
+   begin
+     try
+       DBGrid1.Columns.Items[3].Field.OnGetText := @MemoFieldReveal.DBGridOnGetText;
+     except
+       On E: Exception do
+       begin
+         ShowMessage('Exception caught : ' + E.Message);
+       end;
+     end;
+   end;
+
+     with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clyellow; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;  {
+
+   if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
+  begin
+    DBGrid1.Canvas.Brush.Color := clRed;
+    DBGrid1.Canvas.Font.Color := clWhite;
+  end;
+  }
+end;
+
 end;
 
 procedure TFormspec.DBGrid2MouseUp(Sender: TObject; Button: TMouseButton;

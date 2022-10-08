@@ -1,6 +1,6 @@
 unit U_QUANTIFIER;
 
-{$MODE Delphi}
+{$mode objfpc}{$H+}
 
 interface
 
@@ -15,6 +15,8 @@ type
 
   TFormQUANTIFIER = class(TForm)
     dbExcute: TZQuery;
+    Edit2: TEdit;
+    Label3: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
@@ -102,19 +104,31 @@ end;
  procedure TFormQUANTIFIER.Button2Click(Sender: TObject);
 begin
 if edit1.Text='' then  exit;
+if edit2.Text='' then begin showmessage('æ²¡æœ‰æ·»åŠ çš„å†…å®¹'); exit;  end;
   try
   with UnidadQuery do
   begin
     Append;
-    FieldByName('UNIDAD').AsString:=Edit1.Text;
+    FieldByName('CODE').AsString:=Trim(Edit2.Text);
+    FieldByName('UNIDAD').AsString:=Trim(Edit1.Text);
     Post;
   end;
 
   except
-   application.MessageBox('Error, ¼ÍÂ¼ÖØ¸´(Ya existe)£¡','ÌáÊ¾',0+64) ;
-   UnidadQuery.Refresh;
+   application.MessageBox('Error, çºªå½•é‡å¤(Ya existe)ï¼','æç¤º',0+64) ;
+
   end;
+  UnidadQuery.ApplyUpdates;
+  UnidadQuery.close;
+  UnidadQuery.Open;
+   // DBNavigator1.Refresh;
+  showmessage('æ·»åŠ æˆåŠŸ');
+  Resultado:=1;
+  //DoGetQUANTIFIER;
+ // UnidadQuery.Refresh;
+   // DBNavigator1.Refresh;
   edit1.Text:='';
+  edit2.Text:='';
  // UnidadQuery.Append;
 end;
 
@@ -128,7 +142,7 @@ if UnidadQuery.State in [dsEdit, dsInsert] then
     Resultado:=1;
     end;
 except
-   application.MessageBox('Error, ¼ÍÂ¼ÖØ¸´(Ya existe)£¡','ÌáÊ¾',0+64) ;
+   application.MessageBox('Error, çºªå½•é‡å¤(Ya existe)ï¼','æç¤º',0+64) ;
    UnidadQuery.Refresh;
   end;
 end;
@@ -153,7 +167,7 @@ dbExcute.Connection:=DataModule2.ZCon1;
   dbExcute.Active:=false;
   dbExcute.SQL.Clear;
   dbExcute.SQL.Text:=SqlCMD;
-  Datasource1.DataSet:=dbExcute;
+  //Datasource1.DataSet:=dbExcute;
   dbExcute.Active:= True;
 end;
 

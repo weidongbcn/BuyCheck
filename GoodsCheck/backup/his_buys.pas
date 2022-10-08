@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  DBCtrls, DBGrids, ZDataset, DateTimePicker, Global, connect, db;
+  DBCtrls, DBGrids, ZDataset, DateTimePicker, Global, connect, db, Grids;
 
 type
 
@@ -17,6 +17,7 @@ type
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
+    Button5: TButton;
     ComboBox1: TComboBox;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
@@ -39,7 +40,10 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure ComboBox1Select(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure DoGetProveedor;
     procedure FormCreate(Sender: TObject);
     procedure GetBuyList;
@@ -135,6 +139,11 @@ begin
   FormBuyDetalles.GetBuyDetalles(Id_Buy, '');
 end;
 
+procedure TForm_His_BuyFromProveedor.Button5Click(Sender: TObject);
+begin
+  close;
+end;
+
 procedure TForm_His_BuyFromProveedor.Button1Click(Sender: TObject);
 begin
    GetBuyList;
@@ -155,6 +164,28 @@ BuyListQuery.Filtered:=False;
 BuyListQuery.Filter:=' ID_PROVEEDOR='+DBLookupComboBox1.KeyValue+' ';
 BuyListQuery.Filtered:=True;
 end;
+end;
+
+procedure TForm_His_BuyFromProveedor.DBGrid1PrepareCanvas(sender: TObject;
+  DataCol: Integer; Column: TColumn; AState: TGridDrawState);
+begin
+  with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
+
+  end;
 end;
 
 end.

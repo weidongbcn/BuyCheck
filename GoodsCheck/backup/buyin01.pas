@@ -6,29 +6,39 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  DBGrids, ZDataset, ZSqlUpdate, rxcurredit, LCLType, Buttons,
-  connect, db, Global;
+  DBGrids, ZDataset, ZSqlUpdate, rxcurredit, LCLType, Buttons, Variants,
+  connect, db, Global, Grids, DateTimePicker;
 
 type
 
   { TFormBuyIn }
 
   TFormBuyIn = class(TForm)
+    SpuQuery: TZQuery;
     BitBtn5: TBitBtn;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    Button4: TButton;
     BuyDetallesDS: TDataSource;
     CombinaQuery: TZQuery;
+    Conserva: TCurrencyEdit;
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
     dbTest: TZQuery;
     dbTrabajo: TZQuery;
+    dbFoods: TZQuery;
     Label12: TLabel;
     Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label7: TLabel;
+    TimePanel: TPanel;
     TotalQuery: TZQuery;
     DataSource2: TDataSource;
     Label11: TLabel;
     NewButton: TButton;
-    Cantidad: TCurrencyEdit;
+    Amount: TCurrencyEdit;
     Label10: TLabel;
     PVP1C: TCurrencyEdit;
     Total: TCurrencyEdit;
@@ -62,11 +72,16 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
     procedure BuyDetallesAfterPost(DataSet: TDataSet);
-    procedure CantidadExit(Sender: TObject);
-    procedure CantidadKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+    procedure AmountExit(Sender: TObject);
+    procedure AmountKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure DateTimePicker1CloseUp(Sender: TObject);
+    procedure DateTimePicker2CloseUp(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure DescuentoExit(Sender: TObject);
     procedure DescuentoKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
@@ -79,7 +94,7 @@ type
       );
     procedure NewButtonClick(Sender: TObject);
     procedure Edit1Exit(Sender: TObject);
-    Function ExistGoods(CDBarra: string):boolean;
+    Function ExistGoods(CDBarra: string;out aGoods_id:string; out count:integer; out GoodsType:integer):boolean;
     procedure FormCreate(Sender: TObject);
     procedure GetBuyDetalles;
     procedure PrecioExit(Sender: TObject);
@@ -91,7 +106,7 @@ type
     procedure GetTotal;
     procedure PVP1CKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
-
+    function CreateSkuRecord(aGoods_id, JsonName, AttibuteValueIds: string):string;
   public
 
   end;
@@ -102,9 +117,12 @@ var
   ANewBUYDOC:TDocCompStruct;
   aBUYDoc:TBuyDocStruct;
 
+  SKU_JSON_NAME, SKU_ATTIBUTE_VALUE_IDS: string;
+  Count, aGoodsType: Integer; //用于记录同一码的条数, 货品的类型.
+
 implementation
 uses
-  addgoods, BuyInput, BuyInColgada, goodslist, PayofBuy, select_onesku, Select_SKU;
+  addgoods, BuyInput, BuyInColgada, goodslist, PayofBuy, select_onesku, Select_SKU, SimpleAdd, create, aGoodsSpec;
 
 {$R *.lfm}
 
@@ -112,7 +130,7 @@ uses
 procedure TFormBuyIn.ClearInputEdit();
 begin
   Edit2.Text:='';
-  Cantidad.Clear;
+  Amount.Clear;
   Precio.Clear;
   Descuento.Clear;
   Importe.Clear;
@@ -121,6 +139,7 @@ end;
 procedure TFormBuyIn.ClearAll();
 begin
   Edit1.Text:='';
+  aGoodsType:=-1;
   ClearInputEdit();
   Id.Clear;
   N_Proveedor.Clear;
@@ -133,7 +152,7 @@ end;
 
 procedure TFormBuyIn.CalImporte();
 begin
-  Importe.Value:=Cantidad.Value * Precio.Value * (1-Descuento.Value/100);
+  Importe.Value:=Amount.Value * Precio.Value * (1-Descuento.Value/100);
 end;
 
 procedure TFormBuyIn.GetTotal;
@@ -157,7 +176,7 @@ begin
   if Key=VK_Return then SelectNext(ActiveControl,True,True);
 end;
 
-Function TFormBuyIn.ExistGoods(CDBarra: string):Boolean;
+Function TFormBuyIn.ExistGoods(CDBarra: string;out aGoods_id:string;  out count:integer; out GoodsType: integer):Boolean;
 begin
   with dbTest do
   begin
@@ -168,13 +187,21 @@ begin
      ParamByName('ENA').AsString:=CDBarra;
      Open;
      end;
-  if dbTest.RecordCount > 0 then
+  count:=dbTest.RecordCount;
+  if count < 1 then
   begin
-    result := True;
+
+    GoodsTYpe:= -1;
+    result := False;
   end
   else
   begin
-     result :=False;
+     if count = 1 then
+     begin
+         aGoods_id:= dbTest.FieldByName('GOODS_ID').AsString;
+         GoodsType:=dbTest.FieldByName('type').AsInteger;
+     end;
+     result :=True;
   end;
 end;
 
@@ -183,6 +210,8 @@ end;
 procedure TFormBuyIn.FormCreate(Sender: TObject);
 begin
   NewDoc:=False;
+  TimePanel.Visible:=False;
+  aGoodsType:=-1;
 end;
 
 procedure TFormBuyIn.GetBuyDetalles;
@@ -192,14 +221,14 @@ begin
     Connection:=DataModule2.ZCon1;
     Active:=false;
     SQL.Clear;
-    SQL.TEXT:='SELECT T1.B_UUID, T1.GOODS_ID, T1.SKU_NO, T2.ENA, T2.GOODS_NAME, T1.QUANTITY, T1.COMMODITY_UNIT, T1.COST, T1.DISCOUNT, T3.IVA, '
+    SQL.TEXT:='SELECT T1.B_UUID, T1.GOODS_ID, T1.SKU_NO, T4.SKU_NAME, T2.ENA, T2.GOODS_NAME, T1.QUANTITY, T1.COMMODITY_UNIT, T1.COST, T1.DISCOUNT, T3.IVA, '
             +'T1.QUANTITY*T1.COST*(1-T1.DISCOUNT/100) AS LINEATOTAL, T4.SELLING_P1C  '
             +'FROM BUY_ITEMS as T1 '
             +'LEFT JOIN goods_spu AS T2 ON T1.GOODS_ID = T2.GOODS_ID  '
             +'LEFT JOIN goods_taxrate AS T3 ON T2.taxrate_id = T3.ID '
             +'LEFT JOIN goods_sku AS T4 ON T4.SKU_NO = T1.SKU_NO '
      +'WHERE 1=1 '
-     +'AND T1.B_UUID=:B_UUID ';
+     +'AND T1.B_UUID=:B_UUID order by T1.GOODS_ID';
      ParamByName('B_UUID').AsString:=ABUYDOC.B_UUID;
     open;
 
@@ -223,10 +252,52 @@ begin
     ///
 end;
 
+//返回sku编号
+function TFormBuyIn.CreateSkuRecord(aGoods_id, JsonName, AttibuteValueIds: string):string;
+begin
+   with dbTrabajo do
+  begin
+    Connection:=DataModule2.ZCon1;
+    Active:=false;
+    SQL.Clear;
+    sql.Text:='INSERT INTO GOODS_SKU (SKU_NO, SKU_NAME, ATTIBUTE_VALUE_IDS, COST, SELLING_P1C, SELLING_P2C, SELLING_P3C, LOWPRICE, WHOLESALE, DISCOUNT, GOODS_ID, SKU_CODING, ISCHILD, STOCKAVISO,LOWLIMIT, CAN_DISCount, Points ) '
+        +'VALUES (UUID(), :SKU_NAME, :ATTIBUTE_VALUE_IDS, :COST, :SELLING_P1C, :SELLING_P2C, :SELLING_P3C, :LOWPRICE, :WHOLESALE, :DISCOUNT, :GOODS_ID, :SKU_CODING, :ISCHILD, :STOCKAVISO, :LOWLIMIT, :CAN_DISCount, :Points )'
+        +'ON DUPLICATE KEY UPDATE '
+        +'UPDATE_TIME = now() ';
+        ParamByName('SKU_NAME').AsString:=JsonName;
+        ParamByName('ATTIBUTE_VALUE_IDS').AsString:=AttibuteValueIds;
+        ParamByName('COST').AsCurrency:=0.0;
+        ParamByName('SELLING_P1C').AsCurrency:=0.0;
+        ParamByName('SELLING_P2C').AsCurrency:=0.0;
+        ParamByName('SELLING_P3C').AsCurrency:=0.0;
+        ParamByName('LOWPRICE').AsCurrency:=0.0;
+        ParamByName('WHOLESALE').AsCurrency:=0.0;
+        ParamByName('DISCOUNT').AsFloat:=0.0;
+        ParamByName('GOODS_ID').AsString:=aGoods_id;
+        ParamByName('SKU_CODING').AsString:='';
+        ParamByName('ISCHILD').AsInteger:=1;
+        ParamByName('STOCKAVISO').AsInteger:=0;
+        ParamByName('LOWLIMIT').AsFloat:=0;
+        ParamByName('CAN_DISCount').AsInteger:=0;
+        ParamByName('Points').AsFloat:=0;
+    ExecSQL;
+    Active:=false;
+    SQL.Clear;
+    sql.Text:='SELECT * FROM GOODS_SKU WHERE 1=1 AND GOODS_ID=:GOODS_ID AND SKU_NAME=:SKU_NAME AND ATTIBUTE_VALUE_IDS=:ATTIBUTE_VALUE_IDS LIMIT 1';
+        ParamByName('SKU_NAME').AsString:=JsonName;
+        ParamByName('ATTIBUTE_VALUE_IDS').AsString:=AttibuteValueIds;
+        ParamByName('GOODS_ID').AsString:=aGoods_id;
+    open;
+  end;
+   result:=dbTrabajo.FieldByName('SKU_NO').AsString;
+end;
+
 procedure TFormBuyIn.Edit1Exit(Sender: TObject);
 var
    SKU_NO:string;
    Product:TGOODS;
+   aGoods_id: string;
+   Flag:Boolean;
 begin
   if DbGrid1.Focused then begin Edit1.Text:=''; exit; end;
   if  Trim(Edit1.Text) <> '' then
@@ -236,16 +307,77 @@ begin
       NewButton.Click;
       exit;
     end;
-   IF ExistGoods(trim(Edit1.Text)) THEN
+   IF ExistGoods(trim(Edit1.Text),aGoods_id, Count, aGoodsType) THEN
     BEGIN
-      with Articulo do
+     //属性商品, 没有就创建
+     if (Count = 1) and (aGoodsType=4) then
+      begin
+        with SpuQuery do
+          begin
+            Connection:=DataModule2.ZCon1;
+            Active:=false;
+            SQL.CLEAR;
+            SQl.Text:='SELECT T1.ID, T1.GOODS_ID, T1.GOODS_NAME, T1.GOODS_NAME2, T1.ENA, T1.CODE, T1.CATEGORY_ID, T1.BRAND_ID, T1.TYPE, T1.UNIT, T1.TAXRATE_ID, T1.WEIGTH, T1.VOLUME, T1.IS_ACTIVE, '
+            +'T1.PARENT_ID, T1.CLASS_ID, T1.STOCKAVISO, T1.LOWLIMIT, T1.CAN_DISCount, T1.CAPACITY, T1.DAYS_CONSERVACION, T1.DAYS_AVISO, T1.UPDATED_AT, '
+            +'T2.COST, T2.SELLING_P1C, T2.SELLING_P2C, T2.SELLING_P3C, T2.LOWPRICE, T2.WHOLESALE, T2.DISCOUNT, T2.Points, T2.SKU_NO, T2.SKU_NAME, T2.ATTIBUTE_VALUE_IDS '
+            +'FROM GOODS_SPU AS T1 '
+            +'LEFT OUTER JOIN GOODS_SKU AS T2 ON T2.GOODS_ID = T1.GOODS_ID  '
+            +'WHERE 1=1 '
+            +'AND T1.GOODS_ID=:GOODS_ID '
+            +'AND T1.ENA=:ENA ;';
+            ParamByName('GOODS_ID').AsString:=aGoods_id;
+            ParamByName('ENA').AsString:=trim(Edit1.Text);
+            open;
+          end;
+        Flag:=SpecMatrixForm.GetMatrixValues(SpuQuery.FieldByName('GOODS_ID').AsString, SKU_JSON_NAME, SKU_ATTIBUTE_VALUE_IDS);
+        if not Flag then
+         begin
+            Edit1.SetFocus;
+            exit;
+         end;
+        if SpuQuery.Locate('GOODS_ID;SKU_NAME;ATTIBUTE_VALUE_IDS',VarArrayOf([aGoods_id, SKU_JSON_NAME, SKU_ATTIBUTE_VALUE_IDS]),[]) then
+         begin
+           SKU_NO:= SpuQuery.FieldByName('SKU_NO').AsString;
+         end
+         else
+         begin
+           SKU_NO:= CreateSkuRecord(aGoods_id, SKU_JSON_NAME, SKU_ATTIBUTE_VALUE_IDS);
+         end;
+         if SKU_NO = '' then
+          begin
+          Edit1.SetFocus;
+          exit;
+          end;
+          with Articulo do
+          begin
+          Connection:=DataModule2.ZCon1;
+          Active:=false;
+          SQL.CLEAR;
+          SQL.TEXT:='SELECT T1.SKU_NO, T2.GOODS_NAME, T2.GOODS_NAME2, T2.ENA , T2.CODE, T2.TYPE, T2.UNIT, '
+          +'T1.COST, T1.SELLING_P1C, T1.SELLING_P2C, T1.SELLING_P3C, T1.LOWPRICE, T1.WHOLESALE, T1.STOCK, T1.GOODS_ID, T1.SKU_CODING, T1.ISCHILD, '
+          +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T2.DAYS_CONSERVACION, T3.IVA, T3.REQ '
+          +'FROM GOODS_SKU AS T1 LEFT JOIN GOODS_SPU AS T2 ON T1.GOODS_ID = T2.GOODS_ID '
+          +'LEFT JOIN GOODS_TAXRATE AS T3 ON T2.TAXRATE_ID = T3.ID '
+          +'WHERE 1=1  '              //AND T1.ISCHILD= 0
+          +'AND T1.SKU_NO = :SKU_NO '
+          +'AND T2.ENA =:ENA ';
+          ParamByName('SKU_NO').AsString:= SKU_NO;
+          ParamByName('ENA').AsString:=trim(Edit1.Text);
+          open;
+          END;
+          showmessage(SKU_NO);
+      end
+     else
+     begin
+
+        with Articulo do
       begin
       Connection:=DataModule2.ZCon1;
       Active:=false;
       SQL.CLEAR;
       SQL.TEXT:='SELECT T1.SKU_NO, T2.GOODS_NAME, T2.GOODS_NAME2, T2.ENA , T2.CODE, T2.TYPE, T2.UNIT, '
       +'T1.COST, T1.SELLING_P1C, T1.SELLING_P2C, T1.SELLING_P3C, T1.LOWPRICE, T1.WHOLESALE, T1.STOCK, T1.GOODS_ID, T1.SKU_CODING, T1.ISCHILD, '
-      +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T3.IVA, T3.REQ '
+      +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T2.DAYS_CONSERVACION, T3.IVA, T3.REQ '
       +'FROM GOODS_SKU AS T1 LEFT JOIN GOODS_SPU AS T2 ON T1.GOODS_ID = T2.GOODS_ID '
       +'LEFT JOIN GOODS_TAXRATE AS T3 ON T2.TAXRATE_ID = T3.ID '
       +'WHERE 1=1 AND T1.ISCHILD= 1 '
@@ -276,7 +408,7 @@ begin
       SQL.CLEAR;
       SQL.TEXT:='SELECT T1.SKU_NO, T2.GOODS_NAME, T2.GOODS_NAME2, T2.ENA , T2.CODE, T2.TYPE, T2.UNIT, '
       +'T1.COST, T1.SELLING_P1C, T1.SELLING_P2C, T1.SELLING_P3C, T1.LOWPRICE, T1.WHOLESALE, T1.STOCK, T1.GOODS_ID, T1.SKU_CODING, T1.ISCHILD, '
-      +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T3.IVA, T3.REQ '
+      +'T2.CATEGORY_ID, T2.BRAND_ID, T2.TAXRATE_ID, T2.PARENT_ID, T2.CLASS_ID, T2.DAYS_CONSERVACION, T3.IVA, T3.REQ '
       +'FROM GOODS_SKU AS T1 LEFT JOIN GOODS_SPU AS T2 ON T1.GOODS_ID = T2.GOODS_ID '
       +'LEFT JOIN GOODS_TAXRATE AS T3 ON T2.TAXRATE_ID = T3.ID '
       +'WHERE 1=1 AND T1.ISCHILD= 0 '
@@ -284,13 +416,15 @@ begin
       ParamByName('ENA').AsString:=trim(Edit1.Text);
       open;
       END;
+
       SKU_NO:=Articulo.FieldByName('SKU_NO').AsString;
+      end;
+      END;
       if SKU_NO = '' then
           begin
           Edit1.SetFocus;
           exit;
           end;
-      end;
 
       if BuyDetalles.Locate('ENA', Trim(Edit1.Text), [] ) then
      begin
@@ -300,36 +434,43 @@ begin
       Edit2.Text:=Articulo.FieldByName('GOODS_NAME').AsString;
       Precio.Value:=Articulo.FieldByName('COST').AsCurrency;
       PVP1C.Value:=Articulo.FieldByName('SELLING_P1C').AsCurrency;
-      Cantidad.SetFocus;
-      {
-
-      Edit2.Text:=dbArti.FieldByName('CODE').AsString;
-      Lang1.Text:=dbArti.FieldByName('GOODS_NAME').AsString;
-      Lang2.Text:=dbArti.FieldByName('GOODS_NAME2').AsString;
-      CategoryDBBox.KeyValue:= dbArti.FieldByName('CATEGORY_ID').Value;
-      BrandDBBox.KeyValue:= dbArti.FieldByName('BRAND_ID').Value;
-      IvaDBLookupComboBox1.KeyValue:= dbArti.FieldByName('TAXRATE_ID').Value;
-      PrecioAnterio.Value:= dbArti.fieldbyname('COST').AsCurrency;
-      PVPEdit.Value:=dbArti.fieldbyname('SELLING_P1C').AsCurrency;
-      IsNewGoods:=False;  }
+      if Articulo.FieldByName('TYPE').AsInteger = 3 then
+      begin
+           Conserva.Value:=Articulo.FieldByName('DAYS_CONSERVACION').AsInteger;
+           Panel1.Enabled:=False;
+           Panel2.Enabled:=False;
+           Panel3.Enabled:=False;
+           TimePanel.Visible:=True;
+           exit;
+      end
+      else
+      begin
+          Amount.SetFocus;
+      end;
      END
      ELSE
      BEGIN
-     FormGoodsSpu:=TFormGoodsSpu.Create(Self);
+    { FormGoodsSpu:=TFormGoodsSpu.Create(Self);
      FormGoodsSpu.ENAEdit.Text:=Trim(Edit1.Text);
      FormGoodsSpu.ShowModal;
-     FormGoodsSpu.Free;
+     FormGoodsSpu.Free;  }
+     Product.ENA:=Trim(Edit1.Text);
+     Product.COST:=0.0;
+     FAddGoods.Created(Product);
      Edit1.SetFocus;
      end;
-
-   end;
-
+    end;
 
 end;
 
 procedure TFormBuyIn.NewButtonClick(Sender: TObject);
 begin
   ABUYDOC:=FormBuy.IniciaNewBuy();
+  if aBUYDoc.B_UUID = '' then
+  begin
+    Edit1.SetFocus;
+  exit;
+  end;
   ID.Text:=ABUYDOC.B_UUID;
   N_Proveedor.Text:=ABUYDOC.NAME_PROVEEDOR;
   GetBuyDetalles;
@@ -369,20 +510,45 @@ begin
   Edit1.SetFocus;
 end;
 
+procedure TFormBuyIn.Button4Click(Sender: TObject);
+begin
+  if DateTimePicker2.Date <= now then
+  begin
+  ShowMessage('商品已经过期.');
+  exit;
+  end;
+  Panel1.Enabled:=True;
+  Panel2.Enabled:=True;
+  Panel3.Enabled:=True;
+  Amount.SetFocus;
+  TimePanel.Visible:=False;
+
+end;
+
 procedure TFormBuyIn.BuyDetallesAfterPost(DataSet: TDataSet);
 begin
   Buydetalles.RefreshCurrentRow(false);
 end;
 
-procedure TFormBuyIn.CantidadExit(Sender: TObject);
+procedure TFormBuyIn.AmountExit(Sender: TObject);
 begin
   CalImporte();
 end;
 
-procedure TFormBuyIn.CantidadKeyDown(Sender: TObject; var Key: Word;
+procedure TFormBuyIn.AmountKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if Key=VK_Return then SelectNext(ActiveControl,True,True);
+end;
+
+procedure TFormBuyIn.DateTimePicker1CloseUp(Sender: TObject);
+begin
+    DateTimePicker2.Date:=DateTimePicker1.Date + Conserva.AsInteger;
+end;
+
+procedure TFormBuyIn.DateTimePicker2CloseUp(Sender: TObject);
+begin
+  DateTimePicker1.Date:=DateTimePicker2.Date - Conserva.AsInteger;
 end;
 
 procedure TFormBuyIn.DBGrid1DblClick(Sender: TObject);
@@ -390,6 +556,18 @@ begin
   IF Buydetalles.RecordCount < 1 THEN EXIT;
   EDIT1.Text:=Buydetalles.FieldByName('ENA').AsString;
   EDIT1.SetFocus;
+end;
+
+procedure TFormBuyIn.DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+  Column: TColumn; AState: TGridDrawState);
+begin
+
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
 end;
 
 procedure TFormBuyIn.DescuentoExit(Sender: TObject);
@@ -443,8 +621,22 @@ var
   i:integer;
 begin
   if Edit1.Text = '' then exit;
+  if aGoodsType = -1 then exit;
+
   Bookmark := Buydetalles.GetBookmark;
-  
+  IF aGoodsType = 3 THEN
+  Begin
+    if (DateTimePicker2.Date <= now) or (DateTimePicker2.Date <= DateTimePicker1.Date ) then
+    begin
+      showmessage('过期日期错误无法保持');
+      exit
+    end;
+  end;
+  if aGoodsType = 4 THEN
+  BEGIN
+
+  end;
+
  with dbTrabajo do
  begin
   Connection:=DataModule2.ZCon1;
@@ -473,11 +665,11 @@ begin
   Active:=False;
   SQL.Clear;
   SQL.Text:='UPDATE GOODS_SKU SET COST=:COST, SELLING_P1C=:SELLING_P1C, STOCK=STOCK+:STOCK '
-        +'WHERE 1=1 AND ISCHILD=0 AND SKU_NO=:SKU_NO ';
+        +'WHERE 1=1  AND SKU_NO=:SKU_NO ';                  //AND ISCHILD=0
   ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
   ParamByName('COST').AsFloat:= Precio.Value;
   ParamByName('SELLING_P1C').AsFloat:= PVP1C.Value;
-  ParamByName('STOCK').AsFloat:= CANTIDAD.Value;
+  ParamByName('STOCK').AsFloat:= Amount.Value;
   ExecSQL;
 
   /////////仓库中的货品库存//////////
@@ -489,8 +681,8 @@ begin
   ParamByName('ID_STOCK').AsString:=aBUYDoc.ID_STOCK;
   ParamByName('GOODS_ID').AsString:=Articulo.FieldByName('GOODS_ID').AsString;
   ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
-  ParamByName('AMOUNT').AsFloat:= CANTIDAD.Value;
-  ParamByName('GOODS_STATUS').AsInteger:= 1;
+  ParamByName('AMOUNT').AsFloat:= Amount.Value;
+  ParamByName('GOODS_STATUS').AsInteger:= 0;
   ExecSQL;
 
   Active:=False;
@@ -513,7 +705,7 @@ begin
       SQL.Text:='UPDATE GOODS_SKU SET STOCK=STOCK+:STOCK '
         +'WHERE 1=1 AND SKU_NO=:SKU_NO ';
         ParamByName('SKU_NO').AsString:=CombinaQuery.FieldByName('MEMBER_SKU_NO').AsString;
-        ParamByName('STOCK').AsFloat:= CANTIDAD.Value*CombinaQuery.FieldByName('QUANTITY').AsFloat;
+        ParamByName('STOCK').AsFloat:= Amount.Value*CombinaQuery.FieldByName('QUANTITY').AsFloat;
         ExecSQL;
         sql.Clear;
   sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
@@ -523,12 +715,31 @@ begin
   ParamByName('ID_STOCK').AsString:=aBUYDoc.ID_STOCK;
   ParamByName('GOODS_ID').AsString:=CombinaQuery.FieldByName('GOODS_ID').AsString;
   ParamByName('SKU_NO').AsString:=CombinaQuery.FieldByName('MEMBER_SKU_NO').AsString;
-  ParamByName('AMOUNT').AsFloat:= CANTIDAD.Value;
-  ParamByName('GOODS_STATUS').AsInteger:= 1;
+  ParamByName('AMOUNT').AsFloat:= Amount.Value;
+  ParamByName('GOODS_STATUS').AsInteger:= 0;
   ExecSQL;
       CombinaQuery.Next;
       end;
     end;
+  end;
+  IF Articulo.FieldByName('TYPE').AsInteger = 3 THEN
+  begin
+      WITH dbFoods do
+      begin
+      Connection:=DataModule2.ZCon1;
+      Active:=False;
+      SQL.Text:='INSERT INTO GOODS_SHELFLIFE_STOCK(ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, FECHA_FABRICA, FECHA_CADUCA) '
+       +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, :AMOUNT, :FECHA_FABRICA, :FECHA_CADUCA) '
+      +'ON DUPLICATE KEY UPDATE '
+      +'AMOUNT=AMOUNT+:AMOUNT ';
+      ParamByName('ID_STOCK').AsString:=aBUYDoc.ID_STOCK;
+      ParamByName('GOODS_ID').AsString:=Articulo.FieldByName('GOODS_ID').AsString;
+      ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
+      ParamByName('AMOUNT').AsFloat:= Amount.Value;
+      ParamByName('FECHA_FABRICA').AsDate:=DateTimePicker1.Date;
+      ParamByName('FECHA_CADUCA').AsDate:=DateTimePicker2.Date;
+      ExecSQL;
+      end;
   end;
 
   Active:=False;
@@ -541,7 +752,7 @@ begin
    ParamByName('GOODS_ID').AsString:=Articulo.FieldByName('GOODS_ID').AsString;
    ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
    ParamByName('ENA').AsString:=trim(Edit1.Text);
-   ParamByName('QUANTITY').AsFloat:= CANTIDAD.Value;
+   ParamByName('QUANTITY').AsFloat:= Amount.Value;
    ParamByName('COMMODITY_UNIT').AsString:=Articulo.FieldByName('UNIT').AsString;
    ParamByName('COST').AsFloat:= Precio.Value;
    ParamByName('DISCOUNT').AsFloat:= Descuento.Value;

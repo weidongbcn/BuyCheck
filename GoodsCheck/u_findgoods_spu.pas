@@ -100,6 +100,7 @@ end;
 
 procedure TFormFindGoods_Spu.DoFindOut(aStr: string);
 begin
+
   with ListUniQuery do
  begin
  Connection:=DataModule2.ZCon1;
@@ -113,6 +114,7 @@ begin
             +'LEFT JOIN CLASSES AS T5 ON T5.ID = T1.CLASS_ID '
             +'WHERE 1=1  and (GOODS_NAME LIKE ''%' + aStr+'%'' or ENA LIKE ''%' + aStr+'%''or CATEGORY LIKE ''%' + aStr+'%'' or BRAND_NAME LIKE ''%' + aStr+'%'' )';
        }
+
      sql.Text:='SELECT T1.GOODS_ID, T1.GOODS_NAME, T1.ENA, T1.CODE, T3.CATEGORY, T4.BRAND_NAME,  T5.CLASS, t6.IVA, T2.PVP1C, IFNULL(t7.AMOUNT,0) as AMOUNT '
     +'FROM GOODS_SPU AS T1 '
             +'LEFT JOIN GOODS_SPU_PRICE T2 ON T2.GOODS_ID = T1.GOODS_ID '
@@ -123,8 +125,21 @@ begin
             +'left join (select goods_id, sum(amount) as amount from stockgoods where goods_status = 1 group by goods_id) as t7 on T1.GOODS_ID = t7.GOODS_ID '
             +'WHERE 1=1  and (GOODS_NAME LIKE ''%' + aStr+'%'' or ENA LIKE ''%' + aStr+'%''or CATEGORY LIKE ''%' + aStr+'%'' or BRAND_NAME LIKE ''%' + aStr+'%'' )';
 
+
+      {
+     sql.Text:='SELECT T2.GOODS_ID, T2.GOODS_NAME, T2.ENA, T2.CODE, T3.CATEGORY, T4.BRAND_NAME, T5.CLASS, T6.IVA, T1.SELLING_P1C AS PVP1C, t1.stock  AS AMOUNT '
+   +'FROM GOODS_SKU AS T1 '
+   +'LEFT JOIN GOODS_SPU AS T2 ON T1.GOOD_ID = T1.GOODS_ID   '
+   +'LEFT JOIN CATEGORYS AS T3 ON T3.ID= T1.CATEGORY_ID  '
+           +' LEFT JOIN GOODS_BRANDS AS T4 ON T4.BRAND_ID = T2.BRAND_ID  '
+           +' LEFT JOIN CLASSES AS T5 ON T5.ID = T2.CLASS_ID  '
+           +' LEFT JOIN GOODS_TAXRATE AS T6 ON T6.ID = T2.TAXRATE_ID  '
+           //+' LEFT JOIN (SELECT GOODS_ID, SUM(AMOUNT) AS AMOUNT FROM STOCKGOODS WHERE GOODS_STATUS = 1 GROUP BY GOODS_ID) AS T7 ON T2.GOODS_ID = T7.GOODS_ID ';
+           +'WHERE 1=1  and (t2.GOODS_NAME LIKE ''%' + aStr+'%'' or t2.ENA LIKE ''%' + aStr+'%''or CATEGORY LIKE ''%' + aStr+'%'' or BRAND_NAME LIKE ''%' + aStr+'%'' )';
+      }
     open;
  end;
+
 end;
 
 procedure TFormFindGoods_Spu.DBGrid1DrawColumnCell(Sender: TObject;
@@ -146,12 +161,19 @@ if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
   begin
     DBGrid1.Canvas.Brush.Color := clSilver;
   end;
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
+  {
 
    if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
   begin
     DBGrid1.Canvas.Brush.Color := clRed;
     DBGrid1.Canvas.Font.Color := clWhite;
   end;
+  }
 end;
 end;
 

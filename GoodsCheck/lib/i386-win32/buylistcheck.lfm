@@ -1,28 +1,29 @@
 object Form1: TForm1
-  Left = -8
-  Height = 699
-  Top = -8
-  Width = 1040
+  Left = 420
+  Height = 814
+  Top = 176
+  Width = 1088
   Caption = '核对'
-  ClientHeight = 790
-  ClientWidth = 1727
+  ClientHeight = 814
+  ClientWidth = 1088
   KeyPreview = True
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   Position = poMainFormCenter
+  LCLVersion = '2.0.10.0'
   WindowState = wsMaximized
   object Panel1: TPanel
     Left = 0
     Height = 232
     Top = 0
-    Width = 1727
+    Width = 1088
     Align = alTop
     ClientHeight = 232
-    ClientWidth = 1727
+    ClientWidth = 1088
     TabOrder = 0
     object ListView1: TListView
-      Left = 1523
+      Left = 884
       Height = 230
       Top = 1
       Width = 203
@@ -461,7 +462,7 @@ object Form1: TForm1
       end
       object Benificio: TCurrencyEdit
         Left = 25
-        Height = 32
+        Height = 27
         Top = 101
         Width = 89
         Alignment = taRightJustify
@@ -478,7 +479,7 @@ object Form1: TForm1
       end
       object PVPRecomedable: TCurrencyEdit
         Left = 25
-        Height = 32
+        Height = 27
         Top = 155
         Width = 89
         Alignment = taRightJustify
@@ -516,11 +517,11 @@ object Form1: TForm1
   object Panel2: TPanel
     Left = 0
     Height = 50
-    Top = 740
-    Width = 1727
+    Top = 764
+    Width = 1088
     Align = alBottom
     ClientHeight = 50
-    ClientWidth = 1727
+    ClientWidth = 1088
     Color = clGradientActiveCaption
     ParentColor = False
     TabOrder = 1
@@ -534,7 +535,7 @@ object Form1: TForm1
       TabOrder = 1
     end
     object Button3: TButton
-      Left = 1499
+      Left = 860
       Height = 25
       Top = 16
       Width = 75
@@ -554,12 +555,12 @@ object Form1: TForm1
     end
   end
   object Panel3: TPanel
-    Left = 1559
-    Height = 467
+    Left = 920
+    Height = 491
     Top = 273
     Width = 168
     Align = alRight
-    ClientHeight = 467
+    ClientHeight = 491
     ClientWidth = 168
     TabOrder = 2
     object ComboBox2: TComboBox
@@ -777,7 +778,7 @@ object Form1: TForm1
     object GroupBox1: TGroupBox
       Left = 1
       Height = 145
-      Top = 321
+      Top = 345
       Width = 166
       Align = alBottom
       Caption = 'Funcionas>'
@@ -807,9 +808,9 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Height = 467
+    Height = 491
     Top = 273
-    Width = 1559
+    Width = 920
     Align = alClient
     Color = clWindow
     Columns = <    
@@ -846,11 +847,18 @@ object Form1: TForm1
       item
         Alignment = taRightJustify
         Title.Caption = 'Contado'
+        Width = 80
         FieldName = 'CONTADO'
       end    
       item
-        Alignment = taRightJustify
+        Title.Caption = 'Precio_Sin'
+        Width = 70
+        FieldName = 'PRECIO_SIN'
+        DisplayFormat = '0.000'
+      end    
+      item
         Title.Caption = 'IVA %'
+        Width = 60
         FieldName = 'IVA'
       end    
       item
@@ -991,10 +999,10 @@ object Form1: TForm1
     Left = 0
     Height = 41
     Top = 232
-    Width = 1727
+    Width = 1088
     Align = alTop
     ClientHeight = 41
-    ClientWidth = 1727
+    ClientWidth = 1088
     TabOrder = 5
     object Label28: TLabel
       Left = 40
@@ -1062,8 +1070,8 @@ object Form1: TForm1
   end
   object DataSource1: TDataSource
     DataSet = MemDataset1
-    Left = 692
-    Top = 264
+    Left = 616
+    Top = 208
   end
   object BrandDS: TDataSource
     DataSet = BrandQuery
@@ -1079,11 +1087,6 @@ object Form1: TForm1
     Params = <>
     Left = 445
     Top = 319
-  end
-  object ZUpdateSQL1: TZUpdateSQL
-    UseSequenceFieldForRefreshSQL = False
-    Left = 224
-    Top = 328
   end
   object CategoryDS: TDataSource
     DataSet = CategoryQuery
@@ -1141,5 +1144,200 @@ object Form1: TForm1
     object N6: TMenuItem
       Caption = '打印条形码'
     end
+  end
+  object dbParentAllot: TZQuery
+    Params = <>
+    Left = 180
+    Top = 316
+  end
+  object BufSun: TBufDataset
+    FieldDefs = <>
+    Left = 122
+    Top = 560
+    object BufSunENA: TStringField
+      FieldKind = fkData
+      FieldName = 'ENA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunCODE: TStringField
+      FieldKind = fkData
+      FieldName = 'CODE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunGOODS_ID: TStringField
+      FieldKind = fkData
+      FieldName = 'GoodsId'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunNAME: TStringField
+      FieldKind = fkData
+      FieldName = 'NAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunNAME2: TStringField
+      FieldKind = fkData
+      FieldName = 'NAME2'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunCOST: TCurrencyField
+      FieldKind = fkData
+      FieldName = 'COST'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunPVP: TCurrencyField
+      FieldKind = fkData
+      FieldName = 'PVP'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunWholePrice: TCurrencyField
+      FieldKind = fkData
+      FieldName = 'WholePrice'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunALLOT: TLongintField
+      FieldKind = fkData
+      FieldName = 'ALLOT'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunAVISO: TBooleanField
+      FieldKind = fkData
+      FieldName = 'AVISO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object BufSunAVISONUM: TFloatField
+      FieldKind = fkData
+      FieldName = 'AVISONUM'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunPARENTID: TLongintField
+      FieldKind = fkData
+      FieldName = 'PARENTID'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunUNIT: TStringField
+      FieldKind = fkData
+      FieldName = 'UNIT'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunSKU_NO: TStringField
+      FieldKind = fkData
+      FieldName = 'SKU_NO'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunIVA: TFloatField
+      FieldKind = fkData
+      FieldName = 'IVA'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunID_STOCK: TStringField
+      FieldKind = fkData
+      FieldName = 'ID_STOCK'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object BufSunDISCOUNT: TFloatField
+      FieldKind = fkData
+      FieldName = 'DISCOUNT'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object BufSunID_TMPLIST: TStringField
+      FieldKind = fkData
+      FieldName = 'ID_TMPLIST'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+  end
+  object DSSun: TDataSource
+    DataSet = BufSun
+    Left = 120
+    Top = 520
+  end
+  object ZUpdateSQL2: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    Left = 206
+    Top = 456
+  end
+  object ZUpdateSQL3: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    Left = 216
+    Top = 520
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    Left = 304
+    Top = 400
   end
 end

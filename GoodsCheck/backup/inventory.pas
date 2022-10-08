@@ -214,7 +214,7 @@ begin
     exit;
   end;
   CheckDoc:=FormNewInventory.IniciaNewInventory();
-  showmessage(CheckDoc.B_UUID);
+  //showmessage(CheckDoc.B_UUID);
   ID.Text:=CheckDoc.B_UUID;
   DBLookupComboBox1.KeyValue:=CheckDoc.ID_STOCK;
   GetDocTop;

@@ -7,6 +7,7 @@ object FormBuy: TFormBuy
   ClientHeight = 358
   ClientWidth = 433
   OnCreate = FormCreate
+  Position = poMainFormCenter
   LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0

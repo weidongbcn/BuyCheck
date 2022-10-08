@@ -17,6 +17,14 @@
       <EnableI18N Value="True"/>
       <OutDir Value="locale"/>
     </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MajorVersionNr Value="2021"/>
+      <MinorVersionNr Value="1"/>
+      <RevisionNr Value="1"/>
+      <BuildNr Value="4"/>
+    </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
     </BuildModes>
@@ -76,7 +84,7 @@
         <PackageName Value="LCL"/>
       </Item15>
     </RequiredPackages>
-    <Units Count="41">
+    <Units Count="49">
       <Unit0>
         <Filename Value="BuyCheck.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -372,6 +380,60 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="EtiquetasArticulos"/>
       </Unit40>
+      <Unit41>
+        <Filename Value="cleardb.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ClearDbForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="createproveedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="NewProvForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="CreateProveedor"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="simpleadd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Fsimple"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SimpleAdd"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="CreateGoods\create.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="CreateGoods\create.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FAddGoods"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="agoodsspec.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SpecMatrixForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="aGoodsSpec"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="Caduca\caduca.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ListCaducacionForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="Register\register.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Register"/>
+      </Unit48>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -382,7 +444,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Globales"/>
+      <OtherUnitFiles Value="Globales;CreateGoods;Caduca;Register"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>
@@ -391,6 +453,7 @@
       </SyntaxOptions>
     </Parsing>
     <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
       <VerifyObjMethodCallValidity Value="True"/>
       <TargetCPU Value="i386"/>
       <TargetOS Value="win32"/>
@@ -399,8 +462,8 @@
     <Linking>
       <Debugging>
         <GenerateDebugInfo Value="False"/>
-        <UseHeaptrc Value="True"/>
         <UseValgrind Value="True"/>
+        <StripSymbols Value="True"/>
         <UseExternalDbgSyms Value="True"/>
       </Debugging>
       <LinkSmart Value="True"/>

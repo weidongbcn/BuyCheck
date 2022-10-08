@@ -10,7 +10,7 @@ uses
   StdCtrls, Buttons, ExtCtrls;
 
 type
-  TfrmDlgCaption = class(TForm)
+  TfrmDlgCapt = class(TForm)
     Label1: TLabel;
     edtCaption: TEdit;
     Label2: TLabel;
@@ -30,25 +30,25 @@ type
   procedure ShowfrmDlgCaption(Cp, E1, E2:string);
 
 var
-  frmDlgCaption: TfrmDlgCaption;
+  frmDlgCapt: TfrmDlgCapt;
   FTitle, str1, str2:string;
   Hecho:Boolean;
 
 implementation
 procedure ShowfrmDlgCaption(Cp, E1, E2:string);
 begin
-  with TfrmDlgCaption.Create(Application) do
+  with TfrmDlgCapt.Create(Application) do
     begin
       Caption:=Cp;
-      if FTitle='ĞŞ¸Ä' then
+      if FTitle='ä¿®æ”¹' then
       begin
        // Caption:=Cp;
         edtCaption.Text:=E1;
         Description.Text:=E2;
       end;
-      if FTitle='´´½¨×Ó·ÖÀà' then
+      if FTitle='åˆ›å»ºå­åˆ†ç±»' then
         begin
-          Caption:=Cp+' | Ö÷·ÖÀàÎª:'+E1;
+          Caption:=Cp+' | ä¸»åˆ†ç±»ä¸º:'+E1;
         end;
       ShowModal;
     end;
@@ -56,12 +56,12 @@ end;
 
 {$R *.lfm}
 
-procedure TfrmDlgCaption.bitbtnCancelClick(Sender: TObject);
+procedure TfrmDlgCapt.bitbtnCancelClick(Sender: TObject);
 begin
   Hecho:=False;
 end;
 
-procedure TfrmDlgCaption.bitbtnOKClick(Sender: TObject);
+procedure TfrmDlgCapt.bitbtnOKClick(Sender: TObject);
 begin
   if Trim(edtCaption.Text)='' then Hecho:=False
   else
@@ -72,19 +72,19 @@ begin
   end;
 end;
 
-procedure TfrmDlgCaption.FormCreate(Sender: TObject);
+procedure TfrmDlgCapt.FormCreate(Sender: TObject);
 begin
-  //frmDlgCaption.Caption:= FTitle;
+  //frmDlgCapt.Caption:= FTitle;
   Hecho:=False;
 end;
 
-function TfrmDlgCaption.Iniciar(title:string;  var Name, Descri: string):boolean;
+function TfrmDlgCapt.Iniciar(title:string;  var Name, Descri: string):boolean;
 begin
    FTitle:=title;
    if (title='Edit') or (title='Hijo') then
    begin
    if (title='Edit') then
-     FTitle:='ĞŞ¸Ä' else FTitle:='´´½¨×Ó·ÖÀà';
+     FTitle:='ä¿®æ”¹' else FTitle:='åˆ›å»ºå­åˆ†ç±»';
      str1:=Name;
      Str2:=Descri;
      ShowfrmDlgCaption(Ftitle, str1, str2);

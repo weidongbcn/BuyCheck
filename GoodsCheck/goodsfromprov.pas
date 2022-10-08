@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  DBCtrls, DBGrids, Global, connect, db, ZDataset;
+  DBCtrls, DBGrids, Global, connect, db, ZDataset, Grids;
 
 type
 
@@ -26,6 +26,8 @@ type
     Panel4: TPanel;
     procedure Button1Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure DBLookupComboBox1Select(Sender: TObject);
     Procedure GetList(ID_PROVEEDOR: string);
   private
@@ -70,6 +72,28 @@ begin
  Sqltable:= EMID+'PROVEEDORLIST';
   Result:=FormProveedor.IniciaMExcute(Sqltable);
   if (Result >0 ) then DataModule2.ProvQuery.Refresh;
+end;
+
+procedure TFormProGoods.DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+  Column: TColumn; AState: TGridDrawState);
+begin
+  with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;
+
+  end;
 end;
 
 procedure TFormProGoods.Button1Click(Sender: TObject);

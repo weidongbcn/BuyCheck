@@ -3,14 +3,14 @@ object FormPayInfo: TFormPayInfo
   Height = 487
   Top = 305
   Width = 789
-  Caption = 'FormPayInfo'
+  Caption = '支付信息'
   ClientHeight = 487
   ClientWidth = 789
   KeyPreview = True
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 50

@@ -3,13 +3,12 @@ object GoodsFromProveedor: TGoodsFromProveedor
   Height = 418
   Top = 281
   Width = 1024
-  Caption = 'GoodsFromProveedor'
+  Caption = '查询货品来源'
   ClientHeight = 418
   ClientWidth = 1024
   KeyPreview = True
   OnKeyDown = FormKeyDown
   Position = poMainFormCenter
-  LCLVersion = '2.0.0.4'
   object Panel1: TPanel
     Left = 0
     Height = 41
@@ -117,15 +116,16 @@ object GoodsFromProveedor: TGoodsFromProveedor
       end>
     DataSource = DataSource1
     TabOrder = 2
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object DataSource1: TDataSource
     DataSet = ListQuery
-    left = 360
-    top = 192
+    Left = 360
+    Top = 192
   end
   object ListQuery: TZQuery
     Params = <>
-    left = 450
-    top = 204
+    Left = 450
+    Top = 204
   end
 end

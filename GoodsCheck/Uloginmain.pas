@@ -8,7 +8,7 @@ uses
   Windows, Messages, SysUtils, Variants,
   Classes,  Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   ZDataset, rxcurredit, Global, connect, UItem, UItemList,Udata,
-  U_Conn_Indy, LCLIntf,  ShellAPI,
+  U_Conn_Indy, LCLIntf,  ShellAPI, Register,
   IdException, ZAbstractRODataset, ZAbstractDataset,
   ZAbstractConnection, ZConnection;
 
@@ -68,7 +68,7 @@ type
 
 var
   FormLogin: TFormLogin;
-  ci: TConectItem;
+  //ci: TConectItem; 移到全局
   zhuti1,zhuti2,zhuti3:string;
   Hecho:boolean;
 
@@ -270,9 +270,16 @@ Label4.Caption:=zhuti1+#13#10+zhuti2+#13#10+zhuti3;
 end;
 
 procedure TFormLogin.ComboBox1Select(Sender: TObject);
+var
+  url:string;
+  password:string;
+  respJson:string;
 begin
+  MyConnection.Disconnect;
   ci := TConectItem(Self.tvData.Items[ComboBox1.ItemIndex]);
-
+  //showmessage(inttostr(ci.S_Port));
+  if ci.S_Port=8888 then
+  begin
   TCPServer.Server:=ci.S_Server;
   TCPServer.Port:=ci.S_Port;
   TCPServer.PCID:=ci.PCID;
@@ -280,6 +287,26 @@ begin
   sleep(1000);
   Label3.Caption:='重新定向新服务器';
   DoIndyConection;
+  end;
+
+  if ci.S_Port=8887 then
+  begin
+       DoStopIndy;
+    url:=Format('http://%s:%d/register', [ci.S_Server,ci.S_Port]);
+    password:='weidong';
+    try
+    respJson:=GetRegisterData(url, password);
+    Logined:=SetGlobalData(respJson, aRegisterDB, ReGisted);
+    Label3.Caption:='已经连接到端口:'+inttostr(ci.S_Port);
+    DoConection;
+    except on E: Exception do
+     begin
+     Label3.Caption:='服务端错误,可能地址错误或者没有启动,请联系管理员.';
+     exit;
+     end;
+    end;
+  end;
+
  // DoConection;
 end;
 
@@ -310,9 +337,9 @@ begin
 end else
 begin
 ci := TConectItem(Self.tvData.Items[0]);
- TCPServer.Server:=ci.S_Server;
-  TCPServer.Port:=ci.S_Port;
-  TCPServer.PCID:=ci.PCID;
+ //TCPServer.Server:=ci.S_Server;
+ // TCPServer.Port:=ci.S_Port;
+//  TCPServer.PCID:=ci.PCID;
  // DoIndyConection;
  // sleep(1000);
 
@@ -336,17 +363,23 @@ procedure TFormLogin.UpdateGridRowCount;
 var
 i:integer;
 conectiones: TConectItem;
+  url:string;
+  password:string;
+  respJson:string;
 begin
   ComboBox1.Clear;
 
  for I := 0 to (Self.tvData.Count-1) do
  begin
  conectiones:=TConectItem(Self.tvData.Items[i]);
-  ComboBox1.Items.Add(conectiones.dbHost);
+ //ComboBox1.Items.Add(conectiones.dbHost)
+  ComboBox1.Items.Add(conectiones.S_Server+':'+inttostr(conectiones.S_Port));
 
  end;
  ComboBox1.ItemIndex:=0;
  ci := TConectItem(Self.tvData.Items[ComboBox1.ItemIndex]);
+ if ci.S_Port = 8888 then
+ begin
  TCPServer.Server:=ci.S_Server;
   TCPServer.Port:=ci.S_Port;
   TCPServer.PCID:=ci.PCID;
@@ -354,6 +387,25 @@ begin
   sleep(1000);
   DoIndyConection;
   DoConection;
+
+ end;
+ if ci.S_Port=8887 then
+  begin
+   DoStopIndy;
+    url:=Format('http://%s:%d/register', [ci.S_Server,ci.S_Port]);
+    password:='weidong';
+    try
+    respJson:=GetRegisterData(url, password);
+    Logined:=SetGlobalData(respJson, aRegisterDB, ReGisted);
+    Label3.Caption:='已经连接到端口:'+inttostr(ci.S_Port);
+    DoConection;
+    except on E: Exception do
+     begin
+     Label3.Caption:='服务端错误,可能地址错误或者没有启动,请联系管理员.';
+     exit;
+     end;
+    end;
+  end;
 end;
 
 
@@ -373,7 +425,7 @@ var
 server:string;
 port:integer;
 begin
-//showmessage(sLogFile);
+//showmessage('do'+inttostr(TCPServer.Port));
 
  if IsConected=False then
   begin
@@ -443,7 +495,7 @@ TRY
 
  MyConnection.Connect;
  Label3.Caption:=nLBN50;
- Label5.Caption:='';
+ Label5.Caption:=aRegisterDb.CompanyName;
  //Panel1.Visible:=False;
 UserEdit.Enabled:=True;
 PasswdEdit.Enabled:=True;

@@ -5,21 +5,6 @@ object DataModule2: TDataModule2
   HorizontalOffset = 1276
   VerticalOffset = 233
   Width = 545
-  object ZCon1: TZConnection
-    ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = True
-    ClientCodepage = 'utf8'
-    Properties.Strings = (
-      'AutoEncodeStrings=true'
-      'codepage=utf8'
-      'controls_cp=CP_UTF16'
-    )
-    Port = 0
-    User = 'root'
-    Protocol = 'mysql'
-    Left = 152
-    Top = 32
-  end
   object CategQuery: TZQuery
     Params = <>
     Left = 82
@@ -64,5 +49,17 @@ object DataModule2: TDataModule2
     Params = <>
     Left = 155
     Top = 224
+  end
+  object ZCon1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    ClientCodepage = 'utf8'
+    Properties.Strings = (
+      'CLIENT_FOUND_ROWS=1'
+      'codepage=utf8'
+    )
+    Port = 0
+    Protocol = 'mysql'
+    Left = 158
+    Top = 35
   end
 end

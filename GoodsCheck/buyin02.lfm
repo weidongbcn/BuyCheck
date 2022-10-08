@@ -1,7 +1,7 @@
 object FormBuyIn02: TFormBuyIn02
-  Left = 227
+  Left = 376
   Height = 728
-  Top = 98
+  Top = 231
   Width = 1024
   Caption = '货品入库'
   ClientHeight = 728
@@ -12,6 +12,7 @@ object FormBuyIn02: TFormBuyIn02
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   Position = poMainFormCenter
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 352
@@ -32,7 +33,7 @@ object FormBuyIn02: TFormBuyIn02
       TabOrder = 1
       object Amount: TCurrencyEdit
         Left = 304
-        Height = 25
+        Height = 23
         Top = 16
         Width = 80
         Alignment = taRightJustify
@@ -44,7 +45,7 @@ object FormBuyIn02: TFormBuyIn02
       end
       object Descuento: TCurrencyEdit
         Left = 480
-        Height = 25
+        Height = 23
         Top = 16
         Width = 80
         Alignment = taRightJustify
@@ -56,7 +57,7 @@ object FormBuyIn02: TFormBuyIn02
       end
       object Importe: TCurrencyEdit
         Left = 568
-        Height = 25
+        Height = 23
         Top = 16
         Width = 80
         Alignment = taRightJustify
@@ -77,39 +78,39 @@ object FormBuyIn02: TFormBuyIn02
       end
       object Label63: TLabel
         Left = 304
-        Height = 17
+        Height = 15
         Top = 0
-        Width = 24
+        Width = 26
         Caption = '数量'
         ParentColor = False
       end
       object Label64: TLabel
         Left = 568
-        Height = 17
+        Height = 15
         Top = 0
-        Width = 24
+        Width = 26
         Caption = '合计'
         ParentColor = False
       end
       object Label65: TLabel
         Left = 656
-        Height = 17
+        Height = 15
         Top = 0
-        Width = 36
+        Width = 39
         Caption = '销售价'
         ParentColor = False
       end
       object Label66: TLabel
         Left = 480
-        Height = 17
+        Height = 15
         Top = 1
-        Width = 43
+        Width = 44
         Caption = '折扣(%)'
         ParentColor = False
       end
       object PVP1C: TCurrencyEdit
         Left = 656
-        Height = 25
+        Height = 23
         Top = 16
         Width = 80
         Alignment = taRightJustify
@@ -121,15 +122,15 @@ object FormBuyIn02: TFormBuyIn02
       end
       object Label67: TLabel
         Left = 392
-        Height = 17
+        Height = 15
         Top = 2
-        Width = 24
+        Width = 26
         Caption = '成本'
         ParentColor = False
       end
       object Precio: TCurrencyEdit
         Left = 392
-        Height = 25
+        Height = 23
         Top = 16
         Width = 80
         Alignment = taRightJustify
@@ -142,7 +143,7 @@ object FormBuyIn02: TFormBuyIn02
       object CButton: TButton
         Left = 120
         Height = 25
-        Top = 8
+        Top = 10
         Width = 75
         Caption = '保存'
         OnClick = CButtonClick
@@ -159,6 +160,52 @@ object FormBuyIn02: TFormBuyIn02
         TabOrder = 7
         Visible = False
       end
+      object BitBtn2: TBitBtn
+        Left = 24
+        Height = 25
+        Top = 10
+        Width = 75
+        Caption = 'Buscar'
+        Glyph.Data = {
+          26040000424D2604000000000000360000002800000012000000120000000100
+          180000000000F003000064000000640000000000000000000000FEFEFEFEFEFE
+          FFFFFEFFFFFEF1EEEAD6D3CFCFCBCAD0CBC8D5CCC9D4CDCACFCED2C3C6CACDCE
+          CCC5D0D4A2BDD27A95AF949BAAC8C7D10000FFFFFCFFFFFEFFFFFFFEFCFCE4E0
+          DFC3C0BCB7B6B2B9B6B2BBB5B0B5AEABBDB8BAAFB2B6AAB5B98DA6B0688FAB71
+          97B58FA4B9B6C1CF0000000500000200F1F2F6F6F1FAEBE2E5FBF6F5EBEFE9F1
+          F5EFF2EEE9F3EAE7F5EBEBE1E5EABFDFEC6A9EB563A2C897D5FD9CCAE9A0C6DE
+          0000FFFFF5F7FCF3F2F3F7F9F4FDEAE1E4FFF9F9FCFDF9F2F4EEFAF1EDFFF7F5
+          F0E9ECD4E4F073A9C05BA4C48CD7FE95D6FC90BDD8AED3E90000FFFFF9FFFDF8
+          FBFBFBEFEEF0EEE9EAFFFCFBFFFCFCFFF3F1FFF6F1FDEDEEE3EAF37EA3B756A3
+          C486DEFF99DEFF90BED6A2B8C3D2DBDF0000FFFFFEFFFFFEFFFCFDFEF9FADDD5
+          D5E5DCD9CAC1BEDFD0CDF2D7D3FFEEEFD6DAE56F91A889CDF08CD4F695C6DCBC
+          D6E2B8BFC2E1DDDC0000FAFBFFFFFEFFFFF4F7BDAFB19E8D8A9C8E88B4AFA6B1
+          AAA1B9A7A0C2AFACAFA4AE9298AB93B1CCA1C3DBD5E4EDD5DADDBDBFC0DBDADC
+          0000F8F9FDFFFEFFD0BEBF99807ECAB1A7FBEADDFFFFF0FFFFF3F8EDDFD0BEB3
+          BAA5A3C2B4BAD4DAE7DBE4EEE4E0DFE5DFDABDBBBADADCDD0000FFFEFFE1D5D5
+          A58883CBA99CF7D8C3FFF6DDFFFFEAFAFDE4FFF8DFF2E1C7DDC5AFD6BFB0EBE3
+          DCE8E4DFEDE3D9E1D9CCC0BDB8DDDEDA0000FFFEFEC4B1ACAC8878ECC0A8FAD3
+          B3FFE6C4FCF4D6FCF8DBFCEDCCF7DFBBE4C3A2DCBEA5EBDBCEECE1D9EADDCFE6
+          DBCDBCB9B1D3D4D00000FFFFFBBAA296BE8F73F4BB94F5C297FFD9AFF7DEBCF6
+          E1C1FDDAB2FAD0A6F3C7A2DEBBA1E2D0C9E7DBD9E4D5CCDFD3C9BDB8B5D8D6D6
+          0000FFFFFCB6A598C29677EFB88DFECA9BFFD7AAFFE4BFF0D8B4FFE3B8FFDAB0
+          F5CBA8E4BFA9E9D4D2E4D7D9E1D5CBD1C7BDB8B3B0DAD7D90000F1FFFEBBBCB3
+          B89B86EEC5A4FFDDB2FFE8BBFFF2C8FFFBD3FFEEC8FFEAC6F4D5BCEACABDEBD5
+          D7DFCED1DBD1C7CAC2B5B8B1AEDFDADB0000F1FFFFDADCDCB19E96DCBDA8FFE9
+          C8FFFAD2FDF0CAFFFCD9FFFADCFAEDD3E9D5C3EBD1CAEED8DAE7D5D6D4CBBEC2
+          BCAFCCC7C4F2EDEE0000FFFCFFFBF3FACCB8BDBEA5A1EED5C1FFEFD3FFFEE2FF
+          FFE8FEFAE8EAE4D7D9D0C3E7D8CFF2DED9FFEBE6E9DDD1E1DBD0EBE8E4FFFEFF
+          0000FFFAFFFFFBFFECDEE4CFC0BEC8B8ABD5C7B5EADDCFE9DFD5D7D1CCDDD7D2
+          E8E2D7F7EBDFEFDDD6F6E4DDE3DAD1EBE5DEFEFAF9FFFEFF0000FFFAFDFFFDFE
+          F8F1EEFEF6EFDFDBD0DFDAD1DFD4D6DDD1D7EEE0E4F9ECEAFEF3E5F3E6D6DFD0
+          C7E2D7D3EEEAE9FFFDFDFFFFFFFFFFFF0000FFFEFFFFFFFEFFFFF8FFFDF3F3F3
+          E7E6E6E0ECE3EDEFE2F0EEDDE6F0E1DFE9D9CCDDD1BFE4D8CEF0E7E3FFFEFFF8
+          FAFBFFFDFFFFFDFE0000
+        }
+        OnClick = BitBtn2Click
+        TabOrder = 8
+        TabStop = False
+      end
     end
     object PageControl1: TPageControl
       Left = 1
@@ -171,7 +218,7 @@ object FormBuyIn02: TFormBuyIn02
       TabOrder = 0
       object TabSheet1: TTabSheet
         Caption = '基本信息'
-        ClientHeight = 270
+        ClientHeight = 272
         ClientWidth = 1014
         object Panel11: TPanel
           Left = 0
@@ -185,9 +232,9 @@ object FormBuyIn02: TFormBuyIn02
           TabOrder = 0
           object Label1: TLabel
             Left = 57
-            Height = 17
+            Height = 15
             Top = 11
-            Width = 51
+            Width = 55
             Alignment = taRightJustify
             Caption = '商品条码:'
             Color = clBtnFace
@@ -196,9 +243,9 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label3: TLabel
             Left = 67
-            Height = 17
+            Height = 15
             Top = 68
-            Width = 42
+            Width = 43
             Alignment = taRightJustify
             Caption = '名称(1):'
             Color = clBtnFace
@@ -206,10 +253,10 @@ object FormBuyIn02: TFormBuyIn02
             Transparent = False
           end
           object Label2: TLabel
-            Left = 70
-            Height = 17
-            Top = 40
-            Width = 39
+            Left = 248
+            Height = 15
+            Top = 12
+            Width = 42
             Alignment = taRightJustify
             Caption = '辅助码:'
             Color = clBtnFace
@@ -218,9 +265,9 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label6: TLabel
             Left = 58
-            Height = 17
+            Height = 15
             Top = 130
-            Width = 51
+            Width = 55
             Alignment = taRightJustify
             Caption = '商品分类:'
             Color = clBtnFace
@@ -267,10 +314,10 @@ object FormBuyIn02: TFormBuyIn02
             Transparent = False
           end
           object Label16: TLabel
-            Left = 352
-            Height = 17
+            Left = 434
+            Height = 15
             Top = 11
-            Width = 31
+            Width = 27
             Alignment = taRightJustify
             Caption = 'UUID'
             ParentColor = False
@@ -290,25 +337,25 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label18: TLabel
             Left = 528
-            Height = 17
+            Height = 15
             Top = 99
-            Width = 24
+            Width = 26
             Alignment = taRightJustify
             Caption = '重量'
             ParentColor = False
           end
           object Label19: TLabel
             Left = 499
-            Height = 17
+            Height = 15
             Top = 125
-            Width = 53
+            Width = 57
             Alignment = taRightJustify
             Caption = '包装/体积'
             ParentColor = False
           end
           object ENAEdit: TEdit
             Left = 115
-            Height = 25
+            Height = 23
             Top = 8
             Width = 121
             OnExit = ENAEditExit
@@ -317,7 +364,7 @@ object FormBuyIn02: TFormBuyIn02
           end
           object NameEdit: TEdit
             Left = 115
-            Height = 25
+            Height = 23
             Top = 64
             Width = 293
             OnExit = NameEditExit
@@ -325,9 +372,9 @@ object FormBuyIn02: TFormBuyIn02
             TabOrder = 2
           end
           object CodingEdit: TEdit
-            Left = 115
-            Height = 25
-            Top = 36
+            Left = 293
+            Height = 23
+            Top = 8
             Width = 121
             OnKeyDown = CodingEditKeyDown
             TabOrder = 1
@@ -374,12 +421,12 @@ object FormBuyIn02: TFormBuyIn02
             Margin = 0
             OnClick = BitBtn21Click
             Spacing = 0
-            TabOrder = 18
+            TabOrder = 19
             TabStop = False
           end
           object DateMod: TEdit
             Left = 561
-            Height = 25
+            Height = 23
             Top = 64
             Width = 152
             Color = clSkyBlue
@@ -400,16 +447,16 @@ object FormBuyIn02: TFormBuyIn02
             TabOrder = 15
             object Label13: TLabel
               Left = 74
-              Height = 17
+              Height = 15
               Top = 18
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '成本价'
               ParentColor = False
             end
             object DBCost: TCurrencyEdit
               Left = 114
-              Height = 25
+              Height = 23
               Top = 8
               Width = 81
               Alignment = taRightJustify
@@ -423,16 +470,16 @@ object FormBuyIn02: TFormBuyIn02
             end
             object Label38: TLabel
               Left = 59
-              Height = 17
+              Height = 15
               Top = 50
-              Width = 51
+              Width = 53
               Alignment = taRightJustify
               Caption = '零售价(1)'
               ParentColor = False
             end
             object DBPvP1c: TCurrencyEdit
               Left = 114
-              Height = 25
+              Height = 23
               Top = 42
               Width = 81
               Alignment = taRightJustify
@@ -446,16 +493,16 @@ object FormBuyIn02: TFormBuyIn02
             end
             object Label39: TLabel
               Left = 59
-              Height = 17
+              Height = 15
               Top = 82
-              Width = 51
+              Width = 53
               Alignment = taRightJustify
               Caption = '零售价(2)'
               ParentColor = False
             end
             object DBPvP2c: TCurrencyEdit
               Left = 114
-              Height = 25
+              Height = 23
               Top = 75
               Width = 81
               Alignment = taRightJustify
@@ -468,16 +515,16 @@ object FormBuyIn02: TFormBuyIn02
             end
             object Label43: TLabel
               Left = 59
-              Height = 17
+              Height = 15
               Top = 114
-              Width = 51
+              Width = 53
               Alignment = taRightJustify
               Caption = '零售价(3)'
               ParentColor = False
             end
             object DBPvP3c: TCurrencyEdit
               Left = 114
-              Height = 25
+              Height = 23
               Top = 109
               Width = 81
               Alignment = taRightJustify
@@ -490,16 +537,16 @@ object FormBuyIn02: TFormBuyIn02
             end
             object Label44: TLabel
               Left = 74
-              Height = 17
+              Height = 15
               Top = 146
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '促销价'
               ParentColor = False
             end
             object DBLOWPRICE: TCurrencyEdit
               Left = 114
-              Height = 25
+              Height = 23
               Top = 142
               Width = 81
               Alignment = taRightJustify
@@ -512,16 +559,16 @@ object FormBuyIn02: TFormBuyIn02
             end
             object Label45: TLabel
               Left = 74
-              Height = 17
+              Height = 15
               Top = 178
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '批发价'
               ParentColor = False
             end
             object DBWHOLESALE: TCurrencyEdit
               Left = 114
-              Height = 25
+              Height = 23
               Top = 176
               Width = 81
               Alignment = taRightJustify
@@ -546,7 +593,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBDISCOUNT: TCurrencyEdit
               Left = 114
-              Height = 25
+              Height = 23
               Top = 197
               Width = 81
               Alignment = taRightJustify
@@ -557,15 +604,15 @@ object FormBuyIn02: TFormBuyIn02
             end
             object Label68: TLabel
               Left = 26
-              Height = 17
+              Height = 15
               Top = 235
-              Width = 84
+              Width = 91
               Caption = '赠送销售积分数'
               ParentColor = False
             end
             object Edit4: TEdit
               Left = 115
-              Height = 25
+              Height = 23
               Top = 227
               Width = 80
               OnExit = Edit4Exit
@@ -575,14 +622,14 @@ object FormBuyIn02: TFormBuyIn02
             end
           end
           object UUIDEdit: TEdit
-            Left = 390
-            Height = 25
+            Left = 472
+            Height = 23
             Top = 8
-            Width = 359
+            Width = 290
             Color = clMoneyGreen
             ReadOnly = True
             TabStop = False
-            TabOrder = 21
+            TabOrder = 22
           end
           object BrandDBBox: TDBLookupComboBox
             Left = 115
@@ -602,55 +649,9 @@ object FormBuyIn02: TFormBuyIn02
             ReadOnly = True
             TabOrder = 5
           end
-          object BitBtn2: TBitBtn
-            Left = 255
-            Height = 25
-            Top = 8
-            Width = 75
-            Caption = 'Buscar'
-            Glyph.Data = {
-              26040000424D2604000000000000360000002800000012000000120000000100
-              180000000000F003000064000000640000000000000000000000FEFEFEFEFEFE
-              FFFFFEFFFFFEF1EEEAD6D3CFCFCBCAD0CBC8D5CCC9D4CDCACFCED2C3C6CACDCE
-              CCC5D0D4A2BDD27A95AF949BAAC8C7D10000FFFFFCFFFFFEFFFFFFFEFCFCE4E0
-              DFC3C0BCB7B6B2B9B6B2BBB5B0B5AEABBDB8BAAFB2B6AAB5B98DA6B0688FAB71
-              97B58FA4B9B6C1CF0000000500000200F1F2F6F6F1FAEBE2E5FBF6F5EBEFE9F1
-              F5EFF2EEE9F3EAE7F5EBEBE1E5EABFDFEC6A9EB563A2C897D5FD9CCAE9A0C6DE
-              0000FFFFF5F7FCF3F2F3F7F9F4FDEAE1E4FFF9F9FCFDF9F2F4EEFAF1EDFFF7F5
-              F0E9ECD4E4F073A9C05BA4C48CD7FE95D6FC90BDD8AED3E90000FFFFF9FFFDF8
-              FBFBFBEFEEF0EEE9EAFFFCFBFFFCFCFFF3F1FFF6F1FDEDEEE3EAF37EA3B756A3
-              C486DEFF99DEFF90BED6A2B8C3D2DBDF0000FFFFFEFFFFFEFFFCFDFEF9FADDD5
-              D5E5DCD9CAC1BEDFD0CDF2D7D3FFEEEFD6DAE56F91A889CDF08CD4F695C6DCBC
-              D6E2B8BFC2E1DDDC0000FAFBFFFFFEFFFFF4F7BDAFB19E8D8A9C8E88B4AFA6B1
-              AAA1B9A7A0C2AFACAFA4AE9298AB93B1CCA1C3DBD5E4EDD5DADDBDBFC0DBDADC
-              0000F8F9FDFFFEFFD0BEBF99807ECAB1A7FBEADDFFFFF0FFFFF3F8EDDFD0BEB3
-              BAA5A3C2B4BAD4DAE7DBE4EEE4E0DFE5DFDABDBBBADADCDD0000FFFEFFE1D5D5
-              A58883CBA99CF7D8C3FFF6DDFFFFEAFAFDE4FFF8DFF2E1C7DDC5AFD6BFB0EBE3
-              DCE8E4DFEDE3D9E1D9CCC0BDB8DDDEDA0000FFFEFEC4B1ACAC8878ECC0A8FAD3
-              B3FFE6C4FCF4D6FCF8DBFCEDCCF7DFBBE4C3A2DCBEA5EBDBCEECE1D9EADDCFE6
-              DBCDBCB9B1D3D4D00000FFFFFBBAA296BE8F73F4BB94F5C297FFD9AFF7DEBCF6
-              E1C1FDDAB2FAD0A6F3C7A2DEBBA1E2D0C9E7DBD9E4D5CCDFD3C9BDB8B5D8D6D6
-              0000FFFFFCB6A598C29677EFB88DFECA9BFFD7AAFFE4BFF0D8B4FFE3B8FFDAB0
-              F5CBA8E4BFA9E9D4D2E4D7D9E1D5CBD1C7BDB8B3B0DAD7D90000F1FFFEBBBCB3
-              B89B86EEC5A4FFDDB2FFE8BBFFF2C8FFFBD3FFEEC8FFEAC6F4D5BCEACABDEBD5
-              D7DFCED1DBD1C7CAC2B5B8B1AEDFDADB0000F1FFFFDADCDCB19E96DCBDA8FFE9
-              C8FFFAD2FDF0CAFFFCD9FFFADCFAEDD3E9D5C3EBD1CAEED8DAE7D5D6D4CBBEC2
-              BCAFCCC7C4F2EDEE0000FFFCFFFBF3FACCB8BDBEA5A1EED5C1FFEFD3FFFEE2FF
-              FFE8FEFAE8EAE4D7D9D0C3E7D8CFF2DED9FFEBE6E9DDD1E1DBD0EBE8E4FFFEFF
-              0000FFFAFFFFFBFFECDEE4CFC0BEC8B8ABD5C7B5EADDCFE9DFD5D7D1CCDDD7D2
-              E8E2D7F7EBDFEFDDD6F6E4DDE3DAD1EBE5DEFEFAF9FFFEFF0000FFFAFDFFFDFE
-              F8F1EEFEF6EFDFDBD0DFDAD1DFD4D6DDD1D7EEE0E4F9ECEAFEF3E5F3E6D6DFD0
-              C7E2D7D3EEEAE9FFFDFDFFFFFFFFFFFF0000FFFEFFFFFFFEFFFFF8FFFDF3F3F3
-              E7E6E6E0ECE3EDEFE2F0EEDDE6F0E1DFE9D9CCDDD1BFE4D8CEF0E7E3FFFEFFF8
-              FAFBFFFDFFFFFDFE0000
-            }
-            OnClick = BitBtn2Click
-            TabOrder = 23
-            TabStop = False
-          end
           object UProveedor: TEdit
             Left = 561
-            Height = 25
+            Height = 23
             Top = 148
             Width = 128
             CharCase = ecUppercase
@@ -668,20 +669,20 @@ object FormBuyIn02: TFormBuyIn02
             Margin = 0
             OnClick = BitBtn19Click
             Spacing = 0
-            TabOrder = 25
+            TabOrder = 24
             TabStop = False
           end
           object IdProv: TEdit
             Left = 728
-            Height = 25
+            Height = 23
             Top = 150
             Width = 37
-            TabOrder = 24
+            TabOrder = 23
             Visible = False
           end
           object WeigthEdit: TEdit
             Left = 561
-            Height = 25
+            Height = 23
             Top = 92
             Width = 121
             OnKeyDown = WeigthEditKeyDown
@@ -689,7 +690,7 @@ object FormBuyIn02: TFormBuyIn02
           end
           object VolumeEdit: TEdit
             Left = 561
-            Height = 25
+            Height = 23
             Top = 120
             Width = 193
             OnKeyDown = VolumeEditKeyDown
@@ -697,9 +698,9 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label35: TLabel
             Left = 67
-            Height = 17
+            Height = 15
             Top = 96
-            Width = 42
+            Width = 43
             Alignment = taRightJustify
             Caption = '名称(2):'
             Color = clBtnFace
@@ -708,7 +709,7 @@ object FormBuyIn02: TFormBuyIn02
           end
           object NameEdit2: TEdit
             Left = 115
-            Height = 25
+            Height = 23
             Top = 92
             Width = 293
             OnKeyDown = NameEdit2KeyDown
@@ -717,7 +718,7 @@ object FormBuyIn02: TFormBuyIn02
           object Label36: TLabel
             Left = -11
             Height = 17
-            Top = 184
+            Top = 41
             Width = 120
             Alignment = taRightJustify
             AutoSize = False
@@ -729,17 +730,17 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label37: TLabel
             Left = 54
-            Height = 17
-            Top = 213
-            Width = 51
+            Height = 15
+            Top = 191
+            Width = 55
             Alignment = taRightJustify
             Caption = '计件单位:'
             ParentColor = False
           end
           object Unidades: TEdit
             Left = 115
-            Height = 25
-            Top = 202
+            Height = 23
+            Top = 184
             Width = 80
             OnKeyDown = UnidadesKeyDown
             TabOrder = 7
@@ -747,21 +748,21 @@ object FormBuyIn02: TFormBuyIn02
           object BitBtn22: TBitBtn
             Left = 214
             Height = 23
-            Top = 204
+            Top = 186
             Width = 22
             Caption = '...'
             Layout = blGlyphTop
             Margin = 0
             OnClick = BitBtn22Click
             Spacing = 0
-            TabOrder = 19
+            TabOrder = 18
             TabStop = False
           end
           object Label7: TLabel
             Left = 58
-            Height = 17
-            Top = 239
-            Width = 46
+            Height = 15
+            Top = 221
+            Width = 47
             Alignment = taRightJustify
             Caption = '(%)税率:'
             ParentBidiMode = False
@@ -770,7 +771,7 @@ object FormBuyIn02: TFormBuyIn02
           object IvaDBLookupComboBox1: TDBLookupComboBox
             Left = 115
             Height = 24
-            Top = 230
+            Top = 212
             Width = 92
             Font.Color = clWindowText
             Font.Height = -13
@@ -788,15 +789,16 @@ object FormBuyIn02: TFormBuyIn02
           end
           object TypeBox: TComboBox
             Left = 115
-            Height = 25
-            Top = 174
+            Height = 23
+            Top = 34
             Width = 100
-            ItemHeight = 17
-            ItemIndex = 0
+            Enabled = False
+            ItemHeight = 15
             Items.Strings = (
-              '普通商品'
+              '单个普通商品'
+              '整装商品'
               '组合商品'
-              '拆分商品'
+              '保质期商品'
             )
             OnKeyDown = TypeBoxKeyDown
             OnSelect = TypeBoxSelect
@@ -813,12 +815,12 @@ object FormBuyIn02: TFormBuyIn02
             Layout = blGlyphTop
             Margin = 0
             Spacing = 0
-            TabOrder = 22
+            TabOrder = 21
             TabStop = False
           end
           object LowLimit: TCurrencyEdit
             Left = 561
-            Height = 25
+            Height = 23
             Top = 207
             Width = 65
             Alignment = taRightJustify
@@ -828,10 +830,10 @@ object FormBuyIn02: TFormBuyIn02
           end
           object AvisoLimit: TComboBox
             Left = 561
-            Height = 25
+            Height = 23
             Top = 178
             Width = 100
-            ItemHeight = 17
+            ItemHeight = 15
             ItemIndex = 0
             Items.Strings = (
               'No'
@@ -844,28 +846,28 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label57: TLabel
             Left = 480
-            Height = 17
+            Height = 15
             Top = 180
-            Width = 72
+            Width = 78
             Alignment = taRightJustify
             Caption = '启动库存警戒'
             ParentColor = False
           end
           object Label58: TLabel
             Left = 480
-            Height = 17
+            Height = 15
             Top = 210
-            Width = 72
+            Width = 78
             Alignment = taRightJustify
             Caption = '最低警戒数量'
             ParentColor = False
           end
           object CanDiscount: TComboBox
             Left = 561
-            Height = 25
+            Height = 23
             Top = 233
             Width = 100
-            ItemHeight = 17
+            ItemHeight = 15
             ItemIndex = 1
             Items.Strings = (
               'No'
@@ -878,16 +880,16 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label59: TLabel
             Left = 504
-            Height = 17
+            Height = 15
             Top = 239
-            Width = 48
+            Width = 52
             Alignment = taRightJustify
             Caption = '可以打折'
             ParentColor = False
           end
           object eSTOCK: TCurrencyEdit
             Left = 562
-            Height = 25
+            Height = 23
             Top = 36
             Width = 120
             Alignment = taRightJustify
@@ -899,20 +901,28 @@ object FormBuyIn02: TFormBuyIn02
             TabStop = False
             ZeroEmpty = False
           end
+          object Label69: TLabel
+            Left = 264
+            Height = 15
+            Top = 40
+            Width = 55
+            Caption = ' 普通商品'
+            ParentColor = False
+          end
         end
       end
       object TabSheet7: TTabSheet
         Caption = '组合信息'
-        ClientHeight = 270
+        ClientHeight = 272
         ClientWidth = 1014
         TabVisible = False
         object CombinationPanel: TPanel
           Left = 0
-          Height = 270
+          Height = 272
           Top = 0
           Width = 1014
           Align = alClient
-          ClientHeight = 270
+          ClientHeight = 272
           ClientWidth = 1014
           TabOrder = 0
           object Panel13: TPanel
@@ -952,9 +962,9 @@ object FormBuyIn02: TFormBuyIn02
                 TabOrder = 0
                 object Label47: TLabel
                   Left = 173
-                  Height = 17
+                  Height = 15
                   Top = 9
-                  Width = 48
+                  Width = 52
                   Caption = '组合内容'
                   ParentColor = False
                 end
@@ -1014,14 +1024,14 @@ object FormBuyIn02: TFormBuyIn02
               TabOrder = 1
               object Sku_NoEdit: TEdit
                 Left = 16
-                Height = 25
+                Height = 23
                 Top = 56
                 Width = 152
                 TabOrder = 0
               end
               object ItemName: TEdit
                 Left = 16
-                Height = 25
+                Height = 23
                 Top = 88
                 Width = 224
                 ReadOnly = True
@@ -1038,9 +1048,9 @@ object FormBuyIn02: TFormBuyIn02
               end
               object Label53: TLabel
                 Left = 20
-                Height = 17
+                Height = 15
                 Top = 35
-                Width = 48
+                Width = 52
                 Caption = '选择商品'
                 ParentColor = False
               end
@@ -1090,7 +1100,7 @@ object FormBuyIn02: TFormBuyIn02
               end
               object Cantidad: TCurrencyEdit
                 Left = 152
-                Height = 25
+                Height = 23
                 Top = 120
                 Width = 81
                 Alignment = taRightJustify
@@ -1102,9 +1112,9 @@ object FormBuyIn02: TFormBuyIn02
               end
               object Label56: TLabel
                 Left = 56
-                Height = 17
+                Height = 15
                 Top = 128
-                Width = 87
+                Width = 94
                 Alignment = taRightJustify
                 Caption = '参与组合的数量:'
                 ParentColor = False
@@ -1121,43 +1131,43 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label48: TLabel
             Left = 226
-            Height = 17
+            Height = 15
             Top = 344
-            Width = 51
+            Width = 53
             Alignment = taRightJustify
             Caption = '零售价(2)'
             ParentColor = False
           end
           object Label50: TLabel
             Left = 216
-            Height = 17
+            Height = 15
             Top = 392
-            Width = 51
+            Width = 53
             Alignment = taRightJustify
             Caption = '零售价(3)'
             ParentColor = False
           end
           object Label51: TLabel
             Left = 77
-            Height = 17
+            Height = 15
             Top = 312
-            Width = 36
+            Width = 39
             Alignment = taRightJustify
             Caption = '成本价'
             ParentColor = False
           end
           object Label52: TLabel
             Left = 226
-            Height = 17
+            Height = 15
             Top = 312
-            Width = 51
+            Width = 53
             Alignment = taRightJustify
             Caption = '零售价(1)'
             ParentColor = False
           end
           object CDBPvP1c: TCurrencyEdit
             Left = 285
-            Height = 25
+            Height = 23
             Top = 304
             Width = 81
             Alignment = taRightJustify
@@ -1169,7 +1179,7 @@ object FormBuyIn02: TFormBuyIn02
           end
           object CDBPvP2c: TCurrencyEdit
             Left = 285
-            Height = 25
+            Height = 23
             Top = 337
             Width = 81
             Alignment = taRightJustify
@@ -1181,7 +1191,7 @@ object FormBuyIn02: TFormBuyIn02
           end
           object CDBPvP3c: TCurrencyEdit
             Left = 275
-            Height = 25
+            Height = 23
             Top = 387
             Width = 81
             Alignment = taRightJustify
@@ -1193,7 +1203,7 @@ object FormBuyIn02: TFormBuyIn02
           end
           object CDBCost: TCurrencyEdit
             Left = 32
-            Height = 25
+            Height = 23
             Top = 336
             Width = 81
             Alignment = taRightJustify
@@ -1207,16 +1217,16 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label60: TLabel
             Left = 496
-            Height = 17
+            Height = 15
             Top = 308
-            Width = 36
+            Width = 39
             Alignment = taRightJustify
             Caption = '促销价'
             ParentColor = False
           end
           object CDBLOWPRICE: TCurrencyEdit
             Left = 546
-            Height = 25
+            Height = 23
             Top = 304
             Width = 81
             Alignment = taRightJustify
@@ -1228,16 +1238,16 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Label61: TLabel
             Left = 496
-            Height = 17
+            Height = 15
             Top = 344
-            Width = 36
+            Width = 39
             Alignment = taRightJustify
             Caption = '批发价'
             ParentColor = False
           end
           object CDBWHOLESALE: TCurrencyEdit
             Left = 546
-            Height = 25
+            Height = 23
             Top = 338
             Width = 81
             Alignment = taRightJustify
@@ -1261,7 +1271,7 @@ object FormBuyIn02: TFormBuyIn02
           end
           object CDBDISCOUNT: TCurrencyEdit
             Left = 536
-            Height = 25
+            Height = 23
             Top = 389
             Width = 81
             Alignment = taRightJustify
@@ -1273,22 +1283,22 @@ object FormBuyIn02: TFormBuyIn02
       end
       object TabSheet2: TTabSheet
         Caption = '规格商品和库存'
-        ClientHeight = 270
+        ClientHeight = 272
         ClientWidth = 1014
         ImageIndex = 1
         object NewSkuPanel: TPanel
           Left = 0
-          Height = 229
+          Height = 231
           Top = 41
           Width = 1014
           Align = alClient
-          ClientHeight = 229
+          ClientHeight = 231
           ClientWidth = 1014
           TabOrder = 2
           Visible = False
           object DBGrid2: TDBGrid
             Left = 1
-            Height = 177
+            Height = 179
             Top = 1
             Width = 999
             Align = alClient
@@ -1358,80 +1368,80 @@ object FormBuyIn02: TFormBuyIn02
           end
           object Panel8: TPanel
             Left = 1000
-            Height = 177
+            Height = 179
             Top = 1
             Width = 13
             Align = alRight
             BorderStyle = bsSingle
-            ClientHeight = 173
+            ClientHeight = 175
             ClientWidth = 9
             TabOrder = 1
             object Label20: TLabel
               Left = 57
-              Height = 17
+              Height = 15
               Top = 208
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '批发价'
               ParentColor = False
             end
             object Label21: TLabel
               Left = 57
-              Height = 17
+              Height = 15
               Top = 176
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '促销价'
               ParentColor = False
             end
             object Label22: TLabel
               Left = 56
-              Height = 17
+              Height = 15
               Top = 143
-              Width = 37
+              Width = 35
               Alignment = taRightJustify
               Caption = 'PVP(3)'
               ParentColor = False
             end
             object Label23: TLabel
               Left = 56
-              Height = 17
+              Height = 15
               Top = 111
-              Width = 37
+              Width = 35
               Alignment = taRightJustify
               Caption = 'PVP(2)'
               ParentColor = False
             end
             object Label24: TLabel
               Left = 56
-              Height = 17
+              Height = 15
               Top = 79
-              Width = 37
+              Width = 35
               Alignment = taRightJustify
               Caption = 'PVP(1)'
               ParentColor = False
             end
             object Label25: TLabel
               Left = 52
-              Height = 17
+              Height = 15
               Top = 47
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '成本价'
               ParentColor = False
             end
             object Label26: TLabel
               Left = 32
-              Height = 17
+              Height = 15
               Top = 272
-              Width = 60
+              Width = 65
               Alignment = taRightJustify
               Caption = '商品销售码'
               ParentColor = False
             end
             object DBEdit1: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 71
               Width = 121
               DataField = 'SELLING_P1C'
@@ -1441,7 +1451,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit2: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 104
               Width = 121
               DataField = 'SELLING_P2C'
@@ -1451,7 +1461,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit3: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 136
               Width = 121
               DataField = 'SELLING_P3C'
@@ -1461,7 +1471,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit4: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 168
               Width = 121
               DataField = 'LOWPRICE'
@@ -1471,7 +1481,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit5: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 200
               Width = 121
               DataField = 'WHOLESALE'
@@ -1481,7 +1491,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit6: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 264
               Width = 121
               DataField = 'MERCHANT_CODING'
@@ -1507,7 +1517,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit0: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 40
               Width = 121
               DataField = 'COST'
@@ -1517,16 +1527,16 @@ object FormBuyIn02: TFormBuyIn02
             end
             object Label55: TLabel
               Left = 34
-              Height = 17
+              Height = 15
               Top = 240
-              Width = 59
+              Width = 62
               Alignment = taRightJustify
               Caption = '销售折扣%'
               ParentColor = False
             end
             object DBEdit16: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 232
               Width = 121
               DataField = 'DISCOUNT'
@@ -1538,7 +1548,7 @@ object FormBuyIn02: TFormBuyIn02
           object Panel10: TPanel
             Left = 1
             Height = 50
-            Top = 178
+            Top = 180
             Width = 1012
             Align = alBottom
             ClientHeight = 50
@@ -1660,79 +1670,79 @@ object FormBuyIn02: TFormBuyIn02
             TabOrder = 1
             object Label27: TLabel
               Left = 57
-              Height = 17
+              Height = 15
               Top = 188
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '批发价'
               ParentColor = False
             end
             object Label28: TLabel
               Left = 57
-              Height = 17
+              Height = 15
               Top = 155
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '促销价'
               ParentColor = False
             end
             object Label29: TLabel
               Left = 56
-              Height = 17
+              Height = 15
               Top = 122
-              Width = 37
+              Width = 35
               Alignment = taRightJustify
               Caption = 'PVP(3)'
               ParentColor = False
             end
             object Label30: TLabel
               Left = 56
-              Height = 17
+              Height = 15
               Top = 89
-              Width = 37
+              Width = 35
               Alignment = taRightJustify
               Caption = 'PVP(2)'
               ParentColor = False
             end
             object Label31: TLabel
               Left = 56
-              Height = 17
+              Height = 15
               Top = 56
-              Width = 37
+              Width = 35
               Alignment = taRightJustify
               Caption = 'PVP(1)'
               ParentColor = False
             end
             object Label32: TLabel
               Left = 57
-              Height = 17
+              Height = 15
               Top = 23
-              Width = 36
+              Width = 39
               Alignment = taRightJustify
               Caption = '成本价'
               ParentColor = False
             end
             object Label33: TLabel
               Left = 33
-              Height = 17
+              Height = 15
               Top = 287
-              Width = 60
+              Width = 65
               Alignment = taRightJustify
               Caption = '商品销售码'
               ParentColor = False
             end
             object Label34: TLabel
               Left = 69
-              Height = 17
+              Height = 15
               Top = 254
-              Width = 24
+              Width = 26
               Alignment = taRightJustify
               Caption = '库存'
               ParentColor = False
             end
             object DBEdit7: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 16
               Width = 121
               CharCase = ecNormal
@@ -1741,7 +1751,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit8: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 49
               Width = 121
               DataField = 'SELLING_P1C'
@@ -1751,7 +1761,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit9: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 82
               Width = 121
               DataField = 'SELLING_P2C'
@@ -1761,7 +1771,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit10: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 115
               Width = 121
               DataField = 'SELLING_P3C'
@@ -1771,7 +1781,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit11: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 148
               Width = 121
               DataField = 'LOWPRICE'
@@ -1781,7 +1791,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit12: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 181
               Width = 121
               DataField = 'WHOLESALE'
@@ -1791,7 +1801,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit13: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 247
               Width = 121
               DataField = 'STOCK'
@@ -1801,7 +1811,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit14: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 280
               Width = 121
               DataField = 'SKU_CODING'
@@ -1811,7 +1821,7 @@ object FormBuyIn02: TFormBuyIn02
             end
             object DBEdit15: TDBEdit
               Left = 104
-              Height = 25
+              Height = 23
               Top = 214
               Width = 121
               DataField = 'DISCOUNT'
@@ -1821,9 +1831,9 @@ object FormBuyIn02: TFormBuyIn02
             end
             object Label54: TLabel
               Left = 34
-              Height = 17
+              Height = 15
               Top = 221
-              Width = 59
+              Width = 62
               Alignment = taRightJustify
               Caption = '销售折扣%'
               ParentColor = False
@@ -1860,9 +1870,9 @@ object FormBuyIn02: TFormBuyIn02
           TabOrder = 0
           object Label14: TLabel
             Left = 24
-            Height = 17
+            Height = 15
             Top = 16
-            Width = 192
+            Width = 203
             Caption = '商品的销售规格影响SKU商品的价格'
             ParentColor = False
           end
@@ -1872,7 +1882,7 @@ object FormBuyIn02: TFormBuyIn02
             Top = 8
             Width = 99
             Caption = '组成规格商品'
-            OnClick = Button2Click
+            OnClick = Button6Click
             TabOrder = 0
           end
         end
@@ -2107,7 +2117,9 @@ object FormBuyIn02: TFormBuyIn02
         end>
       DataSource = BuyDetallesDS
       TabOrder = 0
+      OnDrawColumnCell = DBGrid1DrawColumnCell
       OnDblClick = DBGrid1DblClick
+      OnPrepareCanvas = DBGrid1PrepareCanvas
     end
   end
   object Panel3: TPanel
@@ -2121,7 +2133,7 @@ object FormBuyIn02: TFormBuyIn02
     TabOrder = 2
     object Id: TEdit
       Left = 88
-      Height = 25
+      Height = 23
       Top = 8
       Width = 251
       ReadOnly = True
@@ -2130,25 +2142,25 @@ object FormBuyIn02: TFormBuyIn02
     end
     object Label8: TLabel
       Left = 360
-      Height = 17
+      Height = 15
       Top = 10
-      Width = 39
+      Width = 42
       Alignment = taRightJustify
       Caption = '供应商:'
       ParentColor = False
     end
     object Label9: TLabel
       Left = 632
-      Height = 17
+      Height = 15
       Top = 12
-      Width = 27
+      Width = 29
       Alignment = taRightJustify
       Caption = '金额:'
       ParentColor = False
     end
     object N_Proveedor: TEdit
       Left = 407
-      Height = 25
+      Height = 23
       Top = 8
       Width = 144
       ReadOnly = True
@@ -2157,7 +2169,7 @@ object FormBuyIn02: TFormBuyIn02
     end
     object Total: TCurrencyEdit
       Left = 696
-      Height = 25
+      Height = 23
       Top = 8
       Width = 120
       Alignment = taRightJustify
@@ -2179,9 +2191,9 @@ object FormBuyIn02: TFormBuyIn02
     end
     object Label10: TLabel
       Left = 32
-      Height = 17
+      Height = 15
       Top = 12
-      Width = 51
+      Width = 55
       Alignment = taRightJustify
       Caption = '记录编号:'
       ParentColor = False
@@ -2197,9 +2209,9 @@ object FormBuyIn02: TFormBuyIn02
     end
     object Label12: TLabel
       Left = 520
-      Height = 17
-      Top = 48
-      Width = 113
+      Height = 15
+      Top = 50
+      Width = 101
       Anchors = [akLeft, akBottom]
       Caption = '(F5) Para busqueda'
       ParentColor = False

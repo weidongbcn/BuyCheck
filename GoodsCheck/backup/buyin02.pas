@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  DBGrids, ZDataset, ZSqlUpdate, rxcurredit, LCLType, Buttons, DBCtrls,  math,
-  ComCtrls, connect, frxClass, frxBarcode, frxDBSet, db, BufDataset, Global;
+  DBGrids, ZDataset, ZSqlUpdate, rxcurredit, LCLType, Buttons, DBCtrls,  math, fpjson, jsonparser,
+  ComCtrls, connect, frxClass, frxBarcode, frxDBSet, db, BufDataset, Global, Grids;
 
 type
 
@@ -18,6 +18,7 @@ type
     BfCOST: TCurrencyField;
     BfDISCOUNT: TFloatField;
     BfGOODS_ID: TStringField;
+    BitBtn2: TBitBtn;
     BufDatasetLabelsGOODS_ID: TStringField;
     BfLOWPRICE: TCurrencyField;
     BfMERCHANT_CODING: TStringField;
@@ -29,7 +30,6 @@ type
     BfWHOLESALE: TCurrencyField;
     BitBtn12: TBitBtn;
     BitBtn19: TBitBtn;
-    BitBtn2: TBitBtn;
     BitBtn20: TBitBtn;
     BitBtn21: TBitBtn;
     BitBtn22: TBitBtn;
@@ -60,6 +60,7 @@ type
     frxReport1: TfrxReport;
     GetStock: TZQuery;
     dbUuid: TZQuery;
+    Label69: TLabel;
     SAVE2: TButton;
     Cantidad: TCurrencyEdit;
     Amount: TCurrencyEdit;
@@ -285,8 +286,13 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure DBCostChange(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure DBPvP1cChange(Sender: TObject);
     procedure Edit4Exit(Sender: TObject);
     procedure Edit4KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -397,7 +403,7 @@ var
 implementation
 uses
   addgoods, BuyInput, BuyInColgada, goodslist, PayofBuy, select_onesku, Select_SKU,
-  Spec_Select, Goods_Marca, U_FindGoods_Spu, findout, Categorys_Spec;
+  Spec_Select, Goods_Marca, U_FindGoods_Spu, findout, Categorys_Spec, SimpleAdd;
 
 {$R *.lfm}
 
@@ -604,7 +610,7 @@ end;
 
 procedure TFormBuyIn02.TypeBoxSelect(Sender: TObject);
 begin
-  if TypeBox.ItemIndex=1 then
+  if TypeBox.ItemIndex=2 then
   begin
   if not IsNewGoods then
   BEGIN
@@ -729,11 +735,12 @@ begin
             +'LEFT JOIN goods_sku AS T4 ON T4.SKU_NO = T1.SKU_NO '
             +'LEFT JOIN goods_brands AS T5 ON T5.BRAND_ID = T2.BRAND_ID '
      +'WHERE 1=1 '
-     +'AND T1.B_UUID=:B_UUID ';
+     +'AND T1.B_UUID=:B_UUID order by T1.id ';
      ParamByName('B_UUID').AsString:=ABUYDOC.B_UUID;
     open;
 
     end;
+  BuyDetalles.Last;
 
 end;
 
@@ -777,7 +784,7 @@ begin
   N_Proveedor.Text:=ABUYDOC.NAME_PROVEEDOR;
   GetBuyDetalles;
   GetTotal;
-  EnaEdit.SetFocus;
+ // EnaEdit.SetFocus;
 
 end;
 
@@ -799,6 +806,97 @@ begin
     ClearAll();
   end;
   EnaEdit.SetFocus;
+end;
+
+procedure TFormBuyIn02.Button6Click(Sender: TObject);
+var
+ Category_id:integer;
+ Data:TStringArray;
+ Json:String;
+ I, Len:integer;
+ str, str2, str3:string;
+  JsonData: TJSONData;
+  Study: TJSONEnum;
+
+begin
+  if TRim(ENAEdit.Text)='' then exit;
+  if TRIM(NameEdit.text) = '' then exit;
+  if CategoryDBBox.KeyValue=null then
+  begin
+    CategoryDBBox.SetFocus;
+  Exit;
+  end;
+  if IvaDBLookupComboBox1.KeyValue=null then
+  begin
+    IvaDBLookupComboBox1.SetFocus;
+  Exit;
+  end;
+   str:=TRim(ENAEdit.Text);
+  Category_id:=CategoryDBBox.KeyValue;
+  Data:=FormSelectSpec.IniciarSelect(Category_id, GOODS_ID);
+  Len:=Length(Data);
+
+  if Len<=0 then exit;
+   BufDatasetStudies.Close;
+    BufDatasetStudies.CreateDataset;
+    try
+      BufDatasetStudies.Open;
+      BufDatasetStudies.DisableControls;
+
+  Json:='[';
+  for I := Low(Data) to High(Data) do
+    begin
+    str2:=Format('%.*d',[3, I+1]);
+      if I=Len-1 then
+      begin
+      Json:=Json+'{"GOODS_ID":"'+GOODS_ID+'","SKU_NAME":{'+Data[I]+'},"COST":'+Floattostr(DBCost.Value)+', "SELLING_P1C":'+ Floattostr(DBPvP1c.Value)
+      +', "SELLING_P2C":'+ Floattostr(DBPvP2c.Value)+', "SELLING_P3C":'+ Floattostr(DBPvP3c.Value)+', "LOWPRICE":'+ Floattostr(DBLOWPRICE.Value)
+      +', "WHOLESALE":'+ Floattostr(DBWHOLESALE.Value)+', "DISCOUNT":'+ Floattostr(DBDISCOUNT.Value)+', "STOCK": 0, "MERCHANT_CODING":"'+str+Str2+'"}'
+      end
+      else
+      Json:=Json+'{"GOODS_ID":"'+GOODS_ID+'","SKU_NAME":{'+Data[I]+'},"COST":'+ Floattostr(DBCost.Value)+', "SELLING_P1C":'+ Floattostr(DBPvP1c.Value)
+      +', "SELLING_P2C":'+ Floattostr(DBPvP2c.Value)+', "SELLING_P3C":'+ Floattostr(DBPvP3c.Value)
+      +', "LOWPRICE":'+ Floattostr(DBLOWPRICE.Value)+', "WHOLESALE":'+ Floattostr(DBWHOLESALE.Value)+', "DISCOUNT":'+ Floattostr(DBDISCOUNT.Value)+', "STOCK": 0, "MERCHANT_CODING":"'+str+Str2+'"}, ';
+
+       {jo.GOODS_ID:=GOODS_ID;
+       jo.SKU_NAME:= Data[I];
+       jo.COST:=DBCost.Value;
+       jo.SELLING_P1C:=DBPvP1c.Value;
+       jo.SELLING_P2C:=DBPvP2c.Value;
+       jo.SELLING_P3C:=DBPvP3c.Value;
+       jo.STOCK:=0;
+       jo.MERCHANT_CODING:=str+Str2;    }
+
+       with BufDatasetStudies do
+        begin
+          Insert;
+          BfGOODS_ID.AsString := GOODS_ID;
+          BfSKU_NAME.AsString := '{'+Data[I]+'}';
+          BfCOST.AsCurrency := DBCost.Value;
+          BfSELLING_P1C.AsFloat:=DBPvP1c.Value;
+          BfSELLING_P2C.AsFloat:=DBPvP2c.Value;
+          BfSELLING_P3C.AsFloat:=DBPvP3c.Value;
+          BfLOWPRICE.AsFloat:=DBLOWPRICE.Value;
+          BfWHOLESALE.AsFloat:=DBWHOLESALE.Value;
+          BfDISCOUNT.AsFloat:=DBDISCOUNT.Value;
+          BfSTOCK.AsFloat:=0;
+          BfMERCHANT_CODING.AsString:=str+Str2;
+          Post;
+        end;
+
+
+    end;
+  Json:=Json+']';
+    DataSourceStudies.DataSet:= BufDatasetStudies;
+    finally
+      BufDatasetStudies.EnableControls;
+    end;
+
+  HaveNewSkuItem:=True;
+  NewSkuPanel.Align:=AlClient;
+  SkuPanel.Visible:=False;
+  NewSkuPanel.Visible:=True;
+
 end;
 
 procedure TFormBuyIn02.Button9Click(Sender: TObject);
@@ -842,7 +940,7 @@ frxReport1.LoadFromFile(ReportPath+'EtiquetaSabateria40x25.fr3');
   else frxReport1.PrintOptions.ShowDialog := True; //显示打印机选择框
 
  // frxReport1.PrepareReport();
-  frxReport1.ShowPreparedReport;
+ // frxReport1.ShowPreparedReport;
   frxReport1.Print;
 
  //  BufDatasetLabels.Clear;
@@ -855,6 +953,41 @@ begin
   Precio.Value:=DBCost.Value;
 end;
 
+procedure TFormBuyIn02.DBGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+
+end;
+
+procedure TFormBuyIn02.DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+  Column: TColumn; AState: TGridDrawState);
+begin
+    with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+  if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clBlack; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+  end;  {
+
+   if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
+  begin
+    DBGrid1.Canvas.Brush.Color := clRed;
+    DBGrid1.Canvas.Font.Color := clWhite;
+  end;
+  }
+end;
+end;
+
 procedure TFormBuyIn02.DBPvP1cChange(Sender: TObject);
 begin
   PVP1C.Value:=DBPvP1c.Value;
@@ -862,7 +995,7 @@ end;
 
 procedure TFormBuyIn02.Edit4Exit(Sender: TObject);
 begin
-  if TypeBox.ItemIndex=1 then
+  if TypeBox.ItemIndex=2 then
   begin
   //PageControl1.Pages[1].TabVisible:=True;
   PageControl1.Pages[1].Show;
@@ -877,6 +1010,9 @@ end;
 
 procedure TFormBuyIn02.FormShow(Sender: TObject);
 begin
+  CategoryDBBox.KeyValue:= CategoryDBBox.ListSource.DataSet.FieldByName(CategoryDBBox.KeyField).Value;
+BrandDBBox.KeyValue:= BrandDBBox.ListSource.DataSet.FieldByName(BrandDBBox.KeyField).Value;
+IvaDBLookupComboBox1.KeyValue:=IvaDBLookupComboBox1.ListSource.DataSet.FieldByName(IvaDBLookupComboBox1.KeyField).Value;
   ENAEdit.SetFocus;
 end;
 
@@ -1066,6 +1202,33 @@ begin
            else ParamByName('CAN_DISCount').AsInteger:=0;
            ParamByName('Points').AsFloat:=strtofloat(Trim(Edit4.Text));
            ExecSQL;
+
+           Active:=False;
+    sql.Clear;
+    sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
+    +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, 0, :GOODS_STATUS) '
+    +'ON DUPLICATE KEY UPDATE '
+    +'UPDATED_AT=NOW() ';
+    ParamByName('ID_STOCK').AsString:=aBUYDoc.ID_STOCK;
+    ParamByName('GOODS_ID').AsString:=GOODS_ID;
+    ParamByName('SKU_NO').AsString:=dbUuid.FieldByName('UUID').AsString;
+   // ParamByName('AMOUNT').AsFloat:= Amount.Value;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
+    ExecSQL;
+
+     {       Active:=False;
+    sql.Clear;
+    sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
+    +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, AMOUNT=AMOUNT+:AMOUNT, :GOODS_STATUS) '
+    +'ON DUPLICATE KEY UPDATE '
+    +'AMOUNT=AMOUNT+:AMOUNT ';
+    ParamByName('ID_STOCK').AsString:=aBUYDoc.ID_STOCK;
+    ParamByName('GOODS_ID').AsString:=Articulo.FieldByName('GOODS_ID').AsString;
+    ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
+    ParamByName('AMOUNT').AsFloat:= Amount.Value;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
+    ExecSQL;
+    }
           end;
     end;
  end;
@@ -1392,6 +1555,11 @@ begin
 if ExistGoods(Trim(ENAEdit.Text)) then
 begin
   /////
+  if DBGoodsQuery.FieldByName('TYPE').AsInteger = 1 then
+   begin
+   showmessage('此编码不适合在此输入');
+   exit;
+   end;
   GOODS_ID:=DBGoodsQuery.FieldByName('GOODS_ID').AsString;
   ///这里的sku编码是本身的编码, 不是属性商品.
   SKUUUID:=DBGoodsQuery.FieldByName('SKU_NO').AsString;
@@ -1698,7 +1866,7 @@ begin
   if IsNewGoods then
   begin
   {新货品头}
-   if TypeBox.ItemIndex=1 then
+   if TypeBox.ItemIndex=2 then
 begin
     CButton.Click;
 
@@ -1742,6 +1910,7 @@ begin
     ExecSQL;
 
     /////////仓库中的货品库存//////////
+    Active:=False;
     sql.Clear;
     sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
     +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, AMOUNT=AMOUNT+:AMOUNT, :GOODS_STATUS) '
@@ -1751,7 +1920,7 @@ begin
     ParamByName('GOODS_ID').AsString:=GOODS_ID;
     ParamByName('SKU_NO').AsString:=dbUuid.FieldByName('UUID').AsString;
     ParamByName('AMOUNT').AsFloat:= Amount.Value;
-    ParamByName('GOODS_STATUS').AsInteger:= 1;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
     ExecSQL;
 
     Active:=False;
@@ -1784,7 +1953,7 @@ begin
     ParamByName('GOODS_ID').AsString:=CombinaQuery.FieldByName('GOODS_ID').AsString;
     ParamByName('SKU_NO').AsString:=CombinaQuery.FieldByName('MEMBER_SKU_NO').AsString;
     ParamByName('AMOUNT').AsFloat:= Amount.Value;
-    ParamByName('GOODS_STATUS').AsInteger:= 1;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
     ExecSQL;
     CombinaQuery.Next;
     end;
@@ -1851,21 +2020,20 @@ begin
     ParamByName('STOCK').AsFloat:= Amount.Value;
     ExecSQL;
 
+
     /////////仓库中的货品库存//////////
+    Active:=False;
     sql.Clear;
     sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
-    +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, AMOUNT=AMOUNT+:AMOUNT, :GOODS_STATUS) '
+    +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, AMOUNT=:AMOUNT, :GOODS_STATUS) '
     +'ON DUPLICATE KEY UPDATE '
     +'AMOUNT=AMOUNT+:AMOUNT ';
     ParamByName('ID_STOCK').AsString:=aBUYDoc.ID_STOCK;
     ParamByName('GOODS_ID').AsString:=GOODS_ID;
     ParamByName('SKU_NO').AsString:=dbUuid.FieldByName('UUID').AsString;
     ParamByName('AMOUNT').AsFloat:= Amount.Value;
-    ParamByName('GOODS_STATUS').AsInteger:= 1;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
     ExecSQL;
-
-    Active:=False;
-
 
     Active:=False;
     SQL.Clear;
@@ -1893,7 +2061,7 @@ end;
   else
   begin
    {已保存货品头}
-     if TypeBox.ItemIndex=1 then
+     if TypeBox.ItemIndex=2 then
 begin
     CButton.Click;
 
@@ -1934,6 +2102,7 @@ begin
     ExecSQL;
 
     /////////仓库中的货品库存//////////
+    Active:=False;
     sql.Clear;
     sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
     +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, AMOUNT=AMOUNT+:AMOUNT, :GOODS_STATUS) '
@@ -1943,7 +2112,7 @@ begin
     ParamByName('GOODS_ID').AsString:=GOODS_ID;
     ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
     ParamByName('AMOUNT').AsFloat:= Amount.Value;
-    ParamByName('GOODS_STATUS').AsInteger:= 1;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
     ExecSQL;
 
     Active:=False;
@@ -1976,7 +2145,7 @@ begin
     ParamByName('GOODS_ID').AsString:=CombinaQuery.FieldByName('GOODS_ID').AsString;
     ParamByName('SKU_NO').AsString:=CombinaQuery.FieldByName('MEMBER_SKU_NO').AsString;
     ParamByName('AMOUNT').AsFloat:= Amount.Value;
-    ParamByName('GOODS_STATUS').AsInteger:= 1;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
     ExecSQL;
     CombinaQuery.Next;
     end;
@@ -2043,7 +2212,9 @@ begin
     ParamByName('STOCK').AsFloat:= Amount.Value;
     ExecSQL;
 
+
     /////////仓库中的货品库存//////////
+    Active:=False;
     sql.Clear;
     sql.Text:='INSERT INTO STOCKGOODS (ID_STOCK, GOODS_ID, SKU_NO, AMOUNT, GOODS_STATUS) '
     +'VALUES (:ID_STOCK, :GOODS_ID, :SKU_NO, AMOUNT=AMOUNT+:AMOUNT, :GOODS_STATUS) '
@@ -2053,7 +2224,7 @@ begin
     ParamByName('GOODS_ID').AsString:=Articulo.FieldByName('GOODS_ID').AsString;
     ParamByName('SKU_NO').AsString:=Articulo.FieldByName('SKU_NO').AsString;
     ParamByName('AMOUNT').AsFloat:= Amount.Value;
-    ParamByName('GOODS_STATUS').AsInteger:= 1;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
     ExecSQL;
 
     Active:=False;
@@ -2087,7 +2258,7 @@ begin
     ParamByName('GOODS_ID').AsString:=CombinaQuery.FieldByName('GOODS_ID').AsString;
     ParamByName('SKU_NO').AsString:=CombinaQuery.FieldByName('MEMBER_SKU_NO').AsString;
     ParamByName('AMOUNT').AsFloat:= Amount.Value;
-    ParamByName('GOODS_STATUS').AsInteger:= 1;
+    ParamByName('GOODS_STATUS').AsInteger:= 0;
     ExecSQL;
     CombinaQuery.Next;
     end;
@@ -2121,7 +2292,8 @@ end;
 
 
   Buydetalles.Refresh;
-  Buydetalles.GotoBookmark(Bookmark);
+  BuyDetalles.Last;
+  //Buydetalles.GotoBookmark(Bookmark);
 
 
   GetTotal;

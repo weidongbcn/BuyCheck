@@ -11,7 +11,6 @@ object FormGoodsSpu: TFormGoodsSpu
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.2.0'
   object CombinationPanel: TPanel
     Left = 0
     Height = 382
@@ -207,10 +206,7 @@ object FormGoodsSpu: TFormGoodsSpu
           Color = clInfoBk
           DecimalPlaces = 3
           DisplayFormat = '0.000;-0.000'
-          MaxValue = 0
-          MinValue = 0
           TabOrder = 2
-          Value = 0
           ZeroEmpty = False
         end
         object Label56: TLabel
@@ -278,10 +274,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 3
-      Value = 0
       ZeroEmpty = False
     end
     object CDBPvP2c: TCurrencyEdit
@@ -293,10 +286,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 4
-      Value = 0
       ZeroEmpty = False
     end
     object CDBPvP3c: TCurrencyEdit
@@ -308,10 +298,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 5
-      Value = 0
       ZeroEmpty = False
     end
     object CDBCost: TCurrencyEdit
@@ -323,12 +310,9 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       ReadOnly = True
       TabOrder = 0
       TabStop = False
-      Value = 0
       ZeroEmpty = False
     end
     object Label50: TLabel
@@ -349,10 +333,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 6
-      Value = 0
       ZeroEmpty = False
     end
     object Label51: TLabel
@@ -373,10 +354,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 7
-      Value = 0
       ZeroEmpty = False
     end
     object Label52: TLabel
@@ -398,10 +376,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Width = 81
       Alignment = taRightJustify
       DisplayFormat = '0.00'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 8
-      Value = 0
       ZeroEmpty = False
     end
   end
@@ -1039,17 +1014,17 @@ object FormGoodsSpu: TFormGoodsSpu
     end
     object TabSheet3: TTabSheet
       Caption = '商品属性'
-      ClientHeight = 388
-      ClientWidth = 982
+      ClientHeight = 352
+      ClientWidth = 1016
       ImageIndex = 2
       object Panel5: TPanel
         Left = 0
         Height = 41
         Top = 0
-        Width = 982
+        Width = 1016
         Align = alTop
         ClientHeight = 41
-        ClientWidth = 982
+        ClientWidth = 1016
         TabOrder = 0
         object Label15: TLabel
           Left = 68
@@ -1123,10 +1098,7 @@ object FormGoodsSpu: TFormGoodsSpu
           Width = 81
           Alignment = taRightJustify
           DisplayFormat = '0'
-          MaxValue = 0
-          MinValue = 0
           TabOrder = 1
-          Value = 0
           ZeroEmpty = False
         end
         object MaxDesc2: TCurrencyEdit
@@ -1137,10 +1109,7 @@ object FormGoodsSpu: TFormGoodsSpu
           Alignment = taRightJustify
           DecimalPlaces = 3
           DisplayFormat = '0.000'
-          MaxValue = 0
-          MinValue = 0
           TabOrder = 2
-          Value = 0
           ZeroEmpty = False
         end
       end
@@ -1647,10 +1616,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Width = 65
       Alignment = taRightJustify
       DisplayFormat = '0.00;-0.00'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 13
-      Value = 0
       OnExit = LowLimitExit
       OnKeyDown = LowLimitKeyDown
     end
@@ -1891,10 +1857,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 0
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = DBCostKeyDown
     end
@@ -1907,10 +1870,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 1
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = DBPvP1cKeyDown
     end
@@ -1923,10 +1883,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 2
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = DBPvP2cKeyDown
     end
@@ -1939,10 +1896,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 3
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = DBPvP3cKeyDown
     end
@@ -1955,10 +1909,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 4
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = DBLOWPRICEKeyDown
     end
@@ -1971,10 +1922,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Color = clInfoBk
       DecimalPlaces = 4
       DisplayFormat = '0.000;-0.000'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 5
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = DBWHOLESALEKeyDown
     end
@@ -1985,10 +1933,7 @@ object FormGoodsSpu: TFormGoodsSpu
       Width = 81
       Alignment = taRightJustify
       DisplayFormat = '0.00'
-      MaxValue = 0
-      MinValue = 0
       TabOrder = 6
-      Value = 0
       ZeroEmpty = False
       OnKeyDown = DBDISCOUNTKeyDown
     end
@@ -2048,62 +1993,62 @@ object FormGoodsSpu: TFormGoodsSpu
       'AutoEncodeStrings='
     )
     Port = 0
-    left = 744
-    top = 72
+    Left = 744
+    Top = 72
   end
   object DBGoodsQuery: TZQuery
     Params = <>
-    left = 368
-    top = 56
+    Left = 368
+    Top = 56
   end
   object CategoryQuery: TZQuery
     Params = <>
-    left = 824
-    top = 40
+    Left = 824
+    Top = 40
   end
   object CategoryDS: TDataSource
     DataSet = CategoryQuery
-    left = 840
-    top = 80
+    Left = 840
+    Top = 80
   end
   object BrandQuery: TZQuery
     Params = <>
-    left = 408
-    top = 136
+    Left = 408
+    Top = 136
   end
   object BrandDS: TDataSource
     DataSet = BrandQuery
-    left = 424
-    top = 163
+    Left = 424
+    Top = 163
   end
   object ClasseQuery: TZQuery
     Params = <>
-    left = 528
-    top = 256
+    Left = 528
+    Top = 256
   end
   object SKUListQuery: TZQuery
     Params = <>
-    left = 360
-    top = 288
+    Left = 360
+    Top = 288
   end
   object SpecQuery: TZQuery
     Params = <>
-    left = 416
-    top = 328
+    Left = 416
+    Top = 328
   end
   object TempListDS: TDataSource
-    left = 872
-    top = 248
+    Left = 872
+    Top = 248
   end
   object DataSourceStudies: TDataSource
     DataSet = BufDatasetStudies
-    left = 624
-    top = 600
+    Left = 624
+    Top = 600
   end
   object BufDatasetStudies: TBufDataset
     FieldDefs = <>
-    left = 464
-    top = 600
+    Left = 464
+    Top = 600
     object BfGOODS_ID: TStringField
       FieldKind = fkData
       FieldName = 'GOODS_ID'
@@ -2132,8 +2077,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfSELLING_P1C: TCurrencyField
       FieldKind = fkData
@@ -2143,8 +2086,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfSELLING_P2C: TCurrencyField
       FieldKind = fkData
@@ -2154,8 +2095,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfSELLING_P3C: TCurrencyField
       FieldKind = fkData
@@ -2165,8 +2104,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfLOWPRICE: TCurrencyField
       FieldKind = fkData
@@ -2176,8 +2113,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfWHOLESALE: TCurrencyField
       FieldKind = fkData
@@ -2187,8 +2122,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfSTOCK: TFloatField
       FieldKind = fkData
@@ -2198,8 +2131,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object BfMERCHANT_CODING: TStringField
       FieldKind = fkData
@@ -2219,62 +2150,60 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
   end
   object TaxRateZQuery: TZQuery
     Params = <>
-    left = 288
-    top = 216
+    Left = 288
+    Top = 216
   end
   object TaxRateDS: TDataSource
     DataSet = TaxRateZQuery
-    left = 281
-    top = 265
+    Left = 281
+    Top = 265
   end
   object SKUListDS: TDataSource
     DataSet = SKUListQuery
-    left = 208
-    top = 344
+    Left = 208
+    Top = 344
   end
   object dbTrabajo: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 752
-    top = 264
+    Left = 752
+    Top = 264
   end
   object ClasseDS: TDataSource
     DataSet = ClasseQuery
-    left = 533
-    top = 329
+    Left = 533
+    Top = 329
   end
   object CombinaDS: TDataSource
-    left = 728
-    top = 520
+    Left = 728
+    Top = 520
   end
   object dbInsert: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 776
-    top = 432
+    Left = 776
+    Top = 432
   end
   object dbCombina: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 688
-    top = 392
+    Left = 688
+    Top = 392
   end
   object SkuQuery: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 808
-    top = 304
+    Left = 808
+    Top = 304
   end
   object CombinaBD: TBufDataset
     FieldDefs = <>
-    left = 587
-    top = 471
+    Left = 587
+    Top = 471
     object CombinaBDITEM_NAME: TStringField
       FieldKind = fkData
       FieldName = 'ITEM_NAME'
@@ -2293,8 +2222,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object CombinaBDSELLING_P1C: TFloatField
       FieldKind = fkData
@@ -2304,8 +2231,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object CombinaBDCOMMODITY_UNIT: TStringField
       FieldKind = fkData
@@ -2324,8 +2249,6 @@ object FormGoodsSpu: TFormGoodsSpu
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      MaxValue = 0
-      MinValue = 0
     end
     object CombinaBDMEMBER_SKU_NO: TStringField
       FieldKind = fkData
@@ -2340,12 +2263,12 @@ object FormGoodsSpu: TFormGoodsSpu
   end
   object dbClonar: TZQuery
     Params = <>
-    left = 856
-    top = 168
+    Left = 856
+    Top = 168
   end
   object OpenPictureDialog1: TOpenPictureDialog
     Options = [ofNoChangeDir, ofEnableSizing, ofViewDetail, ofAutoPreview]
-    left = 736
-    top = 48
+    Left = 736
+    Top = 48
   end
 end

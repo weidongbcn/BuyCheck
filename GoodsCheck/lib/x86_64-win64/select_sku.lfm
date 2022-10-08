@@ -3,11 +3,11 @@ object FormSelectSKU: TFormSelectSKU
   Height = 398
   Top = 266
   Width = 934
-  Caption = 'FormSelectSKU'
+  Caption = 'SKU货品选择'
   ClientHeight = 398
   ClientWidth = 934
   OnCreate = FormCreate
-  LCLVersion = '2.0.0.4'
+  Position = poOwnerFormCenter
   object DBGrid1: TDBGrid
     Left = 0
     Height = 348
@@ -24,7 +24,7 @@ object FormSelectSKU: TFormSelectSKU
       item
         Title.Caption = '名称'
         Width = 240
-        FieldName = 'GOODS_NAME'
+        FieldName = 'Item_NAME'
       end    
       item
         Title.Caption = '类别'
@@ -59,6 +59,7 @@ object FormSelectSKU: TFormSelectSKU
     TitleFont.Name = 'Tahoma'
     OnDblClick = DBGrid1DblClick
     OnKeyDown = DBGrid1KeyDown
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object Panel1: TPanel
     Left = 0
@@ -91,13 +92,13 @@ object FormSelectSKU: TFormSelectSKU
   end
   object DataSource1: TDataSource
     DataSet = dbTrabajo
-    left = 454
-    top = 218
+    Left = 454
+    Top = 218
   end
   object dbTrabajo: TZQuery
     AutoCalcFields = False
     Params = <>
-    left = 724
-    top = 236
+    Left = 724
+    Top = 236
   end
 end

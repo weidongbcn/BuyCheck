@@ -5,8 +5,8 @@ object frmDlgCapt: TfrmDlgCapt
   Width = 529
   ClientHeight = 207
   ClientWidth = 529
+  KeyPreview = True
   Position = poOwnerFormCenter
-  LCLVersion = '2.0.2.0'
   object Label1: TLabel
     Left = 56
     Height = 17

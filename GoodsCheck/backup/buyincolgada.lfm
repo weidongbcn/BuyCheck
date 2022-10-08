@@ -8,7 +8,7 @@ object FormColgada: TFormColgada
   ClientWidth = 898
   OnCreate = FormCreate
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.10.0'
   object Panel1: TPanel
     Left = 0
     Height = 50
@@ -50,7 +50,7 @@ object FormColgada: TFormColgada
       Height = 25
       Top = 8
       Width = 75
-      Caption = 'Cancelar'
+      Caption = '取消'
       OnClick = Button2Click
       TabOrder = 1
     end
@@ -100,15 +100,16 @@ object FormColgada: TFormColgada
     TitleFont.Name = 'Tahoma'
     OnDblClick = DBGrid1DblClick
     OnKeyDown = DBGrid1KeyDown
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object DBList: TZQuery
     Params = <>
-    left = 173
-    top = 136
+    Left = 173
+    Top = 136
   end
   object DataSource1: TDataSource
     DataSet = DBList
-    left = 238
-    top = 209
+    Left = 238
+    Top = 209
   end
 end

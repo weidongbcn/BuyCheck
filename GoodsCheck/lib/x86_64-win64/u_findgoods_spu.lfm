@@ -8,7 +8,6 @@ object FormFindGoods_Spu: TFormFindGoods_Spu
   ClientWidth = 1025
   OnCreate = FormCreate
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 57
@@ -175,12 +174,12 @@ object FormFindGoods_Spu: TFormFindGoods_Spu
   end
   object ListUniQuery: TZQuery
     Params = <>
-    left = 140
-    top = 284
+    Left = 140
+    Top = 284
   end
   object DataSource1: TDataSource
     DataSet = ListUniQuery
-    left = 216
-    top = 192
+    Left = 216
+    Top = 192
   end
 end

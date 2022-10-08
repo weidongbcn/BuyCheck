@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, db, Forms, Controls, Graphics, Dialogs, ExtCtrls, DBGrids,
   StdCtrls, ZDataset, LCLType,
-  connect, Global;
+  connect, Global, Grids;
 
 type
 
@@ -27,6 +27,8 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+      Column: TColumn; AState: TGridDrawState);
     procedure FormCreate(Sender: TObject);
     procedure GetBuyList;
   private
@@ -114,6 +116,36 @@ begin
  //if Key=VK_Return then SelectNext(ActiveControl,True,True);
   if key = VK_RETURN then
   DBGrid1DblClick(self);
+end;
+
+procedure TFormColgada.DBGrid1PrepareCanvas(sender: TObject; DataCol: Integer;
+  Column: TColumn; AState: TGridDrawState);
+begin
+    with Sender as TDBGrid do begin
+if DBGrid1.DataSource.DataSet.RecNo mod 2 = 1 then
+  begin
+    DBGrid1.Canvas.Brush.Color := clwindow;
+
+  end
+  else
+  begin
+    DBGrid1.Canvas.Brush.Color := clSilver;
+  end;
+
+   if ([gdSelected] * AState <> []) then
+  begin
+    DBGrid1.Canvas.Brush.color := clyellow; //当前行以黑色显示
+    DBGrid1.Canvas.pen.mode := pmmask;
+    DBGrid1.Canvas.Font.Color := clBlack;
+  end;
+
+        {
+   if ([gdSelected, gdFocused] * AState <> []) and (DBGrid1.SelectedColumn = Column) then
+  begin
+    DBGrid1.Canvas.Brush.Color := clBlack;
+   // DBGrid1.Canvas.Font.Color := clWhite;
+  end; }
+end;
 end;
 
 procedure TFormColgada.FormCreate(Sender: TObject);

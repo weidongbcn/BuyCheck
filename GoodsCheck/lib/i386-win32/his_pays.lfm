@@ -10,7 +10,6 @@ object FormPayInfo: TFormPayInfo
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   Position = poMainFormCenter
-  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 50
@@ -37,12 +36,9 @@ object FormPayInfo: TFormPayInfo
       Alignment = taRightJustify
       DecimalPlaces = 3
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       ReadOnly = True
       TabOrder = 1
       TabStop = False
-      Value = 0
       ZeroEmpty = False
     end
     object Payed: TCurrencyEdit
@@ -53,12 +49,9 @@ object FormPayInfo: TFormPayInfo
       Alignment = taRightJustify
       DecimalPlaces = 3
       DisplayFormat = '0.000'
-      MaxValue = 0
-      MinValue = 0
       ReadOnly = True
       TabOrder = 0
       TabStop = False
-      Value = 0
       ZeroEmpty = False
     end
     object Label1: TLabel
@@ -66,7 +59,7 @@ object FormPayInfo: TFormPayInfo
       Height = 17
       Top = 19
       Width = 39
-      Caption = '以支付:'
+      Caption = '已支付:'
       ParentColor = False
     end
   end
@@ -140,20 +133,21 @@ object FormPayInfo: TFormPayInfo
       end>
     DataSource = DataSource1
     TabOrder = 2
+    OnPrepareCanvas = DBGrid1PrepareCanvas
   end
   object DataSource1: TDataSource
     DataSet = PayQuery
-    left = 283
-    top = 174
+    Left = 283
+    Top = 174
   end
   object PayQuery: TZQuery
     Params = <>
-    left = 176
-    top = 179
+    Left = 176
+    Top = 179
   end
   object TotalQuery: TZQuery
     Params = <>
-    left = 204
-    top = 207
+    Left = 204
+    Top = 207
   end
 end
